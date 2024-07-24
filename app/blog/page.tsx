@@ -24,7 +24,7 @@ const BlogPage = async () => {
                     year: "numeric"
                   })}
                 </time>
-                <div className="col-span-4">
+                <div className="flex flex-col gap-1 col-span-4">
                   <h2 className="font-forza font-bold italic text-2xl">
                     <Link href={`/blog/${post.frontmatter.slug}`} className="text-accent">
                       {post.frontmatter.title}
