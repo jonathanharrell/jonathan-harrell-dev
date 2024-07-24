@@ -6,7 +6,7 @@ const BlogPostPage = async ({ params }) => {
   const post = await getPostData(params.slug);
 
   return (
-    <div className="max-w-[65ch] mx-auto py-6">
+    <div className="max-w-[700px] mx-auto py-6">
       <header className="flex items-center gap-8">
         <span>JH</span>
         <Nav/>

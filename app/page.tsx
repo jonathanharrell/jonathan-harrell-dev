@@ -6,9 +6,9 @@ const HomePage = async () => {
   const { posts } = await getPosts({ page: 0 });
 
   return (
-    <div className="grid grid-cols-12 gap-16 py-16">
+    <div className="grid grid-cols-12 gap-16 py-12">
       <div className="col-span-4">
-        <div className="w-24 h-24 bg-neutral-200 rounded-full mb-6" />
+        <div className="w-24 h-24 bg-neutral-200 dark:bg-neutral-800 rounded-full mb-6" />
         <h1 className="font-forza font-bold text-xl mb-3">Jonathan Harrell</h1>
         <p className="prose mb-4">
           Engineer at <a href="" className="underline">Zapier</a>.<br/>

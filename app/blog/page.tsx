@@ -6,12 +6,12 @@ const BlogPage = async () => {
   const { posts } = await getPosts();
 
   return (
-    <div className="max-w-[65ch] mx-auto py-6">
+    <div className="max-w-[700px] mx-auto py-6">
       <header className="flex items-center gap-8">
         <span>JH</span>
         <Nav/>
       </header>
-      <p className="my-12 font-forza font-bold text-3xl">Blog Archive</p>
+      <h1 className="my-12 font-forza font-bold text-3xl">Blog Archive</h1>
       {Boolean(posts.length) && (
         <ul className="flex flex-col gap-8 my-12">
           {posts.map(post => (
@@ -25,7 +25,7 @@ const BlogPage = async () => {
                   })}
                 </time>
                 <div className="col-span-4">
-                  <h2 className="font-forza font-bold italic text-xl">
+                  <h2 className="font-forza font-bold italic text-2xl">
                     <Link href={`/blog/${post.frontmatter.slug}`} className="text-accent">
                       {post.frontmatter.title}
                     </Link>

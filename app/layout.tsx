@@ -13,7 +13,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-neutral-200 dark:bg-neutral-800">
+    <html lang="en" className="bg-neutral-200 dark:bg-neutral-800 dark">
       <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900 font-ideal-sans text-neutral-800 dark:text-neutral-100">
         <main className="container max-w-5xl">
           {children}
