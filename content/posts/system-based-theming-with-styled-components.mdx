@@ -55,7 +55,10 @@ const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 const App = () => {
   // perform an initial detection of system theme
-  const [theme, setTheme] = useState(darkModeQuery.matches ? "dark" : "light");
+  const [theme, setTheme] = useState(
+    darkModeQuery.matches ? "dark" : "light"
+  );
+
 
   // set up a listener to respond to future changes of system theme
   useEffect(() => {
@@ -169,7 +172,9 @@ const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 const App = () => {
   // perform an initial detection of system theme
-  const [activeTheme, setActiveTheme] = useState(darkModeQuery.matches ? "dark" : "light");
+  const [activeTheme, setActiveTheme] = useState(
+    darkModeQuery.matches ? "dark" : "light"
+  );
 
   // set up a listener to respond to future changes of system theme
   useEffect(() => {
