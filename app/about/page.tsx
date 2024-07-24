@@ -8,7 +8,7 @@ const AboutPage = () => {
         <Nav/>
       </header>
       <h1 className="my-12 font-forza font-bold text-3xl">About Jonathan</h1>
-      <section className="flex gap-8 my-12">
+      <section className="bio flex gap-8 my-12">
         <div className="flex-shrink-0 w-48 h-48 bg-neutral-200 dark:bg-neutral-800 rounded-full mb-6" />
         <p className="prose">I’m Jonathan Harrell, a designer and front-end engineer. I’ve been developing websites and applications for the last six years for a wide range of clients, from SaaS startups to established software companies to global hedge funds. While I am now a full-time software engineer, I am also passionate about design, and have worked as a UI/UX designer in an agency context. I am currently based in Brooklyn, New York.</p>
       </section>

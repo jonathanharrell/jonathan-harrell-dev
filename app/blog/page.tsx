@@ -16,15 +16,15 @@ const BlogPage = async () => {
         <ul className="flex flex-col gap-8 my-12">
           {posts.map(post => (
             <li key={post.frontmatter.slug}>
-              <article className="grid grid-cols-6 gap-8">
-                <time dateTime={post.frontmatter.date} className="col-span-2">
+              <article className="grid grid-cols-6 gap-3 md:gap-8">
+                <time dateTime={post.frontmatter.date} className="col-span-6 md:col-span-2">
                   {new Date(post.frontmatter.date).toLocaleDateString("default", {
                     month: "long",
                     day: "numeric",
                     year: "numeric"
                   })}
                 </time>
-                <div className="flex flex-col gap-1 col-span-4">
+                <div className="flex flex-col gap-1 col-span-6 md:col-span-4">
                   <h2 className="font-forza font-bold italic text-2xl">
                     <Link href={`/blog/${post.frontmatter.slug}`} className="text-accent">
                       {post.frontmatter.title}

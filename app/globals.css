@@ -114,6 +114,10 @@
   font-variant-caps: small-caps;
 }
 
+.bio .prose::first-line {
+  font-variant-caps: small-caps;
+}
+
 .prose h1 {
   @apply mb-4 font-forza italic font-bold text-5xl text-balance tracking-tighter text-accent;
 }
@@ -124,6 +128,14 @@
 
 .prose h2 {
   @apply mt-16 mb-3 font-forza font-bold;
+}
+
+.prose h2:has(+ h3) {
+  @apply mb-8;
+}
+
+.prose h3 {
+  @apply text-lg;
 }
 
 .prose p code {
