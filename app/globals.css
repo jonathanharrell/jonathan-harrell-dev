@@ -47,13 +47,6 @@
 }
 
 @font-face {
-  font-family: "Sentinel";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/Sentinel-Bold-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
   font-family: "Operator";
   font-style: normal;
   font-weight: 700;
@@ -119,10 +112,8 @@
 }
 
 .prose p code {
-  @apply font-ideal-sans font-normal;
+  @apply font-operator;
 
-  font-size: inherit;
-  font-variant-caps: small-caps;
   color: inherit;
 }
 
@@ -144,4 +135,8 @@
 
 .prose a {
   @apply hover:no-underline text-accent;
+}
+
+.prose img {
+  @apply aspect-video bg-neutral-200;
 }
