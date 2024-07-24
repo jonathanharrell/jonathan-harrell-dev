@@ -1,0 +1,113 @@
+# Live Theming with CSS Variables
+
+CSS variables, now enjoying fairly good [browser support](https://caniuse.com/#search=css%20variables), are opening up exciting possibilities for more dynamic styling. Having true CSS variables means that we can get and set their values using JavaScript, allowing us to build exciting features like live theming.
+
+The process is fairly simple—set up initial variable values in CSS, mark up some inputs, add event listeners and set the values in JavaScript. Let’s get started!
+
+![Image here](https://placehold.co/1600x800)
+
+## Set Up Initial Values
+
+First we’ll set up the variables and their initial values in the `:root` pseudo-class. In HTML, `:root` represents the `html` element.
+
+```css
+:root {
+  --background-color: #FFFFFF;
+  --text-color: #101727;
+}
+```
+
+Now we can write some styles using these variables. Think about using these values as a base and generating other values in your styles from them. This will let you create fewer variables while still giving the user the power to affect the entire document.
+
+```css
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+```
+
+You may also want to add some transitions for the properties that will be changing to smooth out the theme editing experience.
+
+## Create Some Inputs
+
+Now it’s time to create the form that the user will be interacting with to customize their theme. I’m using color inputs for the color options and range inputs for the font size and line height.
+
+```html
+<input type="color" id="background-color" value="#FFFFFF">
+<input type="color" id="text-color" value="#OOOOO">
+```
+
+Set your initial input values to match the starting values of your CSS variables. You could also set these through JavaScript on page load to remain DRY.
+
+## Set up Event Listeners
+
+I’m setting up listeners for the “change” event for color inputs, and the “input” event for range inputs. I’ve extracted the logic to a separate function called `handleInputChange` so that I can reuse it for all the inputs.
+
+```javascript
+const handleInputChange = (event, property) => {
+  document.documentElement.style.setProperty(
+    `--${property}`,
+    event.target.value
+  );
+};
+
+document.getElementById('background-color')
+  .addEventListener('change', event => {
+    handleInputChange('background-color');
+  });
+```
+
+That’s all it takes to set up basic interactive theming with CSS variables. We can go a step further and keep these values in localStorage so the theme settings will persist on refresh.
+
+## Store Values in localStorage
+
+I’ll edit my `handleInputChange` function to store values in `localStorage`:
+
+```javascript
+const handleInputChange = (event, property) => {
+  document.documentElement.style.setProperty(
+    `--${property}`,
+    event.target.value
+  );
+
+  localStorage.setItem(property, newValue);
+};
+```
+
+Next, I’ll need to add some functionality to grab the values from `localStorage` and set them on page load. I will need to set both the CSS variable and the input value so that everything is consistent. Once again, I’ve extracted the logic to a separate function.
+
+```javascript
+const setValueFromLocalStorage = property => {
+  const value = localStorage.getItem(property);
+  document.documentElement.style.setProperty(
+    `--${property}`,
+    value
+  );
+
+  const input = document.getElementById(property);
+  input.value = value;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setValueFromLocalStorage('background-color');
+});
+```
+
+Now, refresh your page to see a persistent theme!
+
+## Bonus: Pre-Defined Themes
+
+If you want to offer some pre-defined themes, in addition to the free-form inputs, simply create a method that sets all the variables to pre-defined values and hook it up to an event listener.
+
+I’ve created a `setTheme` function that accepts an options object, loops through the object keys, and sets the values. I’ve reworked the function that actually sets the values a bit so it’s more generic.
+
+Now, I just need to call this function with the values I want to set on the appropriate trigger:
+
+```javascript
+setTheme({
+  'background-color': '#FFFFFF',
+  'text-color': '#101727'
+});
+```
+
+CSS variables make live theming easy. Check out the [live experiment here](https://codepen.io/jonathanharrell/details/EdawEq). Hopefully this gets you started playing around with the fun things that CSS variables make possible. You can learn more about CSS variables in [my article here](/blog/unlocking-the-benefits-of-css-custom-properties/).

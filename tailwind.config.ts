@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import TailwindTypography from "@tailwindcss/typography";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -7,14 +9,21 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    fontFamily: {
+      "mercury": ["Mercury", "serif"],
+      "ideal-sans": ["Ideal Sans", "sans-serif"],
+      "sentinel": ["Sentinel", "sans-serif"],
+      "operator": ["Operator", "monospace"],
+      "operator-mono": ["Operator Mono", "monospace"],
     },
+    extend: {},
   },
-  plugins: [],
+  plugins: [
+    TailwindTypography,
+    plugin(function ({addVariant}) {
+      addVariant('prose-inline-code', '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))');
+    })
+  ],
 };
+
 export default config;

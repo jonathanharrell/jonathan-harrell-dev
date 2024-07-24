@@ -1,0 +1,127 @@
+# Contextual Callouts with CSS Grid
+
+At long last, contextual callouts are possible with CSS grid. <dfn>Contextual callouts</dfn> are small paragraphs that sit beside primary text and offer secondary information to a reader. They have long been a feature of books, magazines and other printed materials. I enjoy coming across these small asides while reading, as they add texture and interest to the content.
+
+I've been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring complex floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
+
+![Image here](/assets/grid-test.svg)
+
+<div className="caption">
+  <div>
+    <p>Alex York’s stalwart alphabet uses different techniques to maximize the space. I offer a few more, with some thoughts about when to let character widths take a back seat to spacing.</p>
+  </div>
+</div>
+
+## The Grid Markup
+
+Say I’m building a blog post template. First, I’ll need a `header` to contain the title. Then I’ll need the primary blog content, consisting of headings, paragraphs, images, and callouts. First let’s write some semantic markup:
+
+```html
+<article class="blog-post">
+  <header>
+    <h1>Article Heading</h1>
+  </header>
+  <p>Paragraph text</p>
+  <figure>
+    <img src="image.jpg" alt="Alt text"/>
+  </figure>
+  <h2>Section Heading</h2>
+  <p>Paragraph text</p>
+  <aside>
+    <p>Callout text</p>
+  </aside>
+  <p>Paragraph text</p>
+</article>
+```
+
+The `article` element contains the header and all post content as direct children. This will be important as we apply CSS grid styles to the post. Callouts are written using `aside` elements, perfect for content that is connected tangentially to the rest of the document, and appear in the document directly before the paragraph they are connected to. Note that each `aside` contains a child paragraph of its own.
+
+## Fallback Styling
+
+Next, we’ll apply some basic styles for browsers that don’t yet support CSS grid. We’ll set a max-width of 70 characters using the `ch` unit:
+
+```css
+.blog-post {
+  max-width: 70ch;
+}
+```
+
+## Using CSS Grid
+
+Now, let's progressively enhance for browsers that *do* support CSS grid using a `@supports` query:
+
+```css
+@supports(display: grid) {
+  .blog-post {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 2rem;
+  }
+}
+```
+
+![Image here](https://placehold.co/1600x800)
+
+Now it’s time to start placing content on the grid:
+
+```css
+.blog-post header {
+  grid-column-start: 3;
+  grid-column-end: span 2;
+}
+
+.blog-post h2,
+.blog-post p,
+.blog-post figure {
+  grid-column-start: 5;
+  grid-column-end: span 4;
+}
+```
+
+![Image here](https://placehold.co/1600x800)
+
+The post header and content now sit next to each other in a row. The callouts are up next:
+
+```css
+.blog-post aside {
+  position: relative;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.blog-post aside p {
+  position: absolute;
+}
+```
+
+![Image here](https://placehold.co/1600x800)
+
+The asides are now pulled to the left of the paragraph immediately following them, looking exactly like callouts. The paragraphs within each callout have absolute positioning applied so that they don't force the proceeding paragraph down if they are taller than the adjacent content.
+
+## Bonus: Full-Width Figures
+
+I can easily style figures within the post so that they stretch across the full width of the grid container. The rest of the content remains at a narrower width.
+
+```css
+.blog-post figure {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 2rem;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.blog-post figure img {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.blog-post figure figcaption {
+  grid-column-start: 5;
+  grid-column-end: span 4;
+}
+```
+
+![Image here](https://placehold.co/1600x800)
+
+The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content. Check out the [live experiment here](https://codepen.io/jonathanharrell/pen/QZwqar).
