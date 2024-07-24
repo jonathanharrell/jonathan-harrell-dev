@@ -1,8 +1,13 @@
 import Link from "next/link";
+import { Nav } from "@/components/nav";
 
 const BlogPage = () => {
   return (
-    <div>
+    <div className="max-w-[65ch] mx-auto py-6">
+      <header className="flex items-center gap-8">
+        <span>JH</span>
+        <Nav/>
+      </header>
       <p>blog page</p>
       <ul>
         <li>

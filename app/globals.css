@@ -33,27 +33,6 @@
 /*}*/
 
 @font-face {
-  font-family: "Mercury";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/MercurySSm-Book-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Mercury";
-  font-style: italic;
-  font-weight: 400;
-  src: url("/fonts/MercurySSm-BookItalic-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Mercury";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/MercurySSm-Bold-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
   font-family: "Ideal Sans";
   font-style: normal;
   font-weight: 400;
@@ -82,6 +61,34 @@
 }
 
 @font-face {
+  font-family: "ForzaA";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/ForzaSSm-Black-TD-Space.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ForzaB";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/ForzaSSm-Black-TD-Space.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ForzaA";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/ForzaSSm-BlackItalic-TD-Space.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ForzaB";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/ForzaSSm-BlackItalic-TD.woff") format("woff");
+}
+
+@font-face {
   font-family: "Operator Mono";
   font-style: normal;
   font-weight: 400;
@@ -95,74 +102,46 @@
   src: url("/fonts/OperatorMonoSSm-BookItalic.woff2") format("woff2");
 }
 
-.article-body {
-  @apply text-neutral-800;
+.dark .prose {
+  @apply text-neutral-100;
 }
 
-.article-body > * {
-  @apply col-start-1 col-end-13 md:col-start-3 lg:col-start-4 xl:col-start-5 max-w-[65ch];
+.full-post .prose::first-line {
+  font-variant-caps: small-caps;
 }
 
-.article-body h1 {
-  @apply mb-6 font-sentinel text-4xl sm:text-5xl md:text-6xl xl:text-7xl md:leading-[0.9] tracking-tighter text-balance;
+.prose h1 {
+  @apply mb-4 font-forza italic font-bold text-5xl text-balance tracking-tighter text-accent;
 }
 
-.article-body h2 {
-  @apply mb-4 text-xl font-bold;
+.prose h2 {
+  @apply mt-16 mb-3 font-forza font-bold;
 }
 
-.article-body > p {
-  @apply mb-4 leading-relaxed;
+.prose p code {
+  @apply font-ideal-sans font-normal;
+
+  font-size: inherit;
+  font-variant-caps: small-caps;
+  color: inherit;
 }
 
-.article-body > p:has(img) {
-  @apply sm:col-start-1 max-w-none mb-12;
+.prose p code::before, .prose p code::after {
+  @apply content-none;
 }
 
-.article-body a {
-  @apply underline;
+.prose pre {
+  @apply p-6;
 }
 
-.article-body img {
-  @apply w-full;
+.prose pre code {
+  @apply font-operator-mono;
 }
 
-.article-body p code {
-  @apply font-operator font-bold;
-}
+/*.prose pre {*/
+/*  @apply -mx-12;*/
+/*}*/
 
-.article-body pre {
-  @apply mb-8 px-4
-}
-
-.article-body pre code {
-  @apply font-operator-mono text-[15px];
-}
-
-.article-body > *:has(+ h2) {
-  @apply mb-12;
-}
-
-.article-body > *:has(+ p > img) {
-  @apply mb-12;
-}
-
-.article-body > *:has(+ pre) {
-  @apply mb-8;
-}
-
-.caption {
-  @apply hidden lg:block relative lg:col-start-1 lg:col-end-4 !mb-0;
-}
-
-.caption div {
-  @apply absolute top-0 left-0 w-full;
-}
-
-.caption img {
-  @apply mt-0 mb-6;
-}
-
-.caption p {
-  @apply text-sm leading-[1.6] font-ideal-sans !text-neutral-500;
+.prose a {
+  @apply hover:no-underline text-accent;
 }

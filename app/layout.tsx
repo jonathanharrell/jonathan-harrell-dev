@@ -13,10 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-neutral-800">
-      <body className="font-mercury bg-neutral-100 text-neutral-800">
-        <Nav />
-        <main className="md:w-[95vw] lg:w-[90vw] 2xl:w-[80vw] max-w-[1300px] mx-auto px-8 sm:px-12">
+    <html lang="en" className="bg-neutral-200 dark:bg-neutral-800">
+      <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900 font-ideal-sans text-neutral-800 dark:text-neutral-100">
+        <main className="container max-w-5xl">
           {children}
         </main>
       </body>
