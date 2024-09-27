@@ -17,9 +17,9 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900 font-sans text-neutral-800 dark:text-neutral-100">
-          <main>
+          <div className="container max-w-3xl py-20">
             {children}
-          </main>
+          </div>
         </body>
       </html>
     </ViewTransitions>

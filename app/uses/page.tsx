@@ -1,15 +1,11 @@
-import { HeaderAnimation } from "@/components/header-animation";
+import { Header } from "@/components/header";
 
-const AboutPage = () => {
+const UsesPage = () => {
   return (
-    <div className="container max-w-3xl py-20">
-      <div className="relative">
-        <button className="absolute right-0">theme</button>
-        <header>
-          <HeaderAnimation className="w-16 h-16" style={{ viewTransitionName: "about-image" }} />
-          <h1 className="mt-12 font-semibold">Uses</h1>
-        </header>
-        <section className="mt-12">
+    <>
+      <Header title="Uses" />
+      <main>
+        <section>
           <ul className="space-y-4 [&_li_a]:font-medium [&_li_a]:underline [&_li_a]:underline-offset-2 [&_li_a]:decoration-neutral-200">
             <li>
               <p>IDE</p>
@@ -37,9 +33,9 @@ const AboutPage = () => {
             </li>
           </ul>
         </section>
-      </div>
-    </div>
+      </main>
+    </>
   );
 }
 
-export default AboutPage;
+export default UsesPage;

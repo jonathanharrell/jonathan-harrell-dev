@@ -1,0 +1,79 @@
+{
+  "history": {
+    "job": [
+      {
+        "company": "Vowel",
+        "description": "* Built AI interfaces that delivered auto-summarization of video conferences to users\n* Created and managed Vowel's React component library, made up of unit-tested components that were built in isolation using Storybook\n* Led the frontend development of several new product features in React and Typescript, including a clip video editor, commenting experience and metrics dashboard\n* Diagnosed frontend performance issues, including memory leaks and unnecessary React component renders\n* Refactored the Vowel marketing website to use Next.js and the Tailwind CSS framework",
+        "enddate": "June 2023",
+        "position": "UI Engineer",
+        "startdate": "December 2021"
+      },
+      {
+        "company": "InVision",
+        "description": "* Architected, built and managed a fully unit-tested Vue app for internal teams across the company to get insight into product usage\n* Worked in Node to unite disparate data across multiple microservices\n* Built and maintained the customer-facing help center using Zendesk on the backend and Vue on the frontend, including an Algolia-powered search engine\n* Built multiple React apps to improve internal tooling and increase productivity",
+        "enddate": "December 2021",
+        "position": "Senior Front-End Engineer",
+        "startdate": "September 2018"
+      },
+      {
+        "company": "World Headquarters, Inc.",
+        "description": "* Worked with an international financial institution to design and build internal monitoring applications using React and Redux\n* Built and managed the front-end web strategy for a major commercial bathroom supplier over a 3 year period\n* Worked with over 30 clients to design user experience flows and interfaces, from the user interview stage through to high fidelity mockups\n* Built modern single-page applications with React and Vue for a variety of industries",
+        "enddate": "September 2018",
+        "position": "UI/UX Designer & Front-End Developer",
+        "startdate": "May 2014"
+      },
+      {
+        "company": "TaLK (Teach and Learn in Korea)",
+        "description": "* Designed curriculum, created lesson plans, and taught after school English classes to Korean elementary school students\n* Conceived and recorded monthly school-wide video broadcasts teaching English expressions",
+        "enddate": "January 2014",
+        "position": "TaLK Scholar",
+        "startdate": "August 2012"
+      },
+      {
+        "company": "Cambridge Educational Services",
+        "description": "* Expanded Cambridge’s online presence by enlarging the company web site, designing online courses, and starting a social media campaign\n* Conceived promotional strategies with the company president and designed marketing campaigns and promotional materials",
+        "enddate": "May 2012",
+        "position": "Graphic Designer & Marketing Associate",
+        "startdate": "May 2010"
+      },
+      {
+        "company": "Wheaton College",
+        "description": "* Developed, designed, and implemented the communication department’s comprehensive web strategy\n* Analyzed and increased the department’s total web traffic by 40% between 2006 and 2008",
+        "enddate": "May 2010",
+        "position": "Graphic Designer & Teacher’s Assistant",
+        "startdate": "September 2006"
+      }
+    ],
+    "title": "Employment History"
+  },
+  "education": {
+    "description": "B.A. in Studio Art _cum laude_<br/>Wheaton College, Wheaton, IL<br/>Aug 2006 – May 2010",
+    "title": "Education"
+  },
+  "tools": {
+    "title": "Tools",
+    "tool": [
+      {
+        "name": "Adobe Creative Suite"
+      },
+      {
+        "name": "Sketch"
+      },
+      {
+        "name": "Github"
+      },
+      {
+        "name": "Atlassian Suite"
+      }
+    ]
+  },
+  "opensource": {
+    "project": [
+      {
+        "link": "https://jonathanharrell.github.io/hiq/",
+        "name": "HiQ CSS Framework"
+      }
+    ],
+    "title": "Open-Source Projects"
+  }
+}
