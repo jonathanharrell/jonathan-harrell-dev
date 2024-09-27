@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
+import { ViewTransitions } from "next-view-transitions";
 
 export const metadata: Metadata = {
   title: "Jonathan Harrell",
@@ -13,12 +14,14 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-neutral-200 dark:bg-neutral-800">
-      <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900 font-ideal-sans text-neutral-800 dark:text-neutral-100">
-        <main className="container max-w-5xl">
-          {children}
-        </main>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900 font-sans text-neutral-800 dark:text-neutral-100">
+          <main>
+            {children}
+          </main>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

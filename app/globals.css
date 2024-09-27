@@ -102,68 +102,34 @@
   src: url("/fonts/OperatorMonoSSm-BookItalic.woff2") format("woff2");
 }
 
-.prose {
-  @apply max-w-none;
-}
-
 .dark .prose {
   @apply text-neutral-100;
 }
 
-.full-post .prose::first-line {
-  font-variant-caps: small-caps;
-}
-
-.bio .prose::first-line {
-  font-variant-caps: small-caps;
-}
-
-.prose h1 {
-  @apply mb-4 font-forza italic font-bold text-5xl text-balance tracking-tighter text-accent;
-}
-
-.prose :is(h2, h3, h4, h5, h6) {
-  @apply text-neutral-900 dark:text-neutral-100;
+.prose {
+  @apply text-neutral-800;
 }
 
 .prose h2 {
-  @apply mt-16 mb-3 font-forza font-bold;
-}
-
-.prose h2:has(+ h3) {
-  @apply mb-8;
+  @apply text-base font-semibold;
 }
 
 .prose h3 {
-  @apply text-lg;
+  @apply text-base font-medium;
 }
 
-.prose p code {
-  @apply font-operator;
-
-  color: inherit;
+.prose strong {
+  @apply font-medium;
 }
-
-.prose p code::before, .prose p code::after {
-  @apply content-none;
-}
-
-.prose pre {
-  @apply p-6 bg-neutral-800;
-}
-
-.prose pre code {
-  @apply font-operator-mono;
-}
-
-/*.prose pre {*/
-/*  @apply -mx-12;*/
-/*}*/
 
 .prose a {
-  @apply hover:no-underline text-accent;
+  @apply underline underline-offset-2 decoration-neutral-200 font-normal;
 }
 
 .prose img {
   @apply aspect-video bg-neutral-200 dark:bg-neutral-800;
+}
+
+:root {
+  --accent: #e6594c;
 }

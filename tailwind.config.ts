@@ -11,6 +11,8 @@ const config: Config = {
   darkMode: 'selector',
   theme: {
     fontFamily: {
+      "sans": ["ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+      "inter": ["var(--font-inter)"],
       "ideal-sans": ["Ideal Sans", "sans-serif"],
       "sentinel": ["Sentinel", "sans-serif"],
       "forza": ["ForzaA", "ForzaB", "sans-serif"],

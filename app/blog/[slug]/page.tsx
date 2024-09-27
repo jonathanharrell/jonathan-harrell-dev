@@ -1,43 +1,35 @@
 import "@/app/prism.css";
-import { Nav } from "@/components/nav";
 import { getPostData } from "@/lib/utils";
+import { HeaderAnimation } from "@/components/header-animation";
 
 const BlogPostPage = async ({ params }) => {
   const post = await getPostData(params.slug);
 
   return (
-    <div className="max-w-[700px] mx-auto py-6">
-      <header className="flex items-center gap-8">
-        <span>JH</span>
-        <Nav/>
-      </header>
-      <article className="full-post mt-16 mb-16">
-        <header className="mb-12">
-          <time dateTime={post.frontmatter.date} className="block mb-3">
-            {new Date(post.frontmatter.date).toLocaleDateString("default", {
-              month: "long",
-              day: "numeric",
-              year: "numeric"
-            })}
-          </time>
-          <h1 className="mb-2 font-forza italic font-bold text-5xl text-balance tracking-tighter text-accent">
-            {post.frontmatter.title}
-          </h1>
-          {Boolean(post.frontmatter.tags?.length) && (
-            <ul className="flex gap-3 italic text-neutral-500">
-              {post.frontmatter.tags.map(tag => (
-                <li key={tag}>#{tag}</li>
-              ))}
-            </ul>
-          )}
+    <div className="container max-w-3xl py-20">
+      <div className="relative">
+        <button className="absolute right-0">theme</button>
+        <header>
+          <HeaderAnimation className="w-16 h-16" style={{ viewTransitionName: "about-image" }} />
+          <h1 className="mt-12 font-semibold">{post.frontmatter.title}</h1>
+          <p className="mt-1">
+            <time dateTime={post.frontmatter.date}>
+              {new Date(post.frontmatter.date).toLocaleDateString("default", {
+                month: "long",
+                day: "numeric",
+                year: "numeric"
+              })}
+            </time>
+            {` · `}
+            <span>{post.frontmatter.tags.join(", ")}</span>
+          </p>
         </header>
-        <div className="prose">{post.content}</div>
-        <footer className="mt-12">
-          <p className="text-accent">• Finito</p>
-        </footer>
-      </article>
+        <article className="prose max-w-none mt-12">
+          {post.content}
+        </article>
+      </div>
     </div>
-  );
+  )
 };
 
 export default BlogPostPage;
