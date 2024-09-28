@@ -49,14 +49,5 @@
   "education": {
     "description": "B.A. in Studio Art _cum laude_\n\nWheaton College, Wheaton, IL\n\nAug 2006 – May 2010",
     "title": "Education"
-  },
-  "opensource": {
-    "project": [
-      {
-        "link": "https://jonathanharrell.github.io/hiq/",
-        "name": "HiQ CSS Framework"
-      }
-    ],
-    "title": "Open-Source Projects"
   }
 }

@@ -6,11 +6,6 @@ export interface Job {
   enddate: string;
 }
 
-export interface Project {
-  name: string;
-  link: string;
-}
-
 export interface Resume {
   history: {
     title: string;
@@ -19,9 +14,5 @@ export interface Resume {
   education: {
     title: string;
     description: string;
-  },
-  opensource: {
-    title: string;
-    project: Project[];
-  },
+  }
 }

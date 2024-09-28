@@ -23,7 +23,7 @@ export default function RootLayout({
           <head>
             <script dangerouslySetInnerHTML={{ __html: `${setInitialTheme.toString()}\n\nsetInitialTheme();` }} />
           </head>
-          <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900 font-sans text-neutral-800 dark:text-neutral-100">
+          <body className="min-h-screen bg-white dark:bg-neutral-900 font-sans text-neutral-800 dark:text-neutral-100">
             <div className="container max-w-3xl py-20">
               {children}
             </div>

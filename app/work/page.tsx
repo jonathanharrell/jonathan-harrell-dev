@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { Header } from "@/components/header";
 import { default as resumeData } from "@/content/resume.json";
-import { Job, Project, Resume } from "@/types";
+import { Job, Resume } from "@/types";
 
 const resume = resumeData as Resume;
 
@@ -12,32 +12,28 @@ const WorkPage = async () => {
       <main className="space-y-12">
         {Object.entries(resume).map(([key, section]) => (
           <section key={key}>
-            <h2 className="font-medium">{section.title}</h2>
+            <h2 className="mb-6 font-semibold">{section.title}</h2>
             {section.job && (
-              <ul className="space-y-4 mt-4">
+              <ul className="space-y-6">
                 {section.job.map((job: Job) => (
                   <li key={job.company}>
-                    <h3>{job.company}</h3>
-                    <p>{job.position}</p>
-                    <p>{job.startdate}</p>
-                    <p>{job.enddate}</p>
-                    <ReactMarkdown className="prose">{job.description}</ReactMarkdown>
+                    <h3 className="font-medium">{job.position}, {job.company}</h3>
+                    <p className="text-sm text-neutral-400 dark:text-neutral-500">
+                      {job.startdate} – {job.enddate}
+                    </p>
+                    <ReactMarkdown className="mt-2 prose prose-ul:pl-4 prose-li:my-0 dark:prose-ul:text-neutral-400">
+                      {job.description}
+                    </ReactMarkdown>
                   </li>
                 ))}
               </ul>
             )}
             {section.description && (
-              <ReactMarkdown>{section.description}</ReactMarkdown>
-            )}
-            {section.project && (
-              <ul>
-                {section.project.map((project: Project) => (
-                  <li key={project.name}>
-                    <h3>{project.name}</h3>
-                    <p>{project.link}</p>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <ReactMarkdown>
+                  {section.description}
+                </ReactMarkdown>
+              </div>
             )}
           </section>
         ))}
