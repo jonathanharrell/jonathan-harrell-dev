@@ -1,6 +1,6 @@
-import { getPosts } from "@/lib/utils";
-import { PostsList } from "@/components/posts-list";
+import { PostList } from "@/components/post-list";
 import { Header } from "@/components/header";
+import {getPosts} from "@/lib/get-posts";
 
 const BlogPage = async () => {
   const { posts } = await getPosts();
@@ -13,7 +13,7 @@ const BlogPage = async () => {
           filters/search
         </section>
         <section>
-          <PostsList posts={posts} />
+          <PostList posts={posts} />
         </section>
       </main>
     </>

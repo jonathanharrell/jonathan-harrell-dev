@@ -1,7 +1,7 @@
-import { getPosts } from "@/lib/utils";
-import { PostsList } from "@/components/posts-list";
-import { Header } from "@/components/header";
 import { Link } from "next-view-transitions";
+import { PostList } from "@/components/post-list";
+import { Header } from "@/components/header";
+import {getPosts} from "@/lib/get-posts";
 
 const HomePage = async () => {
   const { posts } = await getPosts();
@@ -22,7 +22,7 @@ const HomePage = async () => {
       <main>
         {Boolean(posts.length) && (
           <section className="mt-12">
-            <PostsList posts={posts} />
+            <PostList posts={posts} />
           </section>
         )}
       </main>

@@ -1,17 +1,26 @@
 import path from "path";
 import fs from "fs";
-import {compileMDX} from "next-mdx-remote/rsc";
-import {Children} from "react";
-import {POSTS_PER_PAGE} from "@/constants";
+import {compileMDX, CompileMDXResult} from "next-mdx-remote/rsc";
 import rehypePrism from "@mapbox/rehype-prism";
 import rehypeSlug from "rehype-slug";
 import rehypeToc from "@jsdevtools/rehype-toc";
+import {Children} from "react";
 
-export const getPostData = async (slug: string) => {
+type PostFrontMatter = {
+  slug: string;
+  title: string;
+  date: string;
+  tags: string[];
+  description: string;
+}
+
+export type PostData = CompileMDXResult<PostFrontMatter>;
+
+export const getPostData = async (slug: string): Promise<PostData> => {
   const fullPath = path.resolve(".", "content/posts/", `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  return await compileMDX<{ title: string; date: string; tags: string[] }>({
+  return await compileMDX<PostFrontMatter>({
     source: fileContents,
     options: {
       parseFrontmatter: true,
@@ -75,43 +84,4 @@ export const getPostData = async (slug: string) => {
       )
     }
   });
-};
-
-export const getPosts = async ({page}: { page?: number } = {}) => {
-  const directoryPath = path.resolve(".", "content/posts");
-  const files = fs.readdirSync(directoryPath);
-
-  const filePromises = files.map(async (file) => {
-    const mdx = await getPostData(file.replace(".mdx", ""));
-
-    return {
-      ...mdx,
-      frontmatter: {
-        ...mdx.frontmatter,
-        slug: file.replace(".mdx", "")
-      }
-    };
-  });
-
-  const posts = await Promise.all(filePromises);
-  const descendingPosts = posts.sort((a, b) => {
-    const aDate = new Date(a.frontmatter.date).getTime();
-    const bDate = new Date(b.frontmatter.date).getTime();
-
-    if (aDate < bDate) return 1;
-    if (aDate > bDate) return -1;
-    return 0;
-  });
-
-  const skip = page ? page * POSTS_PER_PAGE : 0;
-  const paginatedPosts = page !== undefined ? descendingPosts.slice(skip, skip + POSTS_PER_PAGE) : descendingPosts;
-  const pagination = {
-    currentPage: page || 0,
-    totalPages: Math.ceil(files.length / POSTS_PER_PAGE),
-  };
-
-  return {
-    posts: paginatedPosts,
-    pagination,
-  };
 };

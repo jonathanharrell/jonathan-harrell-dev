@@ -1,7 +1,6 @@
 import "@/app/prism.css";
-import { getPostData } from "@/lib/utils";
-import { HeaderAnimation } from "@/components/header-animation";
 import { Header } from "@/components/header";
+import {getPostData} from "@/lib/get-post-data";
 
 interface BlogPostPageProps {
   params: {
@@ -11,7 +10,7 @@ interface BlogPostPageProps {
 
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const post = await getPostData(params.slug);
-console.log(post);
+
   const formattedDate = new Date(post.frontmatter.date).toLocaleDateString("default", {
     month: "long",
     day: "numeric",
