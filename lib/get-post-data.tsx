@@ -5,6 +5,7 @@ import rehypePrism from "@mapbox/rehype-prism";
 import rehypeSlug from "rehype-slug";
 import rehypeToc from "@jsdevtools/rehype-toc";
 import {Children} from "react";
+import {HtmlElementNode} from "@jsdevtools/rehype-toc/lib/types";
 
 type PostFrontMatter = {
   slug: string;
@@ -28,7 +29,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
         rehypePlugins: [rehypePrism, rehypeSlug, [
           rehypeToc, {
             headings: ["h2"],
-            customizeTOC(toc) {
+            customizeTOC(toc: HtmlElementNode) {
               return {
                 type: "element",
                 tagName: "details",

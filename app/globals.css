@@ -2,65 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/*:root {*/
-/*  --foreground-rgb: 0, 0, 0;*/
-/*  --background-start-rgb: 214, 219, 220;*/
-/*  --background-end-rgb: 255, 255, 255;*/
-/*}*/
-
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root {*/
-/*    --foreground-rgb: 255, 255, 255;*/
-/*    --background-start-rgb: 0, 0, 0;*/
-/*    --background-end-rgb: 0, 0, 0;*/
-/*  }*/
-/*}*/
-
-/*body {*/
-/*  color: rgb(var(--foreground-rgb));*/
-/*  background: linear-gradient(*/
-/*      to bottom,*/
-/*      transparent,*/
-/*      rgb(var(--background-end-rgb))*/
-/*    )*/
-/*    rgb(var(--background-start-rgb));*/
-/*}*/
-
-.dark .prose {
-  @apply text-neutral-100;
-}
-
-.prose {
-  @apply text-neutral-800;
-}
-
-.prose h2 {
-  @apply text-base font-semibold;
-}
-
-.prose h3 {
-  @apply text-base font-medium;
-}
-
-.prose strong {
-  @apply font-medium;
-}
-
-.prose a {
-  @apply underline underline-offset-2 decoration-neutral-200 font-normal;
+/*this is for the home animation in Three.js to use*/
+:root {
+  --accent: #e6594c;
 }
 
 .prose img {
-  @apply aspect-video bg-neutral-200 dark:bg-neutral-800;
+  @apply aspect-video bg-neutral-100 dark:bg-neutral-800;
 }
 
-.prose code::before,
-.prose code::after {
-  content: "";
-}
-
-:root {
-  --accent: #e6594c;
+.prose pre {
+  @apply py-5 px-6;
 }
 
 /*@keyframes circle-in-top-right {*/
