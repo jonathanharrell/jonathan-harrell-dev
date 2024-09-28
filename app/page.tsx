@@ -10,7 +10,7 @@ const HomePage = async () => {
     <>
       <Header title="Jonathan Harrell" subtitle="Frontend Engineer">
         <nav className="mt-12">
-          <ul className="flex gap-5 [&_li_a]:text-neutral-400 [&_li_a]:underline [&_li_a]:underline-offset-2 [&_li_a]:decoration-neutral-200">
+          <ul className="flex gap-5 [&_li_a]:text-neutral-400 [&_li_a]:underline [&_li_a]:underline-offset-2 [&_li_a]:decoration-neutral-200 [&_li_a]:dark:decoration-neutral-700">
             <li><Link href="/blog">Articles</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/uses">Uses</Link></li>

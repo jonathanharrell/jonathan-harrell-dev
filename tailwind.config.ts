@@ -7,17 +7,12 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: 'selector',
   theme: {
     fontFamily: {
       "sans": ["ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
-      "inter": ["var(--font-inter)"],
-      "ideal-sans": ["Ideal Sans", "sans-serif"],
-      "sentinel": ["Sentinel", "sans-serif"],
-      "forza": ["ForzaA", "ForzaB", "sans-serif"],
-      "operator": ["Operator", "monospace"],
-      "operator-mono": ["Operator Mono", "monospace"],
     },
     container: {
       center: true,

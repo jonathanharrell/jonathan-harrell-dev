@@ -14,7 +14,7 @@ const AboutPage = () => {
         {/*</figure>*/}
         <section>
           <h2 className="font-medium">Connect</h2>
-          <ul className="space-y-4 mt-4 [&_li_a]:underline [&_li_a]:underline-offset-2 [&_li_a]:decoration-neutral-200">
+          <ul className="space-y-4 mt-4 [&_li_a]:underline [&_li_a]:underline-offset-2 [&_li_a]:decoration-neutral-200 [&_li_a]:dark:decoration-neutral-700">
             <li><a href="">Email</a></li>
             <li><a href="">Twitter</a></li>
             <li><a href="">GitHub</a></li>

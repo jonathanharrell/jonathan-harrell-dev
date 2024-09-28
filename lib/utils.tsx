@@ -1,9 +1,11 @@
 import path from "path";
 import fs from "fs";
-import { compileMDX } from "next-mdx-remote/rsc";
-import { Children } from "react";
-import { POSTS_PER_PAGE } from "@/constants";
+import {compileMDX} from "next-mdx-remote/rsc";
+import {Children} from "react";
+import {POSTS_PER_PAGE} from "@/constants";
 import rehypePrism from "@mapbox/rehype-prism";
+import rehypeSlug from "rehype-slug";
+import rehypeToc from "@jsdevtools/rehype-toc";
 
 export const getPostData = async (slug: string) => {
   const fullPath = path.resolve(".", "content/posts/", `${slug}.mdx`);
@@ -11,9 +13,40 @@ export const getPostData = async (slug: string) => {
 
   return await compileMDX<{ title: string; date: string; tags: string[] }>({
     source: fileContents,
-    options: { parseFrontmatter: true, mdxOptions: { rehypePlugins: [rehypePrism] } },
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        rehypePlugins: [rehypePrism, rehypeSlug, [
+          rehypeToc, {
+            headings: ["h2"],
+            customizeTOC(toc) {
+              return {
+                type: "element",
+                tagName: "details",
+                // properties: { className: 'toc' },
+                children: [
+                  {
+                    type: "element",
+                    tagName: "summary",
+                    properties: {className: "dark:text-neutral-400 cursor-pointer"},
+                    children: [
+                      {
+                        type: "text",
+                        value: "Table of Contents"
+                      }
+                    ]
+                  },
+                  toc
+                ]
+              };
+            }
+          }
+        ]
+        ]
+      }
+    },
     components: {
-      p: ({ children, ...props }) => {
+      p: ({children, ...props}) => {
         try {
           if (Children.only(children)) {
             if (children.props.src) {
@@ -26,7 +59,7 @@ export const getPostData = async (slug: string) => {
 
         return <p {...props}>{children}</p>;
       },
-      img: ({ src, alt, title }) => {
+      img: ({src, alt, title}) => {
         return (
           <figure>
             <img src={src} alt={alt}/>
@@ -44,7 +77,7 @@ export const getPostData = async (slug: string) => {
   });
 };
 
-export const getPosts = async ({ page }: { page?: number } = {}) => {
+export const getPosts = async ({page}: { page?: number } = {}) => {
   const directoryPath = path.resolve(".", "content/posts");
   const files = fs.readdirSync(directoryPath);
 

@@ -26,82 +26,6 @@
 /*    rgb(var(--background-start-rgb));*/
 /*}*/
 
-/*@layer utilities {*/
-/*  .text-balance {*/
-/*    text-wrap: balance;*/
-/*  }*/
-/*}*/
-
-@font-face {
-  font-family: "Ideal Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/IdealSansSSm-Book-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Ideal Sans";
-  font-style: italic;
-  font-weight: 400;
-  src: url("/fonts/IdealSansSSm-BookItalic-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Ideal Sans";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/IdealSansSSm-Bold-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Operator";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/OperatorSSm-Bold-Pro_Web.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "ForzaA";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/ForzaSSm-Black-TD-Space.woff") format("woff");
-}
-
-@font-face {
-  font-family: "ForzaB";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/ForzaSSm-Black-TD-Space.woff") format("woff");
-}
-
-@font-face {
-  font-family: "ForzaA";
-  font-style: italic;
-  font-weight: 700;
-  src: url("/fonts/ForzaSSm-BlackItalic-TD-Space.woff") format("woff");
-}
-
-@font-face {
-  font-family: "ForzaB";
-  font-style: italic;
-  font-weight: 700;
-  src: url("/fonts/ForzaSSm-BlackItalic-TD.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Operator Mono";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/OperatorMonoSSm-Book.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Operator Mono";
-  font-style: italic;
-  font-weight: 400;
-  src: url("/fonts/OperatorMonoSSm-BookItalic.woff2") format("woff2");
-}
-
 .dark .prose {
   @apply text-neutral-100;
 }
@@ -130,6 +54,33 @@
   @apply aspect-video bg-neutral-200 dark:bg-neutral-800;
 }
 
+.prose code::before,
+.prose code::after {
+  content: "";
+}
+
 :root {
   --accent: #e6594c;
 }
+
+/*@keyframes circle-in-top-right {*/
+/*  from {*/
+/*    clip-path: circle(0%);*/
+/*  }*/
+/*  to {*/
+/*    clip-path: circle(150% at top right);*/
+/*  }*/
+/*}*/
+
+/*!* view transition will cross-fade in user prefers reduced motion *!*/
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*  !* old page can just sit there *!*/
+/*  ::view-transition-old(root) {*/
+/*    animation: none;*/
+/*  }*/
+
+/*  !* new page can do fancy stuff! *!*/
+/*  ::view-transition-new(root) {*/
+/*    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right forwards;*/
+/*  }*/
+/*}*/

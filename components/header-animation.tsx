@@ -1,22 +1,27 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import {CSSProperties, useEffect, useRef} from "react";
 import init from "@/lib/animation";
 
-export const HeaderAnimation = ({ className, style }) => {
-  const canvasRef = useRef<HTMLCanvasElement|null>(null)
+interface HeaderAnimationProps {
+  className?: string;
+  style?: CSSProperties;
+}
+
+export const HeaderAnimation = ({className, style}: HeaderAnimationProps) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    let destroy
+    let destroy;
 
     if (canvasRef.current) {
-      destroy = init(canvasRef.current)
+      destroy = init(canvasRef.current);
     }
 
     return () => {
-      if (destroy) destroy()
-    }
-  }, [])
+      if (destroy) destroy();
+    };
+  }, []);
 
   return (
     <canvas
@@ -25,5 +30,5 @@ export const HeaderAnimation = ({ className, style }) => {
       className={className}
       style={style}
     />
-  )
-}
+  );
+};

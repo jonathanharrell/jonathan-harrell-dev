@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "@mapbox/rehype-prism": "^0.9.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
@@ -21,6 +22,7 @@
     "noisejs": "^2.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "rehype-slug": "^6.0.0",
     "three-js": "^79.0.0"
   },
   "devDependencies": {
