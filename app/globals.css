@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/*this is for the home animation in Three.js to use*/
 :root {
+  /* this is for the home animation in Three.js to use */
   --accent: #e6594c;
 
+  /* these are for svg illustrations to respond to light/dark mode */
   --illustration-black: #262626;
   --illustration-gray: #d4d4d4;
   --illustration-accent: var(--accent);
@@ -17,11 +18,11 @@
 }
 
 .prose img {
-  @apply rounded-md bg-neutral-50 dark:bg-neutral-800;
+  @apply w-full h-auto rounded-md bg-neutral-50 dark:bg-neutral-800;
 }
 
 .prose svg {
-  @apply rounded-md bg-neutral-50 dark:bg-neutral-800;
+  @apply w-full h-auto rounded-md bg-neutral-50 dark:bg-neutral-800;
 }
 
 .prose pre {
