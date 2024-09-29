@@ -4,8 +4,9 @@ import {compileMDX, CompileMDXResult} from "next-mdx-remote/rsc";
 import rehypePrism from "@mapbox/rehype-prism";
 import rehypeSlug from "rehype-slug";
 import rehypeToc from "@jsdevtools/rehype-toc";
-import {Children} from "react";
 import {HtmlElementNode} from "@jsdevtools/rehype-toc/lib/types";
+import {Children} from "react";
+import inlineSvg from "@/lib/inline-svg";
 
 type PostFrontMatter = {
   slug: string;
@@ -50,8 +51,8 @@ export const getPostData = async (slug: string): Promise<PostData> => {
                 ]
               };
             }
-          }
-        ]
+          }],
+          inlineSvg,
         ]
       }
     },
@@ -59,7 +60,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       p: ({children, ...props}) => {
         try {
           if (Children.only(children)) {
-            if (children.props.src) {
+            if (children.props.src || children.props.viewBox) {
               return <div {...props}>{children}</div>;
             }
           }
@@ -73,6 +74,14 @@ export const getPostData = async (slug: string): Promise<PostData> => {
         return (
           <figure>
             <img src={src} alt={alt}/>
+            {title && <figcaption>{title}</figcaption>}
+          </figure>
+        );
+      },
+      svg: ({title, ...props}) => {
+        return (
+          <figure>
+            <svg {...props} />
             {title && <figcaption>{title}</figcaption>}
           </figure>
         );

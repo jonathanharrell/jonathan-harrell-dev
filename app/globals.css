@@ -5,9 +5,22 @@
 /*this is for the home animation in Three.js to use*/
 :root {
   --accent: #e6594c;
+
+  --illustration-black: #262626;
+  --illustration-gray: #d4d4d4;
+  --illustration-accent: var(--accent);
+}
+
+.dark {
+  --illustration-black: #d4d4d8;
+  --illustration-gray: #4b5563;
 }
 
 .prose img {
+  @apply rounded-md bg-neutral-50 dark:bg-neutral-800;
+}
+
+.prose svg {
   @apply rounded-md bg-neutral-50 dark:bg-neutral-800;
 }
 
