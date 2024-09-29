@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import ThemeProvider from "@/providers/theme-provider";
 import {setInitialTheme} from "@/lib/set-initial-theme";
-import "./globals.css";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Jonathan Harrell",

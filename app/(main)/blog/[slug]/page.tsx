@@ -1,6 +1,6 @@
-import "@/app/prism.css";
 import { Header } from "@/components/header";
 import {getPostData} from "@/lib/get-post-data";
+import "@/app/(main)/prism.css";
 
 interface BlogPostPageProps {
   params: {

@@ -1,0 +1,212 @@
+[
+  {
+    "title": "Citizen Kane",
+    "image": "https://d13mryl9xv19vu.cloudfront.net/82ec2a21-ef01-4df5-b4af-e04ecb5e29e9_md.jpeg",
+    "short_description": "A gripping tale of ambition, loss, and the power of the American dream.",
+    "long_description": "Widely considered one of the greatest films ever made, Orson Welles' *Citizen Kane* follows the life of Charles Foster Kane, a newspaper magnate whose wealth and power come at a personal cost. The film explores themes of isolation, the corrupting influence of power, and the elusive nature of happiness. Through its innovative narrative structure and cinematography, *Citizen Kane* set the standard for modern filmmaking techniques and remains an enduring masterpiece."
+  },
+  {
+    "title": "The Godfather",
+    "image": "https://example.com/godfather_image.jpg",
+    "short_description": "A gripping portrayal of a mafia dynasty, power, and the bonds of family.",
+    "long_description": "Francis Ford Coppola's *The Godfather* is an epic tale of crime, power, and family, following the rise of Michael Corleone as he navigates the violent world of organized crime. The film is celebrated for its brilliant performances, especially from Marlon Brando and Al Pacino, as well as its deep exploration of loyalty, betrayal, and the moral complexities of leadership. *The Godfather* reshaped the crime genre and stands as a cinematic landmark."
+  },
+  {
+    "title": "2001: A Space Odyssey",
+    "image": "https://example.com/2001_space_odyssey_image.jpg",
+    "short_description": "A visually stunning exploration of human evolution, artificial intelligence, and space travel.",
+    "long_description": "Stanley Kubrick’s *2001: A Space Odyssey* is a groundbreaking science fiction film that redefined the genre with its ambitious scope and visual innovation. The film delves into the future of space exploration, the potential of artificial intelligence, and the mysteries of human evolution. With minimal dialogue, Kubrick uses imagery and music to convey existential themes, culminating in a transcendental and enigmatic finale. *2001* remains an influential and iconic work in cinema history."
+  },
+  {
+    "title": "Schindler's List",
+    "image": "https://example.com/schindlers_list_image.jpg",
+    "short_description": "A harrowing and poignant depiction of one man's quest to save lives during the Holocaust.",
+    "long_description": "Steven Spielberg's *Schindler's List* is a deeply moving portrayal of Oskar Schindler, a German businessman who saved over a thousand Jews during the Holocaust by employing them in his factories. Shot in stark black and white, the film's visual style enhances the horror and tragedy of the Holocaust while highlighting Schindler's moral transformation. The film is praised for its emotional depth, historical accuracy, and its ability to confront the atrocities of genocide with unflinching honesty."
+  },
+  {
+    "title": "Pulp Fiction",
+    "image": "https://example.com/pulp_fiction_image.jpg",
+    "short_description": "An interwoven tale of crime, redemption, and dark humor in Quentin Tarantino's unique style.",
+    "long_description": "Quentin Tarantino's *Pulp Fiction* is a stylistically bold and wildly entertaining film that weaves together multiple storylines centered around criminals, misfits, and redemption. With its non-linear narrative, sharp dialogue, and eclectic soundtrack, the film became a cultural phenomenon, earning Tarantino widespread acclaim. The film's influence can be seen in the countless imitators that followed, but *Pulp Fiction* remains singular for its ability to blend violence, humor, and heart."
+  },
+  {
+    "title": "Lawrence of Arabia",
+    "image": "https://example.com/lawrence_of_arabia_image.jpg",
+    "short_description": "A sweeping epic of one man’s enigmatic journey through the Arabian desert during World War I.",
+    "long_description": "David Lean's *Lawrence of Arabia* is an epic masterpiece that tells the story of T.E. Lawrence, the British officer who united Arab tribes to fight against the Ottoman Empire during World War I. The film is celebrated for its breathtaking cinematography, capturing the vastness of the desert landscape, and for its complex portrayal of Lawrence as both a hero and an anti-hero. With an unforgettable performance by Peter O'Toole, *Lawrence of Arabia* stands as one of the greatest epic films ever made."
+  },
+  {
+    "title": "Casablanca",
+    "image": "https://example.com/casablanca_image.jpg",
+    "short_description": "A timeless romance set against the backdrop of World War II.",
+    "long_description": "Michael Curtiz's *Casablanca* is a classic wartime love story set in a morally ambiguous world of espionage and betrayal. The film follows Rick Blaine, a cynical bar owner in Nazi-occupied Morocco, as he reunites with a former lover, Ilsa Lund, under the most precarious of circumstances. With unforgettable lines, iconic performances from Humphrey Bogart and Ingrid Bergman, and its rich themes of sacrifice and love, *Casablanca* continues to captivate audiences decades after its release."
+  },
+  {
+    "title": "Rashomon",
+    "image": "https://example.com/rashomon_image.jpg",
+    "short_description": "A profound exploration of subjective truth through multiple conflicting perspectives.",
+    "long_description": "Akira Kurosawa's *Rashomon* tells the story of a crime through the differing accounts of four witnesses, each offering their own version of what occurred. This narrative structure invites deep philosophical reflection on the nature of truth and the unreliability of memory. Set in feudal Japan, *Rashomon* combines beautiful cinematography, innovative storytelling, and masterful performances to create one of the most influential films in world cinema. The film’s impact on storytelling, particularly the 'Rashomon effect,' has left a lasting legacy."
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "image": "https://example.com/shawshank_redemption_image.jpg",
+    "short_description": "An inspiring tale of hope and friendship in the face of imprisonment.",
+    "long_description": "Frank Darabont’s *The Shawshank Redemption* tells the story of Andy Dufresne, a man wrongly convicted of murder, as he forges a lasting friendship with fellow inmate Red. The film explores themes of perseverance, justice, and redemption against the backdrop of a corrupt prison system. Praised for its powerful performances by Tim Robbins and Morgan Freeman, *The Shawshank Redemption* has become a beloved classic, cherished for its hopeful message and enduring emotional resonance."
+  },
+  {
+    "title": "Apocalypse Now",
+    "image": "https://example.com/apocalypse_now_image.jpg",
+    "short_description": "A surreal and nightmarish journey into the heart of darkness during the Vietnam War.",
+    "long_description": "Francis Ford Coppola’s *Apocalypse Now* is a haunting depiction of the Vietnam War, loosely based on Joseph Conrad’s *Heart of Darkness*. The film follows Captain Willard as he is sent on a mission to assassinate the rogue Colonel Kurtz, who has set himself up as a godlike figure deep in the jungle. The film is celebrated for its psychedelic, often surreal visuals, its commentary on the madness of war, and its unforgettable performances by Martin Sheen and Marlon Brando. *Apocalypse Now* is a harrowing exploration of human depravity and the thin line between civilization and chaos."
+  },
+  {
+    "title": "Vertigo",
+    "image": "https://example.com/vertigo_image.jpg",
+    "short_description": "A gripping psychological thriller exploring obsession, love, and fear of heights.",
+    "long_description": "Alfred Hitchcock's *Vertigo* is a masterclass in suspense and psychological depth. The film follows retired detective Scottie Ferguson, who is hired to investigate the mysterious behavior of an old acquaintance's wife. As Scottie becomes increasingly obsessed with the woman, Hitchcock expertly unravels themes of identity, desire, and delusion. *Vertigo* is known for its pioneering use of camera techniques and has been widely hailed as one of the greatest films ever made."
+  },
+  {
+    "title": "The Seventh Seal",
+    "image": "https://example.com/seventh_seal_image.jpg",
+    "short_description": "A haunting medieval allegory of life, death, and faith during the Black Plague.",
+    "long_description": "Ingmar Bergman’s *The Seventh Seal* is a deeply philosophical film that examines human existence in the face of mortality and the silence of God. Set during the Black Plague, it follows a knight who challenges Death to a game of chess in order to delay his inevitable fate. With its stark imagery, rich symbolism, and existential themes, *The Seventh Seal* has become one of cinema’s most iconic explorations of life and death, faith and doubt."
+  },
+  {
+    "title": "Star Wars: Episode IV – A New Hope",
+    "image": "https://example.com/star_wars_a_new_hope_image.jpg",
+    "short_description": "A space-fantasy adventure that revolutionized science fiction and popular culture.",
+    "long_description": "George Lucas' *Star Wars: A New Hope* brought forth a cinematic revolution with its blend of space opera, groundbreaking special effects, and timeless hero’s journey. The film introduces audiences to Luke Skywalker, Princess Leia, Han Solo, and the villainous Darth Vader in an epic battle between the Rebellion and the Galactic Empire. With its imaginative world-building, iconic characters, and thrilling action, *A New Hope* changed the landscape of cinema and created a cultural phenomenon."
+  },
+  {
+    "title": "Chinatown",
+    "image": "https://example.com/chinatown_image.jpg",
+    "short_description": "A brooding noir that delves into corruption, mystery, and moral ambiguity in 1930s Los Angeles.",
+    "long_description": "Roman Polanski’s *Chinatown* is a dark and twisting tale of private detective J.J. Gittes, who becomes embroiled in a complex web of lies and deceit when investigating an affair. Set in 1930s Los Angeles, the film is a neo-noir masterpiece that addresses issues of political and personal corruption, water rights, and the shattering of the American dream. With Jack Nicholson's charismatic performance and a haunting finale, *Chinatown* is a bleak yet enthralling classic."
+  },
+  {
+    "title": "The Good, the Bad and the Ugly",
+    "image": "https://example.com/good_bad_ugly_image.jpg",
+    "short_description": "An iconic spaghetti western full of tension, gunfights, and unforgettable characters.",
+    "long_description": "Sergio Leone's *The Good, the Bad and the Ugly* is the quintessential spaghetti western, bringing to life a tale of three gunslingers racing to find a hidden fortune during the American Civil War. With its sweeping cinematography, iconic music by Ennio Morricone, and intense standoff sequences, the film has become a landmark in both westerns and world cinema. Clint Eastwood's portrayal of 'The Good' solidified his status as a legendary cowboy figure, while the film remains one of the most influential of the genre."
+  },
+  {
+    "title": "The Wizard of Oz",
+    "image": "https://example.com/wizard_of_oz_image.jpg",
+    "short_description": "A magical and timeless journey into the fantastical land of Oz.",
+    "long_description": "Victor Fleming’s *The Wizard of Oz* follows Dorothy Gale as she embarks on an unforgettable journey through the colorful land of Oz, meeting beloved characters like the Scarecrow, Tin Man, and Cowardly Lion along the way. The film's innovative use of Technicolor, memorable songs like 'Over the Rainbow,' and timeless message of home and friendship have cemented it as one of the most beloved films in cinema history. Its influence on fantasy, musicals, and popular culture remains profound."
+  },
+  {
+    "title": "Fight Club",
+    "image": "https://example.com/fight_club_image.jpg",
+    "short_description": "A provocative examination of modern masculinity, consumerism, and rebellion.",
+    "long_description": "David Fincher’s *Fight Club* is a subversive and intense exploration of disillusionment in the modern world, following an unnamed narrator who forms an underground fight club with the enigmatic Tyler Durden. The film's stylish visuals, sharp social commentary, and shocking plot twists create a dark satire that critiques consumer culture and the search for identity. Although divisive upon release, *Fight Club* has since achieved cult status and remains a touchstone of countercultural cinema."
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "image": "https://example.com/silence_of_the_lambs_image.jpg",
+    "short_description": "A chilling psychological thriller that explores the mind of a notorious serial killer.",
+    "long_description": "Jonathan Demme’s *The Silence of the Lambs* is a tense and unsettling thriller that follows FBI trainee Clarice Starling as she seeks the help of imprisoned cannibalistic killer Dr. Hannibal Lecter to catch another serial murderer. The film is lauded for its compelling performances, especially from Jodie Foster and Anthony Hopkins, and for its exploration of fear, manipulation, and violence. It remains a landmark in both the crime and horror genres, winning several Academy Awards, including Best Picture."
+  },
+  {
+    "title": "One Flew Over the Cuckoo's Nest",
+    "image": "https://example.com/one_flew_over_image.jpg",
+    "short_description": "A poignant and rebellious exploration of freedom and control within a mental institution.",
+    "long_description": "Milos Forman’s *One Flew Over the Cuckoo's Nest* tells the story of R.P. McMurphy, a convict who feigns insanity to serve his sentence in a mental hospital, only to clash with the tyrannical Nurse Ratched. The film explores themes of individuality, freedom, and institutional control, with powerful performances from Jack Nicholson and Louise Fletcher. It is one of the few films to win all five major Academy Awards and remains a deeply resonant critique of societal power structures."
+  },
+  {
+    "title": "12 Angry Men",
+    "image": "https://example.com/12_angry_men_image.jpg",
+    "short_description": "A riveting courtroom drama that examines justice, prejudice, and moral responsibility.",
+    "long_description": "Sidney Lumet’s *12 Angry Men* is a compelling courtroom drama that takes place almost entirely in a jury room, where 12 men must decide the fate of a young man accused of murder. What begins as an open-and-shut case turns into a gripping exploration of bias, morality, and the meaning of justice as one juror raises doubts. With its tight script, powerful performances, and tense atmosphere, *12 Angry Men* is considered one of the finest examples of American film storytelling."
+  },
+  {
+    "title": "City of God",
+    "image": "https://example.com/city_of_god_image.jpg",
+    "short_description": "A powerful depiction of crime and survival in the violent favelas of Rio de Janeiro.",
+    "long_description": "Fernando Meirelles’ *City of God* is a raw and unflinching look at the brutal realities of life in the slums of Rio de Janeiro, told through the eyes of two boys who take different paths—one becomes a photographer, while the other turns to a life of crime. The film’s kinetic energy, vivid portrayal of violence, and exploration of systemic poverty have earned it widespread acclaim. Its narrative style, non-linear structure, and powerful performances make *City of God* a masterpiece of world cinema."
+  },
+  {
+    "title": "Spirited Away",
+    "image": "https://example.com/spirited_away_image.jpg",
+    "short_description": "A visually stunning and magical coming-of-age tale from Studio Ghibli.",
+    "long_description": "Hayao Miyazaki’s *Spirited Away* is a breathtaking animated fantasy that follows Chihiro, a young girl who stumbles into a mystical world ruled by spirits and gods. As she navigates this strange and magical realm, Chihiro must find her courage and wits to save her parents and return home. The film’s imaginative world, vibrant animation, and universal themes of self-discovery and resilience have made it one of the most beloved animated films of all time, earning it the Academy Award for Best Animated Feature."
+  },
+  {
+    "title": "Goodfellas",
+    "image": "https://example.com/goodfellas_image.jpg",
+    "short_description": "A fast-paced and electrifying exploration of the rise and fall of a mobster.",
+    "long_description": "Martin Scorsese’s *Goodfellas* is an exhilarating and brutal chronicle of Henry Hill’s life in the Mafia, from his early days as a young gangster to his eventual downfall. The film blends dark humor, intense violence, and a mesmerizing sense of realism to paint a vivid portrait of the criminal underworld. With standout performances by Ray Liotta, Robert De Niro, and Joe Pesci, *Goodfellas* is considered one of the greatest gangster films ever made, capturing both the allure and the destructiveness of a life in crime."
+  },
+  {
+    "title": "Psycho",
+    "image": "https://example.com/psycho_image.jpg",
+    "short_description": "A psychological horror masterpiece that redefined the thriller genre.",
+    "long_description": "Alfred Hitchcock’s *Psycho* is a landmark in horror cinema, famous for its shocking twists, tense atmosphere, and iconic scenes, such as the infamous shower sequence. The film follows Marion Crane, a woman on the run who checks into the eerie Bates Motel, where she meets the strange and unsettling Norman Bates. *Psycho* explores themes of identity, voyeurism, and maternal obsession, and has become one of the most analyzed and influential films in cinema history."
+  },
+  {
+    "title": "The Dark Knight",
+    "image": "https://example.com/dark_knight_image.jpg",
+    "short_description": "A dark and intense superhero film that redefined the genre with complex characters and moral dilemmas.",
+    "long_description": "Christopher Nolan’s *The Dark Knight* is a groundbreaking superhero film that transcends the genre, exploring themes of chaos, order, and moral ambiguity through the battle between Batman and the Joker. Heath Ledger’s portrayal of the Joker became iconic, earning him a posthumous Academy Award, while the film’s stunning action sequences and philosophical depth cemented it as one of the best modern films. The film's success also redefined how superhero movies could be approached, blending blockbuster spectacle with deep, psychological storytelling."
+  },
+  {
+    "title": "The Matrix",
+    "image": "https://example.com/matrix_image.jpg",
+    "short_description": "A visually innovative and philosophically rich cyberpunk action film.",
+    "long_description": "The Wachowskis' *The Matrix* revolutionized both action cinema and visual effects with its use of 'bullet time' and groundbreaking computer-generated imagery. The film follows hacker Neo as he discovers that the reality he knows is a simulation, and that he is 'The One' destined to free humanity from its machine oppressors. Blending cyberpunk aesthetics, high-concept philosophy, and exhilarating action, *The Matrix* became a cultural touchstone that continues to influence science fiction and action films."
+  },
+  {
+    "title": "La Dolce Vita",
+    "image": "https://example.com/la_dolce_vita_image.jpg",
+    "short_description": "A stylish and introspective look at fame, excess, and the search for meaning in 1960s Rome.",
+    "long_description": "Federico Fellini’s *La Dolce Vita* explores the life of a journalist, Marcello Rubini, as he navigates the glamorous yet hollow world of high society in Rome. The film’s episodic structure, lush visuals, and existential themes provide a critique of modern life and its emptiness beneath the surface of wealth and fame. *La Dolce Vita* is considered a masterpiece of world cinema, influencing filmmakers with its blend of social commentary and personal reflection."
+  },
+  {
+    "title": "Taxi Driver",
+    "image": "https://example.com/taxi_driver_image.jpg",
+    "short_description": "A disturbing and unforgettable portrait of loneliness and alienation in 1970s New York.",
+    "long_description": "Martin Scorsese’s *Taxi Driver* is a dark, brooding exploration of urban alienation and mental instability. Robert De Niro delivers an iconic performance as Travis Bickle, a war veteran turned taxi driver who becomes increasingly detached from reality, leading to violent and dangerous behavior. The film is a haunting look at the underbelly of 1970s New York, with its gritty atmosphere, unforgettable dialogue, and Scorsese’s masterful direction making it one of the most impactful films of all time."
+  },
+  {
+    "title": "Blade Runner",
+    "image": "https://example.com/blade_runner_image.jpg",
+    "short_description": "A visually stunning and philosophically complex meditation on identity, humanity, and artificial life.",
+    "long_description": "Ridley Scott’s *Blade Runner* is a visually rich and thematically dense science fiction film set in a dystopian future. The film follows Rick Deckard, a 'blade runner' tasked with hunting down rogue replicants, synthetic humans who have become self-aware. *Blade Runner* is celebrated for its atmospheric world-building, thought-provoking exploration of what it means to be human, and its influence on the cyberpunk genre. Over the years, the film has gained a devoted following and is regarded as one of the most significant science fiction films in history."
+  },
+  {
+    "title": "Gone with the Wind",
+    "image": "https://example.com/gone_with_the_wind_image.jpg",
+    "short_description": "A sweeping Civil War epic centered around the tumultuous life of Scarlett O'Hara.",
+    "long_description": "Victor Fleming’s *Gone with the Wind* is one of the most iconic films in American cinema, chronicling the life of the indomitable Scarlett O’Hara during the American Civil War and Reconstruction era. The film is notable for its lavish production, unforgettable characters, and romanticized portrayal of the Old South. Despite its controversy regarding its depictions of race, the film remains a landmark achievement in filmmaking for its grand scale and storytelling. Its cultural impact continues to be felt over 80 years after its release."
+  },
+  {
+    "title": "Sunset Boulevard",
+    "image": "https://example.com/sunset_boulevard_image.jpg",
+    "short_description": "A noir classic about the dangerous allure of fame and the tragic downfall of a forgotten star.",
+    "long_description": "Billy Wilder’s *Sunset Boulevard* is a dark and biting critique of Hollywood and the fleeting nature of fame. The film tells the story of a down-on-his-luck screenwriter who becomes entangled with Norma Desmond, a forgotten silent film star living in delusion and longing for a comeback. With its cynical portrayal of the film industry and Gloria Swanson’s unforgettable performance, *Sunset Boulevard* is one of the greatest film noirs ever made, reflecting the darker side of the American dream."
+  },
+  {
+    "title": "A Clockwork Orange",
+    "image": "https://example.com/clockwork_orange_image.jpg",
+    "short_description": "A provocative and disturbing exploration of free will, violence, and societal control.",
+    "long_description": "Stanley Kubrick’s *A Clockwork Orange* is a controversial and visually striking adaptation of Anthony Burgess’s novel, focusing on Alex, a delinquent youth who indulges in extreme violence before undergoing government-sponsored behavioral correction. The film examines themes of free will, the ethics of rehabilitation, and the nature of violence, pushing the boundaries of cinema both visually and thematically. Its provocative content and Kubrick's unique style have made it a cult classic, while sparking debates on morality and censorship."
+  },
+  {
+    "title": "Seven Samurai",
+    "image": "https://example.com/seven_samurai_image.jpg",
+    "short_description": "A legendary epic about honor, sacrifice, and bravery in feudal Japan.",
+    "long_description": "Akira Kurosawa’s *Seven Samurai* is one of the most celebrated and influential films in cinema history, telling the story of a group of samurai who are hired to protect a village from marauding bandits. Combining thrilling battle sequences, deep character development, and philosophical reflections on duty and sacrifice, the film is a masterclass in storytelling and filmmaking. Its structure, themes, and action choreography have influenced countless films, solidifying its place as a timeless classic."
+  },
+  {
+    "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "image": "https://example.com/dr_strangelove_image.jpg",
+    "short_description": "A darkly comedic satire on nuclear war and the absurdity of Cold War politics.",
+    "long_description": "Stanley Kubrick’s *Dr. Strangelove* is a biting and absurd satire that takes on the chilling topic of nuclear annihilation with dark humor. The film follows a series of escalating miscommunications that bring the world to the brink of nuclear war, featuring Peter Sellers in multiple unforgettable roles. *Dr. Strangelove* is a scathing critique of Cold War paranoia, military bureaucracy, and human folly, and its sharp wit and incisive humor have cemented it as one of the greatest political satires in cinematic history."
+  },
+  {
+    "title": "Rear Window",
+    "image": "https://example.com/rear_window_image.jpg",
+    "short_description": "A thrilling exploration of voyeurism, suspicion, and suspense from the master of suspense.",
+    "long_description": "Alfred Hitchcock’s *Rear Window* is a gripping suspense thriller centered on a wheelchair-bound photographer who spies on his neighbors from his apartment window, only to suspect one of them of murder. With its single setting, masterful pacing, and exploration of voyeurism and urban isolation, *Rear Window* keeps viewers on the edge of their seats while questioning the ethics of observation. James Stewart and Grace Kelly deliver stellar performances, making this one of Hitchcock’s finest works."
+  }
+]
