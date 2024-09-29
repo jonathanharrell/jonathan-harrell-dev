@@ -37,7 +37,7 @@ const config: Config = {
             '--tw-prose-hr': theme('colors.neutral[300]'),
             '--tw-prose-quotes': theme('colors.neutral[800]'),
             '--tw-prose-quote-borders': theme('colors.neutral[300]'),
-            '--tw-prose-captions': theme('colors.neutral[700]'),
+            '--tw-prose-captions': theme('colors.neutral[500]'),
             '--tw-prose-code': theme('colors.neutral[800]'),
             '--tw-prose-pre-code': theme('colors.neutral[800]'),
             '--tw-prose-pre-bg': theme('colors.neutral[100]'),
