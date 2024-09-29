@@ -1,0 +1,27 @@
+export const SemanticImage = () => {
+  return (
+    <figure>
+      <div className="not-prose flex items-center justify-center p-16 rounded-md bg-neutral-50 dark:bg-neutral-800">
+        <article className="group overflow-hidden rounded-xl border border-neutral-150 dark:border-neutral-900 hover:border-accent hover:bg-accent transition-colors">
+          <figure className="relative">
+            <img
+              src="/assets/chair.jpg"
+              alt=""
+              className="w-[300px] h-[300px] object-cover group-hover:mix-blend-multiply group-hover:filter group-hover:blur transition-all"
+            />
+            <figcaption className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+              <h2 className="text-2xl text-white font-bold">
+                <a href="" className="flex items-center justify-center absolute inset-0">
+                  Article Title
+                </a>
+              </h2>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+      <figcaption>
+        Hover over the image to see the effect
+      </figcaption>
+    </figure>
+  );
+}

@@ -7,6 +7,7 @@ import rehypeToc from "@jsdevtools/rehype-toc";
 import {HtmlElementNode} from "@jsdevtools/rehype-toc/lib/types";
 import {Children} from "react";
 import inlineSvg from "@/lib/inline-svg";
+import {SemanticImage} from "@/components/examples/semantic-image";
 
 type PostFrontMatter = {
   slug: string;
@@ -91,7 +92,9 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       ),
       ArticleLink: () => (
         <div>article link</div>
-      )
+      ),
+      // TODO: make lazy import
+      SemanticImage
     }
   });
 };

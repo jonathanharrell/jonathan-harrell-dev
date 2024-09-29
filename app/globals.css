@@ -50,20 +50,20 @@
     @apply decoration-blue-200 dark:decoration-blue-500;
   }
 
-  .prose aside p {
-    @apply my-0;
+  .prose:not(.not-prose) aside p {
+    @apply mt-1 mb-0 leading-normal;
   }
 }
 
-.prose img {
+.prose :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   @apply w-full h-auto rounded-md bg-neutral-50 dark:bg-neutral-800;
 }
 
-.prose svg {
+.prose :where(svg):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   @apply w-full h-auto rounded-md bg-neutral-50 dark:bg-neutral-800;
 }
 
-.prose pre {
+.prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   @apply py-5 px-6;
 }
 
