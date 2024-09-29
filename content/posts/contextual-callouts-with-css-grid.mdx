@@ -63,7 +63,7 @@ Now, let's progressively enhance for browsers that *do* support CSS grid using a
 }
 ```
 
-[//]: # (![Image here]&#40;https://placehold.co/1600x800&#41;)
+![Image here](/assets/css-grid-layout-2.svg "This is a caption")
 
 Now it’s time to start placing content on the grid:
 
@@ -81,8 +81,6 @@ Now it’s time to start placing content on the grid:
 }
 ```
 
-[//]: # (![Image here]&#40;https://placehold.co/1600x800&#41;)
-
 The post header and content now sit next to each other in a row. The callouts are up next:
 
 ```css
@@ -97,9 +95,11 @@ The post header and content now sit next to each other in a row. The callouts ar
 }
 ```
 
-[//]: # (![Image here]&#40;https://placehold.co/1600x800&#41;)
-
 The asides are now pulled to the left of the paragraph immediately following them, looking exactly like callouts. The paragraphs within each callout have absolute positioning applied so that they don't force the proceeding paragraph down if they are taller than the adjacent content.
+
+<aside className="warning">
+  Warning about absolute positioning
+</aside>
 
 ## Bonus: Full-Width Figures
 
@@ -125,6 +125,10 @@ I can easily style figures within the post so that they stretch across the full 
 }
 ```
 
-[//]: # (![Image here]&#40;https://placehold.co/1600x800&#41;)
+![Image here](/assets/css-grid-layout-3.svg "This is a caption")
 
-The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content. Check out the [live experiment here](https://codepen.io/jonathanharrell/pen/QZwqar).
+The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content.
+
+<aside className="demo">
+  Check out the [live experiment](/experiments/css-grid-callouts/) to see this in action.
+</aside>

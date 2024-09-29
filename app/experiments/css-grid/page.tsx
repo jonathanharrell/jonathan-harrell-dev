@@ -3,7 +3,7 @@ import films from "./films.json";
 const CssGridExperimentPage = () => {
   return (
     <main>
-      <div className="min-h-screen p-12 bg-neutral-900 font-sans text-neutral-100">
+      <div className="p-12 font-sans">
         <div className="grid grid-cols-6 gap-5 max-w-[1600px] mx-auto">
           <p className="col-start-4 col-end-6">National Film Theatre of Australia</p>
           <h1 className="col-start-3 col-end-7 text-8xl">The New Swiss Film</h1>

@@ -1,9 +1,9 @@
 article > * {
-  @apply col-start-4 col-end-11 leading-relaxed;
+  @apply col-start-1 md:col-start-5 xl:col-start-4 col-end-13 lg:col-end-12 xl:col-end-11 leading-relaxed;
 }
 
 h1, h2 {
-  @apply col-start-1 col-end-4 text-right text-pretty;
+  @apply col-start-1 md:col-end-5 xl:col-end-4 md:text-right text-pretty;
 }
 
 h1 {
@@ -11,17 +11,17 @@ h1 {
 }
 
 h2 {
-  @apply text-lg;
+  @apply md:justify-self-end text-2xl md:text-lg md:max-w-[24ch];
 }
 
 aside {
-  @apply col-start-1 col-end-4 relative text-sm text-right text-pretty;
+  @apply hidden md:block col-start-1 col-end-5 xl:col-end-4 relative text-sm text-right text-pretty border-[red];
 }
 
 aside p {
-  @apply absolute italic;
+  @apply absolute right-0 md:max-w-[32ch] italic;
 }
 
 figcaption {
-  @apply mt-3 text-sm text-neutral-500;
+  @apply mt-3 text-sm text-neutral-500 dark:text-neutral-400;
 }

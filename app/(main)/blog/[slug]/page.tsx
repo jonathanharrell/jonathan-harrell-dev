@@ -23,7 +23,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
     <>
       <Header title={post.frontmatter.title} subtitle={subtitle} />
       <main>
-        <article className="prose prose-neutral dark:prose-invert prose-h2:text-base prose-h2:font-semibold prose-h3:text-base prose-h3:font-medium prose-strong:font-medium prose-a:underline prose-a:underline-offset-2 prose-a:decoration-neutral-200 prose-a:font-normal prose-code:before:content-none prose-code:after:content-none max-w-none">
+        <article className="prose prose-neutral dark:prose-invert prose-h2:text-base prose-h2:font-semibold prose-h3:text-base prose-h3:font-medium prose-strong:font-medium prose-a:underline prose-a:underline-offset-2 prose-a:decoration-neutral-200 prose-a:dark:decoration-neutral-600 prose-a:font-normal prose-code:before:content-none prose-code:after:content-none max-w-none">
           {post.content}
         </article>
       </main>
