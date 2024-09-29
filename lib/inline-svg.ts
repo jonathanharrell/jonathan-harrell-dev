@@ -49,7 +49,7 @@ async function imgToSvg(node: ImageNode): Promise<void> {
     const filePath = path.join(process.cwd(), "public", node.properties.src);
     fs.readFile(filePath, "utf8", (err, data) => {
       if (err) {
-        console.error(err);
+        // console.error(err);
         reject(err);
       }
 
@@ -95,7 +95,11 @@ export default function inlineSvg(this: Processor) {
     });
 
     for (const node of imgNodes) {
-      await imgToSvg(node);
+      try {
+        await imgToSvg(node);
+      } catch {
+        // fail silently
+      }
     }
 
     return tree;
