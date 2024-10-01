@@ -18,35 +18,35 @@
 }
 
 @layer components {
-  aside {
+  .prose aside {
     @apply my-6 py-3 px-5 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800;
   }
 
-  aside::before {
+  .prose aside::before {
     @apply block text-sm font-medium text-neutral-500 dark:text-neutral-400 content-["Note"];
   }
 
-  aside.warning {
+  .prose aside.warning {
     @apply border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-800 dark:bg-opacity-30;
   }
 
-  aside.warning::before {
+  .prose aside.warning::before {
     @apply text-amber-800 dark:text-amber-700 content-["Warning"];
   }
 
-  aside.warning a {
+  .prose aside.warning a {
     @apply decoration-amber-300 dark:decoration-amber-700;
   }
 
-  aside.demo {
+  .prose aside.demo {
     @apply border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-800 dark:bg-opacity-30;
   }
 
-  aside.demo::before {
+  .prose aside.demo::before {
     @apply text-blue-800 dark:text-blue-500 content-["Demo"];
   }
 
-  aside.demo a {
+  .prose aside.demo a {
     @apply decoration-blue-200 dark:decoration-blue-500;
   }
 

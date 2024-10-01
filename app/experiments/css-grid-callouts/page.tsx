@@ -2,7 +2,7 @@ import "./styles.css";
 
 const CssGridCalloutsExperimentPage = () => {
   return (
-    <main>
+    <main id="css-grid-callouts-experiment">
       <div className="max-w-[1300px] mx-auto p-8 sm:p-12">
         <article className="grid grid-cols-12 gap-x-8 gap-y-6">
           <h1>The Cinematography of <em>Citizen Kane</em>: A Visual Masterpiece</h1>

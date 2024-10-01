@@ -1,27 +1,29 @@
-article > * {
-  @apply col-start-1 md:col-start-5 xl:col-start-4 col-end-13 lg:col-end-12 xl:col-end-11 leading-relaxed;
-}
+#css-grid-callouts-experiment {
+  article > * {
+    @apply col-start-1 md:col-start-5 xl:col-start-4 col-end-13 lg:col-end-12 xl:col-end-11 leading-relaxed;
+  }
 
-h1, h2 {
-  @apply col-start-1 md:col-end-5 xl:col-end-4 md:text-right text-pretty;
-}
+  h1, h2 {
+    @apply col-start-1 md:col-end-5 xl:col-end-4 md:text-right text-pretty;
+  }
 
-h1 {
-  @apply text-3xl;
-}
+  h1 {
+    @apply text-3xl;
+  }
 
-h2 {
-  @apply md:justify-self-end text-2xl md:text-lg md:max-w-[24ch];
-}
+  h2 {
+    @apply md:justify-self-end text-2xl md:text-lg md:max-w-[24ch];
+  }
 
-aside {
-  @apply hidden md:block col-start-1 col-end-5 xl:col-end-4 relative text-sm text-right text-pretty border-[red];
-}
+  aside {
+    @apply hidden md:block col-start-1 col-end-5 xl:col-end-4 relative text-sm text-right text-pretty;
+  }
 
-aside p {
-  @apply absolute right-0 md:max-w-[32ch] italic;
-}
+  aside p {
+    @apply absolute right-0 md:max-w-[32ch] italic;
+  }
 
-figcaption {
-  @apply mt-3 text-sm text-neutral-500 dark:text-neutral-400;
+  figcaption {
+    @apply mt-3 text-sm text-neutral-500 dark:text-neutral-400;
+  }
 }

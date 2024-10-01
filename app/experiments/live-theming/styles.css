@@ -1,0 +1,13 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+#live-theming-experiment {
+  background-color: var(--bg-color);
+}
+
+#live-theming-experiment * {
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
