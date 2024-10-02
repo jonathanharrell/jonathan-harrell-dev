@@ -1,4 +1,4 @@
-export const SemanticImage = () => {
+export const SemanticImageExample = () => {
   return (
     <figure>
       <div className="not-prose flex items-center justify-center p-16 rounded-md bg-neutral-50 dark:bg-neutral-800">

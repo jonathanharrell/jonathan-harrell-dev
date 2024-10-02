@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const hexToCssVariables = {
+  '#fafafa': 'var(--illustration-background)',
   '#262626': 'var(--illustration-black)',
   '#d4d4d4': 'var(--illustration-gray)',
   '#e6594c': 'var(--illustration-accent)',

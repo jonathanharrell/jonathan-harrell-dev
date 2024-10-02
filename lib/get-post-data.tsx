@@ -7,7 +7,8 @@ import rehypeToc from "@jsdevtools/rehype-toc";
 import {HtmlElementNode} from "@jsdevtools/rehype-toc/lib/types";
 import {Children} from "react";
 import inlineSvg from "@/lib/inline-svg";
-import {SemanticImage} from "@/components/examples/semantic-image";
+import {SemanticImageExample} from "@/components/examples/semantic-image";
+import {IntersectionObserverExample} from "@/components/examples/intersection-observer";
 
 type PostFrontMatter = {
   slug: string;
@@ -94,7 +95,8 @@ export const getPostData = async (slug: string): Promise<PostData> => {
         <div>article link</div>
       ),
       // TODO: make lazy import
-      SemanticImage
+      SemanticImageExample,
+      IntersectionObserverExample,
     }
   });
 };
