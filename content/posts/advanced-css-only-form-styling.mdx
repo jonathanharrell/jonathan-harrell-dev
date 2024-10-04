@@ -50,7 +50,11 @@ input:placeholder-shown + label {
 
 ## :required
 
-![Required inputs can be styled to show a required message, alerting the user that these inputs must be filled in.](/img/required.svg)
+<FormInputExample>
+  <label htmlFor="required-input">Required input</label>
+  <input type="text" id="required-input" required />
+  <span className="help-text" />
+</FormInputExample>
 
 Use this selector to indicate that an input has the `required` attribute. Here I am using an empty `.help-text` span and placing some content dynamically using the `::before` pseudo-element. Realistically, this would be done with JavaScript, but I am including here to demonstrate a pure CSS approach.
 
@@ -68,7 +72,11 @@ input:required + .help-text::before {
 
 ## :optional
 
-![Optional inputs can be styled to show an optional message, alerting the user that these inputs aren’t required.](/img/optional.svg)
+<FormInputExample>
+  <label htmlFor="optional-input">Optional input</label>
+  <input type="text" id="optional-input" />
+  <span className="help-text" />
+</FormInputExample>
 
 This selector does the opposite of `:required`. I am again using an empty `.help-text` `span` to display some optional text if the required attribute is NOT present.
 
@@ -80,7 +88,10 @@ input:optional + .help-text::before {
 
 ## :disabled
 
-![Disabled inputs can be styled to appear dimmer than enabled inputs, letting the user know that these inputs cannot be interacted with.](/img/disabled.svg)
+<FormInputExample>
+  <label htmlFor="disabled-input">Disabled input</label>
+  <input type="text" id="disabled-input" disabled />
+</FormInputExample>
 
 This one should be familiar to most of you, but still important to remember. It’s pretty essential to display whether or not an input is disabled to a user.
 
@@ -94,7 +105,10 @@ This one should be familiar to most of you, but still important to remember. It�
 
 ## :read-only
 
-![Read-only inputs can be styled with their values dimmer than writable inputs, letting the user know that the values of these inputs cannot be altered.](/img/read-only.svg)
+<FormInputExample>
+  <label htmlFor="read-only-input">Read-only input</label>
+  <input type="text" id="read-only-input" value="Read-only value" readOnly />
+</FormInputExample>
 
 An input with the `readonly` attribute should convey a slightly different meaning than a disabled input. Thankfully we have this selector to help with that.
 
@@ -112,7 +126,11 @@ input:read-only {
 
 ## :valid
 
-![Valid inputs can be styled with a success state, such as a check box, letting users know when these inputs have been successfully filled in.](/img/valid.svg)
+<FormInputExample>
+  <label htmlFor="valid-input">Valid input</label>
+  <input type="email" id="valid-input" required defaultValue="email@email.com" />
+  <span className="help-text" />
+</FormInputExample>
 
 While much form validation will happen with JavaScript, we are able to take advantage of HTML form validation and style inputs accordingly. This selector gives us the chance to style any input which is currently passing the native browser validation rules.
 
@@ -127,7 +145,11 @@ input:valid {
 
 ## :invalid
 
-![Invalid inputs can be styled with a warning or error message, letting users know when these inputs are not passing their validation rules.](/img/invalid.svg)
+<FormInputExample>
+  <label htmlFor="invalid-email">Invalid input</label>
+  <input type="email" id="invalid-email" defaultValue="notanemail" />
+  <span className="help-text" />
+</FormInputExample>
 
 This selector checks if an input is currently NOT passing the native browser validation rules (for example, if an email input does not contain a real email).
 
@@ -211,9 +233,3 @@ I visually hide the input so that it disappears from view but is still clickable
   content: '';
 }
 ```
-
-## Getting a Head Start with the HiQ Framework
-
-My new [CSS framework HiQ](https://jonathanharrell.github.io/hiq/) provides some useful base styling for HTML form inputs, including checkboxes, radio buttons, and disabled inputs.
-
-HiQ is lightweight and is built with CSS variables that can be changed dynamically, especially useful for theme switching.

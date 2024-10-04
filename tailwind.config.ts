@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import TailwindTypography from "@tailwindcss/typography";
+import TailwindForms from "@tailwindcss/forms";
 import plugin from "tailwindcss/plugin";
 
 const config: Config = {
@@ -66,6 +67,9 @@ const config: Config = {
   },
   plugins: [
     TailwindTypography,
+    TailwindForms({
+      strategy: 'class',
+    }),
     plugin(function ({addVariant}) {
       addVariant('prose-inline-code', '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))');
     }),

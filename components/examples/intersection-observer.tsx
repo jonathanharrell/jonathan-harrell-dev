@@ -41,7 +41,7 @@ export const IntersectionObserverExample = () => {
   }, []);
 
   return (
-    <div className="example-wrapper max-h-[340px] md:max-h-[400px] overflow-y-auto p-12 sm:p-16 rounded-md bg-neutral-100 dark:bg-neutral-800">
+    <div className="example-wrapper max-h-[340px] md:max-h-[400px] overflow-y-auto p-12 sm:p-16 bg-neutral-100 dark:bg-neutral-800">
       <section className="grid grid-cols-[repeat(auto-fill,minmax(80px,1fr))] gap-12">
         {Array.from({length: 32}).map((_, index) => (
           <div

@@ -9,6 +9,7 @@ import {Children} from "react";
 import inlineSvg from "@/lib/inline-svg";
 import {SemanticImageExample} from "@/components/examples/semantic-image";
 import {IntersectionObserverExample} from "@/components/examples/intersection-observer";
+import {FormInputExample} from "@/components/examples/form-input";
 
 type PostFrontMatter = {
   slug: string;
@@ -97,6 +98,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       // TODO: make lazy import
       SemanticImageExample,
       IntersectionObserverExample,
+      FormInputExample,
     }
   });
 };

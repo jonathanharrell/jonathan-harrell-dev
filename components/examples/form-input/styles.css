@@ -1,0 +1,50 @@
+#form-input-example {
+  label {
+    @apply block;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    @apply form-input mt-1 block w-full border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 shadow-sm focus:border-neutral-400 focus:dark:border-neutral-600 focus:ring focus:ring-neutral-300 focus:dark:ring-neutral-700 focus:ring-opacity-50;
+  }
+
+  .help-text {
+    @apply text-sm text-neutral-500;
+  }
+
+  input:required + .help-text::before {
+    @apply content-["*Required"];
+  }
+
+  #optional-input:optional + .help-text::before {
+    @apply content-["*Optional"];
+  }
+
+  &:has(input:disabled) label {
+    @apply text-neutral-400;
+  }
+
+  input:disabled {
+    @apply border-neutral-200 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-700 text-neutral-400 dark:text-neutral-500 cursor-not-allowed;
+  }
+
+  input:read-only {
+    @apply border-neutral-200 dark:border-neutral-600 bg-neutral-50 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed;
+  }
+
+  #valid-input:valid {
+    @apply border-green-400 focus:border-green-400 focus:ring-green-200 focus:ring-opacity-50 focus:dark:ring-opacity-30;
+  }
+
+  input:invalid {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-300 focus:ring-opacity-50 focus:dark:ring-opacity-30;
+  }
+
+  input:invalid + .help-text::before {
+    @apply text-red-600;
+  }
+
+  input[type="email"]:invalid + .help-text::before {
+    content: "You must enter a valid email."
+  }
+}

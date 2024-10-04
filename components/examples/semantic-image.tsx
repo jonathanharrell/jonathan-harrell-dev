@@ -1,7 +1,7 @@
 export const SemanticImageExample = () => {
   return (
     <figure>
-      <div className="not-prose flex items-center justify-center p-16 rounded-md bg-neutral-50 dark:bg-neutral-800">
+      <div className="not-prose flex items-center justify-center p-16 bg-neutral-50 dark:bg-neutral-800">
         <article className="group overflow-hidden rounded-xl border border-neutral-150 dark:border-neutral-900 hover:border-accent hover:bg-accent transition-colors">
           <figure className="relative">
             <img
