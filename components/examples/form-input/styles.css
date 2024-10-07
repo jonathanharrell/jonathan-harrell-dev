@@ -1,9 +1,14 @@
 #form-input-example {
+  legend {
+    @apply font-medium;
+  }
+
   label {
     @apply block;
   }
 
   input[type="text"],
+  input[type="number"],
   input[type="email"] {
     @apply form-input mt-1 block w-full border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 shadow-sm focus:border-neutral-400 focus:dark:border-neutral-600 focus:ring focus:ring-neutral-300 focus:dark:ring-neutral-700 focus:ring-opacity-50;
   }
@@ -20,7 +25,7 @@
     @apply content-["*Optional"];
   }
 
-  &:has(input:disabled) label {
+  div:has(> input:disabled) label {
     @apply text-neutral-400;
   }
 
@@ -46,5 +51,55 @@
 
   input[type="email"]:invalid + .help-text::before {
     content: "You must enter a valid email."
+  }
+
+  input:out-of-range + .help-text {
+    @apply text-red-600;
+  }
+
+  input:out-of-range + .help-text::before {
+    content: "Out of range ";
+  }
+
+  input[type="checkbox"]:enabled {
+    @apply cursor-pointer;
+  }
+
+  .checkbox {
+    @apply relative select-none;
+  }
+
+  .checkbox input[type="checkbox"] + label {
+    @apply flex items-center gap-2;
+  }
+
+  .checkbox input[type="checkbox"]:enabled + label {
+    @apply cursor-pointer;
+  }
+
+  .checkbox input[type="checkbox"]:disabled + label {
+    @apply !cursor-not-allowed;
+  }
+
+  .checkbox input[type="checkbox"] {
+    @apply sr-only;
+  }
+
+  .checkbox input[type="checkbox"] + label::before {
+    @apply block w-4 h-4 border border-neutral-800 transition-colors duration-200 content-[""];
+  }
+
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    @apply border-neutral-400;
+  }
+
+  .checkbox input[type="checkbox"]:checked + label::before {
+    @apply border-green-500 bg-green-500;
+  }
+
+  .checkbox input[type="checkbox"]:checked + label::after {
+    @apply block absolute top-[9px] left-1.5 w-1 h-2 border-white rotate-45 content-[""];
+
+    border-width: 0 2px 2px 0;
   }
 }
