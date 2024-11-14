@@ -81,10 +81,10 @@ export const getPostData = async (slug: string): Promise<PostData> => {
           </figure>
         );
       },
-      svg: ({title, ...props}) => {
+      svg: ({title, alt, ...props}) => {
         return (
           <figure>
-            <svg {...props} />
+            <svg {...props} aria-label={alt} />
             {title && <figcaption>{title}</figcaption>}
           </figure>
         );

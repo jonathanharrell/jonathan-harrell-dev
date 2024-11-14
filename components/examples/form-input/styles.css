@@ -86,7 +86,7 @@
   }
 
   .checkbox input[type="checkbox"] + label::before {
-    @apply block w-4 h-4 border border-neutral-800 transition-colors duration-200 content-[""];
+    @apply block w-4 h-4 border border-neutral-800 bg-white transition-colors duration-200 content-[""];
   }
 
   .checkbox input[type="checkbox"]:disabled + label::before {
