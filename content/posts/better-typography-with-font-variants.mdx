@@ -16,7 +16,7 @@ This article is an overview of how to control OpenType features using CSS, but r
 
 <Codepen id="rqaGqE"/>
 
-## The font-variant- Properties for Advanced Typography
+## The font-variant- Properties
 
 You can control most OpenType features using various properties beginning with `font-variant-`. There is also a low-level property `font-feature-settings` which can be used to support legacy browsers. Whenever possible, however, you should use the more modern `font-variant` properties. One solution is to use an `@supports` rule to check if a font-variant property is supported and otherwise use `font-feature-settings`.
 
@@ -39,7 +39,7 @@ Ligatures are single glyphs made from two or more characters. They typically pre
 
 ### common-ligatures
 
-![Image here](/assets/common-ligatures.svg "This is a caption")
+![Image here](/assets/common-ligatures.svg "Common ligatures often include character pairings where the first letter is “f”.")
 
 These are ligatures that the type designer has decided should be used in normal conditions. In most circumstances you should use these. Most browsers enable them by default.
 
@@ -53,7 +53,7 @@ font-feature-settings: 'liga' 0; /* low-level disable */
 
 ### discretionary-ligatures
 
-![Discretionary ligatures can include character pairings with flourished connections.](/img/discretionary-ligatures.svg)
+![Image here](/assets/discretionary-ligatures.svg "Discretionary ligatures can include character pairings with flourished connections.")
 
 These are ligatures which can be used for typographic purposes, for example to achieve a special effect. These are disabled by default.
 
@@ -81,7 +81,7 @@ font-feature-settings: 'calt' 0; /* low-level disable */
 
 ### historical-ligatures
 
-![Alternate characters like the archaic "long s" can be used in historical settings.](/img/historical-ligatures.svg)
+![Image here](/assets/historical-ligatures.svg "Alternate characters like the archaic “long s” can be used in historical settings.")
 
 These are ligatures which could be considered a subset of discretionary, but are specifically used to achieve a historical effect. These are disabled by default.
 
@@ -463,7 +463,7 @@ font-feature-settings: nalt 1; /* low-level enable */
 font-feature-settings: nalt 0; /* low-level disable */
 ```
 
-## Further Web Typography Resources
+## Further Resources
 
 There is a huge amount to learn about typography on the web including font variants and much more. Check out the following excellent resources for more information:
 
