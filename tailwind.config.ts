@@ -13,12 +13,19 @@ const config: Config = {
   darkMode: 'selector',
   theme: {
     fontFamily: {
+      etbook: ["ETBook", "Palatino", "serif"],
+      "etbook-lining-figures": [
+        "ETBookLiningFigures",
+        "ETBook",
+        "Palatino",
+        "serif",
+      ],
       "sans": ["ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
     },
     container: {
       center: true,
       padding: {
-        DEFAULT: '2rem',
+        DEFAULT: '3rem'
       }
     },
     extend: {

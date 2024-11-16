@@ -13,10 +13,6 @@ I decided to experiment and push IntersectionObserver to its limits.
 
 <IntersectionObserverExample />
 
-<aside className="warning">
-  You probably shouldn’t create as many observers on a production site as I have done. You start to run into performance issues. However, this experiment should help you visualize how the API works.
-</aside>
-
 ## The HTML and CSS
 
 I have a simple grid of cards that is styled using CSS grid:
@@ -65,7 +61,7 @@ targets.forEach(target => observer.observe(target));
 
 ## Setup the Callback
 
-The callback function gives me an array of entries – each entry is essentially an intersection change. I can check the `intersectionRatio` on each entry and apply some styling appropriately.
+The callback function gives me an array of entries—each entry is essentially an intersection change. I can check the `intersectionRatio` on each entry and apply some styling appropriately.
 
 ![](/assets/thresholds.svg)
 

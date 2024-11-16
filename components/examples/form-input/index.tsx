@@ -5,12 +5,14 @@ interface FormInputProps {
   children: ReactNode;
 }
 
-export const FormInputExample = ({ children }: FormInputProps) => {
+export const FormInputExample = ({children}: FormInputProps) => {
   return (
-    <div id="form-input-example" className="example-wrapper p-12 sm:px-16 bg-neutral-100 dark:bg-neutral-800">
+    <figure>
       <div>
-        {children}
+        <div id="form-input-example" className="not-article-body p-12 sm:px-16 bg-neutral-100 dark:bg-neutral-950 font-sans text-base">
+          {children}
+        </div>
       </div>
-    </div>
+    </figure>
   );
 };

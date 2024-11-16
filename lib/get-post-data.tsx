@@ -30,26 +30,16 @@ export const getPostData = async (slug: string): Promise<PostData> => {
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        rehypePlugins: [rehypePrism, rehypeSlug, [
+        rehypePlugins: [rehypePrism, rehypeSlug,
+          [
           rehypeToc, {
             headings: ["h2"],
             customizeTOC(toc: HtmlElementNode) {
               return {
                 type: "element",
-                tagName: "details",
-                // properties: { className: 'toc' },
+                tagName: "div",
+                properties: { className: 'toc-wrapper' },
                 children: [
-                  {
-                    type: "element",
-                    tagName: "summary",
-                    properties: {className: "dark:text-neutral-400 cursor-pointer"},
-                    children: [
-                      {
-                        type: "text",
-                        value: "Table of Contents"
-                      }
-                    ]
-                  },
                   toc
                 ]
               };
@@ -64,7 +54,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
         try {
           if (Children.only(children)) {
             if (children.props.src || children.props.viewBox) {
-              return <div {...props}>{children}</div>;
+              return children;
             }
           }
         } catch (e) {

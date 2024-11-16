@@ -4,7 +4,7 @@ import "./styles.css";
 const LiveThemingPage = () => {
   return (
     <main id="live-theming-experiment">
-      <div className="h-screen font-sans">
+      <div className="h-screen">
         <div className="flex h-full">
           <div className="basis-[300px] p-12 border-r border-neutral-200">
             <LiveThemingControls />

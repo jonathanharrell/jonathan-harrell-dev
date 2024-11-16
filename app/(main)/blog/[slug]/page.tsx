@@ -1,6 +1,9 @@
 import { Header } from "@/components/header";
 import {getPostData} from "@/lib/get-post-data";
 import "@/app/(main)/prism.css";
+import {ThemeToggle} from "@/components/theme-toggle";
+import {Link} from "next-view-transitions";
+import {HeaderAnimation} from "@/components/header-animation";
 
 interface BlogPostPageProps {
   params: {
@@ -20,14 +23,17 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const subtitle = `${formattedDate} · ${post.frontmatter.tags.join(", ")}`
 
   return (
-    <>
-      <Header title={post.frontmatter.title} subtitle={subtitle} />
+    <div className="max-w-[1100px] mx-auto py-24">
+      <header className="relative mb-12">
+        <p className="mt-1 dark:text-neutral-400 text-lg">{subtitle}</p>
+        <h1 className="max-w-[32ch] mt-2 text-5xl text-balance">{post.frontmatter.title}</h1>
+      </header>
       <main>
-        <article className="prose prose-neutral dark:prose-invert prose-h2:text-base prose-h2:font-semibold prose-h3:text-base prose-h3:font-medium prose-strong:font-medium prose-a:underline prose-a:underline-offset-2 prose-a:decoration-neutral-200 prose-a:dark:decoration-neutral-600 prose-a:font-normal prose-code:before:content-none prose-code:after:content-none max-w-none">
+        <article className="article-body">
           {post.content}
         </article>
       </main>
-    </>
+    </div>
   );
 };
 

@@ -20,53 +20,167 @@
 }
 
 @layer components {
-  .prose aside {
-    @apply my-6 py-3 px-5 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800;
+  .article-body {
+    @apply grid grid-cols-12 gap-x-16 text-lg lg:text-xl !leading-normal;
   }
 
-  .prose aside::before {
-    @apply block text-sm font-medium text-neutral-500 dark:text-neutral-400 content-["Note"];
+  .article-body > *:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply col-start-1 col-end-9;
   }
 
-  .prose aside.warning {
-    @apply border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-800 dark:bg-opacity-30;
+  .article-body > .toc-wrapper {
+    @apply col-start-9 col-end-13 row-start-1 relative;
   }
 
-  .prose aside.warning::before {
-    @apply text-amber-800 dark:text-amber-700 content-["Warning"];
+  .toc-wrapper .toc {
+    @apply absolute text-neutral-500;
   }
 
-  .prose aside.warning a {
-    @apply decoration-amber-300 dark:decoration-amber-700;
+  .article-body > aside:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply col-start-9 col-end-13 relative italic text-lg leading-snug;
   }
 
-  .prose aside.demo {
-    @apply border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-800 dark:bg-opacity-30;
+  .article-body > aside p:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply absolute;
   }
 
-  .prose aside.demo::before {
-    @apply text-blue-800 dark:text-blue-500 content-["Demo"];
+  .article-body :where(p, ul, ol, figure, pre):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply mb-4;
   }
 
-  .prose aside.demo a {
-    @apply decoration-blue-200 dark:decoration-blue-500;
+  .article-body :where(p, ul, ol, figure, pre):has(+ figure):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply mb-8;
   }
 
-  .prose:not(.not-prose) aside p {
-    @apply mt-1 mb-0 leading-normal;
+  .article-body > figure:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply grid grid-cols-subgrid col-start-1 col-end-13 mb-8;
   }
+
+  .article-body > figure :where(img, svg, div):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply col-start-1 col-end-9;
+  }
+
+  .article-body > figure figcaption:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply col-start-9 col-end-13 italic text-lg;
+  }
+
+  .article-body > *:has(+ h2):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply mb-12;
+  }
+
+  .article-body h2:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply mb-4 text-3xl italic;
+  }
+
+  .article-body h3:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply mb-4 text-2xl;
+  }
+
+  .article-body > *:has(+ h3):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply mb-8;
+  }
+
+  .article-body code:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply text-[15px];
+  }
+
+  .article-body pre:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply py-3 px-6 text-[15px];
+  }
+
+  .article-body a:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply underline hover:no-underline underline-offset-4 decoration-1;
+  }
+
+  .article-body :where(img):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply w-full h-auto bg-neutral-50 dark:bg-neutral-950;
+  }
+
+  .article-body :where(svg):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply w-full h-auto bg-neutral-50 dark:bg-neutral-950;
+  }
+
+  .article-body :where(ol, ul):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply list-disc ml-4 marker:text-neutral-500;
+  }
+
+  .article-body :where(li):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+    @apply mb-1;
+  }
+
+  /*.prose aside {*/
+  /*  @apply my-6 py-3 px-5 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800;*/
+  /*}*/
+
+  /*.prose aside::before {*/
+  /*  @apply block text-sm font-medium text-neutral-500 dark:text-neutral-400 content-["Note"];*/
+  /*}*/
+
+  /*.prose aside.warning {*/
+  /*  @apply border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-800 dark:bg-opacity-30;*/
+  /*}*/
+
+  /*.prose aside.warning::before {*/
+  /*  @apply text-amber-800 dark:text-amber-700 content-["Warning"];*/
+  /*}*/
+
+  /*.prose aside.warning a {*/
+  /*  @apply decoration-amber-300 dark:decoration-amber-700;*/
+  /*}*/
+
+  /*.prose aside.demo {*/
+  /*  @apply border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-800 dark:bg-opacity-30;*/
+  /*}*/
+
+  /*.prose aside.demo::before {*/
+  /*  @apply text-blue-800 dark:text-blue-500 content-["Demo"];*/
+  /*}*/
+
+  /*.prose aside.demo a {*/
+  /*  @apply decoration-blue-200 dark:decoration-blue-500;*/
+  /*}*/
+
+  /*.prose:not(.not-prose) aside p {*/
+  /*  @apply mt-1 mb-0 leading-normal;*/
+  /*}*/
 }
 
-.prose :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  @apply w-full h-auto bg-neutral-50 dark:bg-neutral-800;
+@font-face {
+  font-family: "ETBook";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/etbookot-roman-webfont.woff") format("woff"), url("/fonts/etbookot-roman-webfont.woff2") format("woff2");
+  font-display: swap;
 }
 
-.prose :where(svg):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  @apply w-full h-auto bg-neutral-50 dark:bg-neutral-800;
+@font-face {
+  font-family: "ETBook";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/etbookot-italic-webfont.woff") format("woff"), url("/fonts/etbookot-italic-webfont.woff2") format("woff2");
+  font-display: swap;
 }
 
-.prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  @apply py-5 px-6;
+@font-face {
+  font-family: "ETBookLiningFigures";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/et-book-roman-line-figures.woff") format("woff");
+  font-display: swap;
+}
+
+@layer utilities {
+  .no-caps {
+    font-variant: normal;
+  }
+
+  .small-caps {
+    font-variant: small-caps;
+  }
+
+  .all-small-caps {
+    font-variant: all-small-caps;
+  }
 }
 
 /*@keyframes circle-in-top-right {*/

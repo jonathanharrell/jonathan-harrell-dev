@@ -17,10 +17,11 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <ThemeProvider>
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning className="bg-neutral-950">
           {/*Note that we should NOT use Next's <Head /> component here since this will cause a flash of the default theme*/}
           <head>
-            <script dangerouslySetInnerHTML={{ __html: `${setInitialTheme.toString()}\n\nsetInitialTheme();` }} />
+            <script dangerouslySetInnerHTML={{__html: `${setInitialTheme.toString()}\n\nsetInitialTheme();`}}/>
+            <meta name="color-scheme" content="light dark"/>
           </head>
           {children}
         </html>
