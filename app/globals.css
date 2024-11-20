@@ -16,7 +16,7 @@
 .dark {
   --illustration-background: #27272a;
   --illustration-black: #f5f5f5;
-  --illustration-gray: #a3a3a3;
+  --illustration-gray: #525252;
 }
 
 @layer components {
