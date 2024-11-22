@@ -34,7 +34,7 @@ The bottom margin of an element collapses with the bottom margin of its last chi
 
 ### An Element’s Own Top and Bottom Margins
 
-![An element that doesn’t take up space in the flow of the page will have its top and bottom margins collapse to 0.](/img/own-margins.svg)
+![Image here.](/assets/own-margins.svg "An element that doesn’t take up space in the flow of the page will have its top and bottom margins collapse to 0.")
 
 The top and bottom margins of an element collapse if the element has no height, padding, or border and all of its children elements’ margins collapse (height is represented here only for clarity).
 
@@ -42,15 +42,13 @@ The top and bottom margins of an element collapse if the element has no height, 
 
 There are several exceptions to the rules. This is where things can get hard to follow. Following are some visual examples of situations where margins would not collapse. For a more complete understanding, refer to the specs.
 
-![Certain attributes will cause an element and its first and last child element margins to not collapse.](/img/child-elements-no-collapse.svg)
+![Image here.](/assets/parent-border-padding-top.svg "A parent element with a top border or top padding and a top margin of 30px will not collapse with its first child element’s top margin of 30px.")
 
 If the parent element has a top border or padding, the parent’s top margin does not collapse with the first child’s top margin.
 
-![A parent element with a top border or top padding and a top margin of 30px will not collapse with its first child element’s top margin of 30px.](/img/parent-border-padding-top.svg)
+![Image here.](/assets/parent-border-padding-bottom.svg "A parent element with a bottom border or bottom padding and a bottom margin of 30px will not collapse with its last child element’s bottom margin of 30px.")
 
 If the parent element has a bottom border or padding, the parent’s bottom margin does not collapse with the last child’s bottom margin.
-
-![A parent element with a bottom border or bottom padding and a bottom margin of 30px will not collapse with its last child element’s bottom margin of 30px.](/img/parent-border-padding-bottom.svg)
 
 ## Further Resources
 

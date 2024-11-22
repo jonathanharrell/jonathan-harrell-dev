@@ -1,0 +1,91 @@
+<svg height="507" viewBox="0 0 800 507" width="800" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="a3" d="m0 0h276v30h-276z"/>
+        <mask id="b3" fill="#fff">
+            <use fill="#fff" fill-rule="evenodd" transform="matrix(1 0 0 -1 0 30)" xlink:href="#a3"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g stroke="#262626">
+            <path d="m90 378v-280h280v280" stroke-width="2"/>
+            <path d="m431 99h278v278h-278z" stroke-width="2"/>
+            <path d="m89 378h282" stroke-width="4"/>
+            <path d="m90 207h138v138h-138z" fill="#d4d4d4" stroke-width="2"/>
+            <path d="m431 177h138v138h-138z" fill="#d4d4d4" stroke-width="2"/>
+        </g>
+        <g fill="#e6594c" transform="translate(89 380)">
+            <path d="m0 0h282v30h-282z" fill-opacity=".5" opacity=".25" transform="matrix(1 0 0 -1 0 30)"/>
+            <path d="m66 27.5v-1h4v-23h-4v-1h.5 8 .5v1l-4-.001v23.001h4v1z" fill-rule="nonzero"/>
+            <text font-family="SFCompactRounded-Semibold, SF Compact Rounded" font-size="10" font-weight="500">
+                <tspan x="80" y="18">30px</tspan>
+            </text>
+        </g>
+        <g fill="#e6594c" transform="translate(89 346)">
+            <path d="m0 0h140v30h-140z" fill-opacity=".5" opacity=".25" transform="matrix(1 0 0 -1 0 30)"/>
+            <path d="m66 27.5v-1h4v-23h-4v-1h.5 8 .5v1l-4-.001v23.001h4v1z" fill-rule="nonzero"/>
+            <text font-family="SFCompactRounded-Semibold, SF Compact Rounded" font-size="10" font-weight="500">
+                <tspan x="80" y="20">30px</tspan>
+            </text>
+        </g>
+        <g transform="translate(432 346)">
+            <use fill="#e6594c" fill-opacity=".1" transform="matrix(1 0 0 -1 0 30)" xlink:href="#a3"/>
+            <g mask="url(#b3)" stroke="#e6594c" stroke-linecap="square">
+                <g transform="translate(-24 -2)">
+                    <path d="m24.202128 32.5 31.610942-32"/>
+                    <path d="m16.299392 32.5 31.610942-32"/>
+                    <path d="m8.396657 32.5 31.610942-32"/>
+                    <path d="m.493921 32.5 31.610942-32"/>
+                    <path d="m32.104863 32.5 31.610943-32"/>
+                    <path d="m40.007599 32.5 31.610942-32"/>
+                    <path d="m47.910334 32.5 31.610943-32"/>
+                    <path d="m55.81307 32.5 31.610942-32"/>
+                    <path d="m63.715806 32.5 31.610942-32"/>
+                    <path d="m71.618541 32.5 31.610942-32"/>
+                    <path d="m79.521277 32.5 31.610942-32"/>
+                    <path d="m87.424012 32.5 31.610942-32"/>
+                    <path d="m95.326748 32.5 31.610942-32"/>
+                    <path d="m103.229483 32.5 31.610943-32"/>
+                    <path d="m111.132219 32.5 31.610942-32"/>
+                    <path d="m119.034954 32.5 31.610943-32"/>
+                    <path d="m126.93769 32.5 31.610942-32"/>
+                    <path d="m134.840426 32.5 31.610942-32"/>
+                    <path d="m142.743161 32.5 31.610942-32"/>
+                    <path d="m150.645897 32.5 31.610942-32"/>
+                    <path d="m158.548632 32.5 31.610942-32"/>
+                    <path d="m166.451368 32.5 31.610942-32"/>
+                    <path d="m174.354103 32.5 31.610943-32"/>
+                    <path d="m182.256839 32.5 31.610942-32"/>
+                    <path d="m190.159574 32.5 31.610943-32"/>
+                    <path d="m198.06231 32.5 31.610942-32"/>
+                    <path d="m205.965046 32.5 31.610942-32"/>
+                    <path d="m213.867781 32.5 31.610942-32"/>
+                    <path d="m221.770517 32.5 31.610942-32"/>
+                    <path d="m229.673252 32.5 31.610943-32"/>
+                    <path d="m237.575988 32.5 31.610942-32"/>
+                    <path d="m245.478723 32.5 31.610943-32"/>
+                    <path d="m253.381459 32.5 31.610942-32"/>
+                    <path d="m261.284195 32.5 31.610942-32"/>
+                    <path d="m269.18693 32.5 31.610942-32"/>
+                    <path d="m277.089666 32.5 31.610942-32"/>
+                    <path d="m284.992401 32.5 31.610942-32"/>
+                    <path d="m292.895137 32.5 31.610942-32"/>
+                </g>
+            </g>
+        </g>
+        <g fill="#e6594c" transform="translate(430 378)">
+            <path d="m0 0h280v30h-280z" fill-opacity=".5" opacity=".25" transform="matrix(1 0 0 -1 0 30)"/>
+            <path d="m136 27.5v-1h4v-23h-4v-1h.5 8 .5v1l-4-.001v23.001h4v1z" fill-rule="nonzero"/>
+            <text font-family="SFCompactRounded-Semibold, SF Compact Rounded" font-size="10" font-weight="500">
+                <tspan x="148" y="18">30px</tspan>
+            </text>
+        </g>
+        <g fill="#e6594c" transform="translate(430 316)">
+            <path d="m0 0h140v30h-140z" fill-opacity=".5" opacity=".25" transform="matrix(1 0 0 -1 0 30)"/>
+            <path d="m66 27.5v-1h4v-23h-4v-1h.5 8 .5v1l-4-.001v23.001h4v1z" fill-rule="nonzero"/>
+            <text font-family="SFCompactRounded-Semibold, SF Compact Rounded" font-size="10" font-weight="500">
+                <tspan x="80" y="20">30px</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
