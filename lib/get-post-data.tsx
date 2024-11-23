@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs";
 import {compileMDX, CompileMDXResult} from "next-mdx-remote/rsc";
 import rehypePrism from "@mapbox/rehype-prism";
+import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeToc from "@jsdevtools/rehype-toc";
 import {HtmlElementNode} from "@jsdevtools/rehype-toc/lib/types";
@@ -35,6 +36,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
     options: {
       parseFrontmatter: true,
       mdxOptions: {
+        remarkPlugins: [remarkGfm],
         rehypePlugins: [rehypePrism, rehypeSlug,
           [
             rehypeToc, {
@@ -84,9 +86,6 @@ export const getPostData = async (slug: string): Promise<PostData> => {
           </figure>
         );
       },
-      Codepen: () => (
-        <div>codepen</div>
-      ),
       ArticleLink: () => (
         <div>article link</div>
       ),

@@ -11,6 +11,8 @@ tags:
 ---
 Imagine you are creating an accordion component that you want to distribute publicly through an npm package. You would like the user of this accordion to be able to use the component in a very flexible way, by composing multiple components together. React Context and provide/inject in Vue provide a solution.
 
+<AccordionExample />
+
 Imagine this is your ideal API:
 
 ```jsx
@@ -52,9 +54,6 @@ It should also be noted that while this is a trivial example, your component may
 What we really need is a way to _implicitly_ pass down props.
 
 ## Using React Context
-
-
-<AccordionExample />
 
 There is a better solution for cases like this — React Context. We can use the Context API to create some state and provide it where needed behind the scenes, removing this concern from our public-facing API.
 

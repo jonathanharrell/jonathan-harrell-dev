@@ -27,7 +27,7 @@ const BlogPage = async () => {
               className="col-start-1 col-end-3 md:col-start-2 md:col-end-4 lg:col-start-3 lg:col-end-5 2xl:col-start-4 2xl:col-end-6 text-xl">I’m
               a designer and developer committed to making the web a more empowering and accessible place. I create
               engaging user experiences and bring them to life through maintainable, high-quality code. I share what
-              I’ve learned in my technical blog.</p>
+              I’ve learned on this blog.</p>
           </div>
           <div
             className="col-start-1 col-end-3 md:col-end-4 lg:col-end-5 xl:col-end-6 2xl:col-end-7 grid grid-cols-subgrid gap-y-8 md:gap-y-6">

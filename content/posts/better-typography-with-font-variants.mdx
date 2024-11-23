@@ -14,8 +14,6 @@ However, this is quickly changing thanks to the increasing availability of OpenT
 
 This article is an overview of how to control OpenType features using CSS, but remember that whatever web font you are using will also need to support these features.
 
-<Codepen id="rqaGqE"/>
-
 ## The font-variant- Properties
 
 You can control most OpenType features using various properties beginning with `font-variant-`. There is also a low-level property `font-feature-settings` which can be used to support legacy browsers. Whenever possible, however, you should use the more modern `font-variant` properties. One solution is to use an `@supports` rule to check if a font-variant property is supported and otherwise use `font-feature-settings`.
