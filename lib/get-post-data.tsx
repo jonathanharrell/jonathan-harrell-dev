@@ -10,6 +10,11 @@ import inlineSvg from "@/lib/inline-svg";
 import {SemanticImageExample} from "@/components/examples/semantic-image";
 import {IntersectionObserverExample} from "@/components/examples/intersection-observer";
 import {FormInputExample} from "@/components/examples/form-input";
+import {
+  Autocomplete as AutocompleteExample,
+  TagListSearch as TagListSearchExample
+} from "@/components/examples/search-select";
+import {AccordionExample} from "@/components/examples/accordion-with-context";
 
 type PostFrontMatter = {
   slug: string;
@@ -32,13 +37,13 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       mdxOptions: {
         rehypePlugins: [rehypePrism, rehypeSlug,
           [
-          rehypeToc, {
+            rehypeToc, {
             headings: ["h2"],
             customizeTOC(toc: HtmlElementNode) {
               return {
                 type: "element",
                 tagName: "div",
-                properties: { className: 'toc-wrapper' },
+                properties: {className: "toc-wrapper"},
                 children: [
                   toc
                 ]
@@ -74,7 +79,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       svg: ({title, alt, ...props}) => {
         return (
           <figure>
-            <svg {...props} aria-label={alt} />
+            <svg {...props} aria-label={alt}/>
             {title && <figcaption>{title}</figcaption>}
           </figure>
         );
@@ -89,6 +94,9 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       SemanticImageExample,
       IntersectionObserverExample,
       FormInputExample,
+      AutocompleteExample,
+      TagListSearchExample,
+      AccordionExample,
     }
   });
 };

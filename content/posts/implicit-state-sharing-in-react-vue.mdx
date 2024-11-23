@@ -53,7 +53,8 @@ What we really need is a way to _implicitly_ pass down props.
 
 ## Using React Context
 
-![](/img/accordion-state-sharing.svg)
+
+<AccordionExample />
 
 There is a better solution for cases like this — React Context. We can use the Context API to create some state and provide it where needed behind the scenes, removing this concern from our public-facing API.
 
@@ -152,8 +153,6 @@ Now, we really can achieve our ideal API for the accordion component. Users of o
 </Accordion>
 ```
 
-<Codepen id="WgBzyX"/>
-
 ## Provide/Inject in Vue
 
 Vue provides a similar tool to React’s Context API, called provide/inject. To use this, we will use the `provide` method on our `accordion-item` Vue component:
@@ -221,8 +220,6 @@ Vue.component('accordion-panel', {
   `
 })
 ```
-
-<Codepen id="PdvRoP"/>
 
 ## Use with Caution
 
