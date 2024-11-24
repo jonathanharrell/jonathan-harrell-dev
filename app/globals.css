@@ -40,6 +40,26 @@
     @apply col-start-1 col-end-13;
   }
 
+  .article-body table {
+    @apply leading-snug;
+
+    th, td {
+      @apply py-4 px-6 border-b border-neutral-700;
+    }
+
+    th:first-child, td:first-child {
+      @apply pl-0;
+    }
+
+    th:last-child, td:last-child {
+      @apply pr-0;
+    }
+
+    thead th {
+      @apply text-left all-small-caps;
+    }
+  }
+
   .article-body > aside:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
     @apply col-start-9 col-end-13 relative italic text-lg leading-snug;
   }
@@ -48,7 +68,7 @@
     @apply absolute;
   }
 
-  .article-body :where(p, ul, ol, figure, pre):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
+  .article-body :where(p, ul, ol, figure, pre, table):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
     @apply mb-4;
   }
 
@@ -187,24 +207,20 @@
   }
 }
 
-/*@keyframes circle-in-top-right {*/
-/*  from {*/
-/*    clip-path: circle(0%);*/
-/*  }*/
-/*  to {*/
-/*    clip-path: circle(150% at top right);*/
-/*  }*/
-/*}*/
+#typographic-details-article ~ table {
+  td:first-child {
+    @apply w-[20%];
+  }
 
-/*!* view transition will cross-fade in user prefers reduced motion *!*/
-/*@media (prefers-reduced-motion: no-preference) {*/
-/*  !* old page can just sit there *!*/
-/*  ::view-transition-old(root) {*/
-/*    animation: none;*/
-/*  }*/
+  td:nth-child(2) {
+    @apply w-[10%];
+  }
 
-/*  !* new page can do fancy stuff! *!*/
-/*  ::view-transition-new(root) {*/
-/*    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right forwards;*/
-/*  }*/
-/*}*/
+  td:nth-child(3) {
+    @apply w-[40%];
+  }
+
+  td:nth-child(4) {
+    @apply font-etbook-lining-figures;
+  }
+}
