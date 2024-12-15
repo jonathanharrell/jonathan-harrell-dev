@@ -36,7 +36,11 @@ const BlogPage = async () => {
                       className={classNames("flex flex-col gap-4 col-span-2 sm:col-span-1", index === 0 ? "sm:col-start-1 xl:col-start-3 2xl:col-start-4" : "")}>
                 <Link
                   href={`/blog/${post.frontmatter.slug}`}>
-                  <div className="aspect-[1.333] bg-neutral-800"/>
+                  {post.frontmatter.thumbnail ? (
+                    <img src={post.frontmatter.thumbnail} alt="" className="aspect-square image-cover bg-neutral-800" />
+                  ) : (
+                    <div className="aspect-square bg-neutral-800"/>
+                  )}
                 </Link>
                 <figcaption className="flex flex-col gap-2">
                   <h2 className="text-xl sm:text-xl md:text-lg !leading-snug">{post.frontmatter.title}</h2>

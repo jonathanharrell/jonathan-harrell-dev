@@ -23,6 +23,7 @@ type PostFrontMatter = {
   date: string;
   tags: string[];
   description: string;
+  thumbnail?: string;
 }
 
 export type PostData = CompileMDXResult<PostFrontMatter>;
