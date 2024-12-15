@@ -43,8 +43,12 @@ const BlogPage = async () => {
                   )}
                 </Link>
                 <figcaption className="flex flex-col gap-2">
-                  <h2 className="text-xl sm:text-xl md:text-lg 2xl:text-xl !leading-snug">{post.frontmatter.title}</h2>
-                  <p className="text-lg sm:text-base">{post.frontmatter.description}</p>
+                  <h2 className="text-xl sm:text-xl md:text-lg 2xl:text-xl !leading-snug">
+                    <Link href={`/blog/${post.frontmatter.slug}`}>
+                      {post.frontmatter.title}
+                    </Link>
+                  </h2>
+                  <p className="text-lg sm:text-base text-neutral-500">{post.frontmatter.description}</p>
                 </figcaption>
               </figure>
             ))}
