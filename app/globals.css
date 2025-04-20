@@ -92,6 +92,10 @@
     @apply mb-12;
   }
 
+  .article-body > *:has(+ aside + h2):not(:where([class~=not-article-body] *)) {
+    @apply mb-12;
+  }
+
   .article-body h2:not(:where([class~=not-article-body],[class~=not-article-body] *)) {
     @apply mb-4 text-3xl italic;
   }
@@ -130,6 +134,22 @@
 
   .article-body :where(li):not(:where([class~=not-article-body],[class~=not-article-body] *)) {
     @apply mb-1;
+  }
+
+  .article-body blockquote {
+    @apply mb-8 pl-5 border-l-4 border-neutral-700 italic;
+  }
+
+  .article-body blockquote p {
+    @apply mb-0;
+  }
+
+  .article-body blockquote cite {
+    @apply block mt-2 not-italic text-base text-neutral-500;
+  }
+
+  .article-body blockquote cite::before {
+    @apply mr-0.5 content-["—"];
   }
 
   /*.prose aside {*/
@@ -207,7 +227,7 @@
   }
 }
 
-#typographic-details-article ~ table {
+.typographic-details-cheat-sheet table {
   td:first-child {
     @apply w-[20%];
   }
@@ -217,10 +237,10 @@
   }
 
   td:nth-child(3) {
-    @apply w-[40%];
+    @apply w-[40%] text-neutral-400;
   }
 
   td:nth-child(4) {
-    @apply font-etbook-lining-figures;
+    @apply font-etbook-lining-figures text-neutral-400;
   }
 }

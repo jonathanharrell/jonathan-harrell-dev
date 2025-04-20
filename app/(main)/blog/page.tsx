@@ -35,14 +35,14 @@ const BlogPage = async () => {
             {posts.map((post, index) => (
               <figure key={index}
                       className={classNames("flex flex-col gap-4 col-span-2 sm:col-span-1", index === 0 ? "sm:col-start-1 xl:col-start-3" : "")}>
-                <Link
-                  href={`/blog/${post.frontmatter.slug}`}>
-                  {post.frontmatter.thumbnail ? (
-                    <img src={post.frontmatter.thumbnail} alt="" className="aspect-square image-cover bg-neutral-950"/>
-                  ) : (
-                    <div className="aspect-square bg-neutral-950"/>
-                  )}
-                </Link>
+                {/*<Link*/}
+                {/*  href={`/blog/${post.frontmatter.slug}`}>*/}
+                {/*  {post.frontmatter.thumbnail ? (*/}
+                {/*    <img src={post.frontmatter.thumbnail} alt="" className="aspect-square image-cover bg-neutral-950"/>*/}
+                {/*  ) : (*/}
+                {/*    <div className="aspect-square bg-neutral-950"/>*/}
+                {/*  )}*/}
+                {/*</Link>*/}
                 <figcaption className="flex flex-col gap-2">
                   <h2 className="text-xl sm:text-xl md:text-lg 2xl:text-xl !leading-snug">
                     <Link href={`/blog/${post.frontmatter.slug}`} className="hover:underline decoration-1 underline-offset-2">

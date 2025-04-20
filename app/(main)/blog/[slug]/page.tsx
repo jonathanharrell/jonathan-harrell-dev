@@ -1,9 +1,7 @@
-import { Header } from "@/components/header";
 import {getPostData} from "@/lib/get-post-data";
 import "@/app/(main)/prism.css";
-import {ThemeToggle} from "@/components/theme-toggle";
-import {Link} from "next-view-transitions";
-import {HeaderAnimation} from "@/components/header-animation";
+import classNames from "classnames";
+import slugify from "slugify";
 
 interface BlogPostPageProps {
   params: {
@@ -29,7 +27,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
         <h1 className="max-w-[32ch] mt-2 text-5xl text-balance">{post.frontmatter.title}</h1>
       </header>
       <main>
-        <article className="article-body">
+        <article className={classNames("article-body", slugify(post.frontmatter.title, { lower: true }))}>
           {post.content}
         </article>
       </main>
