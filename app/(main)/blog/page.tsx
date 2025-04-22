@@ -18,25 +18,19 @@ const BlogPage = async () => {
             empowering and
             accessible place. I create
             engaging user experiences and bring them to life through maintainable, high-quality code.</p>
-          <p className="text-accent">Learn more</p>
+          <p>
+            <Link href="/about" className="text-accent hover:underline">Learn more</Link>
+          </p>
         </section>
         <section className="my-20">
           <header className="flex items-center justify-between gap-4">
             <h2 className="text-3xl italic">Recent articles</h2>
-            <p className="text-accent">View all</p>
+            <Link href="/blog" className="text-accent hover:underline">View all</Link>
           </header>
           <hr className="my-6 border-neutral-800 border-dashed"/>
           <div className="grid grid-cols-3 gap-8">
             {posts.map((post, index) => (
               <article key={index}>
-                {/*<Link*/}
-                {/*  href={`/blog/${post.frontmatter.slug}`}>*/}
-                {/*  {post.frontmatter.thumbnail ? (*/}
-                {/*    <img src={post.frontmatter.thumbnail} alt="" className="aspect-square image-cover bg-neutral-950"/>*/}
-                {/*  ) : (*/}
-                {/*    <div className="aspect-square bg-neutral-950"/>*/}
-                {/*  )}*/}
-                {/*</Link>*/}
                 <p className="text-4xl text-neutral-600 mb-1">{("0" + (posts.length - index)).slice(-2)}</p>
                 <h2 className="text-xl mb-2">
                   <Link href={`/blog/${post.frontmatter.slug}`}
@@ -48,6 +42,11 @@ const BlogPage = async () => {
               </article>
             ))}
           </div>
+        </section>
+        <section className="my-20">
+          <header>
+            <h2 className="text-3xl italic">Subscribe</h2>
+          </header>
         </section>
       </div>
     </main>
