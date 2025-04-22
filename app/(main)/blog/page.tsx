@@ -9,51 +9,49 @@ const BlogPage = async () => {
   return (
     <main>
       <div className="py-12">
-        <HeaderAnimation
-          className="hidden lg:block absolute lg:-top-[400px] xl:-top-[50px] left-1/2 mt-[100px] -ml-[200px] w-[800px] h-[800px] -translate-x-full"/>
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-12 sm:gap-x-5">
-          <div
-            className="col-start-1 col-end-3 md:col-end-4 lg:col-end-5 xl:col-end-6 grid grid-cols-subgrid gap-y-6">
-            <p
-              className="col-start-1 col-end-3 md:col-start-2 md:col-end-4 lg:col-start-3 lg:col-end-5 text-lg">
-              Blog / About / Work
-            </p>
-            <h1
-              className="col-start-1 col-end-3 md:col-start-1 md:col-end-4 lg:col-start-1 lg:col-end-5 xl:col-end-6 text-5xl sm:text-6xl md:text-8xl xl:text-9xl md:text-right">Jonathan
-              Harrell</h1>
-            <p
-              className="col-start-1 col-end-3 md:col-start-2 md:col-end-4 lg:col-start-3 lg:col-end-5 text-2xl xl:text-3xl italic">UI/UX
-              Designer & Front-End Engineer</p>
-            <p
-              className="col-start-1 col-end-3 md:col-start-2 md:col-end-4 lg:col-start-3 lg:col-end-5 text-xl">I’m
-              a designer and developer committed to making the web a more empowering and accessible place. I create
+        {/*<HeaderAnimation*/}
+        {/*  className="hidden lg:block absolute lg:-top-[400px] xl:-top-[50px] left-1/2 mt-[100px] -ml-[200px] w-[800px] h-[800px] -translate-x-full"/>*/}
+        <div>
+          <header className="flex items-center justify-between gap-4">
+            <h1>Jonathan Harrell</h1>
+            <p>Blog / About / Work</p>
+          </header>
+          <section className="my-20">
+            <p className="max-w-[400px] text-5xl mb-6">UI/UX Designer & Front-End Engineer</p>
+            <p className="max-w-[500px] text-xl mb-6">I’m a designer and developer committed to making the web a more empowering and
+              accessible place. I create
               engaging user experiences and bring them to life through maintainable, high-quality code.</p>
-          </div>
-          <div
-            className="col-start-1 col-end-3 md:col-end-4 lg:col-end-5 xl:col-end-6 grid grid-cols-subgrid gap-y-8 md:gap-y-12">
-            {posts.map((post, index) => (
-              <figure key={index}
-                      className={classNames("flex flex-col gap-4 col-span-2 sm:col-span-1", index === 0 ? "sm:col-start-1 xl:col-start-3" : "")}>
-                {/*<Link*/}
-                {/*  href={`/blog/${post.frontmatter.slug}`}>*/}
-                {/*  {post.frontmatter.thumbnail ? (*/}
-                {/*    <img src={post.frontmatter.thumbnail} alt="" className="aspect-square image-cover bg-neutral-950"/>*/}
-                {/*  ) : (*/}
-                {/*    <div className="aspect-square bg-neutral-950"/>*/}
-                {/*  )}*/}
-                {/*</Link>*/}
-                <figcaption className="flex flex-col gap-2">
-                  <h2 className="text-xl sm:text-xl md:text-lg 2xl:text-xl !leading-snug">
-                    <Link href={`/blog/${post.frontmatter.slug}`} className="hover:underline decoration-1 underline-offset-2">
+            <p>Learn more</p>
+          </section>
+          <section className="my-20">
+            <header className="flex items-center justify-between gap-4">
+              <h2 className="text-3xl italic">Recent articles</h2>
+              <p className="text-accent">View all</p>
+            </header>
+            <hr className="my-6 border-neutral-800 border-dashed" />
+            <div className="grid grid-cols-3 gap-8">
+              {posts.map((post, index) => (
+                <article key={index}>
+                  {/*<Link*/}
+                  {/*  href={`/blog/${post.frontmatter.slug}`}>*/}
+                  {/*  {post.frontmatter.thumbnail ? (*/}
+                  {/*    <img src={post.frontmatter.thumbnail} alt="" className="aspect-square image-cover bg-neutral-950"/>*/}
+                  {/*  ) : (*/}
+                  {/*    <div className="aspect-square bg-neutral-950"/>*/}
+                  {/*  )}*/}
+                  {/*</Link>*/}
+                  <p className="text-4xl text-neutral-500 mb-1">{('0' + (posts.length - index)).slice(-2)}</p>
+                  <h2 className="text-xl mb-2">
+                    <Link href={`/blog/${post.frontmatter.slug}`}
+                          className="hover:underline decoration-1 underline-offset-2">
                       {post.frontmatter.title}
                     </Link>
                   </h2>
-                  <p className="text-lg sm:text-base text-neutral-500">{post.frontmatter.description}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+                  <p className="text-lg text-neutral-400">{post.frontmatter.description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </main>
