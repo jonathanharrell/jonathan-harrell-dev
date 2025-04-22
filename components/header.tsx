@@ -1,29 +1,28 @@
-import { ReactNode } from "react";
 import { Link } from "next-view-transitions";
-import { HeaderAnimation } from "@/components/header-animation";
-import {ThemeToggle} from "@/components/theme-toggle";
+import Image from "next/image";
+import Glyph1 from "/public/assets/glyphs/glyph-1.svg";
 
-interface HeaderProps {
-  title: string;
-  subtitle?: string;
-  children?: ReactNode;
-}
-
-export const Header = ({ title, subtitle, children }: HeaderProps) => {
+export const Header = () => {
   return (
-    <header className="relative mb-12">
-      <div className="absolute right-0">
-        <ThemeToggle />
-      </div>
-      <Link href="/" title="Go home" className="inline-block">
-        <HeaderAnimation className="w-20 h-20" />
-        <span className="sr-only">Go to home page</span>
+    <header className="flex items-center justify-between gap-12 max-w-[1100px] mx-auto py-12">
+      <Link href="/" className="flex items-center gap-2 text-lg">
+        <Image
+          src={Glyph1.src}
+          alt=""
+          width={32}
+          height={32}
+          className="w-8 h-8"
+        />
+        <span>Jonathan Harrell</span>
       </Link>
-      <h1 className="mt-12 font-semibold">{title}</h1>
-      {subtitle && (
-        <p className="mt-1 dark:text-neutral-400">{subtitle}</p>
-      )}
-      {children}
+      <nav className="text-lg">
+        <Link href="/blog">Blog</Link>
+        <span className="px-3 text-neutral-600">/</span>
+        <Link href="/about">About</Link>
+        <span className="px-3 text-neutral-600">/</span>
+        <Link href="/work">Work</Link>
+      </nav>
+      <p className="ml-auto text-lg text-accent">Subscribe</p>
     </header>
   );
 }
