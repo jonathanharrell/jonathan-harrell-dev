@@ -23,6 +23,13 @@ const config: Config = {
       "sans": ["ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
     },
     container: {
+      screens: {
+        'sm': '604px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1100px',
+        '2xl': '1100px',
+      },
       center: true,
       padding: {
         DEFAULT: '3rem'

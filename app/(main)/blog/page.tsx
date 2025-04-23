@@ -1,37 +1,31 @@
 import {Link} from "next-view-transitions";
 import {getPosts} from "@/lib/get-posts";
-import {Header} from "@/components/header";
-import {Subscribe} from "@/components/subscribe";
 
 const BlogPage = async () => {
   const {posts} = await getPosts();
 
   return (
-    <main>
-      <Header/>
-      <div className="max-w-[1100px] mx-auto">
-        <header className="my-20">
-          <h1 className="text-5xl">Articles</h1>
-        </header>
-        <section className="my-20">
-          <div className="grid grid-cols-3 gap-8">
-            {posts.map((post, index) => (
-              <article key={index}>
-                <p className="text-4xl text-neutral-600 mb-1">{("0" + (posts.length - index)).slice(-2)}</p>
-                <h2 className="text-xl mb-2">
-                  <Link href={`/blog/${post.frontmatter.slug}`}
-                        className="hover:underline decoration-1 underline-offset-2">
-                    {post.frontmatter.title}
-                  </Link>
-                </h2>
-                <p className="text-lg text-neutral-400">{post.frontmatter.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <Subscribe />
-      </div>
-    </main>
+    <>
+      <header className="my-20">
+        <h1 className="text-5xl">Articles</h1>
+      </header>
+      <section className="my-20">
+        <div className="grid grid-cols-3 gap-8">
+          {posts.map((post, index) => (
+            <article key={index}>
+              <p className="text-4xl text-neutral-600 mb-1">{("0" + (posts.length - index)).slice(-2)}</p>
+              <h2 className="text-xl mb-2">
+                <Link href={`/blog/${post.frontmatter.slug}`}
+                      className="hover:underline decoration-1 underline-offset-2">
+                  {post.frontmatter.title}
+                </Link>
+              </h2>
+              <p className="text-lg text-neutral-400">{post.frontmatter.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

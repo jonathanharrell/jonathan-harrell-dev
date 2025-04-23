@@ -18,12 +18,12 @@ export const PostListItem = ({ post }: PostListItemProps) => {
         <h3>
           <Link
             href={`/blog/${post.frontmatter.slug}`}
-            className="font-medium underline underline-offset-2 decoration-neutral-200 dark:decoration-neutral-700"
+            className="font-medium underline underline-offset-2 dark:decoration-neutral-700"
           >
             {post.frontmatter.title}
           </Link>
         </h3>
-        <p className="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
+        <p className="mt-1 text-sm dark:text-neutral-500">
           <time dateTime={post.frontmatter.date}>
             {formattedDate}
           </time>

@@ -23,18 +23,13 @@ const BlogPostPage = async ({params}: BlogPostPageProps) => {
 
   return (
     <>
-      <Header/>
-      <div className="max-w-[1100px] mx-auto py-24">
-        <header className="relative mb-12">
-          <p className="mt-1 dark:text-neutral-400 text-lg">{subtitle}</p>
-          <h1 className="max-w-[32ch] mt-2 text-5xl text-balance">{post.frontmatter.title}</h1>
-        </header>
-        <main>
-          <article className={classNames("article-body", slugify(post.frontmatter.title, {lower: true}))}>
-            {post.content}
-          </article>
-        </main>
-      </div>
+      <header className="relative mb-12">
+        <p className="mt-1 dark:text-neutral-400 text-lg">{subtitle}</p>
+        <h1 className="max-w-[32ch] mt-2 text-5xl text-balance">{post.frontmatter.title}</h1>
+      </header>
+      <article className={classNames("article-body", slugify(post.frontmatter.title, {lower: true}))}>
+        {post.content}
+      </article>
     </>
   );
 };
