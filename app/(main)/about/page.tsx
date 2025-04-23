@@ -37,11 +37,6 @@ const AboutPage = () => {
         </section>
         <section>
           <header>
-            <h2 className="text-3xl italic">An evolution</h2>
-          </header>
-        </section>
-        <section>
-          <header>
             <h2 className="text-3xl italic">Connect</h2>
           </header>
           <hr className="my-6 border-neutral-800 border-dashed"/>
