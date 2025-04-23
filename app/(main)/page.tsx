@@ -23,13 +23,13 @@ const HomePage = async () => {
             accessible place. I create
             engaging user experiences and bring them to life through maintainable, high-quality code.</p>
           <p>
-            <Link href="/about" className="text-accent hover:underline">Learn more</Link>
+            <Link href="/about" className="text-accent hover:underline underline-offset-2">Learn more</Link>
           </p>
         </section>
         <section className="my-20">
           <header className="flex items-baseline justify-between gap-4">
             <h2 className="text-3xl italic">Recent articles</h2>
-            <Link href="/blog" className="text-accent hover:underline">View all</Link>
+            <Link href="/blog" className="text-accent hover:underline underline-offset-2">View all</Link>
           </header>
           <hr className="mt-6 mb-12 border-neutral-800 border-dashed"/>
           <div className="grid grid-cols-3 gap-8">

@@ -21,11 +21,11 @@ export const Header = () => {
         <span>Jonathan Harrell</span>
       </Link>
       <nav className="text-lg">
-        <Link href="/" className={classNames({"underline": pathname === "/"})}>Home</Link>
+        <Link href="/" className={classNames("hover:underline underline-offset-2", {"underline": pathname === "/"})}>Home</Link>
         <span className="px-3 text-neutral-600">/</span>
-        <Link href="/blog" className={classNames({"underline": pathname?.startsWith("/blog")})}>Blog</Link>
+        <Link href="/blog" className={classNames("hover:underline underline-offset-2", {"underline": pathname?.startsWith("/blog")})}>Blog</Link>
         <span className="px-3 text-neutral-600">/</span>
-        <Link href="/about" className={classNames({"underline": pathname?.startsWith("/about")})}>About</Link>
+        <Link href="/about" className={classNames("hover:underline underline-offset-2", {"underline": pathname?.startsWith("/about")})}>About</Link>
       </nav>
       <div className="ml-auto">
         <a href="#subscribe" className="py-1.5 px-3 rounded-full text-md bg-accent text-black">Subscribe</a>
