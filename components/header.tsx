@@ -1,10 +1,15 @@
 import { Link } from "next-view-transitions";
 import Image from "next/image";
+import {headers} from "next/headers";
 import Glyph1 from "/public/assets/glyphs/glyph-1.svg";
+import classNames from "classnames";
 
 export const Header = () => {
+  const headerList = headers();
+  const pathname = headerList.get("x-current-path");
+
   return (
-    <header className="flex items-center justify-between gap-12 max-w-[1100px] mx-auto py-12">
+    <header className="flex items-center justify-between gap-12 relative z-10 max-w-[1100px] mx-auto py-8">
       <Link href="/" className="flex items-center gap-2 text-lg">
         <Image
           src={Glyph1.src}
@@ -16,13 +21,14 @@ export const Header = () => {
         <span>Jonathan Harrell</span>
       </Link>
       <nav className="text-lg">
-        <Link href="/blog">Blog</Link>
+        <Link href="/" className={classNames({ "underline": pathname === "/" })}>Home</Link>
         <span className="px-3 text-neutral-600">/</span>
-        <Link href="/about">About</Link>
+        <Link href="/blog" className={classNames({ "underline": pathname?.startsWith("/blog") })}>Blog</Link>
         <span className="px-3 text-neutral-600">/</span>
-        <Link href="/work">Work</Link>
+        <Link href="/about" className={classNames({ "underline": pathname?.startsWith("/about") })}>About</Link>
+        <span className="px-3 text-neutral-600">/</span>
+        <Link href="#subscribe">Subscribe</Link>
       </nav>
-      <p className="ml-auto text-lg text-accent">Subscribe</p>
     </header>
   );
 }
