@@ -1,22 +1,23 @@
+@import "./fonts.css";
+@import "./vars.css";
+@import "./overrides.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* this is for the home animation in Three.js to use */
-  --accent: #e6594c;
+@layer utilities {
+  .no-caps {
+    font-variant: normal;
+  }
 
-  /* these are for svg illustrations to respond to light/dark mode */
-  --illustration-background: #fafafa;
-  --illustration-black: #262626;
-  --illustration-gray: #d4d4d4;
-  --illustration-accent: var(--accent);
-}
+  .small-caps {
+    font-variant: small-caps;
+  }
 
-.dark {
-  --illustration-background: #27272a;
-  --illustration-black: #f5f5f5;
-  --illustration-gray: #525252;
+  .all-small-caps {
+    font-variant: all-small-caps;
+  }
 }
 
 @layer components {
@@ -150,97 +151,5 @@
 
   .article-body blockquote cite::before {
     @apply mr-0.5 content-["—"];
-  }
-
-  /*.prose aside {*/
-  /*  @apply my-6 py-3 px-5 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800;*/
-  /*}*/
-
-  /*.prose aside::before {*/
-  /*  @apply block text-sm font-medium text-neutral-500 dark:text-neutral-400 content-["Note"];*/
-  /*}*/
-
-  /*.prose aside.warning {*/
-  /*  @apply border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-800 dark:bg-opacity-30;*/
-  /*}*/
-
-  /*.prose aside.warning::before {*/
-  /*  @apply text-amber-800 dark:text-amber-700 content-["Warning"];*/
-  /*}*/
-
-  /*.prose aside.warning a {*/
-  /*  @apply decoration-amber-300 dark:decoration-amber-700;*/
-  /*}*/
-
-  /*.prose aside.demo {*/
-  /*  @apply border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-800 dark:bg-opacity-30;*/
-  /*}*/
-
-  /*.prose aside.demo::before {*/
-  /*  @apply text-blue-800 dark:text-blue-500 content-["Demo"];*/
-  /*}*/
-
-  /*.prose aside.demo a {*/
-  /*  @apply decoration-blue-200 dark:decoration-blue-500;*/
-  /*}*/
-
-  /*.prose:not(.not-prose) aside p {*/
-  /*  @apply mt-1 mb-0 leading-normal;*/
-  /*}*/
-}
-
-@font-face {
-  font-family: "ETBook";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/etbookot-roman-webfont.woff") format("woff"), url("/fonts/etbookot-roman-webfont.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ETBook";
-  font-style: italic;
-  font-weight: 400;
-  src: url("/fonts/etbookot-italic-webfont.woff") format("woff"), url("/fonts/etbookot-italic-webfont.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ETBookLiningFigures";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/et-book-roman-line-figures.woff") format("woff");
-  font-display: swap;
-}
-
-@layer utilities {
-  .no-caps {
-    font-variant: normal;
-  }
-
-  .small-caps {
-    font-variant: small-caps;
-  }
-
-  .all-small-caps {
-    font-variant: all-small-caps;
-  }
-}
-
-.typographic-details-cheat-sheet table {
-  td:first-child {
-    @apply w-[20%];
-  }
-
-  td:nth-child(2) {
-    @apply w-[10%];
-  }
-
-  td:nth-child(3) {
-    @apply w-[40%] text-neutral-400;
-  }
-
-  td:nth-child(4) {
-    @apply font-etbook-lining-figures text-neutral-400;
   }
 }

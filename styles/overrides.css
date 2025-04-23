@@ -1,0 +1,17 @@
+.typographic-details-cheat-sheet table {
+  td:first-child {
+    @apply w-[20%];
+  }
+
+  td:nth-child(2) {
+    @apply w-[10%];
+  }
+
+  td:nth-child(3) {
+    @apply w-[40%] text-neutral-400;
+  }
+
+  td:nth-child(4) {
+    @apply font-etbook-lining-figures text-neutral-400;
+  }
+}

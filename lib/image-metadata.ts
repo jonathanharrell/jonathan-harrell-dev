@@ -35,7 +35,7 @@ function isImageNode(node: Node): node is ImageNode {
 }
 
 /**
- * Filters out non absolute paths from the public folder.
+ * Filters out non-absolute paths from the public folder.
  */
 function filterImageNode(node: ImageNode): boolean {
   return node.properties.src.startsWith("/");

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import "@/app/globals.css";
+import "@/styles/index.css";
 import {Header} from "@/components/header";
 import {Subscribe} from "@/components/subscribe";
 

@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import TailwindTypography from "@tailwindcss/typography";
 import TailwindForms from "@tailwindcss/forms";
 import plugin from "tailwindcss/plugin";
+import { PluginUtils } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -39,7 +40,7 @@ const config: Config = {
       colors: {
         accent: "var(--accent)"
       },
-      typography: ({ theme }) => ({
+      typography: ({ theme }: PluginUtils) => ({
         neutral: {
           css: {
             '--tw-prose-body': theme('colors.neutral[800]'),
