@@ -6,11 +6,11 @@ const BlogPage = async () => {
 
   return (
     <>
-      <header className="my-20">
-        <h1 className="text-5xl">Articles</h1>
+      <header className="py-10">
+        <h1 className="text-4xl md:text-5xl">Articles</h1>
       </header>
-      <section className="my-20">
-        <div className="grid grid-cols-3 gap-8">
+      <section className="py-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <article key={index}>
               <p className="text-4xl text-neutral-600 mb-1">{("0" + (posts.length - index)).slice(-2)}</p>

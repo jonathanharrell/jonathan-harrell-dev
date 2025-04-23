@@ -6,7 +6,7 @@ const AboutPage = () => {
       <section className="my-20">
         <div className="flex gap-8">
           <div className="flex-1">
-            <h1 className="text-5xl mb-6">About Jonathan</h1>
+            <h1 className="text-4xl md:text-5xl mb-6">About Jonathan</h1>
             <p className="text-xl mb-6">
               I’m Jonathan Harrell, a designer and front-end engineer. I’ve been developing websites and applications
               for the last six years for a wide range of clients, from SaaS startups to established software companies
