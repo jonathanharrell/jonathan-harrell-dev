@@ -6,7 +6,7 @@ import {MobileNav} from "@/components/mobile-nav";
 
 export const Header = () => {
   return (
-    <header className="flex items-center justify-between gap-12 z-10 mb-10 py-8">
+    <header className="flex items-center justify-between gap-12 relative z-10 mb-10 py-8">
       <Link href="/" className="flex items-center gap-2 text-lg">
         <Image
           src={Glyph1.src}

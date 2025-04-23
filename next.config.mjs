@@ -1,10 +1,10 @@
-import NextMdx from '@next/mdx';
-import rehypePrism from '@mapbox/rehype-prism';
+import NextMdx from "@next/mdx";
+import rehypePrism from "@mapbox/rehype-prism";
 
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
   // Configure `pageExtensions` to include MDX files
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
 
 const withMdx = NextMdx({

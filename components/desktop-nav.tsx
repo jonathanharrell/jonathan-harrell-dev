@@ -1,10 +1,11 @@
-import {headers} from "next/headers";
+"use client";
+
 import {Link} from "next-view-transitions";
 import classNames from "classnames";
+import {usePathname} from "next/navigation";
 
 export const DesktopNav = () => {
-  const headerList = headers();
-  const pathname = headerList.get("x-current-path");
+  const pathname = usePathname();
 
   return (
     <div className="hidden md:flex items-center gap-12 flex-1">

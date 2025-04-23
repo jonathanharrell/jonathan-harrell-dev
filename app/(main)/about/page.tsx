@@ -3,11 +3,11 @@ import Image from "next/image";
 const AboutPage = () => {
   return (
     <>
-      <section className="my-20">
+      <section className="py-10">
         <div className="flex gap-8">
-          <div className="flex-1">
-            <h1 className="text-4xl md:text-5xl mb-6">About Jonathan</h1>
-            <p className="text-xl mb-6">
+          <div className="flex flex-col gap-6 flex-1">
+            <h1 className="text-4xl md:text-5xl">About Jonathan</h1>
+            <p className="text-xl">
               I’m Jonathan Harrell, a designer and front-end engineer. I’ve been developing websites and applications
               for the last six years for a wide range of clients, from SaaS startups to established software companies
               to global hedge funds. While I am now a full-time software engineer, I am also passionate about design,
@@ -21,7 +21,7 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="flex justify-end flex-1">
-            <figure className="relative -mt-[80px]">
+            <figure className="relative -mt-[40px]">
               <Image src="/assets/jonathan-2023.jpg" alt="Image of Jonathan Harrell" width={440} height={440}
                      className="aspect-square max-w-full rounded-full"/>
               <svg className="absolute top-0 left-0 w-full h-full translate-x-[-16px] translate-y-[-16px]">
@@ -34,7 +34,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="py-10">
         <header>
           <h2 className="text-3xl italic">Uses</h2>
         </header>
@@ -67,7 +67,7 @@ const AboutPage = () => {
           </li>
         </ul>
       </section>
-      <section>
+      <section className="py-10">
         <header>
           <h2 className="text-3xl italic">Connect</h2>
         </header>
