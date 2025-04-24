@@ -2,7 +2,6 @@ import {getPostData} from "@/lib/get-post-data";
 import "@/app/(main)/prism.css";
 import classNames from "classnames";
 import slugify from "slugify";
-import {Header} from "@/components/header";
 
 interface BlogPostPageProps {
   params: Promise<{
