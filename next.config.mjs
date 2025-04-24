@@ -5,6 +5,9 @@ import rehypePrism from "@mapbox/rehype-prism";
 const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  experimental: {
+    viewTransition: true,
+  },
 };
 
 const withMdx = NextMdx({

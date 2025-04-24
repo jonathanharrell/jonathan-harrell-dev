@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import {getPosts} from "@/lib/get-posts";
 import {HeaderAnimation} from "@/components/header-animation";
 

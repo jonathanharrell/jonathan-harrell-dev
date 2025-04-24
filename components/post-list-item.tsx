@@ -1,4 +1,4 @@
-import {Link} from "next-view-transitions";
+import Link from "next/link";
 import {PostData} from "@/lib/get-post-data";
 
 interface PostListItemProps {

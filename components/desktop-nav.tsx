@@ -1,6 +1,6 @@
 "use client";
 
-import {Link} from "next-view-transitions";
+import Link from "next/link";
 import classNames from "classnames";
 import {usePathname} from "next/navigation";
 

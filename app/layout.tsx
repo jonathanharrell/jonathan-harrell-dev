@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { ViewTransitions } from "next-view-transitions";
+import { unstable_ViewTransition as ViewTransition } from "react";
 import ThemeProvider from "@/providers/theme-provider";
 import {setInitialTheme} from "@/lib/set-initial-theme";
 
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <ViewTransitions>
+    <ViewTransition>
       <ThemeProvider>
         <html lang="en" suppressHydrationWarning className="bg-neutral-950">
           {/*Note that we should NOT use Next's <Head /> component here since this will cause a flash of the default theme*/}
@@ -26,6 +26,6 @@ export default function RootLayout({
           {children}
         </html>
       </ThemeProvider>
-    </ViewTransitions>
+    </ViewTransition>
   );
 }

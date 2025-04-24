@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/styles/index.css";
 import {Header} from "@/components/header";
 import {Subscribe} from "@/components/subscribe";
+import {Footer} from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Jonathan Harrell | CSS Blogger & Teacher, UI/UX Designer, Front-End Engineer",
@@ -21,7 +22,7 @@ export default function MainLayout({
           <Header/>
           {children}
           <Subscribe />
-          <footer>footer</footer>
+          <Footer />
         </main>
       </div>
     </body>
