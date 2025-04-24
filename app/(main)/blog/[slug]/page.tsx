@@ -5,13 +5,14 @@ import slugify from "slugify";
 import {Header} from "@/components/header";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 const BlogPostPage = async ({params}: BlogPostPageProps) => {
-  const post = await getPostData(params.slug);
+  const { slug } = await params;
+  const post = await getPostData(slug);
 
   const formattedDate = new Date(post.frontmatter.date).toLocaleDateString("default", {
     month: "long",
