@@ -30,7 +30,7 @@
   }
 
   .article-body > .toc-wrapper {
-    @apply col-start-9 col-end-13 row-start-1 relative;
+    @apply col-start-9 col-end-13 row-start-1 relative text-lg;
   }
 
   .toc-wrapper .toc {
