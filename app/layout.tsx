@@ -1,9 +1,11 @@
-import { ReactNode, unstable_ViewTransition as ViewTransition } from "react";
+import React, {ReactNode, Suspense, unstable_ViewTransition as ViewTransition} from "react";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NextTopLoader from "nextjs-toploader";
 import ThemeProvider from "@/providers/theme-provider";
 import {setInitialTheme} from "@/lib/set-initial-theme";
+import {Spinner} from "@/components/spinner";
+import {SkipToContent} from "@/components/skip-to-content";
 import {Header} from "@/components/header";
 import {Subscribe} from "@/components/subscribe";
 import {Footer} from "@/components/footer";
@@ -12,8 +14,8 @@ import "@/styles/index.css";
 const gaId = process.env.GOOGLE_ANALYTICS_TRACKING_ID;
 
 export const metadata: Metadata = {
-  title: "Human in the Loop",
-  description: "Jonathan Harrell’s commonplace book",
+  title: "Jonathan Harrell | CSS Blogger & Teacher, UI/UX Designer, Front-End Engineer",
+  description: "Want to stay up-to-date on the latest developments in CSS and JavaScript? Get tips, tutorials and thoughts from designer/developer Jonathan Harrell.",
   // openGraph: {
   //   images: ["/api/og"],
   // },
@@ -71,9 +73,18 @@ export default function RootLayout({
           <body className="min-h-screen dark:bg-neutral-900 font-etbook dark:text-neutral-300">
           <div className="container">
             <NextTopLoader color="#e6594c"/>
+            <SkipToContent />
             <Header/>
-            <main>
-              {children}
+            <main id="main" className="flex flex-col flex-1 focus-visible:ring-0 focus-visible:ring-offset-0" tabIndex={-1}>
+              <Suspense
+                fallback={
+                  <div className="flex items-center justify-center flex-1">
+                    <Spinner/>
+                  </div>
+                }
+              >
+                {children}
+              </Suspense>
             </main>
             <Subscribe/>
             <Footer/>

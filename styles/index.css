@@ -6,6 +6,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  *:focus {
+    @apply outline-none ring-0;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-1 ring-offset-1 ring-offset-neutral-950 ring-neutral-300;
+  }
+}
+
 @layer utilities {
   .no-caps {
     font-variant: normal;
@@ -151,5 +161,21 @@
 
   .article-body blockquote cite::before {
     @apply mr-0.5 content-["—"];
+  }
+
+  /* Spinner */
+  .spinner {
+    @apply block fixed top-[15px] right-[15px] z-[1031];
+  }
+
+  .spinner-icon {
+    @apply w-[18px] h-[18px] border-2 border-transparent border-t-neutral-500 border-l-neutral-500 rounded-full;
+
+    animation: nprogress-spinner 400ms linear infinite;
+  }
+
+  @keyframes nprogress-spinner {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }

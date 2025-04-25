@@ -27,7 +27,7 @@ export const Subscribe = () => {
             <div>
               <label htmlFor="email" className="hidden">Email</label>
               <input name="email" type="email" placeholder="Enter your email address" required
-                     className="w-[260px] max-w-full py-1.5 px-3 border border-transparent focus:border-neutral-500 focus:outline-0 bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-500 transition-colors duration-200 ease-in-out"/>
+                     className="w-[260px] max-w-full py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-500"/>
             </div>
             {pending ? 'pending' : ''}
             <button type="submit" disabled={pending}

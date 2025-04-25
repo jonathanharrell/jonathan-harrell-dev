@@ -12,7 +12,7 @@ export const HeaderAnimation = ({className, style}: HeaderAnimationProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    let destroy;
+    let destroy: (() => void) | undefined;
 
     if (canvasRef.current) {
       destroy = init(canvasRef.current);
