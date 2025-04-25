@@ -4,7 +4,7 @@ import { z } from "zod";
 
 export const subscribe = async (
   prevState: {
-    message: string;
+    status: string | number;
   },
   formData: FormData
 ) => {
@@ -17,7 +17,7 @@ export const subscribe = async (
   });
 
   if (!parse.success) {
-    return { message: "Failed to subscribe" };
+    return { status: 500 };
   }
 
   const data = parse.data;
@@ -25,9 +25,27 @@ export const subscribe = async (
   const email = data.email;
 
   try {
-    console.log("subscribing!", email);
-    return { message: "Subscribed!" };
+    const response = await fetch(`https://${process.env.MAILCHIMP_REGION}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}/members`, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Basic ' + btoa(`harr041:${process.env.MAILCHIMP_API_KEY}`),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email_address: email,
+        status: 'subscribed'
+      })
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    if (data.status === "subscribed") {
+      return { status: "subscribed" };
+    } else {
+      return { status: data.status };
+    }
   } catch(error) {
-    return { message: "Failed to subscribe" };
+    return { status: 500 };
   }
 };

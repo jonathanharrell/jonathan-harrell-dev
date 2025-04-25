@@ -20,7 +20,7 @@ export const DesktopNav = () => {
               className={classNames("hover:underline underline-offset-2", {"underline": pathname?.startsWith("/about")})}>About</Link>
       </nav>
       <div className="ml-auto">
-        <a href="#subscribe" className="py-1.5 px-3 rounded-full text-md bg-accent text-black">Subscribe</a>
+        <a href="#subscribe" className="py-1.5 px-3 rounded-full text-md bg-accent hover:brightness-[80%] text-black transition-all duration-200 ease-in-out">Subscribe</a>
       </div>
     </div>
   );

@@ -9,10 +9,10 @@ export const Footer = () => {
         &copy; 2017–{currentYear} Jonathan Harrell
       </Link>
       <ul className="flex gap-6">
-        <li><a href="" className="underline hover:no-underline underline-offset-2">Github</a></li>
-        <li><a href="" className="underline hover:no-underline underline-offset-2">LinkedIn</a></li>
-        <li><a href="" className="underline hover:no-underline underline-offset-2">Instagram</a></li>
-        <li><a href="" className="underline hover:no-underline underline-offset-2">RSS</a></li>
+        <li><a href="https://github.com/jonathanharrell/" target="_blank" rel="noreferrer" className="underline hover:no-underline underline-offset-2">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/jonathanharrell/" target="_blank" rel="noreferrer" className="underline hover:no-underline underline-offset-2">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/harrellofdurham/" target="_blank" rel="noreferrer" className="underline hover:no-underline underline-offset-2">Instagram</a></li>
+        <li><a href="/rss.xml" target="_blank" className="underline hover:no-underline underline-offset-2">RSS</a></li>
       </ul>
     </footer>
   )
