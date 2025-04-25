@@ -1,7 +1,6 @@
 ---
 title: Better Typography with Font Variants
 date: 2018-01-07T20:17:00.000Z
-thumbnail: /assets/thumbnails/font-variants.svg
 description: >-
   Learn how to use font variants, including ligatures, caps, numerals and
   alternate glyphs, to create more precise, beautiful typography on the web.
@@ -38,7 +37,7 @@ Ligatures are single glyphs made from two or more characters. They typically pre
 
 ### common-ligatures
 
-![Image here](/assets/common-ligatures.svg "Common ligatures often include character pairings where the first letter is “f”.")
+![Image here](/assets/illustrations/common-ligatures.svg "Common ligatures often include character pairings where the first letter is “f”.")
 
 These are ligatures that the type designer has decided should be used in normal conditions. In most circumstances you should use these. Most browsers enable them by default.
 
@@ -52,7 +51,7 @@ font-feature-settings: 'liga' 0; /* low-level disable */
 
 ### discretionary-ligatures
 
-![Image here](/assets/discretionary-ligatures.svg "Discretionary ligatures can include character pairings with flourished connections.")
+![Image here](/assets/illustrations/discretionary-ligatures.svg "Discretionary ligatures can include character pairings with flourished connections.")
 
 These are ligatures which can be used for typographic purposes, for example to achieve a special effect. These are disabled by default.
 
@@ -66,7 +65,7 @@ font-feature-settings: 'dlig' 0; /* low-level disable */
 
 ### contextual
 
-![Image here](/assets/contextual-ligatures.svg "In the Inkwell Script typeface, alternate versions of the letters “f” and “t” are automatically introduced.")
+![Image here](/assets/illustrations/contextual-ligatures.svg "In the Inkwell Script typeface, alternate versions of the letters “f” and “t” are automatically introduced.")
 
 These are alternate ligatures that are affected by their surrounding context. They often harmonize the shapes of grouped glyphs. These are enabled by default.
 
@@ -80,7 +79,7 @@ font-feature-settings: 'calt' 0; /* low-level disable */
 
 ### historical-ligatures
 
-![Image here](/assets/historical-ligatures.svg "Alternate characters like the archaic “long s” can be used in historical settings.")
+![Image here](/assets/illustrations/historical-ligatures.svg "Alternate characters like the archaic “long s” can be used in historical settings.")
 
 These are ligatures which could be considered a subset of discretionary, but are specifically used to achieve a historical effect. These are disabled by default.
 
@@ -100,7 +99,7 @@ Thankfully, there is now a way to enable true subscripts and superscripts with `
 
 ### sub
 
-![Image here](/assets/subscript.svg "True subscript characters are sized and positioned specifically for use in footnotes and scientific formulas.")
+![Image here](/assets/illustrations/subscript.svg "True subscript characters are sized and positioned specifically for use in footnotes and scientific formulas.")
 
 This enables true subscript characters.
 
@@ -114,7 +113,7 @@ font-feature-settings: 'subs' 0; /* low-level disable */
 
 ### super
 
-![Image here](/assets/superscript.svg "True superscript characters are sized and positioned specifically for use in mathematical expressions and scientific formulas.")
+![Image here](/assets/illustrations/superscript.svg "True superscript characters are sized and positioned specifically for use in mathematical expressions and scientific formulas.")
 
 This enables true superscript characters.
 
@@ -132,7 +131,7 @@ A capital is not a capital is not a capital. The most significant use of `font-v
 
 ### small-caps
 
-![Image here](/assets/small-caps.svg "Small caps in the typeface Hoefler Text match the x-height of the font.")
+![Image here](/assets/illustrations/small-caps.svg "Small caps in the typeface Hoefler Text match the x-height of the font.")
 
 Small caps are designed to be the same height as lowercase letters and are used to capitalize words within running text. They make for a more cohesive and readable paragraph.
 
@@ -146,7 +145,7 @@ font-feature-settings: 'smcp' 0; /* low-level disable */
 
 ### all-small-caps
 
-![Image here](/assets/all-small-caps.svg "All characters in the typeface Hoefler Text are converted to small caps using all-small-caps.")
+![Image here](/assets/illustrations/all-small-caps.svg "All characters in the typeface Hoefler Text are converted to small caps using all-small-caps.")
 
 The `small-caps` value will only replace lowercase letters with small caps. To replace all letters with small caps (which is probably what you want) you need to use `all-small-caps`.
 
@@ -160,7 +159,7 @@ font-feature-settings: 'smcp' 1, 'c2sc' 0; /* low-level disable */
 
 ### petite-caps
 
-![Image here](/assets/petite-caps.svg "Petite caps in the typeface EB Garamond are slightly shorter than the x-height of the font.")
+![Image here](/assets/illustrations/petite-caps.svg "Petite caps in the typeface EB Garamond are slightly shorter than the x-height of the font.")
 
 Standard small caps will typically appear slightly larger than the x-height of the font. Some typefaces have additional small caps that match the x-height. These are called `petite-caps`.
 
@@ -174,7 +173,7 @@ font-feature-settings: 'pcap' 0; /* low-level disable */
 
 ### all-petite-caps
 
-![Image here](/assets/all-petite-caps.svg "All characters in the typeface EB Garamond are converted to petite caps using all-petite-caps.")
+![Image here](/assets/illustrations/all-petite-caps.svg "All characters in the typeface EB Garamond are converted to petite caps using all-petite-caps.")
 
 Similarly to `all-small-caps`, this converts all letters, both lower and uppercase, to petite caps.
 
@@ -188,7 +187,7 @@ font-feature-settings: 'pcap' 1, 'c2pc' 0; /* low-level disable */
 
 ### unicase
 
-![Image here](/assets/unicase.svg "A version of the Arial typeface includes unicase characters.")
+![Image here](/assets/illustrations/unicase.svg "A version of the Arial typeface includes unicase characters.")
 
 This feature maps upper and lowercase letters to a mixed set of lowercase and small capital forms, creating a single case alphabet. Sometimes the small capitals used are actual small cap glyphs and sometimes they are specially designed unicase forms. The implementation of this feature varies greatly from font to font.
 
@@ -202,7 +201,7 @@ font-feature-settings: 'unic' 0; /* low-level disable */
 
 ### titling-caps
 
-![Image here](/assets/titling-caps.svg "Titling caps are designed for headline sizes, as seen here with the Hoefler Titling typeface.")
+![Image here](/assets/illustrations/titling-caps.svg "Titling caps are designed for headline sizes, as seen here with the Hoefler Titling typeface.")
 
 Standard uppercase letters are designed for use alongside lowercase letters and when they are used in strings of all uppercase letters they can appear too strong. Some fonts include titling capitals specifically for this situation.
 
@@ -230,7 +229,7 @@ font-variant-numeric: lining-nums tabular-nums;
 
 ### lining-nums
 
-![Image here](/assets/lining-nums.svg "Lining numerals in the typeface Ideal Sans stretch from baseline to cap-height.")
+![Image here](/assets/illustrations/lining-nums.svg "Lining numerals in the typeface Ideal Sans stretch from baseline to cap-height.")
 
 Lining numerals approximate capital letters and are uniform in height. They should be used in headings or numeric tables. Usually numbers are lining figures by default.
 
@@ -244,7 +243,7 @@ font-feature-settings: 'lnum' 0; /* low-level disable */
 
 ### oldstyle-nums
 
-![Image here](/assets/oldstyle-nums.svg "Old-style numerals in the typeface Ideal Sans ascend and descend to sympathize with the rhythm of lowercase letters.")
+![Image here](/assets/illustrations/oldstyle-nums.svg "Old-style numerals in the typeface Ideal Sans ascend and descend to sympathize with the rhythm of lowercase letters.")
 
 Old-style numerals have varying heights and alignments and are therefore more similar to lowercase letters. They should be used in running text.
 
@@ -258,7 +257,7 @@ font-feature-settings: 'onum' 0; /* low-level disable */
 
 ### proportional-nums
 
-![Image here.](/assets/proportional-nums.svg "Proportional numerals should be used in contexts where the vertical alignment of numbers is not important.")
+![Image here.](/assets/illustrations/proportional-nums.svg "Proportional numerals should be used in contexts where the vertical alignment of numbers is not important.")
 
 Proportional numerals have variable spacing and blend in with horizontal text. They should be used in most situations, other than numeric tables where vertical alignment is important. Usually numbers are proportional figures by default.
 
@@ -272,7 +271,7 @@ font-feature-settings: 'pnum' 0; /* low-level disable */
 
 ### tabular-nums
 
-![Image here.](/assets/tabular-nums.svg "Tabular numerals should be used in contexts where numbers need to be stacked.")
+![Image here.](/assets/illustrations/tabular-nums.svg "Tabular numerals should be used in contexts where numbers need to be stacked.")
 
 Tabular numerals have the same width and should be used in numeric tables to allow vertical alignment of numbers.
 
@@ -286,7 +285,7 @@ font-feature-settings: 'tnum' 0; /* low-level disable */
 
 ### diagonal-fractions
 
-![Image here.](/assets/diagonal-fractions.svg "Numerators and denominators in the typeface Ideal Sans are aligned with the baseline and cap-height.")
+![Image here.](/assets/illustrations/diagonal-fractions.svg "Numerators and denominators in the typeface Ideal Sans are aligned with the baseline and cap-height.")
 
 By default, fractions will display as lowercase letters with a slash. Proper fractions will be formatted to match the height of a lining figure and can be either diagonal or stacked.
 
@@ -300,7 +299,7 @@ font-feature-settings: 'frac' 0; /* low-level disable */
 
 ### stacked-fractions
 
-![Image here.](/assets/stacked-fractions.svg "Numerators and denominators are horizontally aligned in stacked fraction alternates.")
+![Image here.](/assets/illustrations/stacked-fractions.svg "Numerators and denominators are horizontally aligned in stacked fraction alternates.")
 
 Stacked fractions are not as common of a feature in most web fonts as diagonal fractions, but should prove useful with heavily scientific or mathematical content.
 
@@ -314,7 +313,7 @@ font-feature-settings: 'afrc' 0; /* low-level disable */
 
 ### ordinal
 
-![Image here.](/assets/ordinals.svg "The typeface Fedra Sans includes specially sized and positioned characters for common ordinals like “1st”, “2nd”, and “3rd”.")
+![Image here.](/assets/illustrations/ordinals.svg "The typeface Fedra Sans includes specially sized and positioned characters for common ordinals like “1st”, “2nd”, and “3rd”.")
 
 Ordinals like st, nd, rd, and th will appear as standard lowercase letters by default. However, these should ideally appear as smaller raised numbers following the numeral. The `ordinal` value enables that.
 
@@ -328,7 +327,7 @@ font-feature-settings: 'ordn' 0; /* low-level disable */
 
 ### slashed-zero
 
-![Image here.](/assets/slashed-zero.svg "The typeface Operator Mono includes a special slashed-zero numeral.")
+![Image here.](/assets/illustrations/slashed-zero.svg "The typeface Operator Mono includes a special slashed-zero numeral.")
 
 This enables an alternate zero character with a slash through it.
 
@@ -346,7 +345,7 @@ Fonts can provide a variety of alternates for any character. The `font-variant-a
 
 ### historical-forms
 
-![Image here.](/assets/historical-forms.svg "The typeface Hoefler Text provides an historical alternate “s” character, known as the archaic “long s”.")
+![Image here.](/assets/illustrations/historical-forms.svg "The typeface Hoefler Text provides an historical alternate “s” character, known as the archaic “long s”.")
 
 Historical alternates can be used for a “period” effect. Note the difference between this and historical ligatures. Historical ligatures are historical character combinations, whereas historical forms are substitutions for individual characters.
 
@@ -360,7 +359,7 @@ font-feature-settings: 'hist' 0; /* low-level disable */
 
 ### stylistic(feature-value-name)
 
-![Image here.](/assets/stylistic.svg "The typeface Ideal Sans includes several special characters and alernates, such as the Inscriptional “G”.")
+![Image here.](/assets/illustrations/stylistic.svg "The typeface Ideal Sans includes several special characters and alernates, such as the Inscriptional “G”.")
 
 Use this to select stylistic features on an individual basis. In order to use this and several of the following `font-variant-alternates` functions, you must define a `font-feature-value` using the `@font-feature-values` rule. For example, if you wanted to select stylistic feature number 1 in the font you are using, you would first define the feature value, and then use it within the `font-variant-alternates: stylistic()` function.
 
@@ -378,7 +377,7 @@ font-feature-settings: salt 0; /* low-level disable */
 
 ### styleset(feature-value-name)
 
-![Image here.](/assets/styleset.svg "Stylesets in the typeface Hoefler Text allow you to apply related alternate characters.")
+![Image here.](/assets/illustrations/styleset.svg "Stylesets in the typeface Hoefler Text allow you to apply related alternate characters.")
 
 Use this to select an entire set of alternative glyphs. The glyphs in a set are often designed to work together. Select a particular set by defining a `font-feature-values` rule using the set’s number.
 
@@ -395,7 +394,7 @@ font-feature-settings: ss01; /* low-level enable */
 
 ### character-variant(feature-value-name)
 
-![Image here.](/assets/character-variant.svg "The italic style of the typeface Hoefler Text includes variants for several characters, including the letters “k” and “z”.")
+![Image here.](/assets/illustrations/character-variant.svg "The italic style of the typeface Hoefler Text includes variants for several characters, including the letters “k” and “z”.")
 
 Use this to select specific character variants. Select a particular variant by defining a `font-feature-values` rule using the variant’s number.
 
@@ -412,7 +411,7 @@ font-feature-settings: cv01; /* low-level enable */
 
 ### swash(feature-value-name)
 
-![Image here.](/assets/swash.svg "The typeface Hoefler Text includes alternate italic swash caps for several characters, including “M”.")
+![Image here.](/assets/illustrations/swash.svg "The typeface Hoefler Text includes alternate italic swash caps for several characters, including “M”.")
 
 Swashes can be used to provide typographic interest to headings or more artistic settings of text. They are typically exaggerated alternative character designs, or have some sort of typographic flourish. Select a particular swash by defining a `font-feature-values` rule using the set’s number.
 
@@ -430,7 +429,7 @@ font-feature-settings: swsh 0; /* low-level disable */
 
 ### ornaments(feature-value-name)
 
-![Image here.](/assets/ornaments.svg "The typeface Hoefler Text provides many graphic characters, including several fleurons.")
+![Image here.](/assets/illustrations/ornaments.svg "The typeface Hoefler Text provides many graphic characters, including several fleurons.")
 
 This replaces default glyphs with ornaments, if they are provided in the font.
 
@@ -448,7 +447,7 @@ font-feature-settings: ornm 0; /* low-level disable */
 
 ### annotation(feature-value-name)
 
-![Image here.](/assets/annotations.svg "The collection of Whitney Index fonts provides examples of annotation characters.")
+![Image here.](/assets/illustrations/annotations.svg "The collection of Whitney Index fonts provides examples of annotation characters.")
 
 Annotations are notational forms of glyphs (for example, glyphs placed in open or solid circles, squares, parentheses, diamonds, rounded boxes. etc.).
 

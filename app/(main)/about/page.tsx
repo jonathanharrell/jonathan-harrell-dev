@@ -10,7 +10,7 @@ const AboutPage = () => {
           <div className="flex items-start md:justify-end md:order-1">
             <figure className="relative max-w-[300px] md:max-w-[200px] lg:max-w-[400px] mx-auto">
               <div className="relative">
-                <Image src="/assets/jonathan-2023.jpg" alt="Image of Jonathan Harrell" width={440} height={440}
+                <Image src="/assets/images/jonathan-2023.jpg" alt="Image of Jonathan Harrell" width={440} height={440}
                        className="aspect-square max-w-full rounded-full"/>
                 <svg className="absolute top-0 left-0 w-full h-full translate-x-[-16px] translate-y-[-16px]">
                   <circle cx="50%" cy="50%" r="49%" fill="none" stroke="var(--accent)" strokeWidth="1"></circle>
@@ -19,7 +19,7 @@ const AboutPage = () => {
                   <circle cx="50%" cy="50%" r="49%" fill="none" stroke="var(--accent)" strokeWidth="1"></circle>
                 </svg>
               </div>
-              <img className="hidden lg:block absolute -bottom-14 left-28 w-12" src="/assets/curved-arrow.svg" alt=""/>
+              <img className="hidden lg:block absolute -bottom-14 left-28 w-12" src="/assets/icons/curved-arrow.svg" alt=""/>
               <figcaption className="hidden lg:block absolute -bottom-20 text-balance italic text-right">This is me on Loch Ness, right before drinking a whiskey hot
                 chocolate
               </figcaption>

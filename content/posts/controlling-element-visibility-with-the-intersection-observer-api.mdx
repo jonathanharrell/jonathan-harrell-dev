@@ -1,7 +1,6 @@
 ---
 title: Controlling Element Visibility with the Intersection Observer API
 date: 2017-10-18T20:17:00.000Z
-thumbnail: /assets/thumbnails/intersection-observer.svg
 description: >-
   Learn how to use the new IntersectionObserver API to control the visibility of
   elements relative to the viewport.
@@ -42,7 +41,7 @@ I have a simple grid of cards that is styled using CSS grid:
 
 I loop over each card and create an observer. The observer accepts a callback and an options object. Note that in options I am setting the `rootMargin` to a negative value. This insets the intersection point in from the viewport on all sides by 100px. So a card can be up to 100px in the viewport before the observer will read it as intersected.
 
-![](/assets/root-margin.svg)
+![](/assets/illustrations/root-margin.svg)
 
 I have also set the `threshold` option as an array with two numeric values. These are essentially the percentages of intersection at which the observer will respond. So, when a card is 50% in the viewport and when it is 100% in, the observer will fire the callback.
 
@@ -64,7 +63,7 @@ targets.forEach(target => observer.observe(target));
 
 The callback function gives me an array of entries—each entry is essentially an intersection change. I can check the `intersectionRatio` on each entry and apply some styling appropriately.
 
-![](/assets/thresholds.svg)
+![](/assets/illustrations/thresholds.svg)
 
 ```javascript
 const callback = entries => {

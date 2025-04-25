@@ -1,7 +1,6 @@
 ---
 title: What’s the Deal with Margin Collapse?
 date: 2018-03-11T20:17:00.000Z
-thumbnail: /assets/thumbnails/margin-collapse.svg
 description: >-
   Learn about margin collapse, a fundamental concept of CSS layout. See visual
   examples of when margin collapse happens, and when it doesn’t.
@@ -19,23 +18,23 @@ The key is understanding when two margins are adjoining. Here are the basic situ
 
 ### Sibling Elements
 
-![Image here.](/assets/sibling-elements.svg "An element with a bottom margin of 30px followed by a sibling element with a top margin of 30px will have their margins collapsed into a total margin of 30px between them.")
+![Image here.](/assets/illustrations/sibling-elements.svg "An element with a bottom margin of 30px followed by a sibling element with a top margin of 30px will have their margins collapsed into a total margin of 30px between them.")
 
 The bottom margin of an element collapses with the top margin of its proceeding sibling.
 
 ### Child Elements
 
-![Image here.](/assets/child-elements-top.svg "An element with a top margin of 30px and a first child element with a top margin of 30px will collapse so that the child element’s margin collapses with that of its parent.")
+![Image here.](/assets/illustrations/child-elements-top.svg "An element with a top margin of 30px and a first child element with a top margin of 30px will collapse so that the child element’s margin collapses with that of its parent.")
 
 The top margin of an element collapses with the top margin of its first child element.
 
-![Image here.](/assets/child-elements-bottom.svg "An element with a bottom margin of 30px and its last child element with a bottom margin of 30px will collapse so that the child element’s margin collapses with that of its parent.")
+![Image here.](/assets/illustrations/child-elements-bottom.svg "An element with a bottom margin of 30px and its last child element with a bottom margin of 30px will collapse so that the child element’s margin collapses with that of its parent.")
 
 The bottom margin of an element collapses with the bottom margin of its last child element.
 
 ### An Element’s Own Top and Bottom Margins
 
-![Image here.](/assets/own-margins.svg "An element that doesn’t take up space in the flow of the page will have its top and bottom margins collapse to 0.")
+![Image here.](/assets/illustrations/own-margins.svg "An element that doesn’t take up space in the flow of the page will have its top and bottom margins collapse to 0.")
 
 The top and bottom margins of an element collapse if the element has no height, padding, or border and all of its children elements’ margins collapse (height is represented here only for clarity).
 
@@ -43,11 +42,11 @@ The top and bottom margins of an element collapse if the element has no height, 
 
 There are several exceptions to the rules. This is where things can get hard to follow. Following are some visual examples of situations where margins would not collapse. For a more complete understanding, refer to the specs.
 
-![Image here.](/assets/parent-border-padding-top.svg "A parent element with a top border or top padding and a top margin of 30px will not collapse with its first child element’s top margin of 30px.")
+![Image here.](/assets/illustrations/parent-border-padding-top.svg "A parent element with a top border or top padding and a top margin of 30px will not collapse with its first child element’s top margin of 30px.")
 
 If the parent element has a top border or padding, the parent’s top margin does not collapse with the first child’s top margin.
 
-![Image here.](/assets/parent-border-padding-bottom.svg "A parent element with a bottom border or bottom padding and a bottom margin of 30px will not collapse with its last child element’s bottom margin of 30px.")
+![Image here.](/assets/illustrations/parent-border-padding-bottom.svg "A parent element with a bottom border or bottom padding and a bottom margin of 30px will not collapse with its last child element’s bottom margin of 30px.")
 
 If the parent element has a bottom border or padding, the parent’s bottom margin does not collapse with the last child’s bottom margin.
 

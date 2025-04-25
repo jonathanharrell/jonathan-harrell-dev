@@ -1,7 +1,6 @@
 ---
 title: Contextual Callouts with CSS Grid
 date: 2017-08-10T20:17:00.000Z
-thumbnail: /assets/thumbnails/contextual-callouts.svg
 description: >-
   Using the power of CSS grid, it is now easier than ever before to create
   callouts — small paragraphs that sit next to the primary text and offer
@@ -14,7 +13,7 @@ At long last, contextual callouts are possible with CSS grid. <dfn>Contextual ca
 
 I've been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring complex floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
 
-![This image shows a webpage layout structured using a CSS grid. Red gridlines divide the page into rows and columns. On the left, there's text that represents callouts, aligned to specific grid sections. In the center, text flows across multiple columns, while a grey rectangle in the middle represents an image placeholder. The overall design demonstrates how CSS grid can be used to position text and images within a structured grid system.](/assets/css-grid-layout-1.svg)
+![This image shows a webpage layout structured using a CSS grid. Red gridlines divide the page into rows and columns. On the left, there's text that represents callouts, aligned to specific grid sections. In the center, text flows across multiple columns, while a grey rectangle in the middle represents an image placeholder. The overall design demonstrates how CSS grid can be used to position text and images within a structured grid system.](/assets/illustrations/css-grid-layout-1.svg)
 
 ## The Grid Markup
 
@@ -68,7 +67,7 @@ Now, let's progressively enhance for browsers that *do* support CSS grid using a
 }
 ```
 
-![Image here](/assets/css-grid-layout-2.svg "This is a caption")
+![Image here](/assets/illustrations/css-grid-layout-2.svg "This is a caption")
 
 Now it’s time to start placing content on the grid:
 
@@ -130,6 +129,6 @@ I can easily style figures within the post so that they stretch across the full 
 }
 ```
 
-![Image here](/assets/css-grid-layout-3.svg "This is a caption")
+![Image here](/assets/illustrations/css-grid-layout-3.svg "This is a caption")
 
 The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content.

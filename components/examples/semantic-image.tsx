@@ -5,7 +5,7 @@ export const SemanticImageExample = () => {
         <article className="not-article-body group w-full overflow-hidden rounded-xl border border-neutral-150 dark:border-neutral-900 hover:border-accent hover:bg-accent transition-colors">
           <figure className="relative">
             <img
-              src="/assets/chair.jpg"
+              src="/assets/images/chair.jpg"
               alt=""
               className="object-cover group-hover:mix-blend-multiply group-hover:filter group-hover:blur transition-all"
             />
