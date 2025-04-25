@@ -28,20 +28,22 @@ const HomePage = async () => {
           <h2 className="text-3xl italic">Recent articles</h2>
           <Link href="/blog" className="text-accent hover:underline underline-offset-2">View all</Link>
         </header>
-        <hr className="mt-6 mb-12 border-neutral-800 border-dashed"/>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <hr role="presentation" className="mt-6 mb-12 border-neutral-800 border-dashed"/>
+        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentPosts.map((post, index) => (
-            <article key={index}>
-              <h2 className="text-xl mb-2">
-                <Link href={`/blog/${post.frontmatter.slug}`}
-                      className="hover:underline decoration-1 underline-offset-2">
-                  {post.frontmatter.title}
-                </Link>
-              </h2>
-              <p className="text-lg text-neutral-400">{post.frontmatter.description}</p>
-            </article>
+            <li key={index}>
+              <article>
+                <h3 className="text-xl mb-2">
+                  <Link href={`/blog/${post.frontmatter.slug}`}
+                        className="hover:underline decoration-1 underline-offset-2">
+                    {post.frontmatter.title}
+                  </Link>
+                </h3>
+                <p className="text-lg text-neutral-400">{post.frontmatter.description}</p>
+              </article>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </>
   );

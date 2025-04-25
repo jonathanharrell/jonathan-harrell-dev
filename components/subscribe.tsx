@@ -19,7 +19,7 @@ export const Subscribe = () => {
       <header className="flex flex-col gap-4">
         <h2 className="text-3xl italic">Subscribe</h2>
       </header>
-      <hr className="my-6 border-neutral-800 border-dashed"/>
+      <hr role="presentation" className="my-6 border-neutral-800 border-dashed"/>
       <div className="flex flex-col gap-6">
         <p className="text-lg">Want more front-end tips and tricks? Sign up for my newsletter to stay up-to-date.</p>
         <form action={formAction} className="flex items-center gap-6">

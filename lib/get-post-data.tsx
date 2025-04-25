@@ -8,14 +8,14 @@ import rehypeToc from "@jsdevtools/rehype-toc";
 import {HtmlElementNode} from "@jsdevtools/rehype-toc/lib/types";
 import {Children} from "react";
 import inlineSvg from "@/lib/inline-svg";
-import {SemanticImageExample} from "@/components/examples/semantic-image";
-import {IntersectionObserverExample} from "@/components/examples/intersection-observer";
-import {FormInputExample} from "@/components/examples/form-input";
+import {SemanticImageExample} from "@/examples/semantic-image";
+import {IntersectionObserverExample} from "@/examples/intersection-observer";
+import {FormInputExample} from "@/examples/form-input";
 import {
   Autocomplete as AutocompleteExample,
   TagListSearch as TagListSearchExample
-} from "@/components/examples/search-select";
-import {AccordionExample} from "@/components/examples/accordion-with-context";
+} from "@/examples/search-select";
+import {AccordionExample} from "@/examples/accordion-with-context";
 
 type PostFrontMatter = {
   slug: string;

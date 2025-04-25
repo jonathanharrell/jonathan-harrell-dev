@@ -46,7 +46,7 @@ const AboutPage = () => {
         <header>
           <h2 className="text-3xl italic">What I Use</h2>
         </header>
-        <hr className="my-6 border-neutral-800 border-dashed"/>
+        <hr role="presentation" className="my-6 border-neutral-800 border-dashed"/>
         <ul
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 [&_li_a]:underline hover:[&_li_a]:no-underline [&_li_a]:underline-offset-2 [&_li_a]:decoration-1 [&_li_a]:decoration-neutral-200">
           <li>

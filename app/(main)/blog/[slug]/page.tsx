@@ -1,5 +1,5 @@
 import {getPostData} from "@/lib/get-post-data";
-import "@/app/(main)/prism.css";
+import "@/styles/prism.css";
 import classNames from "classnames";
 import slugify from "slugify";
 
