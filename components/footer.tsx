@@ -4,10 +4,28 @@ const currentYear = new Date().getFullYear();
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col sm:flex-row items-center sm:justify-between gap-4 py-10 pb-12 text-center text-neutral-500">
-      <Link href="/">
-        &copy; 2017–{currentYear} Jonathan Harrell
-      </Link>
+    <footer className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 py-10 pb-12 text-center text-neutral-500">
+      <p className="text-left">
+        &copy; {currentYear} Jonathan Harrell<br/>
+        Typeset in{" "}
+        <a
+          href="https://edwardtufte.github.io/et-book/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:no-underline"
+        >
+          ET Book
+        </a>
+        , with{` `}
+        <a
+          href="https://www.kickstarter.com/projects/mrcraigward/fe2o3-glyphs-a-conceptual-ornamental-type-system"
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:no-underline"
+        >
+          Fe<sub>2</sub>O<sub>3</sub> glyphs
+        </a>. Arrow icon by <a href="https://thenounproject.com/creator/indygo/" target="_blank" rel="noreferrer" className="underline hover:no-underline">kiddo</a>.
+      </p>
       <ul className="flex gap-6">
         <li><a href="https://github.com/jonathanharrell/" target="_blank" rel="noreferrer" className="underline hover:no-underline underline-offset-2">Github</a></li>
         <li><a href="https://www.linkedin.com/in/jonathanharrell/" target="_blank" rel="noreferrer" className="underline hover:no-underline underline-offset-2">LinkedIn</a></li>

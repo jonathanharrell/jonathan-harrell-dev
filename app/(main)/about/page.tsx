@@ -5,18 +5,24 @@ const AboutPage = () => {
 
   return (
     <>
-      <section>
+      <section className="pb-10">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="flex items-start md:justify-end md:order-1">
             <figure className="relative max-w-[300px] md:max-w-[200px] lg:max-w-[400px] mx-auto">
-              <Image src="/assets/jonathan-2023.jpg" alt="Image of Jonathan Harrell" width={440} height={440}
-                     className="aspect-square max-w-full rounded-full"/>
-              <svg className="absolute top-0 left-0 w-full h-full translate-x-[-16px] translate-y-[-16px]">
-                <circle cx="50%" cy="50%" r="49%" fill="none" stroke="var(--accent)" strokeWidth="1"></circle>
-              </svg>
-              <svg className="absolute top-0 left-0 w-full h-full  translate-x-[16px] translate-y-[16px]">
-                <circle cx="50%" cy="50%" r="49%" fill="none" stroke="var(--accent)" strokeWidth="1"></circle>
-              </svg>
+              <div className="relative">
+                <Image src="/assets/jonathan-2023.jpg" alt="Image of Jonathan Harrell" width={440} height={440}
+                       className="aspect-square max-w-full rounded-full"/>
+                <svg className="absolute top-0 left-0 w-full h-full translate-x-[-16px] translate-y-[-16px]">
+                  <circle cx="50%" cy="50%" r="49%" fill="none" stroke="var(--accent)" strokeWidth="1"></circle>
+                </svg>
+                <svg className="absolute top-0 left-0 w-full h-full  translate-x-[16px] translate-y-[16px]">
+                  <circle cx="50%" cy="50%" r="49%" fill="none" stroke="var(--accent)" strokeWidth="1"></circle>
+                </svg>
+              </div>
+              <img className="hidden lg:block absolute -bottom-14 left-28 w-12" src="/assets/curved-arrow.svg" alt=""/>
+              <figcaption className="hidden lg:block absolute -bottom-20 text-balance italic text-right">This is me on Loch Ness, right before drinking a whiskey hot
+                chocolate
+              </figcaption>
             </figure>
           </div>
           <div className="flex flex-col gap-6 flex-1">
@@ -38,7 +44,7 @@ const AboutPage = () => {
       </section>
       <section id="uses" className="py-10">
         <header>
-          <h2 className="text-3xl italic">Uses</h2>
+          <h2 className="text-3xl italic">What I Use</h2>
         </header>
         <hr className="my-6 border-neutral-800 border-dashed"/>
         <ul
@@ -49,7 +55,7 @@ const AboutPage = () => {
           </li>
           <li>
             <p className="text-lg text-neutral-400">UI Design</p>
-            <p><a href="" target="_blank" rel="noreferrer" className="text-xl">Figma</a></p>
+            <p><a href="https://figma.com/" target="_blank" rel="noreferrer" className="text-xl">Figma</a></p>
           </li>
           <li>
             <p className="text-lg text-neutral-400">Long-form Writing</p>
@@ -65,7 +71,7 @@ const AboutPage = () => {
           </li>
           <li>
             <p className="text-lg text-neutral-400">Backpack</p>
-            <p><a href="https://www.ebags.com/product/ebags/tls-professional-slim-laptop-backpack/249582" target="_blank" rel="noreferrer" className="text-xl">eBags Pro Slim</a></p>
+            <p><a href="https://packhacker.com/travel-gear/ebags/pro-slim-laptop-backpack/" target="_blank" rel="noreferrer" className="text-xl">eBags Pro Slim</a></p>
           </li>
           <li>
             <p className="text-lg text-neutral-400">Headphones</p>
