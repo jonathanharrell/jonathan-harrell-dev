@@ -13,7 +13,7 @@ const nextConfig = {
       {
         source: "/resume",
         destination: "/about",
-        permanent: true,
+        permanent: false,
       },
       {
         source: "/tags",
