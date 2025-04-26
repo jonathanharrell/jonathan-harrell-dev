@@ -53,9 +53,11 @@ export const Subscribe = () => {
                 Email
               </label>
               <input
+                id="email"
                 name="email"
                 type="email"
                 placeholder="Enter your email address"
+                autoComplete="email"
                 required
                 className="w-[260px] max-w-full py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
                 ref={inputRef}
