@@ -128,7 +128,7 @@ const AboutPage = () => {
             <h1 className="text-4xl md:text-5xl">About Jonathan</h1>
             <p className="text-xl">
               I’m Jonathan Harrell, a designer and front-end engineer. I’ve been
-              developing websites and applications for the last six years for a
+              developing websites and applications for the last ten years for a
               wide range of clients, from SaaS startups to established software
               companies to global hedge funds. While I am now a full-time
               software engineer, I am also passionate about design, and have
