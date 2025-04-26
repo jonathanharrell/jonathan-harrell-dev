@@ -10,11 +10,11 @@
   input[type="text"],
   input[type="number"],
   input[type="email"] {
-    @apply form-input mt-1 block w-full border-neutral-700 bg-neutral-900 shadow-sm focus:border-neutral-600 focus:ring focus:ring-neutral-700 focus:ring-opacity-50 placeholder:text-neutral-500;
+    @apply form-input mt-1 block w-full border-neutral-700 bg-neutral-900 shadow-sm focus:border-neutral-600 focus:ring focus:ring-neutral-700 focus:ring-opacity-50 placeholder:text-neutral-400;
   }
 
   .help-text {
-    @apply text-sm text-neutral-500;
+    @apply text-sm text-neutral-400;
   }
 
   &:has(> #dynamic-label-input) {

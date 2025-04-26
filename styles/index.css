@@ -44,7 +44,7 @@
   }
 
   .toc-wrapper .toc {
-    @apply absolute text-neutral-500;
+    @apply absolute text-neutral-400;
   }
 
   .article-prose > table {
@@ -156,7 +156,7 @@
   }
 
   .article-prose blockquote cite {
-    @apply block mt-2 not-italic text-base text-neutral-500;
+    @apply block mt-2 not-italic text-base text-neutral-400;
   }
 
   .article-prose blockquote cite::before {
