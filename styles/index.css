@@ -132,11 +132,11 @@
   }
 
   .article-prose :where(img):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply w-full h-auto bg-neutral-50 dark:bg-neutral-950;
+    @apply w-full h-auto bg-neutral-950;
   }
 
   .article-prose :where(svg):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply w-full h-auto bg-neutral-50 dark:bg-neutral-950;
+    @apply w-full h-auto bg-neutral-950;
   }
 
   .article-prose :where(ol, ul):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {

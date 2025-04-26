@@ -81,7 +81,7 @@ export default function RootLayout({
               }}
             />
           </head>
-          <body className="min-h-screen dark:bg-neutral-900 font-etbook dark:text-neutral-300">
+          <body className="min-h-screen bg-neutral-900 font-etbook text-neutral-300">
             <div className="container overflow-hidden">
               <NextTopLoader color="#e6594c" />
               <SkipToContent />
