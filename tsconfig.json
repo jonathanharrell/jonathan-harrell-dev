@@ -6,6 +6,7 @@
       "esnext"
     ],
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -36,5 +37,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

@@ -1,9 +1,8 @@
-import imageSize from "image-size";
 import path from "path";
-import {Processor, unified} from "unified";
-import {Node, Parent} from "unist";
-import {visit} from "unist-util-visit";
-import {VFile} from "vfile";
+import { Processor, unified } from "unified";
+import { Node, Parent } from "unist";
+import { visit } from "unist-util-visit";
+import { VFile } from "vfile";
 import fs from "fs";
 import parse from "rehype-parse";
 
@@ -28,7 +27,9 @@ function isImageNode(node: Node): node is ImageNode {
 }
 
 function filterImageNode(node: ImageNode): boolean {
-  return node.properties.src.startsWith("/") && node.properties.src.endsWith(".svg");
+  return (
+    node.properties.src.startsWith("/") && node.properties.src.endsWith(".svg")
+  );
 }
 
 export interface SvgNode extends Node {
@@ -76,7 +77,7 @@ async function imgToSvg(node: ImageNode): Promise<void> {
         delete properties.src;
 
         // Overwrite the <img> node with the <svg> node
-        Object.assign(node, svgNode, {properties});
+        Object.assign(node, svgNode, { properties });
 
         resolve();
       }

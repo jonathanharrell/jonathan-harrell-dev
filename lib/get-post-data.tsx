@@ -1,21 +1,22 @@
 import path from "path";
 import fs from "fs";
-import {compileMDX, CompileMDXResult} from "next-mdx-remote/rsc";
+import { compileMDX, CompileMDXResult } from "next-mdx-remote/rsc";
 import rehypePrism from "@mapbox/rehype-prism";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeToc from "@jsdevtools/rehype-toc";
-import {HtmlElementNode} from "@jsdevtools/rehype-toc/lib/types";
-import {Children} from "react";
+import { HtmlElementNode } from "@jsdevtools/rehype-toc/lib/types";
+import { Children } from "react";
 import inlineSvg from "@/lib/inline-svg";
-import {SemanticImageExample} from "@/examples/semantic-image";
-import {IntersectionObserverExample} from "@/examples/intersection-observer";
-import {FormInputExample} from "@/examples/form-input";
+import { SemanticImageExample } from "@/examples/semantic-image";
+import { IntersectionObserverExample } from "@/examples/intersection-observer";
+import { FormInputExample } from "@/examples/form-input";
 import {
   Autocomplete as AutocompleteExample,
-  TagListSearch as TagListSearchExample
+  TagListSearch as TagListSearchExample,
 } from "@/examples/search-select";
-import {AccordionExample} from "@/examples/accordion-with-context";
+import { AccordionExample } from "@/examples/accordion-with-context";
+import { Pluggable } from "unified";
 
 type PostFrontMatter = {
   slug: string;
@@ -24,7 +25,7 @@ type PostFrontMatter = {
   tags: string[];
   description: string;
   thumbnail?: string;
-}
+};
 
 export type PostData = CompileMDXResult<PostFrontMatter>;
 
@@ -38,27 +39,31 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       parseFrontmatter: true,
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypePrism, rehypeSlug,
+        rehypePlugins: [
+          rehypePrism as Pluggable,
+          rehypeSlug,
           [
-            rehypeToc, {
-            headings: ["h2"],
-            customizeTOC(toc: HtmlElementNode) {
-              return {
-                type: "element",
-                tagName: "div",
-                properties: {className: "toc-wrapper"},
-                children: [
-                  toc
-                ]
-              };
-            }
-          }],
+            rehypeToc,
+            {
+              headings: ["h2"],
+              customizeTOC(toc: HtmlElementNode) {
+                toc.properties["aria-label"] = "Table of contents";
+
+                return {
+                  type: "element",
+                  tagName: "div",
+                  properties: { className: "toc-wrapper" },
+                  children: [toc],
+                };
+              },
+            },
+          ],
           inlineSvg,
-        ]
-      }
+        ],
+      },
     },
     components: {
-      p: ({children, ...props}) => {
+      p: ({ children, ...props }) => {
         try {
           if (Children.only(children)) {
             if (children.props.src || children.props.viewBox) {
@@ -71,25 +76,22 @@ export const getPostData = async (slug: string): Promise<PostData> => {
 
         return <p {...props}>{children}</p>;
       },
-      img: ({src, alt, title}) => {
+      img: ({ src, alt, title }) => {
         return (
           <figure>
-            <img src={src} alt={alt}/>
+            <img src={src} alt={alt} />
             {title && <figcaption>{title}</figcaption>}
           </figure>
         );
       },
-      svg: ({title, alt, ...props}) => {
+      svg: ({ title, alt, ...props }) => {
         return (
           <figure>
-            <svg {...props} aria-label={alt}/>
+            <svg {...props} aria-label={alt} />
             {title && <figcaption>{title}</figcaption>}
           </figure>
         );
       },
-      ArticleLink: () => (
-        <div>article link</div>
-      ),
       // TODO: make lazy import
       SemanticImageExample,
       IntersectionObserverExample,
@@ -97,6 +99,6 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       AutocompleteExample,
       TagListSearchExample,
       AccordionExample,
-    }
+    },
   });
 };
