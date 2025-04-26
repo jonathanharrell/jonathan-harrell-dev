@@ -96,7 +96,7 @@
   }
 
   .article-prose > figure figcaption:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply col-start-1 lg:col-start-9 col-end-13 italic text-lg;
+    @apply col-start-1 lg:col-start-9 col-end-13 italic text-lg max-lg:text-neutral-400;
   }
 
   .article-prose > *:has(+ h2):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {

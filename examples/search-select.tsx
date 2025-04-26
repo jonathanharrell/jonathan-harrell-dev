@@ -90,7 +90,7 @@ export class Autocomplete extends React.Component<
     return (
       <figure>
         <div>
-          <div className="not-article-prose p-8 sm:px-16 bg-neutral-950 font-sans text-base">
+          <div className="not-article-prose p-8 sm:py-12 sm:px-16 bg-neutral-950 font-sans text-base">
             <SearchSelect
               options={options}
               filterMethod={this.filterMethod}
@@ -147,7 +147,7 @@ export class TagListSearch extends React.Component<TagListSearchProps> {
     return (
       <figure>
         <div>
-          <div className="not-article-prose p-8 sm:px-16 bg-neutral-950 font-sans text-base">
+          <div className="not-article-prose p-8 sm:py-12 sm:px-16 bg-neutral-950 font-sans text-base">
             <SearchSelect
               options={options}
               filterMethod={this.filterMethod}

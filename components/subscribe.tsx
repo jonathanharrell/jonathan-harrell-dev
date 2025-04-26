@@ -47,8 +47,8 @@ export const Subscribe = () => {
           up-to-date.
         </p>
         <form action={formAction} className="flex flex-wrap items-center gap-6">
-          <div className="flex gap-2">
-            <div className="flex">
+          <div className="flex gap-2 max-sm:flex-1">
+            <div className="flex max-sm:flex-1">
               <label htmlFor="email" className="hidden">
                 Email
               </label>
@@ -59,7 +59,7 @@ export const Subscribe = () => {
                 placeholder="Enter your email address"
                 autoComplete="email"
                 required
-                className="flex-1 basis-[260px] py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
+                className="flex-1 sm:w-[300px] py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
                 ref={inputRef}
               />
             </div>

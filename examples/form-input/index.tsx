@@ -11,7 +11,7 @@ export const FormInputExample = ({ children }: FormInputProps) => {
       <div>
         <div
           id="form-input-example"
-          className="not-article-prose p-8 sm:px-16 bg-neutral-950 font-sans text-base"
+          className="not-article-prose p-8 sm:py-12 sm:px-16 bg-neutral-950 font-sans text-base"
         >
           {children}
         </div>
