@@ -5,7 +5,7 @@ import { Glyph } from "@/components/glyph";
 
 export const Header = () => {
   return (
-    <header className="flex items-center justify-between gap-12 relative z-10 mb-10 py-8">
+    <header className="flex items-center justify-between gap-12 relative z-10 mb-6 sm:mb-10 py-8">
       <Link href="/" className="flex items-center gap-2 text-lg">
         <Glyph />
         <span>Jonathan Harrell</span>

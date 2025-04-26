@@ -72,10 +72,10 @@ const jsonLd = {
 const AboutPage = () => {
   return (
     <>
-      <section className="pb-10 md:py-10">
+      <section className="pb-6 sm:pb-10 md:py-10">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="flex items-start md:justify-end md:order-1">
-            <figure className="relative max-w-[300px] md:max-w-[200px] lg:max-w-[400px] lg:-mt-[60px] mx-auto">
+            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[400px] lg:-mt-[60px] mx-auto">
               <div className="relative">
                 <Image
                   src="/assets/images/jonathan-2023.jpg"
@@ -150,7 +150,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section id="uses" className="py-10">
+      <section id="uses" className="py-6 sm:py-10">
         <header>
           <h2 id="uses-label" className="text-3xl italic">
             What I Use

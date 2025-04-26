@@ -4,8 +4,8 @@ const currentYear = new Date().getFullYear();
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 py-10 pb-12 text-center text-neutral-400">
-      <p className="text-left">
+    <footer className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-4 pt-8 pb-12 text-center text-neutral-400">
+      <p className="text-center lg:text-left">
         &copy; {currentYear} Jonathan Harrell
         <br role="presentation" />
         Typeset in{" "}
@@ -41,7 +41,10 @@ export const Footer = () => {
         <h2 id="social-label" className="sr-only">
           Social links
         </h2>
-        <ul className="flex gap-6" aria-labelledby="social-label">
+        <ul
+          className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6"
+          aria-labelledby="social-label"
+        >
           <li>
             <a
               href="https://blog.jonathan-harrell.com/"

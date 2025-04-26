@@ -33,7 +33,7 @@ export const Subscribe = () => {
   }, []);
 
   return (
-    <section id={subscribeId} className="py-10">
+    <section id={subscribeId} className="py-6 sm:py-10">
       <header className="flex flex-col gap-4">
         <h2 className="text-3xl italic">Subscribe</h2>
       </header>
@@ -46,9 +46,9 @@ export const Subscribe = () => {
           Want more front-end tips and tricks? Sign up for my newsletter to stay
           up-to-date.
         </p>
-        <form action={formAction} className="flex items-center gap-6">
+        <form action={formAction} className="flex flex-wrap items-center gap-6">
           <div className="flex gap-2">
-            <div>
+            <div className="flex">
               <label htmlFor="email" className="hidden">
                 Email
               </label>
@@ -59,7 +59,7 @@ export const Subscribe = () => {
                 placeholder="Enter your email address"
                 autoComplete="email"
                 required
-                className="w-[260px] max-w-full py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
+                className="flex-1 basis-[260px] py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
                 ref={inputRef}
               />
             </div>

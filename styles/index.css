@@ -72,7 +72,7 @@
   }
 
   .article-prose > aside:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply col-start-9 col-end-13 relative italic text-lg leading-snug;
+    @apply hidden lg:block col-start-9 col-end-13 relative italic text-lg leading-snug;
   }
 
   .article-prose > aside p:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -88,15 +88,15 @@
   }
 
   .article-prose > figure:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply grid grid-cols-subgrid col-start-1 col-end-13 mb-8;
+    @apply grid grid-cols-subgrid col-start-1 col-end-13 max-lg:gap-4 mb-8;
   }
 
   .article-prose > figure :where(img, svg, div):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply col-start-1 col-end-9;
+    @apply col-start-1 col-end-13 lg:col-end-9;
   }
 
   .article-prose > figure figcaption:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply col-start-9 col-end-13 italic text-lg;
+    @apply col-start-1 lg:col-start-9 col-end-13 italic text-lg;
   }
 
   .article-prose > *:has(+ h2):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {

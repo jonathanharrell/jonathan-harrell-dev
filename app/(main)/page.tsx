@@ -20,7 +20,7 @@ const HomePage = async () => {
 
   return (
     <>
-      <section className="relative py-10">
+      <section className="relative py-6 sm:py-10">
         <HeaderAnimation className="hidden lg:block absolute top-[-300px] right-[-50px] w-[700px] h-[700px]" />
         <div className="flex flex-col gap-6">
           <h1 className="max-w-[400px] text-4xl md:text-5xl">
@@ -41,7 +41,7 @@ const HomePage = async () => {
           </p>
         </div>
       </section>
-      <section className="py-10">
+      <section className="py-6 sm:py-10">
         <header className="flex items-baseline justify-between gap-4">
           <h2 className="text-3xl italic">Recent articles</h2>
           <Link
@@ -53,7 +53,7 @@ const HomePage = async () => {
         </header>
         <hr
           role="presentation"
-          className="mt-6 mb-12 border-neutral-800 border-dashed"
+          className="mt-6 mb-8 sm:mb-12 border-neutral-800 border-dashed"
         />
         <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentPosts.map((post, index) => (

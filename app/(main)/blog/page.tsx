@@ -31,10 +31,10 @@ const BlogPage = async () => {
 
   return (
     <>
-      <header className="py-10">
+      <header className="py-6 sm:py-10">
         <h1 className="text-4xl md:text-5xl">Articles</h1>
       </header>
-      <section className="py-10">
+      <section className="py-6 sm:py-10">
         <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <li key={index}>

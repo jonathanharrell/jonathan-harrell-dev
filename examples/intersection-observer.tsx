@@ -43,7 +43,7 @@ export const IntersectionObserverExample = () => {
   return (
     <figure>
       <div>
-        <div className="example-wrapper not-article-prose max-h-[340px] md:max-h-[400px] overflow-y-auto p-12 sm:p-16 bg-neutral-950">
+        <div className="example-wrapper not-article-prose max-h-[340px] md:max-h-[400px] overflow-y-auto p-8 sm:p-16 bg-neutral-950">
           <section className="grid grid-cols-4 gap-6">
             {Array.from({ length: 32 }).map((_, index) => (
               <div
