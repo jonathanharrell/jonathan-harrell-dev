@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /fonts/*
+Disallow: /seo/*
+Sitemap: https://www.jonathan-harrell.com/sitemap.xml

@@ -1,10 +1,12 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { CheckCircle, XCircle } from "react-feather";
 import { subscribe } from "@/actions";
 import classNames from "classnames";
+
+const subscribeId = "subscribe";
 
 const initialState = {
   status: null,
@@ -14,8 +16,24 @@ export const Subscribe = () => {
   const [state, formAction] = useActionState(subscribe, initialState);
   const { pending } = useFormStatus();
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const onHashChanged = () => {
+      if (window.location.hash === `#${subscribeId}`) {
+        inputRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("hashchange", onHashChanged);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChanged);
+    };
+  }, []);
+
   return (
-    <section id="subscribe" className="py-10">
+    <section id={subscribeId} className="py-10">
       <header className="flex flex-col gap-4">
         <h2 className="text-3xl italic">Subscribe</h2>
       </header>
@@ -40,6 +58,7 @@ export const Subscribe = () => {
                 placeholder="Enter your email address"
                 required
                 className="w-[260px] max-w-full py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-500"
+                ref={inputRef}
               />
             </div>
             {pending ? "pending" : ""}

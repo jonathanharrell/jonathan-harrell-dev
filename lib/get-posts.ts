@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
-import {POSTS_PER_PAGE} from "@/constants";
-import {getPostData, PostData} from "@/lib/get-post-data";
+import { POSTS_PER_PAGE } from "@/constants";
+import { getPostData, PostData } from "@/lib/get-post-data";
 
 interface PostPagination {
   currentPage: number;
@@ -13,7 +13,9 @@ interface Posts {
   pagination: PostPagination;
 }
 
-export const getPosts = async ({page}: { page?: number } = {}): Promise<Posts> => {
+export const getPosts = async ({
+  page,
+}: { page?: number } = {}): Promise<Posts> => {
   const directoryPath = path.resolve(".", "content/posts");
   const files = fs.readdirSync(directoryPath);
 
@@ -24,8 +26,8 @@ export const getPosts = async ({page}: { page?: number } = {}): Promise<Posts> =
       ...mdx,
       frontmatter: {
         ...mdx.frontmatter,
-        slug: file.replace(".mdx", "")
-      }
+        slug: file.replace(".mdx", ""),
+      },
     };
   });
 
@@ -40,7 +42,10 @@ export const getPosts = async ({page}: { page?: number } = {}): Promise<Posts> =
   });
 
   const skip = page ? page * POSTS_PER_PAGE : 0;
-  const paginatedPosts = page !== undefined ? descendingPosts.slice(skip, skip + POSTS_PER_PAGE) : descendingPosts;
+  const paginatedPosts =
+    page !== undefined
+      ? descendingPosts.slice(skip, skip + POSTS_PER_PAGE)
+      : descendingPosts;
   const pagination = {
     currentPage: page || 0,
     totalPages: Math.ceil(files.length / POSTS_PER_PAGE),

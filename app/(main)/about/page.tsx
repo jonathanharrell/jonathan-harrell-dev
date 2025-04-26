@@ -1,4 +1,7 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+import React from "react";
+import { SITE_URL } from "@/constants";
 
 interface Use {
   url: string;
@@ -43,6 +46,28 @@ const usesData: Use[] = [
     label: "Airpods Pro",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "About | Jonathan Harrell",
+  description:
+    "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML and CSS. Learn more.",
+  openGraph: {
+    images: ["/assets/seo/og.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "WebPage",
+  name: "About | Jonathan Harrell",
+  description:
+    "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML and CSS. Learn more.",
+  url: `${SITE_URL}about`,
+  author: {
+    "@type": "Person",
+    name: "Jonathan Harrell",
+  },
+};
 
 const AboutPage = () => {
   return (
@@ -156,6 +181,10 @@ const AboutPage = () => {
           ))}
         </ul>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 };
