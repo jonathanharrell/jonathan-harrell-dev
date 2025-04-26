@@ -132,7 +132,8 @@ const AboutPage = () => {
               wide range of clients, from SaaS startups to established software
               companies to global hedge funds. While I am now a full-time
               software engineer, I am also passionate about design, and have
-              worked as a UI/UX designer in an agency context.
+              worked as a UI/UX designer in an agency context. I am currently
+              based in Brooklyn, New York.
             </p>
             <p className="text-xl">
               I have another blog, called{" "}
@@ -144,8 +145,7 @@ const AboutPage = () => {
                 Human in the Loop
               </a>
               , which I treat as a digital commonplace book—a repository for
-              poems, photos, art, and more. I am currently based in Brooklyn,
-              New York.
+              poems, photos, art, and more. Check it out if you’re curious!
             </p>
           </div>
         </div>
