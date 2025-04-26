@@ -13,7 +13,7 @@ At long last, contextual callouts are possible with CSS grid. <dfn>Contextual ca
 
 I've been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring complex floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
 
-![This image shows a webpage layout structured using a CSS grid. Red gridlines divide the page into rows and columns. On the left, there's text that represents callouts, aligned to specific grid sections. In the center, text flows across multiple columns, while a grey rectangle in the middle represents an image placeholder. The overall design demonstrates how CSS grid can be used to position text and images within a structured grid system.](/assets/illustrations/css-grid-layout-1.svg)
+![CSS grid layout showing white horizontal content blocks arranged in a 13-column structure. Two content groupings are present—one near the top and one near the bottom—each spanning columns 3 to 9. A nested grid figure with a centered dark gray block spans across the middle columns.](/assets/illustrations/css-grid-layout-1.svg)
 
 ## The Grid Markup
 
@@ -67,7 +67,7 @@ Now, let's progressively enhance for browsers that *do* support CSS grid using a
 }
 ```
 
-![Image here](/assets/illustrations/css-grid-layout-2.svg "This is a caption")
+![Expanded CSS grid layout with 13 columns and two vertical groupings of white horizontal content lines. The upper group spans columns 3 to 9, and the lower group begins at column 3 and spans to column 9 as well. A dark gray rectangular block centered between columns 6 and 9 indicates a figure or figcaption.](/assets/illustrations/css-grid-layout-2.svg "This is a caption")
 
 Now it’s time to start placing content on the grid:
 
@@ -129,6 +129,6 @@ I can easily style figures within the post so that they stretch across the full 
 }
 ```
 
-![Image here](/assets/illustrations/css-grid-layout-3.svg "This is a caption")
+![Grid layout with 13 columns and white content blocks aligned between columns 3 to 9. The top section contains staggered horizontal bars, suggesting header and paragraph placement. A gray area spans the lower portion, representing a full-width figure.](/assets/illustrations/css-grid-layout-3.svg "This is a caption")
 
 The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content.

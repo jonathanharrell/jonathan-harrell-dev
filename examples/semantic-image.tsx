@@ -6,7 +6,7 @@ export const SemanticImageExample = () => {
           <figure className="relative">
             <img
               src="/assets/images/chair.jpg"
-              alt=""
+              alt="Image of a chair"
               className="object-cover group-hover:mix-blend-multiply group-hover:filter group-hover:blur transition-all"
             />
             <figcaption className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
