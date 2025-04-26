@@ -8,6 +8,25 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/resume",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/tags",
+        destination: "/blog",
+        permanent: false,
+      },
+      {
+        source: "/tags/:tag",
+        destination: "/blog",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 const withMdx = NextMdx({
