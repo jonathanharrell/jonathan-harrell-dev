@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, JSX } from "react";
 
 interface SearchSelectProps {
   filterMethod: (options: string[], value: string) => string[];
