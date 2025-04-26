@@ -28,7 +28,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
     dateCreated: post.frontmatter.date,
     url: `${SITE_URL}blog/${slug}`,
     "inLanguage ": "en-US",
-    image: `${SITE_URL}assets/api/og.png`,
+    image: `${SITE_URL}assets/seo/og.png`,
     keywords: post.frontmatter.tags.join(","),
   };
 
@@ -103,7 +103,7 @@ export const generateMetadata = async (props: BlogPostPageProps) => {
     creator: "Jonathan Harrell",
     publisher: "Jonathan Harrell",
     openGraph: {
-      images: ["/assets/api/og.png"],
+      images: ["/assets/seo/og.png"],
     },
   };
 };
