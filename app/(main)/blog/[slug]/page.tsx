@@ -39,7 +39,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
             </>
           )}
         </div>
-        <h1 className="max-w-[32ch] mt-2 text-5xl text-balance">
+        <h1 className="max-w-[32ch] mt-2 text-4xl md:text-5xl text-balance">
           {post.frontmatter.title}
         </h1>
       </header>

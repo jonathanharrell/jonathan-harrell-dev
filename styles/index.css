@@ -100,7 +100,7 @@
   }
 
   .article-prose > *:has(+ h2):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply mb-12;
+    @apply mb-16;
   }
 
   .article-prose > *:has(+ aside + h2):not(:where([class~=not-article-prose] *)) {
