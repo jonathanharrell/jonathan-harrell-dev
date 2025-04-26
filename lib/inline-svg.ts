@@ -71,6 +71,7 @@ async function imgToSvg(node: ImageNode): Promise<void> {
         let properties = {
           ...svgNode.properties,
           ...node.properties,
+          role: "img",
         };
 
         // @ts-expect-error - Don't copy the "src" property
