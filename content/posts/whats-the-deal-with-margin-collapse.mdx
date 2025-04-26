@@ -8,7 +8,7 @@ tags:
   - css
   - layout
 ---
-The concept of _margin collapse_ is foundational to an understanding of the box model in CSS, but it is actually quite complex and potentially confusing. The spec describing how it works is thorough but difficult to understand. This article is an attempt to give some visual examples to the concepts from the specs.
+The concept of _margin collapse_ is foundational to an understanding of the box model in CSS, but it is actually quite complex and potentially confusing. [The spec](https://www.w3.org/TR/CSS2/box.html#collapsing-margins) describing how it works is thorough but difficult to understand. This article is an attempt to give some visual examples to the concepts from the specs.
 
 The basic idea is that if two margins are adjoining, they will collapse into one margin, which will have the greater of the two margin values (it will be the more negative of the margins if both margins are negative).
 
@@ -40,7 +40,7 @@ The top and bottom margins of an element collapse if the element has no height, 
 
 ## When does margin collapse not occur?
 
-There are several exceptions to the rules. This is where things can get hard to follow. Following are some visual examples of situations where margins would not collapse. For a more complete understanding, refer to the specs.
+There are several exceptions to these rules. This is where things can get hard to follow. Following are some visual examples of situations where margins would not collapse. For a more complete understanding, refer to [the spec](https://www.w3.org/TR/CSS2/box.html#collapsing-margins).
 
 ![Left side shows a parent with padding above a child element. Both have 30px top margins, which do not collapse due to the padding. Right side has the same margins but no padding, so margins collapse.](/assets/illustrations/parent-border-padding-top.svg "A parent element with a top border or top padding and a top margin of 30px will not collapse with its first child element’s top margin of 30px.")
 

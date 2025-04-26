@@ -123,10 +123,6 @@ export class Autocomplete extends React.Component<
             />
           </div>
         </div>
-        <figcaption className="!col-start-1 !col-end-9 mt-4">
-          Using render props in React or scoped slots in Vue, we reuse the same
-          basic search/select functionality to create two different components.
-        </figcaption>
       </figure>
     );
   }

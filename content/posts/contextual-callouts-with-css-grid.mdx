@@ -43,10 +43,6 @@ The `article` element contains the header and all post content as direct childre
 
 Next, we’ll apply some basic styles for browsers that don’t yet support CSS grid. We’ll set a max-width of 70 characters using the `ch` unit:
 
-<aside>
-  <p>This is a special aside positioning thing that goes onto multiple lines</p>
-</aside>
-
 ```css
 .blog-post {
   max-width: 70ch;
@@ -55,7 +51,7 @@ Next, we’ll apply some basic styles for browsers that don’t yet support CSS 
 
 ## Using CSS Grid
 
-Now, let's progressively enhance for browsers that *do* support CSS grid using a `@supports` query:
+Now, let’s progressively enhance for browsers that *do* support CSS grid using a `@supports` query:
 
 ```css
 @supports(display: grid) {
@@ -67,7 +63,7 @@ Now, let's progressively enhance for browsers that *do* support CSS grid using a
 }
 ```
 
-![Expanded CSS grid layout with 13 columns and two vertical groupings of white horizontal content lines. The upper group spans columns 3 to 9, and the lower group begins at column 3 and spans to column 9 as well. A dark gray rectangular block centered between columns 6 and 9 indicates a figure or figcaption.](/assets/illustrations/css-grid-layout-2.svg "This is a caption")
+![Expanded CSS grid layout with 13 columns and two vertical groupings of white horizontal content lines. The upper group spans columns 3 to 9, and the lower group begins at column 3 and spans to column 9 as well. A dark gray rectangular block centered between columns 6 and 9 indicates a figure or figcaption.](/assets/illustrations/css-grid-layout-2.svg)
 
 Now it’s time to start placing content on the grid:
 
@@ -99,10 +95,10 @@ The post header and content now sit next to each other in a row. The callouts ar
 }
 ```
 
-The asides are now pulled to the left of the paragraph immediately following them, looking exactly like callouts. The paragraphs within each callout have absolute positioning applied so that they don't force the proceeding paragraph down if they are taller than the adjacent content.
+The asides are now pulled to the left of the paragraph immediately following them, looking exactly like callouts. The paragraphs within each callout have absolute positioning applied so that they don’t force the proceeding paragraph down if they are taller than the adjacent content.
 
 <aside className="warning">
-  Warning about absolute positioning
+  Since setting up asides requires using absolute positioning, you need to be careful that one aside does not overlap the proceeding one.
 </aside>
 
 ## Bonus: Full-Width Figures
@@ -129,6 +125,6 @@ I can easily style figures within the post so that they stretch across the full 
 }
 ```
 
-![Grid layout with 13 columns and white content blocks aligned between columns 3 to 9. The top section contains staggered horizontal bars, suggesting header and paragraph placement. A gray area spans the lower portion, representing a full-width figure.](/assets/illustrations/css-grid-layout-3.svg "This is a caption")
+![Grid layout with 13 columns and white content blocks aligned between columns 3 to 9. The top section contains staggered horizontal bars, suggesting header and paragraph placement. A gray area spans the lower portion, representing a full-width figure.](/assets/illustrations/css-grid-layout-3.svg)
 
 The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content.

@@ -51,7 +51,9 @@ const P = styled.p`
 `;
 
 // set up detection of system dark mode
-const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const darkModeQuery = window.matchMedia(
+  "(prefers-color-scheme: dark)"
+);
 
 const App = () => {
   // perform an initial detection of system theme
@@ -175,13 +177,17 @@ const App = () => {
   // set up a listener to respond to future changes of system theme
   useEffect(() => {
     darkModeQuery.addListener((event) => {
-      setActiveTheme(event.matches ? "dark" : "light");
+      setActiveTheme(
+        event.matches ? "dark" : "light"
+      );
     });
   });
 
   // set up a theme toggle method that will update our state when a user clicks the button
   const toggleTheme = () => {
-    setActiveTheme(activeTheme === "dark" ? "light" : "dark")
+    setActiveTheme(
+      activeTheme === "dark" ? "light" : "dark"
+    )
   }
 
   // pass the correct theme object to the provider
@@ -261,7 +267,9 @@ const P = styled.p`
 `;
 
 // set up detection of system dark mode
-const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const darkModeQuery = window.matchMedia(
+  "(prefers-color-scheme: dark)"
+);
 
 // find saved theme
 const savedTheme = localStorage.getItem("theme");
@@ -270,25 +278,35 @@ const App = () => {
   // set active theme to saved theme, if there is one
   // otherwise, set to system theme
   const [activeTheme, setActiveTheme] = useState(
-    savedTheme ? savedTheme : darkModeQuery.matches ? "dark" : "light"
+    savedTheme
+      ? savedTheme
+      : darkModeQuery.matches ? "dark" : "light"
   );
 
   // set up a listener to respond to future changes of system theme
   useEffect(() => {
     darkModeQuery.addListener((event) => {
-      setActiveTheme(event.matches ? "dark" : "light");
+      setActiveTheme(
+        event.matches ? "dark" : "light"
+      );
     });
   }, []);
 
   // every time the active theme changes, set the theme data attribute
   useEffect(() => {
-    document.body.setAttribute("data-theme", activeTheme);
+    document.body.setAttribute(
+      "data-theme",
+      activeTheme
+    );
   }, [activeTheme]);
 
   // set up a theme toggle method that will update our state when a user clicks the button
   // and save the new theme in localStorage
   const toggleTheme = () => {
-    const newTheme = activeTheme === "light" ? "dark" : "light";
+    const newTheme = activeTheme === "light"
+      ? "dark"
+      : "light";
+
     setActiveTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
@@ -310,7 +328,7 @@ const App = () => {
 };
 ```
 
-Now instead of using a media query to override CSS variable values, we use a data attribute set on the document body. This allows theme overrides to work.
+Now, instead of using a media query to override CSS variable values, we use a data attribute set on the document body. This allows theme overrides to work.
 
 Note that we support responding to system theme changes without JavaScript by using a `no-js` class and falling back to a media query. Of course, this won’t support custom overrides of the theme.
 
@@ -329,7 +347,12 @@ In `head`:
   function setTheme(newTheme) {
     window.__theme = newTheme;
     preferredTheme = newTheme;
-    document.body.setAttribute("data-theme", newTheme);
+
+    document.body.setAttribute(
+      "data-theme",
+      newTheme
+    );
+
     window.dispatchEvent(
       new CustomEvent("themeChange", {
         detail: newTheme
@@ -348,15 +371,22 @@ In `head`:
   };
 
   // set up detection of system dark mode
-  var darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  var darkModeQuery = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  );
 
   // set up a listener to respond to future changes of system theme
   darkModeQuery.addListener(function (event) {
-    window.__setPreferredTheme(event.matches ? "dark" : "light");
+    window.__setPreferredTheme(
+      event.matches ? "dark" : "light"
+    );
   });
 
   // set active theme to saved theme, if there is one, or the system theme
-  setTheme(preferredTheme || (darkModeQuery.matches ? "dark" : "light"));
+  setTheme(
+    preferredTheme ||
+    (darkModeQuery.matches ? "dark" : "light")
+  );
 })();
 ```
 

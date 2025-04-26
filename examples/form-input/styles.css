@@ -110,7 +110,7 @@
   }
 
   .checkbox input[type="checkbox"]:checked + label::after {
-    @apply block absolute top-[9px] left-1.5 w-1 h-2 border-white rotate-45 content-[""];
+    @apply block absolute top-[8px] left-1.5 w-1 h-2 border-white rotate-45 content-[""];
 
     border-width: 0 2px 2px 0;
   }

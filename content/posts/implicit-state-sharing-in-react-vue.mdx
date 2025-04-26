@@ -9,7 +9,7 @@ tags:
   - react
   - vue
 ---
-Imagine you are creating an accordion component that you want to distribute publicly through an npm package. You would like the user of this accordion to be able to use the component in a very flexible way, by composing multiple components together. React Context and provide/inject in Vue provide a solution.
+Imagine you are creating an accordion component that you want to distribute publicly through an npm package. You would like the users of this accordion to be able to use the component in a very flexible way, by composing multiple components together. React Context and provide/inject in Vue provide a solution.
 
 <AccordionExample />
 
@@ -32,7 +32,7 @@ Imagine this is your ideal API:
 
 Each `AccordionItem` will need to maintain some state — whether it is expanded or not. But `AccordionHeader` will also need access to this value, so that it can show the appropriate toggle button. And `AccordionPanel` may also need to access this, since it is the thing being expanded and collapsed.
 
-One possibility is exposing the expanded value to your user through render props and making sure your documentation lets them know they need to pass that down to the header and panel components.
+One possibility is exposing the expanded value to your user through render props and making sure your documentation lets them know that they need to pass that down to the header and panel components.
 
 ```jsx
 <Accordion>
@@ -55,7 +55,7 @@ What we really need is a way to _implicitly_ pass down props.
 
 ## Using React Context
 
-There is a better solution for cases like this — React Context. We can use the Context API to create some state and provide it where needed behind the scenes, removing this concern from our public-facing API.
+There is a better solution for cases like this: React Context. We can use the Context API to create some state and provide it where needed behind the scenes, removing this concern from our public-facing API.
 
 First, we will create a context and define the _shape_ of that context. We will start with an `expanded` value and a `toggleExpansion` method. We are defining this context as specifically relevant to our accordion item:
 
@@ -74,7 +74,9 @@ class AccordionItem extends React.Component {
     super(props)
 
     this.toggleExpansion = () => {
-      this.setState({ expanded: !this.state.expanded });
+      this.setState({
+        expanded: !this.state.expanded
+      });
     }
 
     this.state = {
@@ -192,7 +194,7 @@ Now, we will inject this state into our child components. We will simply use the
 Vue.component('accordion-header', {
   inject: ['accordionItemState'],
 
-  template: `
+  template: html`
     <h2 class="accordion-header">
       <button @click="accordionItemState.expanded = !accordionItemState.expanded">
         {{ accordionItemState.expanded ? '→' : '→' }}
@@ -209,7 +211,7 @@ Once we include the property name in `inject`, we have access to those values in
 Vue.component('accordion-panel', {
   inject: ['accordionItemState'],
 
-  template: `
+  template: html`
     <div
       class="accordion-panel"
       :class="{ expanded: accordionItemState.expanded }"
@@ -222,7 +224,7 @@ Vue.component('accordion-panel', {
 
 ## Use with Caution
 
-It’s worth noting that you should only implicitly pass down props when it really makes sense. Doing this too much can obfuscate the real behavior of your components and cause confusion for other developers that may be working on your project.
+It’s worth noting that you should only implicitly pass down props when it really makes sense. Doing this too much can obfuscate the real behavior of your components and cause confusion for other developers who may be working on your project.
 
 A component library that is packaged up and distributed for use in other applications is a perfect use case for this, since the internal props of the components really don’t need to be exposed to the end user.
 

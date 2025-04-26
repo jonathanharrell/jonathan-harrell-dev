@@ -30,8 +30,9 @@ class Autocomplete extends React.Component {
   searchList(event) {
     const results = this.props.options
       .filter(option =>
-        option.toLowerCase()
-          .includes(event.target.value.toLowerCase())
+        option.toLowerCase().includes(
+          event.target.value.toLowerCase()
+        )
       )
     this.setState({ results })
   }
@@ -88,7 +89,10 @@ class SearchSelect extends React.Component {
 
   searchList(event) {
     const results = this.props
-      .filterMethod(this.props.options, event.target.value)
+      .filterMethod(
+        this.props.options,
+        event.target.value
+      )
     this.setState({ results })
   }
 
@@ -117,8 +121,9 @@ class Autocomplete extends React.Component {
 
   filterMethod (options, query) {
     return options.filter(option =>
-      option.toLowerCase()
-        .includes(query.toLowerCase())
+      option.toLowerCase().includes(
+        query.toLowerCase()
+      )
     )
   }
 
@@ -167,8 +172,9 @@ class TagListSearch extends React.Component {
 
   filterMethod(options, query) {
     return options.filter(option =>
-      option.toLowerCase()
-        .includes(query.toLowerCase())
+      option.toLowerCase().includes(
+        query.toLowerCase()
+      )
     )
   }
 
@@ -218,7 +224,10 @@ Vue.component('search-select', {
 
   computed: {
     results() {
-      return this.filterMethod(this.options, this.query)
+      return this.filterMethod(
+        this.options,
+        this.query
+      )
     }
   },
 
@@ -254,8 +263,9 @@ Vue.component('autocomplete', {
   methods: {
     filterMethod(options, query) {
       return options.filter(option =>
-        option.toLowerCase()
-          .includes(query.toLowerCase())
+        option.toLowerCase().includes(
+          query.toLowerCase()
+        )
       )
     },
 
@@ -268,7 +278,7 @@ Vue.component('autocomplete', {
     }
   },
 
-  template: `
+  template: html`
     <search-select
       :options="options"
       :filterMethod="filterMethod"
