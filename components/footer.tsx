@@ -81,15 +81,15 @@ export const Footer = () => {
               Instagram
             </a>
           </li>
-          <li>
-            <a
-              href="/rss.xml"
-              target="_blank"
-              className="underline hover:no-underline underline-offset-2"
-            >
-              RSS
-            </a>
-          </li>
+          {/*<li>*/}
+          {/*  <a*/}
+          {/*    href="/rss.xml"*/}
+          {/*    target="_blank"*/}
+          {/*    className="underline hover:no-underline underline-offset-2"*/}
+          {/*  >*/}
+          {/*    RSS*/}
+          {/*  </a>*/}
+          {/*</li>*/}
         </ul>
       </section>
     </footer>
