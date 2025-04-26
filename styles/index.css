@@ -108,7 +108,7 @@
   }
 
   .article-prose h2:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply mb-4 text-3xl italic;
+    @apply scroll-mt-4 mb-4 text-3xl italic;
   }
 
   .article-prose h3:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
