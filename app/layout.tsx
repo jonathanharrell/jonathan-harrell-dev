@@ -76,8 +76,8 @@ export default function RootLayout({
           {/*  }}*/}
           {/*/>*/}
         </head>
-        <body className="min-h-screen bg-neutral-900 font-etbook text-neutral-300">
-          <div className="container overflow-hidden">
+        <body className="flex flex-col min-h-dvh bg-neutral-900 font-etbook text-neutral-300">
+          <div className="flex flex-col flex-1 container overflow-hidden">
             <NextTopLoader color="#e6594c" />
             <SkipToContent />
             <Header />
