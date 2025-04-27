@@ -59,7 +59,7 @@ export const Subscribe = () => {
                 placeholder="Enter your email address"
                 autoComplete="email"
                 required
-                className="flex-1 sm:w-[300px] rounded-none py-1.5 px-3 border border-transparent bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
+                className="flex-1 sm:w-[300px] rounded-none py-1.5 px-3 border border-neutral-800 bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
                 ref={inputRef}
               />
             </div>
