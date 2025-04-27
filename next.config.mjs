@@ -1,5 +1,6 @@
 import NextMdx from "@next/mdx";
 import rehypePrism from "@mapbox/rehype-prism";
+import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
@@ -35,4 +36,14 @@ const withMdx = NextMdx({
   },
 });
 
-export default withMdx(nextConfig);
+export default withSentryConfig(withMdx(nextConfig), {
+  org: "jonathan-harrell",
+  project: "jonathanharrell-dev",
+  silent: !process.env.CI,
+  disableLogger: true,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  widenClientFileUpload: true,
+  reactComponentAnnotation: {
+    enabled: true,
+  },
+});

@@ -16,6 +16,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.1",
     "@next/third-parties": "^15.3.1",
+    "@sentry/nextjs": "^9.14.0",
     "@types/mdx": "^2.0.13",
     "classnames": "^2.5.1",
     "gsap": "^3.2.6",
