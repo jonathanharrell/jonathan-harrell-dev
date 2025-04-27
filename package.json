@@ -19,6 +19,7 @@
     "@sentry/nextjs": "^9.14.0",
     "@types/mdx": "^2.0.13",
     "classnames": "^2.5.1",
+    "feed": "^4.2.2",
     "gsap": "^3.2.6",
     "image-size": "^1.1.1",
     "next": "^15.3.1",

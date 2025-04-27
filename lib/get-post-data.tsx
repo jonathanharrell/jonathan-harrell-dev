@@ -18,7 +18,7 @@ import {
 import { AccordionExample } from "@/examples/accordion-with-context";
 import { Pluggable } from "unified";
 
-type PostFrontMatter = {
+export type PostFrontMatter = {
   slug: string;
   title: string;
   date: string;
