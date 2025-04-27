@@ -84,7 +84,7 @@ export const Footer = () => {
           </li>
           <li>
             <a
-              href="/rss.xml"
+              href="/rss"
               target="_blank"
               className="underline hover:no-underline underline-offset-2"
             >

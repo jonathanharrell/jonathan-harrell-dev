@@ -26,6 +26,11 @@ const nextConfig = {
         destination: "/blog",
         permanent: false,
       },
+      {
+        source: "/rss.xml",
+        destination: "/rss",
+        permanent: true,
+      },
     ];
   },
 };
