@@ -1,7 +1,8 @@
-import { PostData, PostFrontMatter } from "@/lib/get-post-data";
 import path from "path";
 import fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
+import { PostData, PostFrontMatter } from "@/lib/get-post-data";
 import inlineSvg from "@/lib/inline-svg";
 import { SITE_URL } from "@/constants";
 
@@ -18,6 +19,7 @@ export const convertPostDataForRss = async (
     options: {
       parseFrontmatter: true,
       mdxOptions: {
+        remarkPlugins: [remarkGfm],
         rehypePlugins: [inlineSvg],
       },
     },
