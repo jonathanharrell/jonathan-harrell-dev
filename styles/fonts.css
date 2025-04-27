@@ -21,3 +21,9 @@
   src: url("/fonts/et-book-roman-line-figures.woff") format("woff");
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Palatino";
+  src: local("Palatino");
+  size-adjust: 90%; /* Adjust the size to match the primary font */
+}
