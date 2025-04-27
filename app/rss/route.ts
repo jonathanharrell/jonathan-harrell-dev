@@ -1,26 +1,8 @@
 import { Feed } from "feed";
 import { SITE_URL } from "@/constants";
-import path from "path";
-import fs from "fs";
-import { compileMDX } from "next-mdx-remote/rsc";
-import { PostData, PostFrontMatter } from "@/lib/get-post-data";
+import { PostData } from "@/lib/get-post-data";
 import { getPostSlugs } from "@/lib/get-post-slugs";
-import { SemanticImageExample } from "@/examples/semantic-image";
-import { IntersectionObserverExample } from "@/examples/intersection-observer";
-import { FormInputExample } from "@/examples/form-input";
-import {
-  Autocomplete as AutocompleteExample,
-  TagListSearch as TagListSearchExample,
-} from "@/examples/search-select";
-import { AccordionExample } from "@/examples/accordion-with-context";
-import { createElement, ReactNode } from "react";
-import remarkGfm from "remark-gfm";
-import rehypePrism from "@mapbox/rehype-prism";
-import { Pluggable } from "unified";
-import rehypeSlug from "rehype-slug";
-import rehypeToc from "@jsdevtools/rehype-toc";
-import { HtmlElementNode } from "@jsdevtools/rehype-toc/lib/types";
-import inlineSvg from "@/lib/inline-svg";
+import { convertPostDataForRss } from "@/lib/convert-post-data-for-rss";
 
 const currentYear = new Date().getFullYear();
 
@@ -41,7 +23,7 @@ export async function GET() {
 
   const postPromises: Promise<PostData & { slug: string }>[] = data.map(
     async (item) => {
-      const postData = await convertPostData(item.slug);
+      const postData = await convertPostDataForRss(item.slug);
 
       return {
         ...postData,
@@ -70,62 +52,6 @@ export async function GET() {
     },
   });
 }
-
-const siteUrlWithoutTrailingSlash = SITE_URL.substring(0, SITE_URL.length - 1);
-
-export const convertPostData = async (slug: string): Promise<PostData> => {
-  const fullPath = path.resolve(".", "content/posts/", `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-
-  return await compileMDX<PostFrontMatter>({
-    source: fileContents,
-    options: {
-      parseFrontmatter: true,
-      mdxOptions: {
-        rehypePlugins: [inlineSvg],
-      },
-    },
-    components: {
-      a: ({ children, href, ...props }) => {
-        const augmentedHref = href.startsWith("/")
-          ? `${siteUrlWithoutTrailingSlash}${href}`
-          : href;
-
-        return (
-          <a {...props} href={augmentedHref} target="_blank" rel="noreferrer">
-            {children}
-          </a>
-        );
-      },
-      img: ({ src, alt, title }) => {
-        return (
-          <figure>
-            <img src={`${siteUrlWithoutTrailingSlash}${src}`} alt={alt} />
-            {title && <figcaption>{title}</figcaption>}
-          </figure>
-        );
-      },
-      svg: ({ title, alt, ...props }) => {
-        return (
-          <figure>
-            <svg
-              {...props}
-              aria-label={alt}
-              style={{ width: "100%", height: "auto" }}
-            />
-            {title && <figcaption>{title}</figcaption>}
-          </figure>
-        );
-      },
-      SemanticImageExample: () => null,
-      IntersectionObserverExample: () => null,
-      FormInputExample: () => null,
-      AutocompleteExample: () => null,
-      TagListSearchExample: () => null,
-      AccordionExample: () => null,
-    },
-  });
-};
 
 const replaceDynamicColors = (content: string) => {
   content = content.replaceAll("var(--illustration-background)", "#27272a");
