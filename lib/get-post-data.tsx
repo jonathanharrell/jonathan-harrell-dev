@@ -76,9 +76,16 @@ export const getPostData = async (slug: string): Promise<PostData> => {
 
         return <p {...props}>{children}</p>;
       },
-      a: ({ children, ...props }) => {
+      a: ({ children, href, ...props }) => {
+        const isInternal = href.startsWith("/");
+
         return (
-          <a {...props} target="_blank" rel="noreferrer">
+          <a
+            {...props}
+            href={href}
+            target={!isInternal ? "_blank" : undefined}
+            rel={!isInternal ? "noreferrer" : undefined}
+          >
             {children}
           </a>
         );
