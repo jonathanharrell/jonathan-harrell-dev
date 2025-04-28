@@ -66,7 +66,7 @@ const jsonLd = {
   author: {
     "@type": "Person",
     name: "Jonathan Harrell",
-    url: "https://www.jonathan-harrell.com",
+    url: "https://www.jonathanharrell.com",
   },
 };
 
@@ -139,7 +139,7 @@ const AboutPage = () => {
             <p className="text-xl">
               I have another blog, called{" "}
               <a
-                href="https://blog.jonathan-harrell.com"
+                href="https://blog.jonathanharrell.com"
                 target="_blank"
                 className="underline hover:no-underline underline-offset-2 decoration-1"
               >

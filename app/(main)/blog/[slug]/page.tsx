@@ -100,7 +100,7 @@ export const generateMetadata = async (props: BlogPostPageProps) => {
     title: `${frontmatter.title} | Jonathan Harrell`,
     description: frontmatter.description,
     author: [
-      { name: "Jonathan Harrell", url: "https://www.jonathan-harrell.com" },
+      { name: "Jonathan Harrell", url: "https://www.jonathanharrell.com" },
     ],
     creator: "Jonathan Harrell",
     publisher: "Jonathan Harrell",

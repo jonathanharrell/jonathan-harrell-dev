@@ -45,7 +45,7 @@ export const Footer = () => {
         >
           <li>
             <a
-              href="https://blog.jonathan-harrell.com/"
+              href="https://blog.jonathanharrell.com/"
               target="_blank"
               className="underline hover:no-underline underline-offset-2"
             >
