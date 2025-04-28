@@ -2,18 +2,18 @@ const fs = require("fs");
 const path = require("path");
 
 const hexToCssVariables = {
-  '#fafafa': 'var(--illustration-background)',
-  '#262626': 'var(--illustration-black)',
-  '#d4d4d4': 'var(--illustration-gray)',
-  '#e6594c': 'var(--illustration-accent)',
+  "#fafafa": "var(--illustration-background)",
+  "#262626": "var(--illustration-black)",
+  "#d4d4d4": "var(--illustration-gray)",
+  "#e6594c": "var(--illustration-accent)",
 };
 
-const inputDir = path.join(__dirname, "../content/images");
-const outputDir = path.join(__dirname, "../public/assets");
+const inputDir = path.join(__dirname, "../content/illustrations");
+const outputDir = path.join(__dirname, "../public/assets/illustrations");
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, {recursive: true});
+  fs.mkdirSync(outputDir, { recursive: true });
 }
 
 // Read all images from the input directory
@@ -22,18 +22,18 @@ fs.readdirSync(inputDir).forEach((file) => {
   const outputFile = path.join(outputDir, file);
 
   if (inputFile.endsWith(".svg")) {
-    fs.readFile(inputFile, 'utf-8', function(err, data){
+    fs.readFile(inputFile, "utf-8", function (err, data) {
       if (err) throw err;
 
       let svgContent = data;
 
       Object.keys(hexToCssVariables).forEach((hex) => {
         const cssVar = hexToCssVariables[hex];
-        const regex = new RegExp(hex, 'gi');
+        const regex = new RegExp(hex, "gi");
         svgContent = svgContent.replace(regex, cssVar);
       });
 
-      fs.writeFile(outputFile, svgContent, 'utf-8', function (err) {
+      fs.writeFile(outputFile, svgContent, "utf-8", function (err) {
         if (err) throw err;
       });
     });
