@@ -17,6 +17,7 @@ import {
 } from "@/examples/search-select";
 import { AccordionExample } from "@/examples/accordion-with-context";
 import { Pluggable } from "unified";
+import { notFound } from "next/navigation";
 
 export type PostFrontMatter = {
   slug: string;
@@ -31,7 +32,13 @@ export type PostData = CompileMDXResult<PostFrontMatter>;
 
 export const getPostData = async (slug: string): Promise<PostData> => {
   const fullPath = path.resolve(".", "content/posts/", `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  let fileContents;
+
+  try {
+    fileContents = fs.readFileSync(fullPath, "utf8");
+  } catch (e) {
+    notFound();
+  }
 
   return await compileMDX<PostFrontMatter>({
     source: fileContents,
