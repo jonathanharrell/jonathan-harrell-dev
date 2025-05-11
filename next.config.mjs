@@ -27,6 +27,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/tag/:tag",
+        destination: "/blog",
+        permanent: false,
+      },
+      {
         source: "/rss.xml",
         destination: "/rss",
         permanent: true,
