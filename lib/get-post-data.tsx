@@ -84,7 +84,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
         return <p {...props}>{children}</p>;
       },
       a: ({ children, href, ...props }) => {
-        const isInternal = href.startsWith("/");
+        const isInternal = href.startsWith("/") || href.startsWith("#");
 
         return (
           <a
