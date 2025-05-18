@@ -81,7 +81,27 @@ export default function RootLayout({
           <meta name="color-scheme" content="light dark" />
           <script
             dangerouslySetInnerHTML={{
-              __html: `${setInitialTheme.toString()}\n\nsetInitialTheme();`,
+              __html: `
+                (function setInitialTheme() {
+                  try {
+                    const savedTheme = JSON.parse(localStorage.getItem("theme") ?? "");
+                    if (savedTheme === "dark") {
+                      document.documentElement.classList.add("dark");
+                      return;
+                    }
+                  } catch {}
+          
+                  const userPrefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+                  if (userPrefersDarkMode.matches) {
+                    document.documentElement.classList.add("dark");
+                    try {
+                      localStorage.setItem("theme", JSON.stringify("dark"));
+                    } catch {
+                      // fail silently
+                    }
+                  }
+                })();
+              `,
             }}
           />
         </head>
