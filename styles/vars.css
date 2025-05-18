@@ -1,6 +1,5 @@
 :root {
-  /* this is for the home animation in Three.js to use */
-  --accent: #e6594c;
+  --accent: #ff6354;
 
   --illustration-accent: var(--accent);
 
@@ -11,6 +10,8 @@
 }
 
 .dark {
+  --accent: #e6594c;
+
   --illustration-background: #27272a;
   --illustration-black: #f5f5f5;
   --illustration-gray: #525252;

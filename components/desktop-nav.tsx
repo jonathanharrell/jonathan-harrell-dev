@@ -49,7 +49,7 @@ export const DesktopNav = () => {
         <ThemeToggle />
         <a
           href="#subscribe"
-          className="py-1.5 px-3 rounded-full text-md bg-accent hover:brightness-[110%] hover:dark:brightness-[80%] text-black transition-all duration-200 ease-in-out"
+          className="py-1.5 px-3 rounded-full text-md bg-accent hover:brightness-[90%] hover:dark:brightness-[80%] text-black transition-all duration-200 ease-in-out"
         >
           Subscribe
         </a>
