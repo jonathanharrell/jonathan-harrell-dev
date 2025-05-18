@@ -7,7 +7,6 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NextTopLoader from "nextjs-toploader";
 import ThemeProvider from "@/providers/theme-provider";
-import { setInitialTheme } from "@/lib/set-initial-theme";
 import { Spinner } from "@/components/spinner";
 import { SkipToContent } from "@/components/skip-to-content";
 import { Header } from "@/components/header";
@@ -87,6 +86,10 @@ export default function RootLayout({
                     const savedTheme = JSON.parse(localStorage.getItem("theme") ?? "");
                     if (savedTheme === "dark") {
                       document.documentElement.classList.add("dark");
+                      return;
+                    }
+                    if (savedTheme === "light") {
+                      document.documentElement.classList.remove("dark");
                       return;
                     }
                   } catch {}
