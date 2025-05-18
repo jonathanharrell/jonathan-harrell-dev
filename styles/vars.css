@@ -2,14 +2,16 @@
   /* this is for the home animation in Three.js to use */
   --accent: #e6594c;
 
+  --illustration-accent: var(--accent);
+
   /* these are for svg illustrations to respond to light/dark mode */
+  --illustration-background: #fafafa;
+  --illustration-black: #262626;
+  --illustration-gray: #d4d4d4;
+}
+
+.dark {
   --illustration-background: #27272a;
   --illustration-black: #f5f5f5;
   --illustration-gray: #525252;
-  --illustration-accent: var(--accent);
 }
-
-/*for when I do light mode*/
-/*--illustration-background: #fafafa;*/
-/*--illustration-black: #262626;*/
-/*--illustration-gray: #d4d4d4;*/

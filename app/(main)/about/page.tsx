@@ -159,7 +159,7 @@ const AboutPage = () => {
         </header>
         <hr
           role="presentation"
-          className="my-6 border-neutral-800 border-dashed"
+          className="my-6 border-neutral-200 dark:border-neutral-800 border-dashed"
         />
         <ul
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
@@ -167,13 +167,15 @@ const AboutPage = () => {
         >
           {usesData.map((use, index) => (
             <li key={index}>
-              <p className="text-lg text-neutral-400">{use.type}</p>
+              <p className="text-lg text-neutral-500 dark:text-neutral-400">
+                {use.type}
+              </p>
               <p>
                 <a
                   href={use.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xl underline hover:no-underline underline-offset-2 decoration-1 decoration-neutral-200"
+                  className="text-xl underline hover:no-underline underline-offset-2 decoration-1 decoration-neutral-400 dark:decoration-neutral-200"
                 >
                   {use.label}
                 </a>

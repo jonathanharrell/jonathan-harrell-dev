@@ -42,7 +42,7 @@ const BlogPage = async () => {
               <article>
                 <p
                   aria-hidden="true"
-                  className="text-4xl text-neutral-600 mb-1"
+                  className="text-4xl text-neutral-400 dark:text-neutral-600 mb-1"
                 >
                   {("0" + (posts.length - index)).slice(-2)}
                 </p>
@@ -54,7 +54,7 @@ const BlogPage = async () => {
                     {post.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-lg text-neutral-400">
+                <p className="text-lg text-neutral-500 dark:text-neutral-400">
                   {post.frontmatter.description}
                 </p>
               </article>

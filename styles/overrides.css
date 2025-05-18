@@ -6,7 +6,7 @@
   }
 
   tr {
-    @apply max-md:block max-md:py-4 max-md:border-b max-md:border-neutral-700;
+    @apply max-md:block max-md:py-4 max-md:border-b max-md:border-neutral-300 max-md:dark:border-neutral-700;
   }
 
   th, td {
@@ -22,10 +22,10 @@
   }
 
   td:nth-child(3) {
-    @apply w-[40%] text-neutral-400;
+    @apply w-[40%] text-neutral-500 dark:text-neutral-400;
   }
 
   td:nth-child(4) {
-    @apply font-etbook-lining-figures text-neutral-400;
+    @apply font-etbook-lining-figures text-neutral-500 dark:text-neutral-400;
   }
 }

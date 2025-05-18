@@ -46,7 +46,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   return (
     <article>
       <header>
-        <div className="mt-1 text-neutral-400 text-lg">
+        <div className="mt-1 text-neutral-500 dark:text-neutral-400 text-lg">
           <time dateTime={post.frontmatter.date}>{formattedDate}</time>
           {Boolean(post.frontmatter.tags.length) && (
             <>

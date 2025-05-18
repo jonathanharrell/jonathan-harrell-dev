@@ -46,7 +46,11 @@ export default function RootLayout({
 }>) {
   return (
     <ThemeProvider>
-      <html lang="en" suppressHydrationWarning className="bg-neutral-950">
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className="bg-neutral-100 dark:bg-neutral-950"
+      >
         {/*Note that we should NOT use Next's <Head /> component here since this will cause a flash of the default theme*/}
         <head>
           <link
@@ -73,14 +77,14 @@ export default function RootLayout({
             rel="apple-touch-icon"
             href="/assets/favicon/apple-touch-icon.png"
           />
-          <meta name="color-scheme" content="dark" />
+          <meta name="color-scheme" content="light dark" />
           {/*<script*/}
           {/*  dangerouslySetInnerHTML={{*/}
           {/*    __html: `${setInitialTheme.toString()}\n\nsetInitialTheme();`,*/}
           {/*  }}*/}
           {/*/>*/}
         </head>
-        <body className="flex flex-col min-h-dvh bg-neutral-900 font-etbook text-neutral-300">
+        <body className="flex flex-col min-h-dvh bg-white dark:bg-neutral-900 font-etbook text-neutral-800 dark:text-neutral-300">
           <div className="flex flex-col flex-1 container overflow-hidden">
             <NextTopLoader color="#e6594c" />
             <SkipToContent />

@@ -47,7 +47,9 @@ class AccordionItem extends React.Component<
   render() {
     return (
       <AccordionItemContext.Provider value={this.state}>
-        <div className="rounded-lg bg-neutral-800">{this.props.children}</div>
+        <div className="rounded-lg bg-neutral-200 dark:bg-neutral-800">
+          {this.props.children}
+        </div>
       </AccordionItemContext.Provider>
     );
   }
@@ -85,7 +87,8 @@ const AccordionPanel = (props: AccordionPanelProps) => {
       {({ expanded }) => (
         <div
           className={
-            "p-4 border-t border-neutral-700 " + (expanded ? "block" : "hidden")
+            "p-4 border-t border-neutral-300 dark:border-neutral-700 " +
+            (expanded ? "block" : "hidden")
           }
         >
           {props.children}
@@ -100,7 +103,7 @@ export class AccordionExample extends React.Component {
     return (
       <figure>
         <div>
-          <div className="not-article-prose p-8 sm:py-12 sm:px-16 bg-neutral-950 font-sans text-base">
+          <div className="not-article-prose p-8 sm:py-12 sm:px-16 bg-neutral-100 dark:bg-neutral-950 font-sans text-base">
             <Accordion>
               <AccordionItem>
                 <AccordionHeader>Section 1</AccordionHeader>

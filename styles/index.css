@@ -12,7 +12,7 @@
   }
 
   *:focus-visible {
-    @apply outline-none ring-1 ring-offset-1 ring-offset-neutral-950 ring-neutral-300;
+    @apply outline-none ring-1 ring-offset-1 dark:ring-offset-neutral-950 ring-neutral-400 dark:ring-neutral-300;
   }
 }
 
@@ -44,7 +44,7 @@
   }
 
   .toc-wrapper .toc {
-    @apply absolute text-neutral-400;
+    @apply absolute text-neutral-500 dark:text-neutral-400;
   }
 
   .article-prose > table {
@@ -55,7 +55,7 @@
     @apply leading-snug;
 
     th, td {
-      @apply py-4 px-6 border-b border-neutral-700;
+      @apply py-4 px-6 border-b border-neutral-300 dark:border-neutral-700;
     }
 
     th:first-child, td:first-child {
@@ -136,7 +136,7 @@
   }
 
   .article-prose :where(svg):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply w-full h-auto bg-neutral-950;
+    @apply w-full h-auto bg-neutral-100 dark:bg-neutral-950;
   }
 
   .article-prose :where(ol, ul):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -148,7 +148,7 @@
   }
 
   .article-prose blockquote {
-    @apply mb-8 pl-5 border-l-4 border-neutral-700 italic;
+    @apply mb-8 pl-5 border-l-4 border-neutral-300 dark:border-neutral-700 italic;
   }
 
   .article-prose blockquote p {
@@ -156,7 +156,7 @@
   }
 
   .article-prose blockquote cite {
-    @apply block mt-2 not-italic text-base text-neutral-400;
+    @apply block mt-2 not-italic text-base text-neutral-500 dark:text-neutral-400;
   }
 
   .article-prose blockquote cite::before {

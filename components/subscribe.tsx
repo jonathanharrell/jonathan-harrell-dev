@@ -39,7 +39,7 @@ export const Subscribe = () => {
       </header>
       <hr
         role="presentation"
-        className="my-6 border-neutral-800 border-dashed"
+        className="my-6 border-neutral-200 dark:border-neutral-800 border-dashed"
       />
       <div className="flex flex-col gap-6">
         <p className="text-lg">
@@ -59,7 +59,7 @@ export const Subscribe = () => {
                 placeholder="Enter your email address"
                 autoComplete="email"
                 required
-                className="flex-1 sm:w-[300px] rounded-none py-1.5 px-3 border border-neutral-800 bg-neutral-800 text-lg text-neutral-100 placeholder:text-neutral-400"
+                className="flex-1 sm:w-[300px] rounded-none py-1.5 px-3 border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800 text-lg dark:text-neutral-100 placeholder:text-neutral-400"
                 ref={inputRef}
               />
             </div>

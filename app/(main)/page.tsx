@@ -53,7 +53,7 @@ const HomePage = async () => {
         </header>
         <hr
           role="presentation"
-          className="mt-6 mb-8 sm:mb-12 border-neutral-800 border-dashed"
+          className="mt-6 mb-8 sm:mb-12 border-neutral-200 dark:border-neutral-800 border-dashed"
         />
         <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentPosts.map((post, index) => (
@@ -67,7 +67,7 @@ const HomePage = async () => {
                     {post.frontmatter.title}
                   </Link>
                 </h3>
-                <p className="text-lg text-neutral-400">
+                <p className="text-lg text-neutral-500 dark:text-neutral-400">
                   {post.frontmatter.description}
                 </p>
               </article>

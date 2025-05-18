@@ -10,7 +10,7 @@
   input[type="text"],
   input[type="number"],
   input[type="email"] {
-    @apply form-input mt-1 block w-full border-neutral-700 bg-neutral-900 shadow-sm focus:border-neutral-600 focus:ring focus:ring-neutral-700 focus:ring-opacity-50 placeholder:text-neutral-400;
+    @apply form-input mt-1 block w-full border-neutral-400 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm focus:border-neutral-500 focus:dark:border-neutral-600 focus:ring focus:ring-neutral-300 focus:dark:ring-neutral-700 focus:ring-opacity-50 placeholder:text-neutral-400;
   }
 
   .help-text {
@@ -42,11 +42,11 @@
   }
 
   input:disabled {
-    @apply border-neutral-600 bg-neutral-700 text-neutral-500 cursor-not-allowed;
+    @apply border-neutral-300 dark:border-neutral-600 bg-neutral-200 dark:bg-neutral-700 text-neutral-500 cursor-not-allowed;
   }
 
   input:read-only {
-    @apply border-neutral-600 bg-neutral-700 text-neutral-400 cursor-not-allowed;
+    @apply border-neutral-300 dark:border-neutral-600 bg-neutral-200 dark:bg-neutral-700 text-neutral-400 cursor-not-allowed;
   }
 
   #valid-input:valid {
