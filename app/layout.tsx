@@ -1,4 +1,8 @@
-import React, { ReactNode, Suspense } from "react";
+import React, {
+  ReactNode,
+  Suspense,
+  unstable_ViewTransition as ViewTransition,
+} from "react";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NextTopLoader from "nextjs-toploader";
@@ -69,7 +73,7 @@ export default function RootLayout({
             rel="apple-touch-icon"
             href="/assets/favicon/apple-touch-icon.png"
           />
-          <meta name="color-scheme" content="light dark" />
+          <meta name="color-scheme" content="dark" />
           {/*<script*/}
           {/*  dangerouslySetInnerHTML={{*/}
           {/*    __html: `${setInitialTheme.toString()}\n\nsetInitialTheme();`,*/}
@@ -93,7 +97,7 @@ export default function RootLayout({
                   </div>
                 }
               >
-                {children}
+                <ViewTransition>{children}</ViewTransition>
               </Suspense>
             </main>
             <Subscribe />
