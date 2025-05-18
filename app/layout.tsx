@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import NextTopLoader from "nextjs-toploader";
 import ThemeProvider from "@/providers/theme-provider";
+import { setInitialTheme } from "@/lib/set-initial-theme";
 import { Spinner } from "@/components/spinner";
 import { SkipToContent } from "@/components/skip-to-content";
 import { Header } from "@/components/header";
@@ -78,11 +79,11 @@ export default function RootLayout({
             href="/assets/favicon/apple-touch-icon.png"
           />
           <meta name="color-scheme" content="light dark" />
-          {/*<script*/}
-          {/*  dangerouslySetInnerHTML={{*/}
-          {/*    __html: `${setInitialTheme.toString()}\n\nsetInitialTheme();`,*/}
-          {/*  }}*/}
-          {/*/>*/}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `${setInitialTheme.toString()}\n\nsetInitialTheme();`,
+            }}
+          />
         </head>
         <body className="flex flex-col min-h-dvh bg-white dark:bg-neutral-900 font-etbook text-neutral-800 dark:text-neutral-300">
           <div className="flex flex-col flex-1 container overflow-hidden">
