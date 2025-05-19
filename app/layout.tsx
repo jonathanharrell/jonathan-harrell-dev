@@ -82,6 +82,11 @@ export default function RootLayout({
             rel="authorization_endpoint"
             href="https://indieauth.com/auth"
           />
+          {/*enable webmentions*/}
+          <link
+            rel="webmention"
+            href="https://webmention.io/www.jonathanharrell.com/webmention"
+          />
           <meta name="color-scheme" content="light dark" />
           <script
             dangerouslySetInnerHTML={{
