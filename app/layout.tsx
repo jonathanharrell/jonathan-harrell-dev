@@ -77,6 +77,11 @@ export default function RootLayout({
             rel="apple-touch-icon"
             href="/assets/favicon/apple-touch-icon.png"
           />
+          {/*auth for webmentions*/}
+          <link
+            rel="authorization_endpoint"
+            href="https://indieauth.com/auth"
+          />
           <meta name="color-scheme" content="light dark" />
           <script
             dangerouslySetInnerHTML={{
