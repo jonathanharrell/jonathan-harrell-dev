@@ -56,7 +56,7 @@ export const Footer = () => {
             <a
               href="https://github.com/jonathanharrell/"
               target="_blank"
-              rel="noreferrer"
+              rel="me noreferrer"
               className="underline hover:no-underline underline-offset-2"
             >
               Github
@@ -66,7 +66,7 @@ export const Footer = () => {
             <a
               href="https://www.linkedin.com/in/jonathanharrell/"
               target="_blank"
-              rel="noreferrer"
+              rel="me noreferrer"
               className="underline hover:no-underline underline-offset-2"
             >
               LinkedIn
