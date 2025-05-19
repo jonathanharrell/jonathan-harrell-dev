@@ -44,10 +44,12 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const uniqueClassName = slugify(post.frontmatter.title, { lower: true });
 
   return (
-    <article>
+    <article className="h-entry">
       <header>
         <div className="mt-1 text-neutral-500 dark:text-neutral-400 text-lg">
-          <time dateTime={post.frontmatter.date}>{formattedDate}</time>
+          <time dateTime={post.frontmatter.date} className="dt-published">
+            {formattedDate}
+          </time>
           {Boolean(post.frontmatter.tags.length) && (
             <>
               <span aria-hidden="true" className="mx-2">
@@ -57,11 +59,13 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
             </>
           )}
         </div>
-        <h1 className="max-w-[32ch] mt-2 text-4xl md:text-5xl text-balance">
+        <h1 className="p-name max-w-[32ch] mt-2 text-4xl md:text-5xl text-balance">
           {post.frontmatter.title}
         </h1>
       </header>
-      <div className={classNames("article-prose mt-12", uniqueClassName)}>
+      <div
+        className={classNames("e-content article-prose mt-12", uniqueClassName)}
+      >
         {post.content}
       </div>
       <script
