@@ -1,10 +1,12 @@
-import { getPostData } from "@/lib/get-post-data";
-import "@/styles/prism.css";
-import classNames from "classnames";
+import * as Sentry from "@sentry/nextjs";
 import slugify from "slugify";
+import classNames from "classnames";
+import { getPostData } from "@/lib/get-post-data";
 import { getPostSlugs } from "@/lib/get-post-slugs";
+import { Mention } from "@/components/mention";
 import { SITE_URL } from "@/constants";
-import React from "react";
+import type { Mention as MentionType } from "@/types";
+import "@/styles/prism.css";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -43,6 +45,18 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
 
   const uniqueClassName = slugify(post.frontmatter.title, { lower: true });
 
+  let mentions: MentionType[] = [];
+
+  try {
+    const response = await fetch(
+      `https://webmention.io/api/mentions.jf2?target=${SITE_URL}blog/${slug}`,
+    );
+    const data = await response.json();
+    mentions = data.children;
+  } catch (error) {
+    Sentry.captureException(error);
+  }
+
   return (
     <article className="h-entry">
       <header>
@@ -68,6 +82,26 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
       >
         {post.content}
       </div>
+      {mentions.length > 0 && (
+        <section className="py-6 sm:py-10">
+          <header className="flex flex-col gap-4">
+            <h2 id="mentions-label" className="text-3xl italic">
+              Mentions
+            </h2>
+          </header>
+          <hr
+            role="presentation"
+            className="my-6 border-neutral-200 dark:border-neutral-800 border-dashed"
+          />
+          <ul aria-labelledby="mentions-label" className="flex flex-col gap-8">
+            {mentions.map((mention, index) => (
+              <li key={index}>
+                <Mention mention={mention} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

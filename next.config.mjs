@@ -9,6 +9,17 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.webmention.io",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
+    ],
+  },
   async redirects() {
     return [
       {
