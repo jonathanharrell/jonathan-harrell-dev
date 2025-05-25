@@ -223,9 +223,9 @@ const AboutPage = () => {
               <div role="presentation" className="relative h-full">
                 <div
                   className={classNames(
-                    "w-6 md:w-8 h-6 md:h-8 rounded-full border-2 border-neutral-700",
+                    "w-6 md:w-8 h-6 md:h-8 rounded-full border-2 border-neutral-300 dark:border-neutral-700",
                     {
-                      "before:block before:absolute before:bottom-0 before:left-1/2 before:h-[calc(100%-24px)] before:md:h-[calc(100%-32px)] before:w-[2px] before:bg-neutral-700 before:-translate-x-1/2 before:content-['']":
+                      "before:block before:absolute before:bottom-0 before:left-1/2 before:h-[calc(100%-24px)] before:md:h-[calc(100%-32px)] before:w-[2px] before:bg-neutral-300 before:dark:bg-neutral-700 before:-translate-x-1/2 before:content-['']":
                         index !== workData.length - 1,
                     },
                   )}
