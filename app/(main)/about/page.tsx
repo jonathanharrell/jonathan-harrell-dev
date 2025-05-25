@@ -2,6 +2,52 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import React from "react";
 import { SITE_URL } from "@/constants";
+import classNames from "classnames";
+
+interface Work {
+  start: string;
+  end?: string;
+  role: string;
+  company: string;
+}
+
+const workData: Work[] = [
+  {
+    start: "2023",
+    role: "Senior Frontend Engineer",
+    company: "Zapier",
+  },
+  {
+    start: "2021",
+    end: "2023",
+    role: "Senior UI Engineer",
+    company: "Vowel",
+  },
+  {
+    start: "2018",
+    end: "2021",
+    role: "Senior Software Engineer, Internal Tools",
+    company: "InVision",
+  },
+  {
+    start: "2018",
+    end: "2014",
+    role: "UI/UX Designer & Frontend Developer",
+    company: "WHQ",
+  },
+  {
+    start: "2014",
+    end: "2014",
+    role: "TaLK Scholar",
+    company: "TaLK (Teach and Learn in Korea)",
+  },
+  {
+    start: "2010",
+    end: "2012",
+    role: "Graphic Designer & Marketing Associate",
+    company: "Cambridge Educational Services",
+  },
+];
 
 interface Use {
   url: string;
@@ -150,6 +196,47 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
+      </section>
+      <section className="pt-6 sm:pt-10 pb-2">
+        <header>
+          <h2 id="work-label" className="text-3xl italic">
+            My Work
+          </h2>
+        </header>
+        <hr
+          role="presentation"
+          className="my-6 border-neutral-200 dark:border-neutral-800 border-dashed"
+        />
+        <ul
+          aria-labelledby="work-label"
+          className="grid gap-x-4 md:gap-x-6"
+          style={{ gridTemplateColumns: "auto auto 1fr" }}
+        >
+          {workData.map((work, index) => (
+            <li
+              key={index}
+              className="grid grid-cols-subgrid col-start-1 col-end-4"
+            >
+              <div className="-mt-0.5 md:mt-0.5 text-lg text-right">
+                {work.start}-{work.end || "present"}
+              </div>
+              <div role="presentation" className="relative h-full">
+                <div
+                  className={classNames(
+                    "w-6 md:w-8 h-6 md:h-8 rounded-full border-2 border-neutral-700",
+                    {
+                      "before:block before:absolute before:bottom-0 before:left-1/2 before:h-[calc(100%-24px)] before:md:h-[calc(100%-32px)] before:w-[2px] before:bg-neutral-700 before:-translate-x-1/2 before:content-['']":
+                        index !== workData.length - 1,
+                    },
+                  )}
+                />
+              </div>
+              <div className="-mt-0.5 md:mt-0.5 pb-5 md:pb-8 text-xl">
+                {work.role}, {work.company}
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
       <section id="uses" className="py-6 sm:py-10">
         <header>
