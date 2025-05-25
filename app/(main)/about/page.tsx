@@ -30,13 +30,13 @@ const workData: Work[] = [
     company: "InVision",
   },
   {
-    start: "2018",
-    end: "2014",
+    start: "2014",
+    end: "2018",
     role: "UI/UX Designer & Frontend Developer",
     company: "WHQ",
   },
   {
-    start: "2014",
+    start: "2012",
     end: "2014",
     role: "TaLK Scholar",
     company: "TaLK (Teach and Learn in Korea)",
