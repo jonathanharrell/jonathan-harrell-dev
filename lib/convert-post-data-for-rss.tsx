@@ -61,6 +61,7 @@ export const convertPostDataForRss = async (
       AutocompleteExample: () => null,
       TagListSearchExample: () => null,
       AccordionExample: () => null,
+      LightDarkSvg: () => null,
     },
   });
 };
