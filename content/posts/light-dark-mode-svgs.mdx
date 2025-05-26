@@ -1,0 +1,121 @@
+---
+title: Dynamic SVGs in Light & Dark Mode
+date: 2025-05-25T12:55:00.000Z
+description: >-
+  Learn how to make your SVG illustrations respond to light and dark mode using CSS variables—plus, a script to automate replacing hex values.
+tags:
+  - javascript
+  - theming
+  - svg
+---
+When supporting light and dark mode, you likely want your images to respond accordingly, showing both a light and dark version. The easiest way to do this is by providing two image sources and using the `picture` element to switch between them.
+
+```html
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="./dark-mode-image.png"
+  >
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="./light-mode-image.png"
+  >
+  <img src="./default-image.png" alt="Image">
+</picture>
+```
+
+However, this requires exporting and maintaining two versions of the image. When the image needs an update, you need to update and export two files. Additionally, if you ever decide to change your color scheme, you will need to update all of your image source files and export them again.
+
+For SVGs in particular, there is a better way to respond to theme changes using CSS variables. The SVG must be loaded inline within your page’s HTML.
+
+Here is an SVG I’ve exported from a graphics program (I’m using Sketch):
+
+<LightDarkSvg />
+
+I want to replace the hex codes in this SVG with CSS variables that can respond to theme changes. However, I may need to re-export this image in the future, so I don’t want to do this manually. I need a repeatable way to easily replace the hex codes.
+
+I’ve written a script to be run via the command line that will go through at all the SVGs in a particular directory, look for certain hex codes, and replace those with references to CSS variables.
+
+```javascript
+const fs = require("fs");
+const path = require("path");
+
+const hexToCssVariables = {
+  "#fafafa": "var(--illustration-background)",
+  "#262626": "var(--illustration-black)",
+  "#d4d4d4": "var(--illustration-gray)",
+  "#e6594c": "var(--illustration-accent)"
+};
+
+const inputDir = path.join(
+  __dirname,
+  "../content/illustrations"
+);
+const outputDir = path.join(
+  __dirname,
+  "../public/assets/illustrations"
+);
+
+// Ensure output directory exists
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
+
+// Read all images from the input directory
+fs.readdirSync(inputDir).forEach((file) => {
+  const inputFile = path.join(inputDir, file);
+  const outputFile = path.join(outputDir, file);
+
+  if (inputFile.endsWith(".svg")) {
+    fs.readFile(
+      inputFile,
+      "utf-8",
+      function (err, data) {
+        if (err) throw err;
+
+        let svgContent = data;
+
+        // replace each hex code with a CSS variable reference
+        Object.keys(hexToCssVariables).forEach((hex) => {
+          const cssVar = hexToCssVariables[hex];
+          const regex = new RegExp(hex, "gi");
+          svgContent = svgContent.replace(regex, cssVar);
+        });
+
+        // generate the new SVG file
+        fs.writeFile(
+          outputFile,
+          svgContent,
+          "utf-8",
+          function (err) {
+            if (err) throw err;
+          }
+        );
+      }
+    );
+  }
+});
+```
+
+I have the CSS variables defined in my styles and have set them up to change based on the presence of a `dark` class on my root element.
+
+```css
+:root {
+  --accent: #ff6354;
+
+  --illustration-accent: var(--accent);
+  --illustration-background: #fafafa;
+  --illustration-black: #262626;
+  --illustration-gray: #d4d4d4;
+}
+
+.dark {
+  --accent: #e6594c;
+
+  --illustration-background: #27272a;
+  --illustration-black: #f5f5f5;
+  --illustration-gray: #525252;
+}
+```
+
+Now, the SVG will respond perfectly to changes in my theme, and I only have to maintain a single file for each image. I export all my SVGs to a `content` directory, then run my script to generate the final files in the `public` directory. If I decide to drastically update my theme in the future, I don’t have to manually update all the source files; just a quick change of a few variables, and I’m good to go!

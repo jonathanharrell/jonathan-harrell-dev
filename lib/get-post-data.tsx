@@ -1,12 +1,14 @@
 import path from "path";
 import fs from "fs";
+import { Children } from "react";
+import { notFound } from "next/navigation";
 import { compileMDX, CompileMDXResult } from "next-mdx-remote/rsc";
-import rehypePrism from "@mapbox/rehype-prism";
+import { Pluggable } from "unified";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
+import rehypePrism from "@mapbox/rehype-prism";
 import rehypeToc from "@jsdevtools/rehype-toc";
 import { HtmlElementNode } from "@jsdevtools/rehype-toc/lib/types";
-import { Children } from "react";
 import inlineSvg from "@/lib/inline-svg";
 import { SemanticImageExample } from "@/examples/semantic-image";
 import { IntersectionObserverExample } from "@/examples/intersection-observer";
@@ -16,8 +18,7 @@ import {
   TagListSearch as TagListSearchExample,
 } from "@/examples/search-select";
 import { AccordionExample } from "@/examples/accordion-with-context";
-import { Pluggable } from "unified";
-import { notFound } from "next/navigation";
+import { LightDarkSvg } from "@/examples/light-dark-svg";
 
 export type PostFrontMatter = {
   slug: string;
@@ -120,6 +121,7 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       AutocompleteExample,
       TagListSearchExample,
       AccordionExample,
+      LightDarkSvg,
     },
   });
 };

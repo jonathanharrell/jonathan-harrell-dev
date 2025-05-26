@@ -38,12 +38,4 @@ fs.readdirSync(inputDir).forEach((file) => {
       });
     });
   }
-
-  fs.copyFile(inputFile, outputFile, (err) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(`Copied ${inputFile} to ${outputFile}`);
-    }
-  });
 });

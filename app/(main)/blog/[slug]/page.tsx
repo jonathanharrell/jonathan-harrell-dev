@@ -1,7 +1,10 @@
+import Link from "next/link";
 import * as Sentry from "@sentry/nextjs";
 import slugify from "slugify";
+import { ArrowLeft, ArrowRight } from "react-feather";
 import classNames from "classnames";
 import { getPostData } from "@/lib/get-post-data";
+import { getPreviousAndNextPosts } from "@/lib/get-previous-and-next-posts";
 import { getPostSlugs } from "@/lib/get-post-slugs";
 import { Mention } from "@/components/mention";
 import { SITE_URL } from "@/constants";
@@ -16,7 +19,11 @@ interface BlogPostPageProps {
 
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const { slug } = await params;
-  const post = await getPostData(slug);
+
+  const [post, { previous, next }] = await Promise.all([
+    getPostData(slug),
+    getPreviousAndNextPosts(slug),
+  ]);
 
   const jsonLd = {
     "@context": "https://schema.org/",
@@ -102,6 +109,46 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
           </ul>
         </section>
       )}
+      <section className="mt-6 sm:mt-10 py-6 border-t border-neutral-200 dark:border-neutral-800 border-dashed">
+        <h2 id="other-articles-label" className="sr-only">
+          Other articles
+        </h2>
+        <nav
+          aria-labelledby="other-aticles-label"
+          className="flex flex-col sm:flex-row items-center md:justify-between gap-8 text-center"
+        >
+          {next && (
+            <div className="flex-1 sm:text-left">
+              <span className="text-neutral-500 dark:text-neutral-400">
+                Newer article
+              </span>
+              <Link
+                href={`/blog/${next.frontmatter.slug}`}
+                rel="next"
+                className="flex items-center gap-1.5 md:text-lg underline-offset-2 hover:underline"
+              >
+                <ArrowLeft size={16} />
+                {next.frontmatter.title}
+              </Link>
+            </div>
+          )}
+          {previous && (
+            <div className="flex-1 sm:ml-auto sm:text-right">
+              <span className="text-neutral-500 dark:text-neutral-400">
+                Older article
+              </span>
+              <Link
+                href={`/blog/${previous.frontmatter.slug}`}
+                rel="prev"
+                className="flex items-center md:justify-end gap-1.5 md:text-lg underline-offset-2 hover:underline"
+              >
+                {previous.frontmatter.title}
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          )}
+        </nav>
+      </section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
