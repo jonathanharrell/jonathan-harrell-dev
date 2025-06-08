@@ -174,25 +174,15 @@ const AboutPage = () => {
           <div className="flex flex-col gap-6 flex-1">
             <h1 className="text-4xl md:text-5xl">About Jonathan</h1>
             <p className="text-xl">
-              I’m Jonathan Harrell, a designer and front-end engineer. I’ve been
-              developing websites and applications for the last ten years for a
-              wide range of clients, from SaaS startups to established software
-              companies to global hedge funds. While I am now a full-time
-              software engineer, I am also passionate about design, and have
-              worked as a UI/UX designer in an agency context. I am currently
-              based in Brooklyn, New York.
-            </p>
-            <p className="text-xl">
-              I have another blog, called{" "}
-              <a
-                href="https://blog.jonathanharrell.com"
-                target="_blank"
-                className="underline hover:no-underline underline-offset-2 decoration-1"
-              >
-                Human in the Loop
-              </a>
-              , which I treat as a digital commonplace book—a repository for
-              poems, photos, art, and more. Check it out if you’re curious!
+              I’m Jonathan Harrell, a designer and front-end engineer. Ever
+              since playing around with HyperCard stacks on my Macintosh Classic
+              as a kid in the 90s, I’ve been passionate about building things
+              with code and pixels. For the last ten years, I’ve been developing
+              websites and applications for a wide range of clients, from small
+              design agencies to SaaS startups to established software
+              companies. While I am now a full-time software engineer, I am also
+              passionate about design, and worked for several years as a UI/UX
+              designer. I am currently based in Brooklyn, New York.
             </p>
           </div>
         </div>
