@@ -9,6 +9,7 @@ import rehypeSlug from "rehype-slug";
 import rehypePrism from "@mapbox/rehype-prism";
 import rehypeToc from "@jsdevtools/rehype-toc";
 import { HtmlElementNode } from "@jsdevtools/rehype-toc/lib/types";
+import { extractImageUrlsFromMdx } from "@/lib/extract-image-urls-from-mdx";
 import inlineSvg from "@/lib/inline-svg";
 import { SemanticImageExample } from "@/examples/semantic-image";
 import { IntersectionObserverExample } from "@/examples/intersection-observer";
@@ -29,7 +30,9 @@ export type PostFrontMatter = {
   thumbnail?: string;
 };
 
-export type PostData = CompileMDXResult<PostFrontMatter>;
+export type PostData = CompileMDXResult<PostFrontMatter> & {
+  imageUrls: string[];
+};
 
 export const getPostData = async (slug: string): Promise<PostData> => {
   const fullPath = path.resolve(".", "content/posts/", `${slug}.mdx`);
@@ -41,7 +44,9 @@ export const getPostData = async (slug: string): Promise<PostData> => {
     notFound();
   }
 
-  return await compileMDX<PostFrontMatter>({
+  const imageUrls = await extractImageUrlsFromMdx(fileContents);
+
+  const result = await compileMDX<PostFrontMatter>({
     source: fileContents,
     options: {
       parseFrontmatter: true,
@@ -124,4 +129,9 @@ export const getPostData = async (slug: string): Promise<PostData> => {
       LightDarkSvg,
     },
   });
+
+  return {
+    ...result,
+    imageUrls,
+  };
 };
