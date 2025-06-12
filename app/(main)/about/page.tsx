@@ -98,7 +98,7 @@ export const metadata: Metadata = {
   description:
     "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML and CSS. Learn more.",
   openGraph: {
-    images: ["/assets/seo/og.png"],
+    images: ["/assets/images/jonathan-2023.jpg"],
   },
 };
 

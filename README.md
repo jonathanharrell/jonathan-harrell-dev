@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Note about Illustrations
 
-Add a new illustration to `/public/assets/source-illustrations`.
+Add a new illustration to `/content/illustrations`.
 
 Then run `npm run process-images`. This will generate two new versions of the illustration:
 

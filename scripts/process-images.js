@@ -15,7 +15,7 @@ const hexToCssVariables = {
   "#e6594c": "var(--illustration-accent)",
 };
 
-const inputDir = path.join(__dirname, "../public/assets/source-illustrations");
+const inputDir = path.join(__dirname, "../content/illustrations");
 const darkOutputDir = path.join(
   __dirname,
   "../public/assets/dark-illustrations",
