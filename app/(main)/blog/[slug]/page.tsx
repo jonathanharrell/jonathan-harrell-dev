@@ -179,7 +179,12 @@ const Tags = ({ tags }: { tags: string[] }) => {
 
 export const generateMetadata = async (props: BlogPostPageProps) => {
   const params = await props.params;
-  const { frontmatter } = await getPostData(params.slug);
+  const { frontmatter, imageUrls } = await getPostData(params.slug);
+
+  const firstImage = imageUrls[0];
+  const firstImageDark = firstImage
+    ? firstImage.replace("/assets/illustrations", "/assets/dark-illustrations")
+    : undefined;
 
   return {
     title: `${frontmatter.title} | Jonathan Harrell`,
@@ -190,7 +195,7 @@ export const generateMetadata = async (props: BlogPostPageProps) => {
     creator: "Jonathan Harrell",
     publisher: "Jonathan Harrell",
     openGraph: {
-      images: ["/assets/seo/og.png"],
+      images: [firstImageDark ?? "/assets/seo/og.png"],
     },
   };
 };

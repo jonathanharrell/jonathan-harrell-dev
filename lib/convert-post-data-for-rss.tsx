@@ -10,7 +10,7 @@ const siteUrlWithoutTrailingSlash = SITE_URL.substring(0, SITE_URL.length - 1);
 
 export const convertPostDataForRss = async (
   slug: string,
-): Promise<PostData> => {
+): Promise<Omit<PostData, "imageUrls">> => {
   const fullPath = path.resolve(".", "content/posts/", `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

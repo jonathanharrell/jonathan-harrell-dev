@@ -21,16 +21,16 @@ export async function GET() {
 
   const data = await getPostSlugs();
 
-  const postPromises: Promise<PostData & { slug: string }>[] = data.map(
-    async (item) => {
-      const postData = await convertPostDataForRss(item.slug);
+  const postPromises: Promise<
+    Omit<PostData, "imageUrls"> & { slug: string }
+  >[] = data.map(async (item) => {
+    const postData = await convertPostDataForRss(item.slug);
 
-      return {
-        ...postData,
-        slug: item.slug,
-      };
-    },
-  );
+    return {
+      ...postData,
+      slug: item.slug,
+    };
+  });
 
   const posts = await Promise.all(postPromises);
 
