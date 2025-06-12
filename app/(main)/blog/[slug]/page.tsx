@@ -182,10 +182,9 @@ export const generateMetadata = async (props: BlogPostPageProps) => {
   const { frontmatter, imageUrls } = await getPostData(params.slug);
 
   const firstImage = imageUrls[0];
-  const firstImageDark = firstImage.replace(
-    "/assets/illustrations",
-    "/assets/dark-illustrations",
-  );
+  const firstImageDark = firstImage
+    ? firstImage.replace("/assets/illustrations", "/assets/dark-illustrations")
+    : undefined;
 
   return {
     title: `${frontmatter.title} | Jonathan Harrell`,
