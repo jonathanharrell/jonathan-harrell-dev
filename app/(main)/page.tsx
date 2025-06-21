@@ -59,7 +59,7 @@ const HomePage = async () => {
           {recentPosts.map((post, index) => (
             <li key={index}>
               <article>
-                <h3 className="text-xl mb-2">
+                <h3 className="text-xl mb-2 text-pretty">
                   <Link
                     href={`/blog/${post.frontmatter.slug}`}
                     className="hover:underline decoration-1 underline-offset-2"

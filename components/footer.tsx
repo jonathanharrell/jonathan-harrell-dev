@@ -1,11 +1,12 @@
+import Link from "next/link";
+
 const currentYear = new Date().getFullYear();
 
 export const Footer = () => {
   return (
     <footer className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-4 pt-8 pb-12 text-center text-neutral-500 dark:text-neutral-400">
       <p className="text-center lg:text-left">
-        &copy; {currentYear} Jonathan Harrell
-        <br role="presentation" />
+        &copy; {currentYear} Jonathan Harrell. <br role="presentation" />
         Typeset in{" "}
         <a
           href="https://edwardtufte.github.io/et-book/"
@@ -33,6 +34,11 @@ export const Footer = () => {
         >
           kiddo
         </a>
+        .
+        <br role="presentation" />
+        <Link href="/chronicle" className="underline hover:no-underline">
+          See the site chronicle
+        </Link>
         .
       </p>
       <section>

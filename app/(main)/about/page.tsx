@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import React from "react";
 import { SITE_URL } from "@/constants";
 import classNames from "classnames";
+import Link from "next/link";
 
 interface Work {
   start: string;
@@ -183,6 +184,16 @@ const AboutPage = () => {
               companies. While I am now a full-time software engineer, I am also
               passionate about design, and worked for several years as a UI/UX
               designer. I am currently based in Brooklyn, New York.
+            </p>
+            <p className="text-xl">
+              If you’re curious, check out the{" "}
+              <Link
+                href="/chronicle"
+                className="underline hover:no-underline decoration-1 underline-offset-2"
+              >
+                chronicle of this site
+              </Link>
+              , to see how it has evolved over the years.
             </p>
           </div>
         </div>
