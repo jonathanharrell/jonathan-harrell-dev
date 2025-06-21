@@ -87,7 +87,6 @@ export default function RootLayout({
             rel="webmention"
             href="https://webmention.io/www.jonathanharrell.com/webmention"
           />
-          <meta name="color-scheme" content="light dark" />
           <script
             dangerouslySetInnerHTML={{
               __html: `

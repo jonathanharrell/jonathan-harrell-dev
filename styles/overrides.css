@@ -5,6 +5,10 @@
     @apply max-md:hidden;
   }
 
+  tbody {
+    @apply max-md:block;
+  }
+
   tr {
     @apply max-md:block max-md:py-4 max-md:border-b max-md:border-neutral-300 max-md:dark:border-neutral-700;
   }
@@ -27,5 +31,37 @@
 
   td:nth-child(4) {
     @apply w-[25%] font-etbook-lining-figures text-neutral-500 dark:text-neutral-400;
+  }
+}
+
+.input-types-cheat-sheet table {
+  @apply max-md:block;
+
+  thead {
+    @apply max-md:hidden;
+  }
+
+  tbody {
+    @apply max-md:block;
+  }
+
+  tr {
+    @apply max-md:block max-md:py-4 max-md:border-b max-md:border-neutral-300 max-md:dark:border-neutral-700;
+  }
+
+  th, td {
+    @apply max-md:block max-md:!w-full max-md:!py-1 max-md:!px-0 max-md:!border-0;
+  }
+
+  td:nth-child(1) {
+    @apply w-[20%];
+  }
+
+  td:nth-child(2) {
+    @apply w-[40%];
+  }
+
+  input {
+    @apply form-input block w-full border-neutral-400 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 shadow-sm focus:border-neutral-500 focus:dark:border-neutral-600 focus:ring focus:ring-neutral-300 focus:dark:ring-neutral-700 focus:ring-opacity-50 placeholder:text-neutral-400 font-sans;
   }
 }

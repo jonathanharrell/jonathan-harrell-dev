@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   --accent: #ff6354;
 
   --illustration-accent: var(--accent);
@@ -10,6 +12,8 @@
 }
 
 .dark {
+  color-scheme: dark;
+
   --accent: #e6594c;
 
   --illustration-background: #27272a;
