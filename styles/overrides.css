@@ -13,12 +13,12 @@
     @apply max-md:block max-md:!w-full max-md:!py-1 max-md:!px-0 max-md:!border-0;
   }
 
-  td:first-child {
+  td:nth-child(1) {
     @apply w-[20%];
   }
 
   td:nth-child(2) {
-    @apply w-[10%];
+    @apply w-[15%];
   }
 
   td:nth-child(3) {
@@ -26,6 +26,6 @@
   }
 
   td:nth-child(4) {
-    @apply font-etbook-lining-figures text-neutral-500 dark:text-neutral-400;
+    @apply w-[25%] font-etbook-lining-figures text-neutral-500 dark:text-neutral-400;
   }
 }

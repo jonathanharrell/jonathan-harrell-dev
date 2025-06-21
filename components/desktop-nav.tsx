@@ -19,10 +19,11 @@ export const DesktopNav = () => {
         <Link
           href="/"
           className={classNames(linkClasses, { underline: pathname === "/" })}
+          aria-current={pathname === "/" ? "page" : undefined}
         >
           Home
         </Link>
-        <span role="presentation" className="px-3 text-neutral-600">
+        <span className="px-3 text-neutral-600" aria-hidden="true">
           /
         </span>
         <Link
@@ -30,10 +31,11 @@ export const DesktopNav = () => {
           className={classNames(linkClasses, {
             underline: pathname?.startsWith("/blog"),
           })}
+          aria-current={pathname === "/blog" ? "page" : undefined}
         >
           Blog
         </Link>
-        <span role="presentation" className="px-3 text-neutral-600">
+        <span className="px-3 text-neutral-600" aria-hidden="true">
           /
         </span>
         <Link
@@ -41,6 +43,7 @@ export const DesktopNav = () => {
           className={classNames(linkClasses, {
             underline: pathname === "/about",
           })}
+          aria-current={pathname === "/about" ? "page" : undefined}
         >
           About
         </Link>

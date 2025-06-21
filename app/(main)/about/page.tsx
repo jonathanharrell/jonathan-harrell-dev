@@ -39,7 +39,7 @@ const workData: Work[] = [
     start: "2012",
     end: "2014",
     role: "TaLK Scholar",
-    company: "TaLK (Teach and Learn in Korea)",
+    company: "Teach and Learn in Korea",
   },
   {
     start: "2010",
@@ -177,7 +177,7 @@ const AboutPage = () => {
               I’m Jonathan Harrell, a designer and front-end engineer. Ever
               since playing around with HyperCard stacks on my Macintosh Classic
               as a kid in the 90s, I’ve been passionate about building things
-              with code and pixels. For the last ten years, I’ve been developing
+              with pixels and code. For the last ten years, I’ve been developing
               websites and applications for a wide range of clients, from small
               design agencies to SaaS startups to established software
               companies. While I am now a full-time software engineer, I am also

@@ -4,8 +4,11 @@ import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import Link from "next/link";
 import { X } from "react-feather";
+import { usePathname } from "next/navigation";
 
 export const MobileNav = () => {
+  const pathname = usePathname();
+
   const modalRef = useRef<HTMLDialogElement | null>(null);
 
   const [_isModalOpen, setIsModalOpen] = useState(false);
@@ -75,17 +78,29 @@ export const MobileNav = () => {
             </h2>
             <ul className="flex flex-col items-center justify-center gap-8 flex-1 text-3xl">
               <li>
-                <Link href="/" onClick={closeModal}>
+                <Link
+                  href="/"
+                  aria-current={pathname === "/" ? "page" : undefined}
+                  onClick={closeModal}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/blog" onClick={closeModal}>
+                <Link
+                  href="/blog"
+                  aria-current={pathname === "/blog" ? "page" : undefined}
+                  onClick={closeModal}
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/about" onClick={closeModal}>
+                <Link
+                  href="/about"
+                  aria-current={pathname === "/about" ? "page" : undefined}
+                  onClick={closeModal}
+                >
                   About
                 </Link>
               </li>

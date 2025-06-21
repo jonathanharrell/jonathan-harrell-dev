@@ -4,9 +4,9 @@ import { Image } from "mdast";
 import remarkParse from "remark-parse";
 import remarkMdx from "remark-mdx";
 
-export async function extractImageUrlsFromMdx(
+export const extractImageUrlsFromMdx = async (
   source: string,
-): Promise<string[]> {
+): Promise<string[]> => {
   const imageUrls: string[] = [];
 
   const processor = unified().use(remarkParse).use(remarkMdx);
@@ -21,4 +21,4 @@ export async function extractImageUrlsFromMdx(
   });
 
   return imageUrls;
-}
+};

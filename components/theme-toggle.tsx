@@ -38,7 +38,6 @@ export const ThemeToggle = () => {
           onChange={handleChange}
           className="sr-only"
         />
-        <span className="sr-only">Dark mode enabled</span>
         <span aria-hidden="true">{isChecked ? <Moon /> : <Sun />}</span>
       </label>
     </div>
