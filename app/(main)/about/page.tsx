@@ -193,7 +193,8 @@ const AboutPage = () => {
               >
                 chronicle of this site
               </Link>
-              , to see how it has evolved over the years.
+              {` `}
+              to see how it has evolved over the years.
             </p>
           </div>
         </div>

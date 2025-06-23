@@ -53,7 +53,7 @@ export const MobileNav = () => {
       </button>
       <dialog
         onClose={handleDialogClose}
-        className="w-screen max-w-[100vw] h-dvh max-h-[100vh] m-0 p-6 bg-neutral-900"
+        className="w-screen max-w-[100vw] h-dvh max-h-[100vh] m-0 p-6 bg-neutral-100 dark:bg-neutral-900"
         ref={modalRef}
       >
         <div className="flex flex-col relative h-full">
