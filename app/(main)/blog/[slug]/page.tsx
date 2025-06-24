@@ -56,7 +56,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
 
   try {
     const response = await fetch(
-      `https://webmention.io/api/mentions.jf2?target=${SITE_URL}blog/${slug}`,
+      `https://webmention.io/api/mentions.jf2?target=${SITE_URL}/blog/${slug}`,
     );
     const data = await response.json();
     mentions = data.children;
