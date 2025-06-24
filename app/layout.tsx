@@ -18,6 +18,7 @@ import { SITE_URL } from "@/constants";
 const gaId = process.env.GOOGLE_ANALYTICS_TRACKING_ID;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title:
     "Jonathan Harrell | CSS Blogger & Teacher, UI/UX Designer, Front-End Engineer",
   description:

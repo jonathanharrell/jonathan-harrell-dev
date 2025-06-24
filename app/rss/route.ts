@@ -11,7 +11,7 @@ const feed = new Feed({
   description:
     "Tips, tutorials and thoughts from designer/developer Jonathan Harrell.",
   id: SITE_URL,
-  link: `${SITE_URL}index.xml`,
+  link: `${SITE_URL}/index.xml`,
   language: "en",
   copyright: `${currentYear}, by Jonathan Harrell`,
 });
@@ -37,7 +37,7 @@ export async function GET() {
   posts.forEach((post) => {
     feed.addItem({
       title: `${post.frontmatter.title ?? ""}`,
-      link: `${SITE_URL}blog/${post.slug}`,
+      link: `${SITE_URL}/blog/${post.slug}`,
       description: `${post.frontmatter.description ?? ""}`,
       date: new Date(post.frontmatter.date),
       content: replaceDynamicColors(

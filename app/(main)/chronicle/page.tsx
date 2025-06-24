@@ -18,7 +18,7 @@ const jsonLd = {
   name: "Chronicle | Jonathan Harrell",
   description:
     "The evolution of Jonathan Harrell's development blog throughout the years.",
-  url: `${SITE_URL}chronicle`,
+  url: `${SITE_URL}/chronicle`,
   author: {
     "@type": "Person",
     name: "Jonathan Harrell",

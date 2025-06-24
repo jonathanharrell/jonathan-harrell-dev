@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     images: ["/assets/seo/og.png"],
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const HomePage = async () => {

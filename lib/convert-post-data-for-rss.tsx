@@ -6,8 +6,6 @@ import { PostData, PostFrontMatter } from "@/lib/get-post-data";
 import inlineSvg from "@/lib/inline-svg";
 import { SITE_URL } from "@/constants";
 
-const siteUrlWithoutTrailingSlash = SITE_URL.substring(0, SITE_URL.length - 1);
-
 export const convertPostDataForRss = async (
   slug: string,
 ): Promise<Omit<PostData, "imageUrls">> => {
@@ -26,7 +24,7 @@ export const convertPostDataForRss = async (
     components: {
       a: ({ children, href, ...props }) => {
         const augmentedHref = href.startsWith("/")
-          ? `${siteUrlWithoutTrailingSlash}${href}`
+          ? `${SITE_URL}${href}`
           : href;
 
         return (
@@ -38,7 +36,7 @@ export const convertPostDataForRss = async (
       img: ({ src, alt, title }) => {
         return (
           <figure>
-            <img src={`${siteUrlWithoutTrailingSlash}${src}`} alt={alt} />
+            <img src={`${SITE_URL}${src}`} alt={alt} />
             {title && <figcaption>{title}</figcaption>}
           </figure>
         );

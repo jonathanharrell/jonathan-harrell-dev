@@ -109,7 +109,7 @@ const jsonLd = {
   name: "About | Jonathan Harrell",
   description:
     "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML and CSS. Learn more.",
-  url: `${SITE_URL}about`,
+  url: `${SITE_URL}/about`,
   author: {
     "@type": "Person",
     name: "Jonathan Harrell",
@@ -160,7 +160,7 @@ const AboutPage = () => {
                 </svg>
               </div>
               <Image
-                className="hidden lg:block absolute -bottom-14 left-28 w-12"
+                className="hidden lg:block absolute -bottom-14 left-28 w-12 h-auto"
                 src="/assets/icons/curved-arrow.svg"
                 width={48}
                 height={48}

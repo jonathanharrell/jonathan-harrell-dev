@@ -19,7 +19,7 @@ const jsonLd = {
   name: "Articles | Jonathan Harrell",
   description:
     "Stay update to date on the latest developments in HTML, CSS and Javascript. Read Jonathan Harrell's blog for tips, tricks and techniques.",
-  url: `${SITE_URL}blog`,
+  url: `${SITE_URL}/blog`,
   author: {
     "@type": "Person",
     name: "Jonathan Harrell",
