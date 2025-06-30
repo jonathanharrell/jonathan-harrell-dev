@@ -1,5 +1,5 @@
 ---
-title: Typographic Details Cheat Sheet
+title: Typographic Details - Using Correct Spaces and Punctuation
 date: 2025-04-20T11:57:00.000Z
 description: >-
   Learn how to use the correct spaces, punctuation, and special characters to create precise, elegant web typography.
@@ -14,30 +14,125 @@ Welcome to this quick cheat sheet that will you help you know which spaces, punc
 
 ## Use the right spaces
 
-| Name | Entity | When to use | Example |
-| -------- | ------- | ------- | ------- |
-| Non-breaking space | `&nbsp;` | Use a non-breaking space to keep words together on the same line. | Page&nbsp;2. |
-| Thin space | `&thinsp;` | Use a thin space to separate characters when a regular space is too big. | Looking up he said, “She mouthed ‘I love you’&thinsp;” and then returned to his book. |
-| Hair space | `&hairsp;` | Use a hair space to prevent adjacent characters touching. | D.&hairsp;H.&hairsp;Lawrence. |
-| Narrow no-break space | `&#8239;` | Use a narrow no-break space to prevent initials or numbers and their units from wrapping across two lines. | A hair space is 1/24&#8239;em wide. |
+### Non-breaking space
+
+![The text “Page 2” using a non-breaking space between the word and the number. The space is emphasized with a tall red rectangle and spacing marker.](/assets/illustrations/nbsp.svg "Prevents an awkward line break between closely related elements, such as labels and numbers.")
+
+Use a non-breaking space to keep words together on the same line.
+
+```html
+Page&nbsp;2.
+```
+
+### Thin space
+
+![The word “you” followed by a closing single and double quotation mark, with a thin space placed between them, highlighted in red.](/assets/illustrations/thin.svg "Maintains typographic rhythm by creating subtle breathing room where standard spacing feels excessive.")
+
+Use a thin space to separate characters when a regular space is too big.
+
+```html
+Looking up he said, “She mouthed ‘I love you’&thinsp;” and then returned to his book.
+```
+
+### Hair space
+
+![The initials “D. H. L.” spaced with thin hair spaces between each letter and period. Each space is marked with a dark vertical bar and a red spacing indicator.](/assets/illustrations/hair.svg "Adds just enough separation to avoid visual collisions between initials without disrupting flow.")
+
+Use a hair space to prevent adjacent characters touching.
+
+```html
+D.&hairsp;H.&hairsp;Lawrence.
+```
+
+### Narrow no-break space
+
+![The expression “1⁄2 em” with a narrow no-break space between the number and the unit, highlighted by a vertical block and measurement bar beneath it.](/assets/illustrations/narrow-no-break.svg "Keeps fine-grained units intact on a single line while preserving typographic tightness.")
+
+Use a narrow no-break space to prevent initials or numbers and their units from wrapping across two lines.
+
+```html
+A hair space is 1/24&#8239;em wide.
+```
 
 ## Use the right punctuation marks
 
-| Name | Entity | When to use | Example |
-| -------- | ------- | ------- | ------- |
-| Hyphen | - | Use a hyphen for one of the following:<ul><li>joining words to indicate they have a combined meaning</li><li>indicating missing words shared by a series of compounds</li><li>indicating stuttering speech</li><li>splitting words when breaking them across lines</li></ul> | She wore a well-tailored jacket. |
-| En dash | – | Use an en dash in phrases with numerical ranges. | 4–5 minutes. |
-| Em dash | — | Use an em dash to set off phrases. Separate em dashes from phrases with hair spaces. You can also use to indicate attribution after a quote, followed by a full space. | this and that&hairsp;—&hairsp;that and this. |
-| Minus symbol | − | Use a proper minus glyph to mean minus. | 10−7=3. |
-| Multiplication symbol | × | Use a proper multiplication sign (not x) | 4×4. |
-| Obelus | ÷ | Use an obelus to indicate division. | 6÷2=3. |
-| Quotation marks | ‘&thinsp;’ “&thinsp;” | Use the proper quotation marks and apostrophes (not straight marks) | “Typography isn’t just about looks,” she said. |
-| Ellipsis | … | Always use the correct ellipsis character instead of typing three individual dots. | I’m not sure… maybe we should wait. |
-| Primes | ′ ″ | Use primes to indicate feet and inches, minutes and seconds (not straight marks) | He was 6′4″. |
-| Degree symbol | ° | Use a proper degree symbol | 50°. |
-| Parentheses | (&thinsp;) | Use for clarification or an aside. Don't italicize parentheses or brackets. | Nobody (save the other craftsmen) will appreciate half your skill. |
+### Hyphen
 
-<p className="text-base text-neutral-500 dark:text-neutral-400"><span className="small-caps">NOTE</span>: You can use the above characters directly in your code without needing to use an HTML entity. If you are using a Mac, open your symbol viewer and pop in the correct character.</p>
+![The word “op–ed” shown with a hyphen between “op” and “ed” to illustrate compound word formation.](/assets/illustrations/hyphen.svg "A hyphen joins compound words without altering rhythm or spacing of surrounding characters.")
+
+Use a hyphen for one of the following:
+* joining words to indicate they have a combined meaning
+* indicating missing words shared by a series of compounds
+* indicating stuttering speech
+* splitting words when breaking them across lines
+
+*Example:* She wore a well-tailored jacket.
+
+### En dash
+
+![The numbers 4 and 5 separated by an en dash, demonstrating correct punctuation for numeric ranges.](/assets/illustrations/en-dash.svg "An en dash indicates range with spacing that visually balances the digits it connects.")
+
+Use an en dash in phrases with numerical ranges.
+
+*Example:* 4–5 minutes.
+
+### Em dash
+
+![The phrase “I—no” with an em dash between words, highlighting punctuation for interruptions or emphasis.](/assets/illustrations/em-dash.svg "The em dash marks interruption or emphasis—spaced just enough to breathe but not break.")
+
+Use an em dash to set off phrases. Separate em dashes from phrases with hair spaces. You can also use to indicate attribution after a quote, followed by a full space.
+
+*Example:* this and that — that and this.
+
+### Minus symbol
+
+![Two horizontal dashes side by side: a shorter hyphen labeled with a red “X,” and a longer minus sign labeled with a green checkmark.](/assets/illustrations/minus.svg "The minus symbol is longer and sits at the mathematical midpoint—unlike the shorter hyphen.")
+
+Use a proper minus glyph to mean minus.
+
+### Multiplication symbol
+
+![The lowercase letter “x” on the left labeled as incorrect, contrasted with a typographic multiplication symbol on the right marked correct.](/assets/illustrations/multiplication.svg "A proper multiplication sign avoids confusion with the letter “x” and aligns better with numerals.")
+
+Use a proper multiplication sign (not x).
+
+### Obelus
+
+![A slash symbol on the left marked incorrect and labeled “slash,” contrasted with a division sign (obelus) on the right marked correct.](/assets/illustrations/obelus.svg "The obelus is the correct symbol for division, with visual weight that centers between operands.")
+
+Use an obelus to indicate division.
+
+### Quotation marks & apostrophes
+
+![Four straight vertical quote marks on the left labeled “straight marks” and marked with a red X. On the right, matching typographic curly quotes marked correct.](/assets/illustrations/quotes.svg "Quotation marks and apostrophes should curl inward and reflect the structure of the sentence—not the keyboard.")
+
+![On the left: two straight vertical marks labeled “straight marks” and marked incorrect. On the right: typographic apostrophes with curled shapes marked correct.](/assets/illustrations/apostrophes.svg)
+
+Use the proper quotation marks and apostrophes (not straight marks).
+
+### Ellipsis
+
+![Two sets of ellipses shown side by side: three individual dots on the left marked incorrect, and a single ellipsis character on the right marked correct.](/assets/illustrations/ellipsis.svg "The ellipsis character ensures consistent spacing and baseline alignment across typefaces.")
+
+Always use the correct ellipsis character instead of typing three individual dots.
+
+### Primes
+
+![On the left, three straight vertical tick marks labeled “straight marks” and marked incorrect; on the right, slanted tick marks representing prime and double prime symbols are marked correct.](/assets/illustrations/primes.svg "Prime marks indicate units like inches and minutes; straight apostrophes are typographic imposters.")
+
+Use primes to indicate feet and inches, minutes and seconds (not straight marks).
+
+### Degree symbol
+
+![A lowercase letter “o” on the left marked incorrect, contrasted with a correctly raised and smaller degree symbol on the right.](/assets/illustrations/degree.svg "The degree symbol is smaller and raised—distinct from a lowercase o.")
+
+Use a proper degree symbol.
+
+### Parentheses
+
+![Two sets of parentheses compared side by side. On the left, the italicized version is marked incorrect; on the right, the roman version is marked correct, showing the preferred typographic form.](/assets/illustrations/parentheses.svg "Parentheses are not designed to be italicized; they retain proper shape and spacing when set in roman.")
+
+Use for clarification or an aside. Don't italicize parentheses or brackets.
 
 ## Use the right characters
 
