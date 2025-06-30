@@ -167,6 +167,10 @@
     @apply mr-0.5 content-["—"];
   }
 
+  .article-prose figure svg text {
+    @apply font-sans;
+  }
+
   /* Spinner */
   .spinner {
     @apply block fixed top-[15px] right-[15px] z-[1031];
