@@ -2,9 +2,10 @@
 
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { X } from "react-feather";
-import { usePathname } from "next/navigation";
+import { ThemeRadio } from "@/components/theme-radio";
 
 export const MobileNav = () => {
   const pathname = usePathname();
@@ -65,52 +66,55 @@ export const MobileNav = () => {
             <X />
             <span className="sr-only">Close site navigation dialog</span>
           </button>
-          <nav
-            aria-labelledby="mobile-navigation-label"
-            className="flex flex-col flex-1"
-          >
-            <h2
-              id="mobile-navigation-label"
-              className="sr-only"
-              aria-hidden="true"
+          <div className="flex flex-col gap-12 items-center justify-center flex-1">
+            <nav
+              aria-labelledby="mobile-navigation-label"
+              className="flex flex-col"
             >
-              Site navigation
-            </h2>
-            <ul className="flex flex-col items-center justify-center gap-8 flex-1 text-3xl">
-              <li>
-                <Link
-                  href="/"
-                  aria-current={pathname === "/" ? "page" : undefined}
-                  onClick={closeModal}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  aria-current={pathname === "/blog" ? "page" : undefined}
-                  onClick={closeModal}
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  aria-current={pathname === "/about" ? "page" : undefined}
-                  onClick={closeModal}
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#subscribe" onClick={closeModal}>
-                  Subscribe
-                </Link>
-              </li>
-            </ul>
-          </nav>
+              <h2
+                id="mobile-navigation-label"
+                className="sr-only"
+                aria-hidden="true"
+              >
+                Site navigation
+              </h2>
+              <ul className="flex flex-col items-center justify-center gap-8 flex-1 text-3xl">
+                <li>
+                  <Link
+                    href="/"
+                    aria-current={pathname === "/" ? "page" : undefined}
+                    onClick={closeModal}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    aria-current={pathname === "/blog" ? "page" : undefined}
+                    onClick={closeModal}
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    aria-current={pathname === "/about" ? "page" : undefined}
+                    onClick={closeModal}
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#subscribe" onClick={closeModal}>
+                    Subscribe
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <ThemeRadio />
+          </div>
         </div>
       </dialog>
     </div>
