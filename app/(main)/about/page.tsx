@@ -97,7 +97,7 @@ const usesData: Use[] = [
 export const metadata: Metadata = {
   title: "About | Jonathan Harrell",
   description:
-    "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML and CSS. Learn more.",
+    "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML, CSS, and JavaScript.",
   openGraph: {
     images: ["/assets/images/jonathan-2023.jpg"],
   },
@@ -108,7 +108,7 @@ const jsonLd = {
   "@type": "WebPage",
   name: "About | Jonathan Harrell",
   description:
-    "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML and CSS. Learn more.",
+    "Jonathan Harrell is a UI/UX designer and front-end developer. He specializes in and blogs about HTML, CSS, and JavaScript.",
   url: `${SITE_URL}/about`,
   author: {
     "@type": "Person",
