@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { getPosts } from "@/lib/get-posts";
-import { HeaderAnimation } from "@/components/header-animation";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ChevronRight } from "react-feather";
+import { HeaderAnimation } from "@/components/header-animation";
 
 export const metadata: Metadata = {
   title:
@@ -17,68 +17,29 @@ export const metadata: Metadata = {
 };
 
 const HomePage = async () => {
-  const { posts } = await getPosts();
-
-  const recentPosts = posts.slice(0, 6);
-
   return (
-    <>
-      <section className="relative py-6 sm:py-10">
-        <HeaderAnimation className="hidden lg:block absolute top-[-300px] right-[-50px] w-[700px] h-[700px]" />
-        <div className="flex flex-col gap-6">
-          <h1 className="max-w-[400px] text-4xl md:text-5xl">
-            UI/UX Designer & Front-End Engineer
-          </h1>
-          <p className="max-w-[500px] text-xl">
-            I’m a designer and developer committed to making the web a more
-            empowering and accessible place. I create engaging user experiences
-            and bring them to life through maintainable, high-quality code.
-          </p>
-          <p>
-            <Link
-              href="/about"
-              className="hover:underline underline-offset-2 text-accent"
-            >
-              Learn more
-            </Link>
-          </p>
-        </div>
-      </section>
-      <section className="py-6 sm:py-10">
-        <header className="flex items-baseline justify-between gap-4">
-          <h2 className="text-3xl italic">Recent articles</h2>
+    <section className="flex flex-col items-center justify-center relative md:h-[calc(100vh-120px)] md:min-h-[800px] pb-6 sm:pb-10">
+      <HeaderAnimation className="w-[400px] h-[400px] md:w-[600px] md:h-[600px]" />
+      <div className="flex flex-col">
+        <h1 className="text-4xl text-center">
+          UI/UX Designer & <span className="italic">Front-End Engineer</span>
+        </h1>
+        <p className="max-w-[520px] mt-4 mx-auto font-sans text-center text-neutral-600 dark:text-neutral-400">
+          I’m a designer and developer committed to making the web a more
+          empowering and accessible place. I create engaging user experiences
+          and bring them to life through maintainable, high-quality code.
+        </p>
+        <p className="mt-8 text-center">
           <Link
-            href="/blog"
-            className="text-accent hover:underline underline-offset-2"
+            href="/about"
+            className="inline-flex items-center gap-1 py-3 pl-5 pr-3 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 font-sans transition-colors"
           >
-            View all
+            Learn more
+            <ChevronRight size={18} className="opacity-50" />
           </Link>
-        </header>
-        <hr
-          role="presentation"
-          className="mt-6 mb-8 sm:mb-12 border-neutral-200 dark:border-neutral-800 border-dashed"
-        />
-        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recentPosts.map((post, index) => (
-            <li key={index}>
-              <article>
-                <h3 className="text-xl mb-2 text-pretty">
-                  <Link
-                    href={`/blog/${post.frontmatter.slug}`}
-                    className="hover:underline decoration-1 underline-offset-2"
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                </h3>
-                <p className="text-lg text-neutral-500 dark:text-neutral-400">
-                  {post.frontmatter.description}
-                </p>
-              </article>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </>
+        </p>
+      </div>
+    </section>
   );
 };
 
