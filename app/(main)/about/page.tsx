@@ -196,15 +196,17 @@ const AboutPage = () => {
         </header>
         <ul aria-labelledby="work-label" className="flex flex-col gap-4">
           {workData.map((work, index) => (
-            <li
-              key={index}
-              className="md:grid grid-cols-6 gap-12 font-sans text-neutral-500 dark:text-neutral-400"
-            >
+            <li key={index} className="md:grid grid-cols-6 gap-12">
               <div className="col-start-1 col-end-4 mb-1">
-                {work.start}-{work.end || "present"}
+                <p className="font-sans text-neutral-500 dark:text-neutral-400">
+                  {work.start}-{work.end || "present"}
+                </p>
               </div>
               <div className="col-start-4 col-end-13">
-                {work.role}, {work.company}
+                <p className="text-lg font-bold">{work.company}</p>
+                <p className="font-sans text-neutral-500 dark:text-neutral-400">
+                  {work.role}
+                </p>
               </div>
             </li>
           ))}
