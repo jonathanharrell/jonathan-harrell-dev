@@ -122,7 +122,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
               <Link
                 href={`/blog/${previous.frontmatter.slug}`}
                 rel="prev"
-                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
               >
                 previous
               </Link>
@@ -133,7 +133,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
               <Link
                 href={`/blog/${next.frontmatter.slug}`}
                 rel="next"
-                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
               >
                 next
               </Link>

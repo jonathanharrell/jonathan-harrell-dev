@@ -60,7 +60,7 @@
   }
 
   .toc-wrapper .toc-link {
-    @apply no-underline hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300;
+    @apply no-underline hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
   }
 
   .article-prose > table {
@@ -88,7 +88,7 @@
   }
 
   .article-prose > aside:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply hidden lg:block col-start-11 col-end-13 relative italic text-lg leading-snug;
+    @apply hidden lg:block col-start-11 col-end-13 relative text-sm leading-snug max-xl:text-neutral-500 dark:max-xl:text-neutral-400;
   }
 
   .article-prose > aside p:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -148,7 +148,7 @@
   }
 
   .article-prose a:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply underline underline-offset-2 decoration-1 decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300;
+    @apply underline underline-offset-2 decoration-1 decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
   }
 
   .article-prose :where(img):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {

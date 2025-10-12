@@ -174,7 +174,7 @@ const AboutPage = () => {
           </div>
           <div className="flex flex-col gap-6 flex-1">
             <h1 className="text-3xl font-bold">About Jonathan</h1>
-            <p className="font-sans text-neutral-600 dark:text-neutral-400">
+            <p className="text-lg">
               I’m Jonathan Harrell, a designer and front-end engineer. Ever
               since playing around with HyperCard stacks on my Macintosh Classic
               as a kid in the 90s, I’ve been passionate about building things

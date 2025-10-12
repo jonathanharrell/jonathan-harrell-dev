@@ -87,10 +87,7 @@ export const LightDarkSvg = () => {
         </div>
       </div>
       <figcaption>
-        <button
-          className="italic underline hover:no-underline"
-          onClick={toggleTheme}
-        >
+        <button className="underline hover:no-underline" onClick={toggleTheme}>
           Click here
         </button>{" "}
         to toggle the theme and watch the SVG dynamically adapt
