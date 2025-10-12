@@ -56,7 +56,7 @@
   }
 
   .toc-wrapper .toc-item {
-    @apply leading-snug;
+    @apply mb-2 leading-snug;
   }
 
   .toc-wrapper .toc-link {
@@ -140,7 +140,7 @@
   }
 
   .article-prose :where(p code):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply text-base text-neutral-600 dark:text-neutral-400;
+    @apply text-base;
   }
 
   .article-prose pre:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {

@@ -63,16 +63,19 @@ export const Subscribe = () => {
         </button>
       </div>
       <div
-        className={classNames("flex items-center gap-2", {
-          "text-green-500": state?.status === 200,
-          "text-red-600": state?.status && state.status !== 200,
-        })}
+        className={classNames(
+          "flex items-center justify-center gap-2 w-full font-sans text-center",
+          {
+            "text-green-500": state?.status === 200,
+            "text-red-600": state?.status && state.status !== 200,
+          },
+        )}
       >
         {state?.status === 200 && <CheckCircle size={18} role="presentation" />}
         {Boolean(state?.status && state.status !== 200) && (
           <XCircle size={18} role="presentation" />
         )}
-        <p aria-live="assertive" role="status" className="text-lg">
+        <p aria-live="assertive" role="status">
           {state?.status === 200 && "Subscribed!"}
           {Boolean(state?.status && state.status !== 200) &&
             "Failed to subscribe"}
