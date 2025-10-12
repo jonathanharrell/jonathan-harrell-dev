@@ -12,7 +12,7 @@ export const DesktopNav = () => {
     "hover:underline underline-offset-2 decoration-neutral-400 dark:decoration-neutral-500";
 
   return (
-    <div className="hidden md:flex items-center gap-12 ml-auto">
+    <div className="hidden md:flex items-center gap-12 ml-auto font-sans">
       <nav className="flex gap-8" aria-labelledby="navigation-label">
         <h2 id="navigation-label" className="sr-only" aria-hidden="true">
           Site navigation

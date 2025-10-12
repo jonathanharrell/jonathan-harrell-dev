@@ -36,7 +36,7 @@
 
 @layer components {
   .article-prose {
-    @apply grid grid-cols-12 lg:gap-x-10 text-lg !leading-normal;
+    @apply grid grid-cols-12 lg:gap-x-10 md:text-lg !leading-normal;
   }
 
   .article-prose > *:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -44,7 +44,7 @@
   }
 
   .article-prose > .toc-wrapper {
-    @apply hidden xl:block col-start-1 col-end-3 row-start-1 relative text-lg;
+    @apply hidden xl:block col-start-1 col-end-3 row-start-1 relative;
   }
 
   .toc-wrapper .toc {
@@ -136,7 +136,7 @@
   }
 
   .article-prose code:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply text-[15px];
+    @apply text-sm md:text-[15px];
   }
 
   .article-prose :where(p code):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -144,7 +144,7 @@
   }
 
   .article-prose pre:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply max-w-full py-3 px-6 rounded bg-neutral-100 dark:bg-neutral-800 whitespace-pre-wrap leading-tight;
+    @apply max-w-full overflow-x-auto py-3 px-6 rounded bg-neutral-100 dark:bg-neutral-800 whitespace-pre-wrap leading-tight;
   }
 
   .article-prose a:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {

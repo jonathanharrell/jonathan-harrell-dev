@@ -19,7 +19,7 @@ export const LightDarkSvg = () => {
             width="592"
             height="621"
             xmlns="http://www.w3.org/2000/svg"
-            className="max-w-[400px] max-h-[400px] border border-[var(--illustration-gray)]"
+            className="w-[400px] max-w-full h-auto border border-[var(--illustration-gray)]"
           >
             <g fill="none" fillRule="evenodd">
               <circle

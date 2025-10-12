@@ -123,7 +123,7 @@ const AboutPage = () => {
       <section className="pb-6 sm:pb-10 md:py-10">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="flex items-start md:justify-end md:order-1">
-            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[300px] mx-auto">
+            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[300px] mx-auto mt-4 md:mt-0">
               <div className="relative">
                 <Image
                   src="/assets/images/jonathan-2023.jpg"
@@ -174,7 +174,7 @@ const AboutPage = () => {
           </div>
           <div className="flex flex-col gap-6 flex-1">
             <h1 className="text-3xl font-bold">About Jonathan</h1>
-            <p className="text-lg">
+            <p className="md:ext-lg">
               I’m Jonathan Harrell, a designer and front-end engineer. Ever
               since playing around with HyperCard stacks on my Macintosh Classic
               as a kid in the 90s, I’ve been passionate about building things
@@ -194,7 +194,7 @@ const AboutPage = () => {
             My Work
           </h2>
         </header>
-        <ul aria-labelledby="work-label" className="flex flex-col gap-4">
+        <ul aria-labelledby="work-label" className="flex flex-col gap-6">
           {workData.map((work, index) => (
             <li key={index} className="md:grid grid-cols-6 gap-12">
               <div className="col-start-1 col-end-4 mb-1">
@@ -218,7 +218,7 @@ const AboutPage = () => {
             What I Use
           </h2>
         </header>
-        <ul className="flex flex-col gap-4" aria-labelledby="uses-label">
+        <ul className="flex flex-col gap-6" aria-labelledby="uses-label">
           {usesData.map((use, index) => (
             <li key={index} className="md:grid grid-cols-6 gap-12 font-sans">
               <p className="col-start-1 col-end-4 mb-1 text-neutral-500 dark:text-neutral-400">

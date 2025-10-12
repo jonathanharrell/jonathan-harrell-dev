@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 const HomePage = async () => {
   return (
-    <section className="flex flex-col items-center justify-center relative md:h-[calc(100vh-120px)] md:min-h-[600px] pb-6 sm:pb-10">
-      <HeaderAnimation className="w-[400px] h-[400px] md:min-w-[400px] md:min-h-[400px] md:w-[50vh] md:h-[50vh] md:max-w-[600px] md:max-h-[600px]" />
+    <section className="flex flex-col items-center justify-center relative md:h-[calc(100dvh-120px)] md:min-h-[600px] pb-6 sm:pb-10">
+      <HeaderAnimation className="w-[320px] h-[320px] md:min-w-[400px] md:min-h-[400px] md:w-[50vh] md:h-[50vh] md:max-w-[600px] md:max-h-[600px]" />
       <div className="flex flex-col">
         <h1 className="text-3xl md:text-4xl text-center">
           UI/UX Designer & <br />

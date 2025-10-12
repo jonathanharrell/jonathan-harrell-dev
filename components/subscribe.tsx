@@ -49,7 +49,7 @@ export const Subscribe = () => {
             placeholder="Enter your email for more tips and tricks"
             autoComplete="email"
             required
-            className="flex-1 rounded-none py-3 px-4 border border-neutral-200 dark:border-neutral-800 bg-neutral-100 font-sans dark:bg-neutral-800 dark:text-neutral-100 placeholder:text-neutral-400"
+            className="flex-1 rounded-none py-3 px-4 border border-neutral-200 dark:border-neutral-800 bg-neutral-100 truncate font-sans dark:bg-neutral-800 dark:text-neutral-100 placeholder:text-neutral-400"
             ref={inputRef}
           />
         </div>
