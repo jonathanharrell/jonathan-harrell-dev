@@ -119,11 +119,11 @@ const jsonLd = {
 
 const AboutPage = () => {
   return (
-    <>
+    <div className="max-w-[800px] mx-auto">
       <section className="pb-6 sm:pb-10 md:py-10">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="flex items-start md:justify-end md:order-1">
-            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[400px] lg:-mt-[60px] mx-auto">
+            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[300px] mx-auto mt-4 md:mt-0">
               <div className="relative">
                 <Image
                   src="/assets/images/jonathan-2023.jpg"
@@ -160,21 +160,21 @@ const AboutPage = () => {
                 </svg>
               </div>
               <Image
-                className="hidden lg:block absolute -bottom-14 left-28 w-12 h-auto"
+                className="hidden lg:block absolute -bottom-14 left-16 w-12 h-auto"
                 src="/assets/icons/curved-arrow.svg"
                 width={48}
                 height={48}
                 role="presentation"
                 alt=""
               />
-              <figcaption className="hidden lg:block absolute -bottom-20 right-8 max-w-[200px] text-balance italic text-right">
+              <figcaption className="hidden lg:block absolute -bottom-20 right-0 max-w-[200px] text-balance italic text-right text-sm">
                 Me on Loch Ness, right before drinking a whiskey hot chocolate
               </figcaption>
             </figure>
           </div>
           <div className="flex flex-col gap-6 flex-1">
-            <h1 className="text-4xl md:text-5xl">About Jonathan</h1>
-            <p className="text-xl">
+            <h1 className="text-3xl font-bold">About Jonathan</h1>
+            <p className="md:text-lg">
               I’m Jonathan Harrell, a designer and front-end engineer. Ever
               since playing around with HyperCard stacks on my Macintosh Classic
               as a kid in the 90s, I’ve been passionate about building things
@@ -185,86 +185,51 @@ const AboutPage = () => {
               passionate about design, and worked for several years as a UI/UX
               designer. I am currently based in Brooklyn, New York.
             </p>
-            <p className="text-xl">
-              If you’re curious, check out the{" "}
-              <Link
-                href="/chronicle"
-                className="underline hover:no-underline decoration-1 underline-offset-2"
-              >
-                chronicle of this site
-              </Link>
-              {` `}
-              to see how it has evolved over the years.
-            </p>
           </div>
         </div>
       </section>
       <section className="pt-6 sm:pt-10 pb-2">
-        <header>
-          <h2 id="work-label" className="text-3xl italic">
+        <header className="mb-10">
+          <h2 id="work-label" className="text-2xl font-bold">
             My Work
           </h2>
         </header>
-        <hr
-          role="presentation"
-          className="my-6 border-neutral-200 dark:border-neutral-800 border-dashed"
-        />
-        <ul
-          aria-labelledby="work-label"
-          className="grid gap-x-4 md:gap-x-6"
-          style={{ gridTemplateColumns: "auto auto 1fr" }}
-        >
+        <ul aria-labelledby="work-label" className="flex flex-col gap-6">
           {workData.map((work, index) => (
-            <li
-              key={index}
-              className="grid grid-cols-subgrid col-start-1 col-end-4"
-            >
-              <div className="-mt-0.5 md:mt-0.5 text-lg text-right">
-                {work.start}-{work.end || "present"}
+            <li key={index} className="md:grid grid-cols-6 gap-12">
+              <div className="col-start-1 col-end-4 mb-1">
+                <p className="font-sans text-neutral-500 dark:text-neutral-400">
+                  {work.start}-{work.end || "present"}
+                </p>
               </div>
-              <div role="presentation" className="relative h-full">
-                <div
-                  className={classNames(
-                    "w-6 md:w-8 h-6 md:h-8 rounded-full border-2 border-neutral-300 dark:border-neutral-700",
-                    {
-                      "before:block before:absolute before:bottom-0 before:left-1/2 before:h-[calc(100%-24px)] before:md:h-[calc(100%-32px)] before:w-[2px] before:bg-neutral-300 before:dark:bg-neutral-700 before:-translate-x-1/2 before:content-['']":
-                        index !== workData.length - 1,
-                    },
-                  )}
-                />
-              </div>
-              <div className="-mt-0.5 md:mt-0.5 pb-5 md:pb-8 text-xl">
-                {work.role}, {work.company}
+              <div className="col-start-4 col-end-13">
+                <p className="text-lg font-bold">{work.company}</p>
+                <p className="font-sans text-neutral-500 dark:text-neutral-400">
+                  {work.role}
+                </p>
               </div>
             </li>
           ))}
         </ul>
       </section>
       <section id="uses" className="py-6 sm:py-10">
-        <header>
-          <h2 id="uses-label" className="text-3xl italic">
+        <header className="mb-10">
+          <h2 id="uses-label" className="text-2xl font-bold">
             What I Use
           </h2>
         </header>
-        <hr
-          role="presentation"
-          className="my-6 border-neutral-200 dark:border-neutral-800 border-dashed"
-        />
-        <ul
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-          aria-labelledby="uses-label"
-        >
+        <ul className="flex flex-col gap-6" aria-labelledby="uses-label">
           {usesData.map((use, index) => (
-            <li key={index}>
-              <p className="text-lg text-neutral-500 dark:text-neutral-400">
+            <li key={index} className="md:grid grid-cols-6 gap-12 font-sans">
+              <p className="col-start-1 col-end-4 mb-1 text-neutral-500 dark:text-neutral-400">
                 {use.type}
               </p>
-              <p>
+              <p className="col-start-4 col-end-13">
                 <a
                   href={use.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xl underline hover:no-underline underline-offset-2 decoration-1 decoration-neutral-400 dark:decoration-neutral-200"
+                  className="underline underline-offset-2 decoration-1 decoration-neutral-300 dark:decoration-neutral-500 text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100"
                 >
                   {use.label}
                 </a>
@@ -277,7 +242,7 @@ const AboutPage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </>
+    </div>
   );
 };
 

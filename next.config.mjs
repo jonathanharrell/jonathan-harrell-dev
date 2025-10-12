@@ -47,6 +47,11 @@ const nextConfig = {
         destination: "/rss",
         permanent: true,
       },
+      {
+        source: "/chronicle",
+        destination: "/about",
+        permanent: false,
+      },
     ];
   },
 };

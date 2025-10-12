@@ -118,7 +118,7 @@ export default function RootLayout({
             }}
           />
         </head>
-        <body className="flex flex-col min-h-dvh bg-white dark:bg-neutral-900 font-etbook text-neutral-800 dark:text-neutral-300">
+        <body className="flex flex-col min-h-dvh bg-white dark:bg-neutral-900 font-iowan text-neutral-800 dark:text-neutral-300">
           <div className="flex flex-col flex-1 container overflow-hidden">
             <NextTopLoader color="#e6594c" />
             <SkipToContent />
@@ -138,7 +138,6 @@ export default function RootLayout({
                 <ViewTransition>{children}</ViewTransition>
               </Suspense>
             </main>
-            <Subscribe />
             <Footer />
             <script
               type="application/ld+json"

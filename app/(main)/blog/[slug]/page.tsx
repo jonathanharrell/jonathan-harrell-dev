@@ -10,6 +10,7 @@ import { Mention } from "@/components/mention";
 import { SITE_URL } from "@/constants";
 import type { Mention as MentionType } from "@/types";
 import "@/styles/prism.css";
+import Image from "next/image";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -66,8 +67,11 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
 
   return (
     <article className="h-entry">
-      <header>
-        <div className="mt-1 text-neutral-500 dark:text-neutral-400 text-lg">
+      <header className="flex flex-col items-center gap-6 max-w-[480px] mt-8 mx-auto text-center">
+        <h1 className="p-name max-w-[32ch] text-3xl font-bold text-balance">
+          {post.frontmatter.title}
+        </h1>
+        <div className="font-sans text-sm text-neutral-500 dark:text-neutral-400">
           <time dateTime={post.frontmatter.date} className="dt-published">
             {formattedDate}
           </time>
@@ -80,9 +84,6 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
             </>
           )}
         </div>
-        <h1 className="p-name max-w-[32ch] mt-2 text-4xl md:text-5xl text-balance">
-          {post.frontmatter.title}
-        </h1>
       </header>
       <div
         className={classNames("e-content article-prose mt-12", uniqueClassName)}
@@ -90,60 +91,53 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
         {post.content}
       </div>
       {mentions.length > 0 && (
-        <section className="py-6 sm:py-10">
-          <header className="flex flex-col gap-4">
-            <h2 id="mentions-label" className="text-3xl italic">
-              Mentions
-            </h2>
-          </header>
-          <hr
-            role="presentation"
-            className="my-6 border-neutral-200 dark:border-neutral-800 border-dashed"
-          />
-          <ul aria-labelledby="mentions-label" className="flex flex-col gap-8">
-            {mentions.map((mention, index) => (
-              <li key={index}>
-                <Mention mention={mention} />
-              </li>
-            ))}
-          </ul>
+        <section className="grid grid-cols-12 lg:gap-x-10 py-6 sm:py-10">
+          <div className="col-start-1 col-end-13 lg:col-start-3 lg:col-end-11">
+            <header className="flex flex-col gap-4">
+              <h2 id="mentions-label" className="text-2xl font-bold">
+                Mentions
+              </h2>
+            </header>
+            <ul
+              aria-labelledby="mentions-label"
+              className="flex flex-col gap-8"
+            >
+              {mentions.map((mention, index) => (
+                <li key={index}>
+                  <Mention mention={mention} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       )}
-      <section className="mt-6 sm:mt-10 py-6 border-t border-neutral-200 dark:border-neutral-800 border-dashed">
+      <section className="grid grid-cols-12 lg:gap-x-10 mt-6 py-6">
         <h2 id="other-articles-label" className="sr-only">
           Other articles
         </h2>
         <nav
           aria-labelledby="other-aticles-label"
-          className="flex flex-col sm:flex-row items-center md:justify-between gap-8 text-center"
+          className="col-start-1 col-end-13 lg:col-start-3 lg:col-end-11 flex items-center justify-between gap-8 font-sans"
         >
-          {next && (
-            <div className="flex-1 sm:text-left">
-              <span className="text-neutral-500 dark:text-neutral-400">
-                Newer article
-              </span>
-              <Link
-                href={`/blog/${next.frontmatter.slug}`}
-                rel="next"
-                className="flex items-center gap-1.5 md:text-lg underline-offset-2 hover:underline"
-              >
-                <ArrowLeft size={16} />
-                {next.frontmatter.title}
-              </Link>
-            </div>
-          )}
           {previous && (
-            <div className="flex-1 sm:ml-auto sm:text-right">
-              <span className="text-neutral-500 dark:text-neutral-400">
-                Older article
-              </span>
+            <div className="flex-1">
               <Link
                 href={`/blog/${previous.frontmatter.slug}`}
                 rel="prev"
-                className="flex items-center md:justify-end gap-1.5 md:text-lg underline-offset-2 hover:underline"
+                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
               >
-                {previous.frontmatter.title}
-                <ArrowRight size={16} />
+                previous
+              </Link>
+            </div>
+          )}
+          {next && (
+            <div className="flex-1 text-right">
+              <Link
+                href={`/blog/${next.frontmatter.slug}`}
+                rel="next"
+                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+              >
+                next
               </Link>
             </div>
           )}

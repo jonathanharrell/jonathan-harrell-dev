@@ -36,23 +36,35 @@
 
 @layer components {
   .article-prose {
-    @apply grid grid-cols-12 lg:gap-x-16 text-lg lg:text-xl !leading-normal;
+    @apply grid grid-cols-12 lg:gap-x-10 md:text-lg !leading-normal;
   }
 
   .article-prose > *:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply col-start-1 col-end-13 lg:col-end-9;
+    @apply col-start-1 col-end-13 lg:col-start-3 lg:col-end-11;
   }
 
   .article-prose > .toc-wrapper {
-    @apply hidden lg:block col-start-9 col-end-13 row-start-1 relative text-lg;
+    @apply hidden xl:block col-start-1 col-end-3 row-start-1 relative;
   }
 
   .toc-wrapper .toc {
-    @apply absolute text-neutral-500 dark:text-neutral-400;
+    @apply absolute text-sm;
+  }
+
+  .toc-wrapper .toc-level {
+    @apply list-none;
+  }
+
+  .toc-wrapper .toc-item {
+    @apply mb-2 leading-snug;
+  }
+
+  .toc-wrapper .toc-link {
+    @apply no-underline hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
   }
 
   .article-prose > table {
-    @apply col-start-1 col-end-13;
+    @apply col-start-1 col-end-13 lg:col-start-3 lg:col-end-11;
   }
 
   .article-prose table {
@@ -76,7 +88,7 @@
   }
 
   .article-prose > aside:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply hidden lg:block col-start-9 col-end-13 relative italic text-lg leading-snug;
+    @apply hidden lg:block col-start-11 col-end-13 relative text-sm leading-snug max-xl:text-neutral-500 dark:max-xl:text-neutral-400;
   }
 
   .article-prose > aside p:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -92,31 +104,31 @@
   }
 
   .article-prose > figure:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply grid grid-cols-subgrid col-start-1 col-end-13 max-lg:gap-4 mb-8;
+    @apply grid grid-cols-subgrid col-start-1 col-end-13 max-xl:gap-4 mb-8;
   }
 
   .article-prose > figure :where(img, svg, div):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply col-start-1 col-end-13 lg:col-end-9;
+    @apply col-start-1 col-end-13 lg:col-start-3 lg:col-end-11;
   }
 
   .article-prose > figure figcaption:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply col-start-1 lg:col-start-9 col-end-13 italic text-lg max-lg:text-neutral-400;
+    @apply col-start-1 lg:col-start-3 xl:col-start-11 col-end-13 lg:col-end-11 xl:col-end-13 text-sm leading-snug max-xl:text-neutral-500 dark:max-xl:text-neutral-400;
   }
 
   .article-prose > *:has(+ h2):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply mb-16;
-  }
-
-  .article-prose > *:has(+ aside + h2):not(:where([class~=not-article-prose] *)) {
     @apply mb-12;
   }
 
+  .article-prose > *:has(+ aside + h2):not(:where([class~=not-article-prose] *)) {
+    @apply mb-8;
+  }
+
   .article-prose h2:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply scroll-mt-4 mb-4 text-3xl italic;
+    @apply scroll-mt-4 mb-4 text-2xl font-bold;
   }
 
   .article-prose h3:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply mb-4 text-2xl;
+    @apply mb-4 text-[22px] italic;
   }
 
   .article-prose > *:has(+ h3):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -124,15 +136,19 @@
   }
 
   .article-prose code:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply text-[15px];
+    @apply text-sm md:text-[15px];
+  }
+
+  .article-prose :where(p code):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+    @apply text-base;
   }
 
   .article-prose pre:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply max-w-full py-3 px-6 text-[15px] whitespace-pre-wrap;
+    @apply max-w-full overflow-x-auto py-3 px-6 rounded bg-neutral-100 dark:bg-neutral-800 whitespace-pre-wrap leading-tight;
   }
 
   .article-prose a:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply underline hover:no-underline underline-offset-4 decoration-1;
+    @apply underline underline-offset-2 decoration-1 decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
   }
 
   .article-prose :where(img):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
@@ -152,7 +168,7 @@
   }
 
   .article-prose blockquote {
-    @apply mb-8 pl-5 border-l-4 border-neutral-300 dark:border-neutral-700 italic;
+    @apply mb-8 pl-5 border-l-2 border-neutral-300 dark:border-neutral-700 italic text-neutral-500 dark:text-neutral-400;
   }
 
   .article-prose blockquote p {
@@ -160,7 +176,7 @@
   }
 
   .article-prose blockquote cite {
-    @apply block mt-2 not-italic text-base text-neutral-500 dark:text-neutral-400;
+    @apply block mt-2 not-italic text-base;
   }
 
   .article-prose blockquote cite::before {

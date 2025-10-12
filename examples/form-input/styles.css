@@ -38,7 +38,7 @@
   }
 
   div:has(> input:disabled) label {
-    @apply text-neutral-400;
+    @apply text-neutral-400 dark:text-neutral-500;
   }
 
   input:disabled {
@@ -98,11 +98,11 @@
   }
 
   .checkbox input[type="checkbox"] + label::before {
-    @apply block w-4 h-4 border border-neutral-800 bg-white transition-colors duration-200 content-[""];
+    @apply block w-4 h-4 border border-neutral-800 dark:border-neutral-300 bg-white dark:bg-neutral-600 transition-colors duration-200 content-[""];
   }
 
   .checkbox input[type="checkbox"]:disabled + label::before {
-    @apply border-neutral-400;
+    @apply border-neutral-400 dark:border-neutral-500;
   }
 
   .checkbox input[type="checkbox"]:checked + label::before {

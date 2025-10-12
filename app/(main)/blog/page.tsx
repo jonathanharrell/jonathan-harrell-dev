@@ -31,42 +31,56 @@ const BlogPage = async () => {
   const { posts } = await getPosts();
 
   return (
-    <>
+    <div className="max-w-[800px] mx-auto">
       <header className="h-feed py-6 sm:py-10">
-        <h1 className="p-name text-4xl md:text-5xl">Articles</h1>
+        <h1 className="p-name text-3xl font-bold">Articles</h1>
       </header>
       <section className="py-6 sm:py-10">
-        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
-            <li key={index}>
-              <article className="h-entry">
-                <p
-                  aria-hidden="true"
-                  className="text-4xl text-neutral-400 dark:text-neutral-600 mb-1"
-                >
-                  {("0" + (posts.length - index)).slice(-2)}
-                </p>
-                <h2 className="text-xl mb-2">
-                  <Link
-                    href={`/blog/${post.frontmatter.slug}`}
-                    className="p-name hover:underline decoration-1 underline-offset-2"
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                </h2>
-                <p className="p-summary text-lg text-neutral-500 dark:text-neutral-400">
-                  {post.frontmatter.description}
-                </p>
-              </article>
-            </li>
-          ))}
+        <ul className="flex flex-col gap-8">
+          {posts.map((post, index) => {
+            const formattedDate = new Date(
+              post.frontmatter.date,
+            ).toLocaleDateString("default", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            });
+
+            return (
+              <li key={index}>
+                <article className="h-entry md:grid grid-cols-6 gap-12">
+                  <div className="col-start-1 col-end-3 mb-2">
+                    <time
+                      dateTime={post.frontmatter.date}
+                      className="dt-published font-sans text-neutral-500 dark:text-neutral-400"
+                    >
+                      {formattedDate}
+                    </time>
+                  </div>
+                  <div className="col-start-3 col-end-13">
+                    <h2 className="mb-2 text-lg font-bold">
+                      <Link
+                        href={`/blog/${post.frontmatter.slug}`}
+                        className="p-name hover:underline decoration-2 underline-offset-2 decoration-neutral-300 dark:decoration-neutral-600"
+                      >
+                        {post.frontmatter.title}
+                      </Link>
+                    </h2>
+                    <p className="p-summary font-sans text-neutral-500 dark:text-neutral-400">
+                      {post.frontmatter.description}
+                    </p>
+                  </div>
+                </article>
+              </li>
+            );
+          })}
         </ul>
       </section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </>
+    </div>
   );
 };
 

@@ -46,7 +46,7 @@ export const MobileNav = () => {
   return (
     <div className="md:hidden">
       <button
-        className="py-1.5 px-3 rounded-full border border-neutral-700 hover:border-neutral-500 leading-none transition-colors duration-200 ease-in-out"
+        className="py-1.5 px-3 rounded-full border border-neutral-700 hover:border-neutral-500 font-sans text-sm leading-none transition-colors duration-200 ease-in-out"
         onClick={showModal}
       >
         <span className="sr-only">Site Navigation Dialog</span>
@@ -78,7 +78,7 @@ export const MobileNav = () => {
               >
                 Site navigation
               </h2>
-              <ul className="flex flex-col items-center justify-center gap-8 flex-1 text-3xl">
+              <ul className="flex flex-col items-center justify-center gap-8 flex-1 text-3xl font-bold">
                 <li>
                   <Link
                     href="/"
@@ -104,11 +104,6 @@ export const MobileNav = () => {
                     onClick={closeModal}
                   >
                     About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#subscribe" onClick={closeModal}>
-                    Subscribe
                   </Link>
                 </li>
               </ul>

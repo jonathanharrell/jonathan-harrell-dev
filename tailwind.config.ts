@@ -22,6 +22,7 @@ const config: Config = {
         "Palatino",
         "serif",
       ],
+      iowan: ["Iowan Old Style", "Palatino", "serif"],
       sans: [
         "ui-sans-serif",
         "system-ui",
@@ -31,6 +32,7 @@ const config: Config = {
         "Segoe UI Symbol",
         "Noto Color Emoji",
       ],
+      "gt-america": ["Gt America", "ui-sans-serif", "system-ui", "sans-serif"],
     },
     container: {
       screens: {
@@ -38,7 +40,7 @@ const config: Config = {
         md: "768px",
         lg: "1024px",
         xl: "1100px",
-        "2xl": "1100px",
+        "2xl": "1200px",
       },
       center: true,
       padding: {
