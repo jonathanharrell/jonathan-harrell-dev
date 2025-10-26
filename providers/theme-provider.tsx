@@ -1,7 +1,7 @@
 "use client";
 
-import React, {createContext, ReactNode, useEffect, useState} from "react";
-import {useLocalStorage} from "usehooks-ts";
+import React, { createContext, ReactNode, useEffect, useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 
 export enum Theme {
   LIGHT = "light",
@@ -20,9 +20,13 @@ interface ThemeProviderProps {
 export default function ThemeProvider({ children }: ThemeProviderProps) {
   // initialize with the possible value from local storage, rather than the default value specified here
   // this is important to avoid a flash of the default theme when the page loads
-  const [savedTheme, setSavedTheme] = useLocalStorage<Theme>("theme", Theme.LIGHT, {
-    initializeWithValue: true,
-  });
+  const [savedTheme, setSavedTheme] = useLocalStorage<Theme>(
+    "theme",
+    Theme.LIGHT,
+    {
+      initializeWithValue: true,
+    },
+  );
 
   const [theme, setTheme] = useState(savedTheme);
 
@@ -33,7 +37,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
       } else {
         window.document.documentElement.classList.add("dark");
       }
-    }
+    };
 
     // store the new theme in local storage
     // this change can happen either from the user's system theme changing
@@ -49,7 +53,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
     } else {
       setThemeOnDocumentElement();
     }
-  }, [theme]);
+  }, [setSavedTheme, theme]);
 
   const handleDarkModePreferenceChange = (event: MediaQueryListEvent) => {
     if (event.matches) {
@@ -57,15 +61,23 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
     } else {
       setTheme(Theme.LIGHT);
     }
-  }
+  };
 
   useEffect(() => {
-    const userPrefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    userPrefersDarkMode.addEventListener("change", handleDarkModePreferenceChange);
+    const userPrefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    );
+    userPrefersDarkMode.addEventListener(
+      "change",
+      handleDarkModePreferenceChange,
+    );
 
     return () => {
-      userPrefersDarkMode.removeEventListener("change", handleDarkModePreferenceChange);
-    }
+      userPrefersDarkMode.removeEventListener(
+        "change",
+        handleDarkModePreferenceChange,
+      );
+    };
   }, []);
 
   return (

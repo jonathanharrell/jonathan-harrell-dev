@@ -135,7 +135,9 @@ export default function RootLayout({
                   </div>
                 }
               >
-                <ViewTransition>{children}</ViewTransition>
+                <ViewTransition>
+                  <div>{children}</div>
+                </ViewTransition>
               </Suspense>
             </main>
             <Footer />
