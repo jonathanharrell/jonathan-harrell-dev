@@ -1,3 +1,5 @@
+@reference "./index.css";
+
 /* -- LIGHT MODE -- */
 .token.comment,
 .token.prolog,

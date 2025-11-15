@@ -57,7 +57,7 @@ export const Subscribe = () => {
         <button
           type="submit"
           disabled={pending}
-          className="px-4 bg-accent disabled:brightness-[50%] hover:brightness-[90%] hover:dark:brightness-[80%] font-sans text-neutral-900 transition-all duration-200 ease-in-out"
+          className="px-4 bg-accent disabled:brightness-50 hover:brightness-90 dark:hover:brightness-80 font-sans text-neutral-900 transition-all duration-200 ease-in-out select-none"
         >
           Subscribe
         </button>

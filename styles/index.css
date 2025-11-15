@@ -1,84 +1,74 @@
-@import "./fonts.css";
-@import "./vars.css";
-@import "./overrides.css";
+@import './fonts.css' layer(base);
+@import './vars.css' layer(base);
+@import './overrides.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+@config '../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
-  *:focus {
-    @apply outline-none ring-0;
-  }
-
-  *:focus-visible {
-    @apply outline-none ring-1 ring-offset-1 dark:ring-offset-neutral-950 ring-neutral-400 dark:ring-neutral-300;
-  }
-
-  ::selection {
-    @apply bg-neutral-300/50 dark:bg-neutral-700/50;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-@layer utilities {
-  .no-caps {
-    font-variant: normal;
-  }
-
-  .small-caps {
-    font-variant: small-caps;
-  }
-
-  .all-small-caps {
-    font-variant: all-small-caps;
-  }
+@utility no-caps {
+  font-variant: normal;
 }
 
-@layer components {
-  .article-prose {
-    @apply grid grid-cols-12 lg:gap-x-10 md:text-lg !leading-normal;
-  }
+@utility small-caps {
+  font-variant: small-caps;
+}
 
-  .article-prose > *:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+@utility all-small-caps {
+  font-variant: all-small-caps;
+}
+
+@utility article-prose {
+  @apply grid grid-cols-12 lg:gap-x-10 md:text-lg leading-normal!;
+
+  &
+    > *:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply col-start-1 col-end-13 lg:col-start-3 lg:col-end-11;
   }
 
-  .article-prose > .toc-wrapper {
+  & > .toc-wrapper {
     @apply hidden xl:block col-start-1 col-end-3 row-start-1 relative;
   }
 
-  .toc-wrapper .toc {
-    @apply absolute text-sm;
-  }
-
-  .toc-wrapper .toc-level {
-    @apply list-none;
-  }
-
-  .toc-wrapper .toc-item {
-    @apply mb-2 leading-snug;
-  }
-
-  .toc-wrapper .toc-link {
-    @apply no-underline hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
-  }
-
-  .article-prose > table {
+  & > table {
     @apply col-start-1 col-end-13 lg:col-start-3 lg:col-end-11;
   }
 
-  .article-prose table {
+  & table {
     @apply leading-snug;
 
-    th, td {
+    th,
+    td {
       @apply py-4 px-6 border-b border-neutral-300 dark:border-neutral-700;
     }
 
-    th:first-child, td:first-child {
+    th:first-child,
+    td:first-child {
       @apply pl-0;
     }
 
-    th:last-child, td:last-child {
+    th:last-child,
+    td:last-child {
       @apply pr-0;
     }
 
@@ -87,116 +77,239 @@
     }
   }
 
-  .article-prose > aside:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    > aside:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply hidden lg:block col-start-11 col-end-13 relative text-sm leading-snug max-xl:text-neutral-500 dark:max-xl:text-neutral-400;
   }
 
-  .article-prose > aside p:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    > aside
+    p:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply absolute;
   }
 
-  .article-prose :where(p, ul, ol, figure, pre, table):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    :where(p, ul, ol, figure, pre, table):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply mb-4;
   }
 
-  .article-prose :where(p, ul, ol, figure, pre):has(+ figure):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    :where(p, ul, ol, figure, pre):has(+ figure):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply mb-8;
   }
 
-  .article-prose > figure:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    > figure:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply grid grid-cols-subgrid col-start-1 col-end-13 max-xl:gap-4 mb-8;
   }
 
-  .article-prose > figure :where(img, svg, div):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    > figure
+    :where(img, svg, div):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply col-start-1 col-end-13 lg:col-start-3 lg:col-end-11;
   }
 
-  .article-prose > figure figcaption:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    > figure
+    figcaption:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply col-start-1 lg:col-start-3 xl:col-start-11 col-end-13 lg:col-end-11 xl:col-end-13 text-sm leading-snug max-xl:text-neutral-500 dark:max-xl:text-neutral-400;
   }
 
-  .article-prose > *:has(+ h2):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    > *:has(+ h2):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply mb-12;
   }
 
-  .article-prose > *:has(+ aside + h2):not(:where([class~=not-article-prose] *)) {
+  & > *:has(+ aside + h2):not(:where([class~='not-article-prose'] *)) {
     @apply mb-8;
   }
 
-  .article-prose h2:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    h2:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply scroll-mt-4 mb-4 text-2xl font-bold;
   }
 
-  .article-prose h3:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    h3:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply mb-4 text-[22px] italic;
   }
 
-  .article-prose > *:has(+ h3):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    > *:has(+ h3):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply mb-8;
   }
 
-  .article-prose code:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    code:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply text-sm md:text-[15px];
   }
 
-  .article-prose :where(p code):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    :where(p code):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply text-base;
   }
 
-  .article-prose pre:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
-    @apply max-w-full overflow-x-auto py-3 px-6 rounded bg-neutral-100 dark:bg-neutral-800 whitespace-pre-wrap leading-tight;
+  &
+    pre:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
+    @apply max-w-full overflow-x-auto py-3 px-6 rounded-sm bg-neutral-100 dark:bg-neutral-800 whitespace-pre-wrap leading-tight;
   }
 
-  .article-prose a:not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    a:not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply underline underline-offset-2 decoration-1 decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
   }
 
-  .article-prose :where(img):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    :where(img):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply w-full h-auto bg-neutral-950;
   }
 
-  .article-prose :where(svg):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    :where(svg):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply w-full h-auto bg-neutral-100 dark:bg-neutral-950;
   }
 
-  .article-prose :where(ol, ul):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    :where(ol, ul):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply list-disc ml-4 marker:text-neutral-500;
   }
 
-  .article-prose :where(li):not(:where([class~=not-article-prose],[class~=not-article-prose] *)) {
+  &
+    :where(li):not(
+      :where([class~='not-article-prose'], [class~='not-article-prose'] *)
+    ) {
     @apply mb-1;
   }
 
-  .article-prose blockquote {
+  & blockquote {
     @apply mb-8 pl-5 border-l-2 border-neutral-300 dark:border-neutral-700 italic text-neutral-500 dark:text-neutral-400;
   }
 
-  .article-prose blockquote p {
+  & blockquote p {
     @apply mb-0;
   }
 
-  .article-prose blockquote cite {
+  & blockquote cite {
     @apply block mt-2 not-italic text-base;
   }
 
-  .article-prose blockquote cite::before {
+  & blockquote cite::before {
     @apply mr-0.5 content-["—"];
   }
 
-  .article-prose figure svg text {
+  & figure svg text {
     @apply font-sans;
   }
+}
 
+@utility toc-wrapper {
+  .article-prose > & {
+    @apply hidden xl:block col-start-1 col-end-3 row-start-1 relative;
+  }
+
+  & .toc {
+    @apply absolute text-sm;
+  }
+
+  & .toc-level {
+    @apply list-none;
+  }
+
+  & .toc-item {
+    @apply mb-2 leading-snug;
+  }
+
+  & .toc-link {
+    @apply no-underline hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
+  }
+}
+
+@utility toc {
+  .toc-wrapper & {
+    @apply absolute text-sm;
+  }
+}
+
+@utility toc-level {
+  .toc-wrapper & {
+    @apply list-none;
+  }
+}
+
+@utility toc-item {
+  .toc-wrapper & {
+    @apply mb-2 leading-snug;
+  }
+}
+
+@utility toc-link {
+  .toc-wrapper & {
+    @apply no-underline hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors;
+  }
+}
+
+@utility spinner {
   /* Spinner */
-  .spinner {
-    @apply block fixed top-[15px] right-[15px] z-[1031];
+  @apply block fixed top-[15px] right-[15px] z-1031;
+}
+
+@utility spinner-icon {
+  @apply w-[18px] h-[18px] border-2 border-transparent border-t-neutral-500 border-l-neutral-500 rounded-full;
+
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+@layer base {
+  *:focus {
+    @apply outline-hidden ring-0;
   }
 
-  .spinner-icon {
-    @apply w-[18px] h-[18px] border-2 border-transparent border-t-neutral-500 border-l-neutral-500 rounded-full;
-
-    animation: nprogress-spinner 400ms linear infinite;
+  *:focus-visible {
+    @apply outline-hidden ring-1 ring-offset-1 dark:ring-offset-neutral-950 ring-neutral-400 dark:ring-neutral-300;
   }
+
+  ::selection {
+    @apply bg-neutral-300/50 dark:bg-neutral-700/50;
+  }
+}
+
+@layer components {
 
   @keyframes nprogress-spinner {
     0%   { transform: rotate(0deg); }

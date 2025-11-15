@@ -23,7 +23,7 @@ export const ThemeRadio = () => {
           />
           <label
             htmlFor="light"
-            className="block p-4 rounded border border-neutral-200 dark:border-neutral-700 bg-transparent group-has-[:checked]:bg-neutral-200 dark:group-has-[:checked]:bg-neutral-700 text-neutral-400 dark:text-neutral-600 group-has-[:checked]:text-neutral-800 dark:group-has-[:checked]:text-neutral-100 cursor-pointer"
+            className="block p-4 rounded-sm border border-neutral-200 dark:border-neutral-700 bg-transparent group-has-checked:bg-neutral-200 dark:group-has-checked:bg-neutral-700 text-neutral-400 dark:text-neutral-600 group-has-checked:text-neutral-800 dark:group-has-checked:text-neutral-100 cursor-pointer"
           >
             <span aria-hidden="true">
               <Sun />
@@ -43,7 +43,7 @@ export const ThemeRadio = () => {
           />
           <label
             htmlFor="dark"
-            className="block p-4 rounded border border-neutral-200 dark:border-neutral-700 bg-transparent group-has-[:checked]:bg-neutral-200 dark:group-has-[:checked]:bg-neutral-700 text-neutral-400 dark:text-neutral-600 group-has-[:checked]:text-neutral-800 dark:group-has-[:checked]:text-neutral-100 cursor-pointer"
+            className="block p-4 rounded-sm border border-neutral-200 dark:border-neutral-700 bg-transparent group-has-checked:bg-neutral-200 dark:group-has-checked:bg-neutral-700 text-neutral-400 dark:text-neutral-600 group-has-checked:text-neutral-800 dark:group-has-checked:text-neutral-100 cursor-pointer"
           >
             <span aria-hidden="true">
               <Moon />

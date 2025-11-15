@@ -102,14 +102,14 @@ export class Autocomplete extends React.Component<
                     onChange={searchList}
                     onFocus={() => this.showDropdown()}
                     onBlur={() => this.hideDropdown()}
-                    className="form-input block w-full border-neutral-400 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm focus:border-neutral-500 focus:dark:border-neutral-600 focus:ring-3 focus:ring-neutral-300/50 focus:dark:ring-neutral-700/50 placeholder:text-neutral-400"
+                    className="form-input block w-full border-neutral-400 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-xs focus:border-neutral-500 dark:focus:border-neutral-600 focus:ring-3 focus:ring-neutral-300/50 dark:focus:ring-neutral-700/50 placeholder:text-neutral-400"
                   />
                   {this.state.dropdownVisible && results.length > 0 && (
                     <div className="absolute w-full bg-neutral-200 dark:bg-neutral-800">
                       <ul className="py-1.5">
                         {results.map((result) => (
                           <li
-                            className="py-1.5 px-3 hover:bg-neutral-300 hover:dark:bg-neutral-700 cursor-pointer"
+                            className="py-1.5 px-3 hover:bg-neutral-300 dark:hover:bg-neutral-700 cursor-pointer"
                             key={result}
                           >
                             {result}
@@ -157,12 +157,12 @@ export class TagListSearch extends React.Component<TagListSearchProps> {
                     type="text"
                     placeholder="Type to search list"
                     onChange={searchList}
-                    className="form-input block w-full border-neutral-400 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm focus:border-neutral-500 focus:dark:border-neutral-600 focus:ring-3 focus:ring-neutral-300/50 focus:dark:ring-neutral-700/50 placeholder:text-neutral-400"
+                    className="form-input block w-full border-neutral-400 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-xs focus:border-neutral-500 dark:focus:border-neutral-600 focus:ring-3 focus:ring-neutral-300/50 dark:focus:ring-neutral-700/50 placeholder:text-neutral-400"
                   />
                   <ul className="flex flex-wrap gap-1.5">
                     {results.map((result) => (
                       <li
-                        className="py-0.5 px-2 bg-neutral-300 dark:bg-neutral-800 rounded text-base"
+                        className="py-0.5 px-2 bg-neutral-300 dark:bg-neutral-800 rounded-sm text-base"
                         key={result}
                       >
                         {result}

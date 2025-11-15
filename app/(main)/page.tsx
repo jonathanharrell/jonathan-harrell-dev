@@ -33,7 +33,7 @@ const HomePage = async () => {
         <p className="mt-8 text-center">
           <Link
             href="/about"
-            className="inline-flex items-center gap-1 py-3 pl-5 pr-3 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 font-sans transition-colors"
+            className="inline-flex items-center gap-1 py-3 pl-5 pr-3 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 font-sans transition-colors select-none"
           >
             Learn more
             <ChevronRight size={18} className="opacity-50" />

@@ -1,8 +1,6 @@
 import type { Config } from "tailwindcss";
 import TailwindTypography from "@tailwindcss/typography";
 import TailwindForms from "@tailwindcss/forms";
-import plugin from "tailwindcss/plugin";
-import { PluginUtils } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -52,7 +50,7 @@ const config: Config = {
       colors: {
         accent: "var(--accent)",
       },
-      typography: ({ theme }: PluginUtils) => ({
+      typography: ({ theme }) => ({
         neutral: {
           css: {
             "--tw-prose-body": theme("colors.neutral[800]"),
@@ -97,12 +95,6 @@ const config: Config = {
     TailwindForms({
       strategy: "class",
     }),
-    // plugin(function ({ addVariant }) {
-    //   addVariant(
-    //     "prose-inline-code",
-    //     '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))',
-    //   );
-    // }),
   ],
 };
 

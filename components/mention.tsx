@@ -29,7 +29,7 @@ export const Mention = ({ mention }: MentionProps) => {
       <div className="flex flex-col gap-1">
         <div
           dangerouslySetInnerHTML={{ __html: mention.content.html }}
-          className="lg:max-w-[60ch] md:text-lg !leading-normal [&_a]:underline [&_a]:hover:no-underline"
+          className="lg:max-w-[60ch] md:text-lg leading-normal! [&_a]:underline hover:[&_a]:no-underline"
         />
         <time
           dateTime={mention.published}
