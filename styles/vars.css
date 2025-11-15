@@ -1,22 +1,15 @@
 :root {
   color-scheme: light;
 
-  --accent: #ff6354;
-
+  --accent: light-dark(#ff6354, #e6594c);
   --illustration-accent: var(--accent);
 
   /* these are for svg illustrations to respond to light/dark mode */
-  --illustration-background: #fafafa;
-  --illustration-black: #262626;
-  --illustration-gray: #d4d4d4;
+  --illustration-background: light-dark(#fafafa, #27272a);
+  --illustration-black: light-dark(#262626, #f5f5f5);
+  --illustration-gray: light-dark(#d4d4d4, #525252);
 }
 
 .dark {
   color-scheme: dark;
-
-  --accent: #e6594c;
-
-  --illustration-background: #27272a;
-  --illustration-black: #f5f5f5;
-  --illustration-gray: #525252;
 }
