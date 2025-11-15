@@ -97,12 +97,12 @@ const config: Config = {
     TailwindForms({
       strategy: "class",
     }),
-    plugin(function ({ addVariant }) {
-      addVariant(
-        "prose-inline-code",
-        '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))',
-      );
-    }),
+    // plugin(function ({ addVariant }) {
+    //   addVariant(
+    //     "prose-inline-code",
+    //     '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))',
+    //   );
+    // }),
   ],
 };
 
