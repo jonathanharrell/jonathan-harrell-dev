@@ -62,6 +62,6 @@
   }
 
   input {
-    @apply form-input block w-full border-neutral-400 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 shadow-sm focus:border-neutral-500 focus:dark:border-neutral-600 focus:ring focus:ring-neutral-300 focus:dark:ring-neutral-700 focus:ring-opacity-50 placeholder:text-neutral-400 font-sans;
+    @apply form-input block w-full border-neutral-400 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 shadow-sm focus:border-neutral-500 focus:dark:border-neutral-600 focus:ring-3 focus:ring-neutral-300/50 focus:dark:ring-neutral-700/50 placeholder:text-neutral-400 font-sans;
   }
 }
