@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.13",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/dom-view-transitions": "^1.0.5",
     "@types/mapbox__rehype-prism": "^0.8.3",
     "@types/node": "^20",
