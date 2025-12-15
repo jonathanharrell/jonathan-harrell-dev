@@ -21,7 +21,7 @@ export const ThemeToggle = () => {
   // if the theme has not yet been checked, hide the toggle
   // this will prevent a flash of the toggle in the wrong state
   if (isChecked === undefined) {
-    return null;
+    return <div className="w-6 h-6" />;
   }
 
   return (
