@@ -119,11 +119,11 @@ const jsonLd = {
 
 const AboutPage = () => {
   return (
-    <div className="max-w-[800px] mx-auto">
+    <div>
       <section className="pb-6 sm:pb-10 md:py-10">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="flex items-start md:justify-end md:order-1">
-            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[300px] mx-auto mt-4 md:mt-0">
+            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[360px] xl:max-w-[400px] mx-auto mt-4 md:mt-0 lg:pr-4">
               <div className="relative">
                 <Image
                   src="/assets/images/jonathan-2023.jpg"
@@ -167,14 +167,14 @@ const AboutPage = () => {
                 role="presentation"
                 alt=""
               />
-              <figcaption className="hidden lg:block absolute -bottom-20 right-0 max-w-[200px] text-balance italic text-right text-sm">
+              <figcaption className="hidden lg:block absolute -bottom-20 right-10 xl:right-20 max-w-[200px] text-balance italic text-right text-sm">
                 Me on Loch Ness, right before drinking a whiskey hot chocolate
               </figcaption>
             </figure>
           </div>
           <div className="flex flex-col gap-6 flex-1">
             <h1 className="text-3xl font-bold">About Jonathan</h1>
-            <p className="md:text-lg">
+            <p className="max-w-[550px] md:text-lg">
               I’m Jonathan Harrell, a designer and front-end engineer. Ever
               since playing around with HyperCard stacks on my Macintosh Classic
               as a kid in the 90s, I’ve been passionate about building things
@@ -197,12 +197,12 @@ const AboutPage = () => {
         <ul aria-labelledby="work-label" className="flex flex-col gap-6">
           {workData.map((work, index) => (
             <li key={index} className="md:grid grid-cols-6 gap-12">
-              <div className="col-start-1 col-end-4 mb-1">
+              <div className="col-start-1 col-end-4 lg:col-end-3 mb-1">
                 <p className="font-sans text-neutral-500 dark:text-neutral-400">
                   {work.start}-{work.end || "present"}
                 </p>
               </div>
-              <div className="col-start-4 col-end-13">
+              <div className="col-start-4 lg:col-start-3 col-end-7">
                 <p className="text-lg font-bold">{work.company}</p>
                 <p className="font-sans text-neutral-500 dark:text-neutral-400">
                   {work.role}
@@ -221,10 +221,10 @@ const AboutPage = () => {
         <ul className="flex flex-col gap-6" aria-labelledby="uses-label">
           {usesData.map((use, index) => (
             <li key={index} className="md:grid grid-cols-6 gap-12 font-sans">
-              <p className="col-start-1 col-end-4 mb-1 text-neutral-500 dark:text-neutral-400">
+              <p className="col-start-1 col-end-4 lg:col-end-3 mb-1 text-neutral-500 dark:text-neutral-400">
                 {use.type}
               </p>
-              <p className="col-start-4 col-end-13">
+              <p className="col-start-4 lg:col-start-3 col-end-7">
                 <a
                   href={use.url}
                   target="_blank"
