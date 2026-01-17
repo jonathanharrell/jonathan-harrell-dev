@@ -8,18 +8,17 @@ import { ThemeToggle } from "@/components/theme-toggle";
 export const DesktopNav = () => {
   const pathname = usePathname();
 
-  const linkClasses =
-    "hover:underline underline-offset-2 decoration-neutral-400 dark:decoration-neutral-500";
+  const linkClasses = "px-4";
 
   return (
     <div className="hidden md:flex items-center gap-12 ml-auto font-sans">
-      <nav className="flex gap-8" aria-labelledby="navigation-label">
+      <nav className="desktop-nav flex" aria-labelledby="navigation-label">
         <h2 id="navigation-label" className="sr-only" aria-hidden="true">
           Site navigation
         </h2>
         <Link
           href="/"
-          className={classNames(linkClasses, { underline: pathname === "/" })}
+          className={classNames(linkClasses, { active: pathname === "/" })}
           aria-current={pathname === "/" ? "page" : undefined}
         >
           Home
@@ -27,7 +26,7 @@ export const DesktopNav = () => {
         <Link
           href="/blog"
           className={classNames(linkClasses, {
-            underline: pathname?.startsWith("/blog"),
+            active: pathname?.startsWith("/blog"),
           })}
           aria-current={pathname === "/blog" ? "page" : undefined}
         >
@@ -36,7 +35,7 @@ export const DesktopNav = () => {
         <Link
           href="/about"
           className={classNames(linkClasses, {
-            underline: pathname === "/about",
+            active: pathname === "/about",
           })}
           aria-current={pathname === "/about" ? "page" : undefined}
         >
