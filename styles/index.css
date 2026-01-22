@@ -247,27 +247,6 @@
 }
 
 @layer components {
-  .desktop-nav {
-    &:not(:hover) a.active {
-      anchor-name: --nav-link;
-    }
-
-    & a {
-      &:hover {
-        anchor-name: --nav-link;
-      }
-    }
-
-    &::after {
-      @apply block fixed h-[2px] bg-neutral-400 dark:bg-neutral-500 transition-all duration-200 ease-in-out content-[""];
-
-      position-anchor: --nav-link;
-      top: anchor(bottom);
-      left: calc(anchor(left) + 1rem);
-      right: calc(anchor(right) + 1rem);
-    }
-  }
-
   @keyframes nprogress-spinner {
     0% {
       transform: rotate(0deg);
