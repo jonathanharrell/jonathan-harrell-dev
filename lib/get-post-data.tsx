@@ -55,32 +55,32 @@ export const getPostData = async (slug: string): Promise<PostData> => {
         rehypePlugins: [
           rehypePrism as Pluggable,
           rehypeSlug,
-          [
-            rehypeToc,
-            {
-              headings: ["h2"],
-              customizeTOC(toc: HtmlElementNode) {
-                toc.properties["aria-label"] = "Table of contents";
-
-                const ol = toc.children?.find(
-                  (child) => (child as HtmlElementNode).tagName === "ol",
-                );
-                const itemsCount =
-                  (ol as HtmlElementNode)?.children?.length || 0;
-
-                if (itemsCount < 3) {
-                  return null;
-                }
-
-                return {
-                  type: "element",
-                  tagName: "div",
-                  properties: { className: "toc-wrapper" },
-                  children: [toc],
-                };
-              },
-            },
-          ],
+          // [
+          //   rehypeToc,
+          //   {
+          //     headings: ["h2"],
+          //     customizeTOC(toc: HtmlElementNode) {
+          //       toc.properties["aria-label"] = "Table of contents";
+          //
+          //       const ol = toc.children?.find(
+          //         (child) => (child as HtmlElementNode).tagName === "ol",
+          //       );
+          //       const itemsCount =
+          //         (ol as HtmlElementNode)?.children?.length || 0;
+          //
+          //       if (itemsCount < 3) {
+          //         return null;
+          //       }
+          //
+          //       return {
+          //         type: "element",
+          //         tagName: "div",
+          //         properties: { className: "toc-wrapper" },
+          //         children: [toc],
+          //       };
+          //     },
+          //   },
+          // ],
           inlineSvg,
         ],
       },

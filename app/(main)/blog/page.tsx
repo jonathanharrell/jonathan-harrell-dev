@@ -33,7 +33,7 @@ const BlogPage = async () => {
   return (
     <div className="max-w-[800px] mx-auto">
       <header className="h-feed py-6 sm:py-10">
-        <h1 className="p-name text-3xl font-bold">Articles</h1>
+        <h1 className="p-name text-3xl font-bold text-center">Articles</h1>
       </header>
       <section className="py-6 sm:py-10">
         <ul className="flex flex-col gap-8">
