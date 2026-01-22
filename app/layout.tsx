@@ -50,7 +50,7 @@ export default function RootLayout({
       <html
         lang="en"
         suppressHydrationWarning
-        className="bg-neutral-100 dark:bg-neutral-950"
+        className="bg-white dark:bg-neutral-900"
       >
         {/*Note that we should NOT use Next's <Head /> component here since this will cause a flash of the default theme*/}
         <head>

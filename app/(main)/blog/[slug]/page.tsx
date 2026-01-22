@@ -111,13 +111,13 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
           </div>
         </section>
       )}
-      <section className="grid grid-cols-12 lg:gap-x-10 mt-6 py-6">
+      <section className="grid grid-cols-12 lg:gap-x-10 mt-6">
         <h2 id="other-articles-label" className="sr-only">
           Other articles
         </h2>
         <nav
           aria-labelledby="other-aticles-label"
-          className="col-start-1 col-end-13 lg:col-start-3 lg:col-end-11 flex items-center justify-between gap-8 font-sans"
+          className="col-start-1 col-end-13 lg:col-start-3 lg:col-end-11 flex items-center justify-between gap-8 border-t border-neutral-200 dark:border-neutral-700 py-6 font-sans"
         >
           {previous && (
             <div className="flex-1">
@@ -126,7 +126,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
                 rel="prev"
                 className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
               >
-                previous
+                previous article
               </Link>
             </div>
           )}
@@ -137,7 +137,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
                 rel="next"
                 className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
               >
-                next
+                next article
               </Link>
             </div>
           )}

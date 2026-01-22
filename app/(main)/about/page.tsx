@@ -119,7 +119,7 @@ const jsonLd = {
 
 const AboutPage = () => {
   return (
-    <div className="max-w-[800px] mx-auto">
+    <div className="max-w-[900px] mx-auto">
       <section className="pb-6 sm:pb-10 md:py-10">
         <div className="flex flex-col md:flex-row gap-16">
           <div className="flex items-start md:justify-end md:order-1">
