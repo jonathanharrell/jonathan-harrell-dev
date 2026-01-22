@@ -13,7 +13,7 @@ export const LightDarkSvg = () => {
   return (
     <figure>
       <div>
-        <div className="example-wrapper not-article-prose flex flex-col items-center justify-center gap-4 p-16 bg-neutral-100 dark:bg-neutral-950">
+        <div className="example-wrapper not-article-prose flex flex-col items-center justify-center gap-4 p-16 bg-neutral-100 dark:bg-neutral-925">
           <svg
             viewBox="0 0 592 621"
             width="592"
@@ -87,7 +87,10 @@ export const LightDarkSvg = () => {
         </div>
       </div>
       <figcaption>
-        <button className="underline hover:no-underline" onClick={toggleTheme}>
+        <button
+          className="underline hover:no-underline cursor-pointer"
+          onClick={toggleTheme}
+        >
           Click here
         </button>{" "}
         to toggle the theme and watch the SVG dynamically adapt

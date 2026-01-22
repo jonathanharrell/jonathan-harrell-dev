@@ -49,6 +49,7 @@ const config: Config = {
     extend: {
       colors: {
         accent: "var(--accent)",
+        "neutral-925": "oklch(17% 0 0)",
       },
       typography: ({ theme }) => ({
         neutral: {

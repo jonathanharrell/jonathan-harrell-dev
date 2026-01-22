@@ -103,7 +103,7 @@ export class AccordionExample extends React.Component {
     return (
       <figure>
         <div>
-          <div className="not-article-prose p-8 sm:py-12 sm:px-16 bg-neutral-100 dark:bg-neutral-950 font-sans text-base">
+          <div className="not-article-prose p-8 sm:py-12 sm:px-16 bg-neutral-100 dark:bg-neutral-925 font-sans text-base">
             <Accordion>
               <AccordionItem>
                 <AccordionHeader>Section 1</AccordionHeader>

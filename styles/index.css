@@ -91,15 +91,11 @@
   }
 
   & > figure:not(:where([class~='not-article-prose'], [class~='not-article-prose'] *)) {
-    @apply grid grid-cols-subgrid col-start-1 col-end-13 max-xl:gap-4 mb-8;
-  }
-
-  & > figure :where(img, svg, div):not(:where([class~='not-article-prose'], [class~='not-article-prose'] *)) {
-    @apply col-start-1 col-end-13 lg:col-start-3 lg:col-end-11;
+    @apply flex flex-col gap-4 mb-6;
   }
 
   & > figure figcaption:not(:where([class~='not-article-prose'], [class~='not-article-prose'] *)) {
-    @apply col-start-1 lg:col-start-3 xl:col-start-11 col-end-13 lg:col-end-11 xl:col-end-13 text-sm leading-snug max-xl:text-neutral-500 dark:max-xl:text-neutral-400;
+    @apply text-sm leading-snug text-neutral-500 dark:text-neutral-400;
   }
 
   & > *:has(+ h2):not(:where([class~='not-article-prose'], [class~='not-article-prose'] *)) {
@@ -143,7 +139,7 @@
   }
 
   & :where(svg):not(:where([class~='not-article-prose'], [class~='not-article-prose'] *)) {
-    @apply w-full h-auto bg-neutral-100 dark:bg-neutral-950;
+    @apply w-full h-auto bg-neutral-100 dark:bg-neutral-925;
   }
 
   & :where(ol, ul):not(:where([class~='not-article-prose'], [class~='not-article-prose'] *)) {
