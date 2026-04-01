@@ -77,28 +77,32 @@
 
     th,
     td {
-      @apply py-3 px-0 text-left;
+      @apply py-4 px-0 text-left align-middle;
     }
 
     th {
-      @apply border-t border-b border-neutral-900 dark:border-neutral-100 text-xs tracking-widest uppercase font-gt-america;
+      @apply border-t border-b border-neutral-900 dark:border-neutral-100 text-[10px] tracking-widest uppercase font-gt-america text-neutral-500 dark:text-neutral-400;
     }
 
     tr td {
-      @apply border-b border-neutral-200 dark:border-neutral-800;
+      @apply border-b border-neutral-100 dark:border-neutral-900;
     }
 
     tr:last-child td {
-      @apply border-b border-neutral-900 dark:border-neutral-100;
+      @apply border-b border-neutral-200 dark:border-neutral-800;
     }
 
     th:not(:first-child),
     td:not(:first-child) {
-      @apply pl-4;
+      @apply pl-6;
     }
 
     thead th {
       @apply text-left;
+    }
+
+    td input {
+      @apply w-full bg-transparent border border-neutral-200 dark:border-neutral-700 px-3 py-2 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 dark:placeholder:text-neutral-600 focus:outline-none focus:border-accent transition-colors;
     }
   }
 
