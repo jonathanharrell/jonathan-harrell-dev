@@ -165,7 +165,7 @@ const AboutPage = () => {
       </section>
 
       {/* Work History */}
-      <section className="py-12 md:py-16 border-b border-neutral-100 dark:border-neutral-900">
+      <section id="work" className="py-12 md:py-16 border-b border-neutral-100 dark:border-neutral-900">
         <div className="flex flex-col gap-2 mb-8">
           <span className="text-[10px] tracking-widest uppercase text-accent">Work history</span>
         </div>
