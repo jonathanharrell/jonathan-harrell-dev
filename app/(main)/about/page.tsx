@@ -2,8 +2,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import React from "react";
 import { SITE_URL } from "@/constants";
-import classNames from "classnames";
-import Link from "next/link";
 
 interface Work {
   start: string;
@@ -119,125 +117,131 @@ const jsonLd = {
 
 const AboutPage = () => {
   return (
-    <div className="max-w-[900px] mx-auto">
-      <section className="pb-6 sm:pb-10 md:py-10">
-        <div className="flex flex-col md:flex-row gap-16">
-          <div className="flex items-start md:justify-end md:order-1">
-            <figure className="relative max-w-[260px] md:max-w-[200px] lg:max-w-[300px] mx-auto mt-4 md:mt-0">
-              <div className="relative">
-                <Image
-                  src="/assets/images/jonathan-2023.jpg"
-                  alt="Image of Jonathan Harrell"
-                  width={440}
-                  height={440}
-                  className="aspect-square max-w-full rounded-full"
-                />
-                <svg
-                  role="presentation"
-                  className="absolute top-0 left-0 w-full h-full translate-x-[-16px] translate-y-[-16px]"
-                >
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="49%"
-                    fill="none"
-                    stroke="var(--accent)"
-                    strokeWidth="1"
-                  ></circle>
-                </svg>
-                <svg
-                  role="presentation"
-                  className="absolute top-0 left-0 w-full h-full  translate-x-[16px] translate-y-[16px]"
-                >
-                  <circle
-                    cx="50%"
-                    cy="50%"
-                    r="49%"
-                    fill="none"
-                    stroke="var(--accent)"
-                    strokeWidth="1"
-                  ></circle>
-                </svg>
-              </div>
+    <div>
+      {/* Header */}
+      <header className="py-12 md:py-16 border-b border-neutral-100 dark:border-neutral-900">
+        <span className="block text-[10px] tracking-widest uppercase text-accent mb-3">03</span>
+        <h1
+          className="font-gt-america font-normal tracking-tight text-neutral-900 dark:text-neutral-100"
+          style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", lineHeight: 1.05 }}
+        >
+          About Jonathan
+        </h1>
+      </header>
+
+      {/* Bio section */}
+      <section className="py-12 md:py-16 border-b border-neutral-100 dark:border-neutral-900">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div className="md:col-span-4 lg:col-span-3">
+            <figure className="relative max-w-[240px]">
               <Image
-                className="hidden lg:block absolute -bottom-14 left-16 w-12 h-auto"
-                src="/assets/icons/curved-arrow.svg"
-                width={48}
-                height={48}
-                role="presentation"
-                alt=""
+                src="/assets/images/jonathan-2023.jpg"
+                alt="Image of Jonathan Harrell"
+                width={440}
+                height={440}
+                className="aspect-square max-w-full w-full"
+                style={{ filter: "grayscale(20%)" }}
               />
-              <figcaption className="hidden lg:block absolute -bottom-20 right-0 max-w-[200px] text-balance italic text-right text-sm">
-                Me on Loch Ness, right before drinking a whiskey hot chocolate
-              </figcaption>
             </figure>
           </div>
-          <div className="flex flex-col gap-6 flex-1">
-            <h1 className="text-3xl font-bold">About Jonathan</h1>
-            <p className="md:text-lg">
-              I’m Jonathan Harrell, a designer and front-end engineer. Ever
-              since playing around with HyperCard stacks on my Macintosh Classic
-              as a kid in the 90s, I’ve been passionate about building things
-              with pixels and code. For the last ten years, I’ve been developing
+          <div className="md:col-span-8 lg:col-span-9 flex flex-col gap-6">
+            <p
+              className="font-gt-america font-normal leading-snug tracking-tight text-neutral-900 dark:text-neutral-100"
+              style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)" }}
+            >
+              Designer and front-end engineer based in Brooklyn, New York.
+            </p>
+            <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-[600px]">
+              Ever since playing around with HyperCard stacks on my Macintosh Classic
+              as a kid in the 90s, I&apos;ve been passionate about building things
+              with pixels and code. For the last ten years, I&apos;ve been developing
               websites and applications for a wide range of clients, from small
-              design agencies to SaaS startups to established software
-              companies. While I am now a full-time software engineer, I am also
-              passionate about design, and worked for several years as a UI/UX
-              designer. I am currently based in Brooklyn, New York.
+              design agencies to SaaS startups to established software companies.
+              While I am now a full-time software engineer, I am also passionate
+              about design, and worked for several years as a UI/UX designer.
             </p>
           </div>
         </div>
       </section>
-      <section className="pt-6 sm:pt-10 pb-2">
-        <header className="mb-10">
-          <h2 id="work-label" className="text-2xl font-bold">
-            My Work
-          </h2>
-        </header>
-        <ul aria-labelledby="work-label" className="flex flex-col gap-6">
-          {workData.map((work, index) => (
-            <li key={index} className="md:grid grid-cols-6 gap-12">
-              <div className="col-start-1 col-end-4 mb-1">
-                <p className="font-sans text-neutral-500 dark:text-neutral-400">
-                  {work.start}-{work.end || "present"}
-                </p>
-              </div>
-              <div className="col-start-4 col-end-13">
-                <p className="text-lg font-bold">{work.company}</p>
-                <p className="font-sans text-neutral-500 dark:text-neutral-400">
+
+      {/* Work History */}
+      <section className="py-12 md:py-16 border-b border-neutral-100 dark:border-neutral-900">
+        <div className="flex flex-col gap-2 mb-8">
+          <span className="text-[10px] tracking-widest uppercase text-accent">Work history</span>
+        </div>
+        <table className="w-full border-collapse" aria-labelledby="work-label">
+          <caption id="work-label" className="sr-only">Work history</caption>
+          <thead>
+            <tr>
+              <th className="text-left text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600 py-3 border-t border-b border-neutral-900 dark:border-neutral-100 font-normal w-[120px]">
+                Period
+              </th>
+              <th className="text-left text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600 py-3 border-t border-b border-neutral-900 dark:border-neutral-100 font-normal pl-8">
+                Company
+              </th>
+              <th className="hidden md:table-cell text-left text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600 py-3 border-t border-b border-neutral-900 dark:border-neutral-100 font-normal pl-8">
+                Role
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {workData.map((work, index) => (
+              <tr key={index} className="border-b border-neutral-100 dark:border-neutral-900">
+                <td className="py-4 text-sm text-neutral-400 dark:text-neutral-600 tabular-nums align-top">
+                  {work.start}–{work.end || "now"}
+                </td>
+                <td className="py-4 pl-8 align-top">
+                  <p className="font-normal text-neutral-900 dark:text-neutral-100">{work.company}</p>
+                  <p className="md:hidden text-sm text-neutral-500 dark:text-neutral-400 mt-1">{work.role}</p>
+                </td>
+                <td className="hidden md:table-cell py-4 pl-8 text-sm text-neutral-500 dark:text-neutral-400 align-top">
                   {work.role}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
-      <section id="uses" className="py-6 sm:py-10">
-        <header className="mb-10">
-          <h2 id="uses-label" className="text-2xl font-bold">
-            What I Use
-          </h2>
-        </header>
-        <ul className="flex flex-col gap-6" aria-labelledby="uses-label">
-          {usesData.map((use, index) => (
-            <li key={index} className="md:grid grid-cols-6 gap-12 font-sans">
-              <p className="col-start-1 col-end-4 mb-1 text-neutral-500 dark:text-neutral-400">
-                {use.type}
-              </p>
-              <p className="col-start-4 col-end-13">
-                <a
-                  href={use.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-2 decoration-1 decoration-neutral-300 dark:decoration-neutral-500 text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100"
-                >
-                  {use.label}
-                </a>
-              </p>
-            </li>
-          ))}
-        </ul>
+
+      {/* Uses */}
+      <section id="uses" className="py-12 md:py-16">
+        <div className="flex flex-col gap-2 mb-8">
+          <span className="text-[10px] tracking-widest uppercase text-accent">Tools & equipment</span>
+        </div>
+        <table className="w-full border-collapse" aria-labelledby="uses-label">
+          <caption id="uses-label" className="sr-only">What I use</caption>
+          <thead>
+            <tr>
+              <th className="text-left text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600 py-3 border-t border-b border-neutral-900 dark:border-neutral-100 font-normal">
+                Category
+              </th>
+              <th className="text-left text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600 py-3 border-t border-b border-neutral-900 dark:border-neutral-100 font-normal pl-8">
+                Tool
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {usesData.map((use, index) => (
+              <tr key={index} className="border-b border-neutral-100 dark:border-neutral-900">
+                <td className="py-4 text-sm text-neutral-400 dark:text-neutral-600 align-top">
+                  {use.type}
+                </td>
+                <td className="py-4 pl-8 align-top">
+                  <a
+                    href={use.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-neutral-900 dark:text-neutral-100 hover:text-accent dark:hover:text-accent transition-colors underline underline-offset-2 decoration-1 decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-accent"
+                  >
+                    {use.label}
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

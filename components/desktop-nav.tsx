@@ -5,43 +5,49 @@ import classNames from "classnames";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@/components/theme-toggle";
 
+const navItems = [
+  { href: "/", label: "Home", num: "01" },
+  { href: "/blog", label: "Articles", num: "02" },
+  { href: "/about", label: "About", num: "03" },
+];
+
 export const DesktopNav = () => {
   const pathname = usePathname();
 
-  const linkClasses =
-    "hover:underline underline-offset-2 decoration-neutral-400 dark:decoration-neutral-500";
-
   return (
-    <div className="hidden md:flex items-center gap-12 ml-auto font-sans">
-      <nav className="flex gap-8" aria-labelledby="navigation-label">
+    <div className="hidden md:flex items-center gap-8 ml-auto">
+      <nav className="flex gap-6" aria-labelledby="navigation-label">
         <h2 id="navigation-label" className="sr-only" aria-hidden="true">
           Site navigation
         </h2>
-        <Link
-          href="/"
-          className={classNames(linkClasses, { underline: pathname === "/" })}
-          aria-current={pathname === "/" ? "page" : undefined}
-        >
-          Home
-        </Link>
-        <Link
-          href="/blog"
-          className={classNames(linkClasses, {
-            underline: pathname?.startsWith("/blog"),
-          })}
-          aria-current={pathname === "/blog" ? "page" : undefined}
-        >
-          Blog
-        </Link>
-        <Link
-          href="/about"
-          className={classNames(linkClasses, {
-            underline: pathname === "/about",
-          })}
-          aria-current={pathname === "/about" ? "page" : undefined}
-        >
-          About
-        </Link>
+        {navItems.map(({ href, label, num }) => {
+          const isActive =
+            href === "/" ? pathname === "/" : pathname?.startsWith(href);
+          return (
+            <Link
+              key={href}
+              href={href}
+              className={classNames(
+                "flex items-baseline gap-1.5 text-sm tracking-wide transition-colors",
+                isActive
+                  ? "text-neutral-900 dark:text-neutral-100"
+                  : "text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100",
+              )}
+              aria-current={
+                href === "/"
+                  ? pathname === "/"
+                    ? "page"
+                    : undefined
+                  : pathname === href
+                    ? "page"
+                    : undefined
+              }
+            >
+              <span className="text-[10px] text-accent font-gt-america">{num}</span>
+              {label}
+            </Link>
+          );
+        })}
       </nav>
       <ThemeToggle />
     </div>

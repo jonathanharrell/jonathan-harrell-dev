@@ -50,7 +50,7 @@ export default function RootLayout({
       <html
         lang="en"
         suppressHydrationWarning
-        className="bg-white dark:bg-neutral-900"
+        className="bg-white dark:bg-neutral-950"
       >
         {/*Note that we should NOT use Next's <Head /> component here since this will cause a flash of the default theme*/}
         <head>
@@ -118,9 +118,9 @@ export default function RootLayout({
             }}
           />
         </head>
-        <body className="flex flex-col min-h-dvh bg-white dark:bg-neutral-900 font-iowan text-neutral-800 dark:text-neutral-300">
+        <body className="flex flex-col min-h-dvh bg-white dark:bg-neutral-950 font-gt-america text-neutral-900 dark:text-neutral-100 antialiased">
           <div className="flex flex-col flex-1 container overflow-hidden">
-            <NextTopLoader color="#e6594c" />
+            <NextTopLoader color="#c8102e" />
             <SkipToContent />
             <Header />
             <main

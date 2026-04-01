@@ -29,7 +29,7 @@ export const ThemeToggle = () => {
       <label
         htmlFor="themeIsDark"
         title={isChecked ? "Switch to light mode" : "Switch to dark mode"}
-        className="cursor-pointer"
+        className="cursor-pointer text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
       >
         <input
           type="checkbox"
@@ -38,7 +38,7 @@ export const ThemeToggle = () => {
           onChange={handleChange}
           className="sr-only"
         />
-        <span aria-hidden="true">{isChecked ? <Moon /> : <Sun />}</span>
+        <span aria-hidden="true">{isChecked ? "Light" : "Dark"}</span>
       </label>
     </div>
   );

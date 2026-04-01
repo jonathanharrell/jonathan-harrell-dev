@@ -67,23 +67,27 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
 
   return (
     <article className="h-entry">
-      <header className="flex flex-col items-center gap-6 max-w-[480px] mt-8 mx-auto text-center">
-        <h1 className="p-name max-w-[32ch] text-3xl font-bold text-balance">
-          {post.frontmatter.title}
-        </h1>
-        <div className="font-sans text-sm text-neutral-500 dark:text-neutral-400">
-          <time dateTime={post.frontmatter.date} className="dt-published">
+      <header className="py-12 md:py-16 border-b border-neutral-100 dark:border-neutral-900">
+        <div className="flex items-center gap-4 mb-6">
+          <time
+            dateTime={post.frontmatter.date}
+            className="dt-published text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600"
+          >
             {formattedDate}
           </time>
           {Boolean(post.frontmatter.tags.length) && (
             <>
-              <span aria-hidden="true" className="mx-2">
-                •
-              </span>
+              <span aria-hidden="true" className="w-4 h-px bg-neutral-300 dark:bg-neutral-700 inline-block" />
               <Tags tags={post.frontmatter.tags} />
             </>
           )}
         </div>
+        <h1
+          className="p-name font-gt-america font-normal tracking-tight text-neutral-900 dark:text-neutral-100 max-w-[800px]"
+          style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.1 }}
+        >
+          {post.frontmatter.title}
+        </h1>
       </header>
       <div
         className={classNames("e-content article-prose mt-12", uniqueClassName)}
@@ -91,10 +95,10 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
         {post.content}
       </div>
       {mentions.length > 0 && (
-        <section className="grid grid-cols-12 lg:gap-x-10 py-6 sm:py-10">
+        <section className="grid grid-cols-12 lg:gap-x-10 py-12">
           <div className="col-start-1 col-end-13 lg:col-start-3 lg:col-end-11">
-            <header className="flex flex-col gap-4">
-              <h2 id="mentions-label" className="text-2xl font-bold">
+            <header className="mb-8 border-t border-accent pt-3">
+              <h2 id="mentions-label" className="text-sm tracking-widest uppercase text-neutral-400 dark:text-neutral-600">
                 Mentions
               </h2>
             </header>
@@ -117,16 +121,17 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
         </h2>
         <nav
           aria-labelledby="other-aticles-label"
-          className="col-start-1 col-end-13 lg:col-start-3 lg:col-end-11 flex items-center justify-between gap-8 border-t border-neutral-200 dark:border-neutral-700 py-6 font-sans"
+          className="col-start-1 col-end-13 lg:col-start-3 lg:col-end-11 flex items-center justify-between gap-8 border-t border-neutral-200 dark:border-neutral-800 py-8"
         >
           {previous && (
             <div className="flex-1">
               <Link
                 href={`/blog/${previous.frontmatter.slug}`}
                 rel="prev"
-                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+                className="text-sm tracking-wide text-neutral-400 dark:text-neutral-600 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors flex items-center gap-2"
               >
-                previous article
+                <span className="w-4 h-px bg-current inline-block" />
+                Previous
               </Link>
             </div>
           )}
@@ -135,9 +140,10 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
               <Link
                 href={`/blog/${next.frontmatter.slug}`}
                 rel="next"
-                className="underline-offset-2 hover:underline decoration-neutral-300 dark:decoration-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+                className="text-sm tracking-wide text-neutral-400 dark:text-neutral-600 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors inline-flex items-center gap-2"
               >
-                next article
+                Next
+                <span className="w-4 h-px bg-current inline-block" />
               </Link>
             </div>
           )}
@@ -161,7 +167,7 @@ const Tags = ({ tags }: { tags: string[] }) => {
       </h2>
       <ul className="inline" aria-labelledby="tags-tabel">
         {tags.map((tag, index) => (
-          <li key={tag} className="inline">
+          <li key={tag} className="inline text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600">
             {tag}
             {index < tags.length - 1 && <span aria-hidden="true">, </span>}
           </li>

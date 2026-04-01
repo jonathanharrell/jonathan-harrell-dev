@@ -30,7 +30,7 @@
   }
 
   td:nth-child(4) {
-    @apply w-[25%] font-etbook-lining-figures text-neutral-500 dark:text-neutral-400;
+    @apply w-[25%] text-neutral-500 dark:text-neutral-400 tabular-nums;
   }
 }
 

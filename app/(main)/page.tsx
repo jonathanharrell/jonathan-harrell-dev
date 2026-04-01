@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight } from "react-feather";
-import { HeaderAnimation } from "@/components/header-animation";
 
 export const metadata: Metadata = {
   title:
@@ -18,29 +16,105 @@ export const metadata: Metadata = {
 
 const HomePage = async () => {
   return (
-    <section className="flex flex-col items-center justify-center relative md:h-[calc(100dvh-120px)] md:min-h-[600px] pb-6 sm:pb-10">
-      <HeaderAnimation className="w-[320px] h-[320px] md:min-w-[400px] md:min-h-[400px] md:w-[50vh] md:h-[50vh] md:max-w-[600px] md:max-h-[600px]" />
-      <div className="flex flex-col">
-        <h1 className="text-3xl md:text-4xl text-center">
-          UI/UX Designer & <br />
-          <span className="italic">Front-End Engineer</span>
-        </h1>
-        <p className="max-w-[520px] mt-4 mx-auto font-sans leading-relaxed text-center text-neutral-600 dark:text-neutral-400">
-          I’m a designer and developer committed to making the web a more
-          empowering and accessible place. I create engaging user experiences
-          and bring them to life through maintainable, high-quality code.
-        </p>
-        <p className="mt-8 text-center">
+    <div className="flex flex-col">
+      {/* Hero */}
+      <section className="py-16 md:py-24 border-b border-neutral-100 dark:border-neutral-900">
+        <div className="flex flex-col gap-2 mb-3">
+          <span className="text-[10px] tracking-widest uppercase text-accent">
+            01
+          </span>
+          <div
+            className="font-gt-america font-normal leading-[1.05] tracking-tight text-neutral-900 dark:text-neutral-100"
+            style={{ fontSize: "clamp(2.75rem, 8vw, 6rem)" }}
+          >
+            <span className="block">UI/UX Designer</span>
+            <span className="block text-neutral-400 dark:text-neutral-600">
+              & Front-End Engineer
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-10 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+          <p className="max-w-[520px] text-neutral-500 dark:text-neutral-400 leading-relaxed">
+            I&apos;m a designer and developer committed to making the web a more
+            empowering and accessible place. I create engaging user experiences
+            and bring them to life through maintainable, high-quality code.
+          </p>
           <Link
             href="/about"
-            className="inline-flex items-center gap-1 py-3 pl-5 pr-3 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 font-sans transition-colors select-none"
+            className="shrink-0 inline-flex items-center gap-2 text-sm tracking-wide text-neutral-900 dark:text-neutral-100 hover:text-accent dark:hover:text-accent transition-colors group"
           >
             Learn more
-            <ChevronRight size={18} className="opacity-50" />
+            <span className="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300" aria-hidden="true" />
           </Link>
-        </p>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="py-16 border-b border-neutral-100 dark:border-neutral-900">
+        <div className="flex flex-col gap-2 mb-8">
+          <span className="text-[10px] tracking-widest uppercase text-accent">02</span>
+          <p className="text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-500">At a glance</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
+          <div className="flex flex-col gap-2 py-8 sm:pr-8 border-t border-neutral-200 dark:border-neutral-800 sm:border-r">
+            <span
+              className="font-gt-america font-normal leading-none tracking-tight text-neutral-900 dark:text-neutral-100"
+              style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}
+            >
+              10+
+            </span>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-snug max-w-[180px]">
+              Years building web products and user interfaces
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 py-8 sm:px-8 border-t border-neutral-200 dark:border-neutral-800 sm:border-r">
+            <span
+              className="font-gt-america font-normal leading-none tracking-tight text-neutral-900 dark:text-neutral-100"
+              style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}
+            >
+              50+
+            </span>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-snug max-w-[180px]">
+              Articles written on CSS, JavaScript, and design
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 py-8 sm:pl-8 border-t border-neutral-200 dark:border-neutral-800">
+            <span
+              className="font-gt-america font-normal leading-none tracking-tight text-neutral-900 dark:text-neutral-100"
+              style={{ fontSize: "clamp(3rem, 6vw, 5rem)" }}
+            >
+              NY
+            </span>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-snug max-w-[180px]">
+              Based in Brooklyn, New York
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA to Blog */}
+      <section className="py-16">
+        <div className="flex flex-col gap-2 mb-8">
+          <span className="text-[10px] tracking-widest uppercase text-accent">03</span>
+          <p className="text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-500">Writing</p>
+        </div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+          <p
+            className="font-gt-america font-normal leading-tight tracking-tight text-neutral-900 dark:text-neutral-100 max-w-[600px]"
+            style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}
+          >
+            Tips, techniques, and thoughts on modern CSS and front-end development.
+          </p>
+          <Link
+            href="/blog"
+            className="shrink-0 inline-flex items-center gap-2 text-sm tracking-wide border-t border-accent pt-3 text-neutral-900 dark:text-neutral-100 hover:text-accent dark:hover:text-accent transition-colors group"
+          >
+            Read articles
+            <span className="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 };
 

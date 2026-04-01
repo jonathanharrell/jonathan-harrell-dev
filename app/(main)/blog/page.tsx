@@ -31,12 +31,22 @@ const BlogPage = async () => {
   const { posts } = await getPosts();
 
   return (
-    <div className="max-w-[800px] mx-auto">
-      <header className="h-feed py-6 sm:py-10">
-        <h1 className="p-name text-3xl font-bold text-center">Articles</h1>
+    <div className="h-feed">
+      <header className="py-12 md:py-16 border-b border-neutral-100 dark:border-neutral-900">
+        <span className="block text-[10px] tracking-widest uppercase text-accent mb-3">02</span>
+        <h1
+          className="p-name font-gt-america font-normal tracking-tight text-neutral-900 dark:text-neutral-100"
+          style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", lineHeight: 1.05 }}
+        >
+          Articles
+        </h1>
+        <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-sm tracking-wide">
+          {posts.length} articles on CSS, JavaScript, and design
+        </p>
       </header>
-      <section className="py-6 sm:py-10">
-        <ul className="flex flex-col gap-8">
+
+      <section className="py-4">
+        <ul className="flex flex-col">
           {posts.map((post, index) => {
             const formattedDate = new Date(
               post.frontmatter.date,
@@ -46,29 +56,42 @@ const BlogPage = async () => {
               year: "numeric",
             });
 
+            const year = new Date(post.frontmatter.date).getFullYear();
+
             return (
-              <li key={index}>
-                <article className="h-entry md:grid grid-cols-6 gap-12">
-                  <div className="col-start-1 col-end-3 mb-2">
+              <li key={index} className="border-t border-neutral-200 dark:border-neutral-800">
+                <article className="h-entry grid grid-cols-12 gap-4 py-6 group">
+                  <div className="col-span-12 md:col-span-2">
                     <time
                       dateTime={post.frontmatter.date}
-                      className="dt-published font-sans text-neutral-500 dark:text-neutral-400"
+                      className="dt-published text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600"
                     >
-                      {formattedDate}
+                      {year}
                     </time>
                   </div>
-                  <div className="col-start-3 col-end-13">
-                    <h2 className="mb-2 text-lg font-bold">
+                  <div className="col-span-12 md:col-span-7">
+                    <h2 className="mb-2 text-lg font-normal leading-snug">
                       <Link
                         href={`/blog/${post.frontmatter.slug}`}
-                        className="p-name hover:underline decoration-2 underline-offset-2 decoration-neutral-300 dark:decoration-neutral-600"
+                        className="p-name text-neutral-900 dark:text-neutral-100 hover:text-accent dark:hover:text-accent transition-colors"
                       >
                         {post.frontmatter.title}
                       </Link>
                     </h2>
-                    <p className="p-summary font-sans text-neutral-500 dark:text-neutral-400">
+                    <p className="p-summary text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
                       {post.frontmatter.description}
                     </p>
+                  </div>
+                  <div className="hidden md:flex col-span-3 items-start justify-end">
+                    <Link
+                      href={`/blog/${post.frontmatter.slug}`}
+                      className="text-xs tracking-widest uppercase text-neutral-400 dark:text-neutral-600 group-hover:text-accent transition-colors flex items-center gap-2"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                    >
+                      Read
+                      <span className="w-4 h-px bg-current inline-block" />
+                    </Link>
                   </div>
                 </article>
               </li>

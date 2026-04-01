@@ -37,13 +37,14 @@ const config: Config = {
         sm: "604px",
         md: "768px",
         lg: "1024px",
-        xl: "1100px",
-        "2xl": "1200px",
+        xl: "1200px",
+        "2xl": "1400px",
       },
       center: true,
       padding: {
-        DEFAULT: "2rem",
-        sm: "3rem",
+        DEFAULT: "1.5rem",
+        sm: "2.5rem",
+        lg: "3rem",
       },
     },
     extend: {
